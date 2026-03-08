@@ -3661,7 +3661,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Minimum refinement level for building surfaces. Higher = finer. Typical: 2-3. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">10fff515-b0c5-4896-9741-3f90ce644b6b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Building Min Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Building Min Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BldMin</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3707,7 +3707,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Maximum refinement level for building surfaces. Must be &gt;= min. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">734a883f-cc85-4174-8f13-25b143cd9f8f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Building Max Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Building Max Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BldMax</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3753,7 +3753,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for building corners and features. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0918c08c-d983-4bbe-9c11-79e4c25878f0</item>
                         <item name="Name" type_name="gh_string" type_code="10">Feature Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Feature Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Feat</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3799,7 +3799,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for region around buildings. 0 = no extra refinement. Default: 0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">9d1fec35-46af-4490-8d2a-d5d19e4e86b9</item>
                         <item name="Name" type_name="gh_string" type_code="10">Bounding Box Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Bounding Box Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BBox</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3845,7 +3845,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for ground surface. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0e692a0d-79f1-43d9-b3d2-0ed9e0603e61</item>
                         <item name="Name" type_name="gh_string" type_code="10">Ground Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Ground Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Gnd</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3891,7 +3891,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of mesh layers near walls. More = better boundary layer resolution. Default: 4</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4b827fa6-20a0-4352-bd30-a2f241083eaa</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Layers</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Boundary Layers</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">nLay</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3937,7 +3937,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of cells between refinement levels. More = smoother transition. Default: 5</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5132cfa0-6b0b-480e-a49b-0fbe1ec93f51</item>
                         <item name="Name" type_name="gh_string" type_code="10">Cells Between Levels</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Cells Between Levels</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">nCells</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3983,7 +3983,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">0: No snapping (fast debug), 1: With snapping (production), 2: With layers (accurate but slow)</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">25b2e2f2-ca9d-486f-8db6-272261e73b51</item>
                         <item name="Name" type_name="gh_string" type_code="10">Mesh Mode</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh Mode</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Mode</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4075,7 +4075,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Mesh settings object to connect to Simulation component</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7d776a4e-d102-4325-870a-a74aa117338f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Mesh settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">MSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4139,7 +4139,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Maximum solver iterations. Higher = more accurate but slower. Typical: 500-2000. Default: 1000</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5453ab14-c07e-430d-9b86-491a3b1ae0f2</item>
                         <item name="Name" type_name="gh_string" type_code="10">Iterations</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Iterations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Iter</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">94b38d5a-c232-4c68-9e33-c0f113d83c59</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -4186,7 +4186,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Save results every N iterations. Lower = more disk space. Typical: 10-50. Default: 20</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">d65491ee-7a5d-486c-8279-3ca0eb371cd5</item>
                         <item name="Name" type_name="gh_string" type_code="10">Write Interval</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Write Interval</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Write</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4232,7 +4232,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of saved timesteps to retain on disk. Older saves are deleted. Default: 3</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a9338d5b-a471-4370-9ddd-553c29b0d250</item>
                         <item name="Name" type_name="gh_string" type_code="10">Timesteps to Keep</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Timesteps to Keep</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Keep</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4278,7 +4278,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">RANS turbulence model. k-epsilon is fast and robust for urban flows. k-omega SST is more accurate near walls.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b689d7d5-a844-4d3c-b56d-201c9e348577</item>
                         <item name="Name" type_name="gh_string" type_code="10">Turbulence Model</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Turbulence Model</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Turb</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4324,7 +4324,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Under-relaxation for solver stability. Robust is safer for complex geometry. Default: Optimized</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">367a9a5c-5e04-43e0-8c5f-bdd31465b50b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Relaxation Factors</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Relaxation Factors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Relax</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4370,7 +4370,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Discretization schemes for equations. Optimized balances accuracy and stability.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fce8afe6-425c-4de4-87ec-7f3037ebb930</item>
                         <item name="Name" type_name="gh_string" type_code="10">Numerical Schemes</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Numerical Schemes</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Schemes</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4416,7 +4416,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Initialize with potentialFoam for faster convergence. Recommended for new simulations. Default: false</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">48083ba7-56c2-4159-bb4f-7efb3e31fe20</item>
                         <item name="Name" type_name="gh_string" type_code="10">Potential Flow Init</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Potential Flow Init</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PotInit</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4462,7 +4462,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Calculate mean age of air (ventilation effectiveness). Must be enabled before running simulation.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">42a86ff3-27e8-4632-9a92-19a0095aa693</item>
                         <item name="Name" type_name="gh_string" type_code="10">Age of Air</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Age of Air</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">AoA</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4508,7 +4508,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Parallel processing cores. -1 = Auto (75% of physical cores, not logical threads). More cores = faster but needs more RAM. Default: -1</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">f0a7e890-d776-4fc9-b604-6a0c8e09e7af</item>
                         <item name="Name" type_name="gh_string" type_code="10">CPU Cores</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">CPU Cores</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">CPUs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4554,7 +4554,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Optional: Custom BlueCFD installation folder.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e582accc-bf0e-49ce-adb5-e4eec069042d</item>
                         <item name="Name" type_name="gh_string" type_code="10">BlueCFD Folder</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">BlueCFD Folder</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">CFDFolder</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4601,7 +4601,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Optional: add conservative OpenFOAM field limiters (k/epsilon/omega and nut) to reduce divergence on poor meshes. Pressure is intentionally not limited by default.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">55289728-937f-49d3-8d04-b0a80de5cd27</item>
                         <item name="Name" type_name="gh_string" type_code="10">Stability Limiter</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Stability Limiter</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Stab</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4647,7 +4647,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Enable additional diagnostic function objects (fieldMinMax and volume averages) in solver logs. Keep off for faster runs.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3aa6e8c6-ff7d-49db-be25-cd1aa2b442da</item>
                         <item name="Name" type_name="gh_string" type_code="10">Debug Diagnostics</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Debug Diagnostics</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Dbg</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4693,7 +4693,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Use SIMPLEC pressure-velocity coupling (consistent yes). Can reduce iterations for steady runs; turn off if convergence becomes oscillatory.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">2e58295b-42e8-472f-b43a-203fd74e8633</item>
                         <item name="Name" type_name="gh_string" type_code="10">SIMPLEC</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">SIMPLEC</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">SPLC</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4739,7 +4739,7 @@ Eddy3D 0.6.1.821</item>
                         <item name="Description" type_name="gh_string" type_code="10">Solver configuration object to connect to Wind Simulation component</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">53be5fff-dd5d-4156-b364-99be0aa6d11b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Run settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Run settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
