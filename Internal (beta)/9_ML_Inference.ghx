@@ -49,10 +49,10 @@
             <chunk name="Projection">
               <items count="2">
                 <item name="Target" type_name="gh_drawing_point" type_code="30">
-                  <X>-3</X>
-                  <Y>-506</Y>
+                  <X>226</X>
+                  <Y>-478</Y>
                 </item>
-                <item name="Zoom" type_name="gh_single" type_code="5">1.2750001</item>
+                <item name="Zoom" type_name="gh_single" type_code="5">1.5</item>
               </items>
             </chunk>
             <chunk name="Views">
@@ -110,10 +110,39 @@
         </chunk>
         <chunk name="DefinitionObjects">
           <items count="1">
-            <item name="ObjectCount" type_name="gh_int32" type_code="3">59</item>
+            <item name="ObjectCount" type_name="gh_int32" type_code="3">61</item>
           </items>
-          <chunks count="59">
+          <chunks count="61">
             <chunk name="Object" index="0">
+              <items count="2">
+                <item name="GUID" type_name="gh_guid" type_code="9">c552a431-af5b-46a9-a8a4-0fcbc27ef596</item>
+                <item name="Name" type_name="gh_string" type_code="10">Group</item>
+              </items>
+              <chunks count="1">
+                <chunk name="Container">
+                  <items count="12">
+                    <item name="Border" type_name="gh_int32" type_code="3">1</item>
+                    <item name="Colour" type_name="gh_drawing_color" type_code="36">
+                      <ARGB>150;170;135;255</ARGB>
+                    </item>
+                    <item name="Description" type_name="gh_string" type_code="10">A group of Grasshopper objects</item>
+                    <item name="ID" index="0" type_name="gh_guid" type_code="9">a8feaf35-c374-442e-8040-77fd8cdc2516</item>
+                    <item name="ID" index="1" type_name="gh_guid" type_code="9">4c985a38-1b2e-4c5d-8005-76f36f1215c5</item>
+                    <item name="ID" index="2" type_name="gh_guid" type_code="9">273d0e73-5e21-43f6-b533-b9cb17bd91d5</item>
+                    <item name="ID" index="3" type_name="gh_guid" type_code="9">d99e9af0-4074-434a-be55-f30446a924e1</item>
+                    <item name="ID" index="4" type_name="gh_guid" type_code="9">415b1a36-baf7-491f-b421-807e5b7b37d3</item>
+                    <item name="ID_Count" type_name="gh_int32" type_code="3">5</item>
+                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">bf210132-235f-42cc-853a-e50ef4dab727</item>
+                    <item name="Name" type_name="gh_string" type_code="10">Group</item>
+                    <item name="NickName" type_name="gh_string" type_code="10">Terrain- Do not change</item>
+                  </items>
+                  <chunks count="1">
+                    <chunk name="Attributes" />
+                  </chunks>
+                </chunk>
+              </chunks>
+            </chunk>
+            <chunk name="Object" index="1">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">c552a431-af5b-46a9-a8a4-0fcbc27ef596</item>
                 <item name="Name" type_name="gh_string" type_code="10">Group</item>
@@ -146,7 +175,7 @@
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="1">
+            <chunk name="Object" index="2">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">c552a431-af5b-46a9-a8a4-0fcbc27ef596</item>
                 <item name="Name" type_name="gh_string" type_code="10">Group</item>
@@ -172,100 +201,6 @@
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="2">
-              <items count="3">
-                <item name="GUID" type_name="gh_guid" type_code="9">d8e619a8-bf03-422f-962b-0d52a05559df</item>
-                <item name="Lib" type_name="gh_guid" type_code="9">2e38bada-fd78-4b1a-a943-dc06595af3d5</item>
-                <item name="Name" type_name="gh_string" type_code="10">Select Template</item>
-              </items>
-              <chunks count="1">
-                <chunk name="Container">
-                  <items count="4">
-                    <item name="Description" type_name="gh_string" type_code="10">Load example Grasshopper definitions for common workflows.
-
-Templates include wind comfort studies, MRT analysis, and 
-indoor airflow simulations.
-
-
-Eddy3D 0.7.0.827</item>
-                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">fc17d51f-3ad0-432d-b9fd-d02b83ee51cd</item>
-                    <item name="Name" type_name="gh_string" type_code="10">Select Template</item>
-                    <item name="NickName" type_name="gh_string" type_code="10">Select</item>
-                  </items>
-                  <chunks count="3">
-                    <chunk name="Attributes">
-                      <items count="2">
-                        <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>367</X>
-                          <Y>184</Y>
-                          <W>96</W>
-                          <H>50</H>
-                        </item>
-                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>410</X>
-                          <Y>198</Y>
-                        </item>
-                      </items>
-                    </chunk>
-                    <chunk name="param_input" index="0">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Optional: Additional folder paths or GitHub URLs to search for .gh/.ghx templates.
-Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">e5f9e7af-f23a-419c-bc54-f57c4e51fa0e</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Additional Folders</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Dirs</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>369</X>
-                              <Y>186</Y>
-                              <W>26</W>
-                              <H>24</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>383.5</X>
-                              <Y>198</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_output" index="0">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Full paths to discovered template files (.gh/.ghx)</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">56900ba7-f3fa-49c7-b0b0-a780db175cc6</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Template Paths</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Paths</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>425</X>
-                              <Y>186</Y>
-                              <W>36</W>
-                              <H>24</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>443</X>
-                              <Y>198</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                  </chunks>
-                </chunk>
-              </chunks>
-            </chunk>
             <chunk name="Object" index="3">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">e9eb1dcf-92f6-4d4d-84ae-96222d60f56b</item>
@@ -284,14 +219,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>861</X>
-                          <Y>533</Y>
+                          <X>806</X>
+                          <Y>208</Y>
                           <W>67</W>
                           <H>44</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>893</X>
-                          <Y>555</Y>
+                          <X>838</X>
+                          <Y>230</Y>
                         </item>
                       </items>
                     </chunk>
@@ -309,14 +244,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>863</X>
-                              <Y>535</Y>
+                              <X>808</X>
+                              <Y>210</Y>
                               <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>872</X>
-                              <Y>545</Y>
+                              <X>817</X>
+                              <Y>220</Y>
                             </item>
                           </items>
                         </chunk>
@@ -335,14 +270,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>863</X>
-                              <Y>555</Y>
+                              <X>808</X>
+                              <Y>230</Y>
                               <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>872</X>
-                              <Y>565</Y>
+                              <X>817</X>
+                              <Y>240</Y>
                             </item>
                           </items>
                         </chunk>
@@ -385,14 +320,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>908</X>
-                              <Y>535</Y>
+                              <X>853</X>
+                              <Y>210</Y>
                               <W>18</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>917</X>
-                              <Y>545</Y>
+                              <X>862</X>
+                              <Y>220</Y>
                             </item>
                           </items>
                         </chunk>
@@ -411,14 +346,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>908</X>
-                              <Y>555</Y>
+                              <X>853</X>
+                              <Y>230</Y>
                               <W>18</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>917</X>
-                              <Y>565</Y>
+                              <X>862</X>
+                              <Y>240</Y>
                             </item>
                           </items>
                         </chunk>
@@ -447,14 +382,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1001</X>
-                          <Y>533</Y>
+                          <X>954</X>
+                          <Y>188</Y>
                           <W>101</W>
                           <H>64</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1054</X>
-                          <Y>565</Y>
+                          <X>1007</X>
+                          <Y>220</Y>
                         </item>
                       </items>
                     </chunk>
@@ -473,14 +408,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1003</X>
-                              <Y>535</Y>
+                              <X>956</X>
+                              <Y>190</Y>
                               <W>36</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1022.5</X>
-                              <Y>545</Y>
+                              <X>975.5</X>
+                              <Y>200</Y>
                             </item>
                           </items>
                         </chunk>
@@ -500,14 +435,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1003</X>
-                              <Y>555</Y>
+                              <X>956</X>
+                              <Y>210</Y>
                               <W>36</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1022.5</X>
-                              <Y>565</Y>
+                              <X>975.5</X>
+                              <Y>220</Y>
                             </item>
                           </items>
                         </chunk>
@@ -546,14 +481,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1003</X>
-                              <Y>575</Y>
+                              <X>956</X>
+                              <Y>230</Y>
                               <W>36</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1022.5</X>
-                              <Y>585</Y>
+                              <X>975.5</X>
+                              <Y>240</Y>
                             </item>
                           </items>
                         </chunk>
@@ -593,14 +528,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1069</X>
-                              <Y>535</Y>
+                              <X>1022</X>
+                              <Y>190</Y>
                               <W>31</W>
                               <H>30</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1084.5</X>
-                              <Y>550</Y>
+                              <X>1037.5</X>
+                              <Y>205</Y>
                             </item>
                           </items>
                         </chunk>
@@ -619,14 +554,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1069</X>
-                              <Y>565</Y>
+                              <X>1022</X>
+                              <Y>220</Y>
                               <W>31</W>
                               <H>30</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1084.5</X>
-                              <Y>580</Y>
+                              <X>1037.5</X>
+                              <Y>235</Y>
                             </item>
                           </items>
                         </chunk>
@@ -657,8 +592,8 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="5">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>908</X>
-                          <Y>621</Y>
+                          <X>862</X>
+                          <Y>278</Y>
                           <W>30</W>
                           <H>38</H>
                         </item>
@@ -666,8 +601,8 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginTop" type_name="gh_int32" type_code="3">0</item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>908.01013</X>
-                          <Y>621.87</Y>
+                          <X>862.98615</X>
+                          <Y>278.433</Y>
                         </item>
                       </items>
                     </chunk>
@@ -1015,14 +950,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>722</X>
-                          <Y>534</Y>
+                          <X>653</X>
+                          <Y>185</Y>
                           <W>50</W>
                           <H>24</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>747.52344</X>
-                          <Y>546.04974</Y>
+                          <X>678.97003</X>
+                          <Y>197.90692</Y>
                         </item>
                       </items>
                     </chunk>
@@ -1125,8 +1060,8 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="5">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1262</X>
-                          <Y>763</Y>
+                          <X>831</X>
+                          <Y>622</Y>
                           <W>30</W>
                           <H>38</H>
                         </item>
@@ -1134,8 +1069,8 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginTop" type_name="gh_int32" type_code="3">0</item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1262.5673</X>
-                          <Y>763.02875</Y>
+                          <X>831.25555</X>
+                          <Y>622.5637</Y>
                         </item>
                       </items>
                     </chunk>
@@ -1333,14 +1268,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>515</X>
-                          <Y>808</Y>
+                          <X>282</X>
+                          <Y>498</Y>
                           <W>50</W>
                           <H>24</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>540.98126</X>
-                          <Y>820.3376</Y>
+                          <X>307.49155</X>
+                          <Y>510.82224</Y>
                         </item>
                       </items>
                     </chunk>
@@ -1389,14 +1324,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1063</X>
-                          <Y>691</Y>
+                          <X>817</X>
+                          <Y>399</Y>
                           <W>50</W>
                           <H>24</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1088.4756</X>
-                          <Y>703.08795</Y>
+                          <X>842.9532</X>
+                          <Y>411.3821</Y>
                         </item>
                       </items>
                     </chunk>
@@ -1728,8 +1663,8 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="1">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>851</X>
-                          <Y>1131</Y>
+                          <X>789</X>
+                          <Y>781</Y>
                           <W>136</W>
                           <H>22</H>
                         </item>
@@ -1783,14 +1718,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1194</X>
-                          <Y>727</Y>
+                          <X>958</X>
+                          <Y>480</Y>
                           <W>48</W>
                           <H>44</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1228</X>
-                          <Y>749</Y>
+                          <X>992</X>
+                          <Y>502</Y>
                         </item>
                       </items>
                     </chunk>
@@ -1809,14 +1744,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1196</X>
-                              <Y>729</Y>
+                              <X>960</X>
+                              <Y>482</Y>
                               <W>17</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1206</X>
-                              <Y>739</Y>
+                              <X>970</X>
+                              <Y>492</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1836,14 +1771,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1196</X>
-                              <Y>749</Y>
+                              <X>960</X>
+                              <Y>502</Y>
                               <W>17</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1206</X>
-                              <Y>759</Y>
+                              <X>970</X>
+                              <Y>512</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1905,14 +1840,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1070</X>
-                          <Y>753</Y>
+                          <X>804</X>
+                          <Y>503</Y>
                           <W>88</W>
                           <H>20</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1070</X>
-                          <Y>753.8657</Y>
+                          <X>804.7762</X>
+                          <Y>503.60526</Y>
                         </item>
                       </items>
                     </chunk>
@@ -2351,14 +2286,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1635</X>
-                          <Y>919</Y>
+                          <X>1459</X>
+                          <Y>666</Y>
                           <W>45</W>
                           <H>64</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1666</X>
-                          <Y>951</Y>
+                          <X>1490</X>
+                          <Y>698</Y>
                         </item>
                       </items>
                     </chunk>
@@ -2377,14 +2312,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1637</X>
-                              <Y>921</Y>
+                              <X>1461</X>
+                              <Y>668</Y>
                               <W>14</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1645.5</X>
-                              <Y>931</Y>
+                              <X>1469.5</X>
+                              <Y>678</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2404,14 +2339,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1637</X>
-                              <Y>941</Y>
+                              <X>1461</X>
+                              <Y>688</Y>
                               <W>14</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1645.5</X>
-                              <Y>951</Y>
+                              <X>1469.5</X>
+                              <Y>698</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2430,14 +2365,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1637</X>
-                              <Y>961</Y>
+                              <X>1461</X>
+                              <Y>708</Y>
                               <W>14</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1645.5</X>
-                              <Y>971</Y>
+                              <X>1469.5</X>
+                              <Y>718</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2489,14 +2424,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1635</X>
-                          <Y>799</Y>
+                          <X>1459</X>
+                          <Y>546</Y>
                           <W>50</W>
                           <H>24</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1660</X>
-                          <Y>811.01416</Y>
+                          <X>1484.5494</X>
+                          <Y>558.75366</Y>
                         </item>
                       </items>
                     </chunk>
@@ -2524,14 +2459,14 @@ Example URL: https://github.com/Startraders/Eddy3D-Templates/tree/main/Indoor</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1635</X>
-                          <Y>857</Y>
+                          <X>1459</X>
+                          <Y>605</Y>
                           <W>50</W>
                           <H>24</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1660.2587</X>
-                          <Y>869.82605</Y>
+                          <X>1484.8082</X>
+                          <Y>617.56555</Y>
                         </item>
                       </items>
                     </chunk>
@@ -2560,14 +2495,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1369</X>
-                          <Y>710</Y>
+                          <X>1193</X>
+                          <Y>457</Y>
                           <W>144</W>
                           <H>244</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1471</X>
-                          <Y>832</Y>
+                          <X>1295</X>
+                          <Y>579</Y>
                         </item>
                       </items>
                     </chunk>
@@ -2586,14 +2521,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>712</Y>
+                              <X>1195</X>
+                              <Y>459</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>722</Y>
+                              <X>1239</X>
+                              <Y>469</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2614,14 +2549,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>732</Y>
+                              <X>1195</X>
+                              <Y>479</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>742</Y>
+                              <X>1239</X>
+                              <Y>489</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2641,14 +2576,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>752</Y>
+                              <X>1195</X>
+                              <Y>499</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>762</Y>
+                              <X>1239</X>
+                              <Y>509</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2668,14 +2603,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>772</Y>
+                              <X>1195</X>
+                              <Y>519</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>782</Y>
+                              <X>1239</X>
+                              <Y>529</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2714,14 +2649,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>792</Y>
+                              <X>1195</X>
+                              <Y>539</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>802</Y>
+                              <X>1239</X>
+                              <Y>549</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2760,14 +2695,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>812</Y>
+                              <X>1195</X>
+                              <Y>559</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>822</Y>
+                              <X>1239</X>
+                              <Y>569</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2808,14 +2743,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>832</Y>
+                              <X>1195</X>
+                              <Y>579</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>842</Y>
+                              <X>1239</X>
+                              <Y>589</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2854,14 +2789,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>852</Y>
+                              <X>1195</X>
+                              <Y>599</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>862</Y>
+                              <X>1239</X>
+                              <Y>609</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2900,14 +2835,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>872</Y>
+                              <X>1195</X>
+                              <Y>619</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>882</Y>
+                              <X>1239</X>
+                              <Y>629</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2947,14 +2882,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>892</Y>
+                              <X>1195</X>
+                              <Y>639</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>902</Y>
+                              <X>1239</X>
+                              <Y>649</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2995,14 +2930,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>912</Y>
+                              <X>1195</X>
+                              <Y>659</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>922</Y>
+                              <X>1239</X>
+                              <Y>669</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3021,14 +2956,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1371</X>
-                              <Y>932</Y>
+                              <X>1195</X>
+                              <Y>679</Y>
                               <W>85</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1415</X>
-                              <Y>942</Y>
+                              <X>1239</X>
+                              <Y>689</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3068,14 +3003,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1486</X>
-                              <Y>712</Y>
+                              <X>1310</X>
+                              <Y>459</Y>
                               <W>25</W>
                               <H>34</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1498.5</X>
-                              <Y>729.1429</Y>
+                              <X>1322.5</X>
+                              <Y>476.14285</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3095,14 +3030,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1486</X>
-                              <Y>746</Y>
+                              <X>1310</X>
+                              <Y>493</Y>
                               <W>25</W>
                               <H>34</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1498.5</X>
-                              <Y>763.4286</Y>
+                              <X>1322.5</X>
+                              <Y>510.42856</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3122,14 +3057,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1486</X>
-                              <Y>780</Y>
+                              <X>1310</X>
+                              <Y>527</Y>
                               <W>25</W>
                               <H>34</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1498.5</X>
-                              <Y>797.7143</Y>
+                              <X>1322.5</X>
+                              <Y>544.7143</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3148,14 +3083,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1486</X>
-                              <Y>814</Y>
+                              <X>1310</X>
+                              <Y>561</Y>
                               <W>25</W>
                               <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1498.5</X>
-                              <Y>832</Y>
+                              <X>1322.5</X>
+                              <Y>579</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3174,14 +3109,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1486</X>
-                              <Y>849</Y>
+                              <X>1310</X>
+                              <Y>596</Y>
                               <W>25</W>
                               <H>34</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1498.5</X>
-                              <Y>866.2857</Y>
+                              <X>1322.5</X>
+                              <Y>613.2857</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3201,14 +3136,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1486</X>
-                              <Y>883</Y>
+                              <X>1310</X>
+                              <Y>630</Y>
                               <W>25</W>
                               <H>34</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1498.5</X>
-                              <Y>900.5715</Y>
+                              <X>1322.5</X>
+                              <Y>647.5715</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3228,14 +3163,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1486</X>
-                              <Y>917</Y>
+                              <X>1310</X>
+                              <Y>664</Y>
                               <W>25</W>
                               <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1498.5</X>
-                              <Y>934.8572</Y>
+                              <X>1322.5</X>
+                              <Y>681.8572</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3329,8 +3264,8 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="1">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1158</X>
-                          <Y>1103</Y>
+                          <X>798</X>
+                          <Y>994</Y>
                           <W>134</W>
                           <H>22</H>
                         </item>
@@ -3357,14 +3292,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1231</X>
-                          <Y>1171</Y>
+                          <X>871</X>
+                          <Y>1062</Y>
                           <W>61</W>
                           <H>44</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1262</X>
-                          <Y>1193</Y>
+                          <X>902</X>
+                          <Y>1084</Y>
                         </item>
                       </items>
                     </chunk>
@@ -3381,14 +3316,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1233</X>
-                              <Y>1173</Y>
+                              <X>873</X>
+                              <Y>1064</Y>
                               <W>14</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1241.5</X>
-                              <Y>1183</Y>
+                              <X>881.5</X>
+                              <Y>1074</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3428,14 +3363,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1233</X>
-                              <Y>1193</Y>
+                              <X>873</X>
+                              <Y>1084</Y>
                               <W>14</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1241.5</X>
-                              <Y>1203</Y>
+                              <X>881.5</X>
+                              <Y>1094</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3474,14 +3409,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1277</X>
-                              <Y>1173</Y>
+                              <X>917</X>
+                              <Y>1064</Y>
                               <W>13</W>
                               <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1283.5</X>
-                              <Y>1193</Y>
+                              <X>923.5</X>
+                              <Y>1084</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3512,8 +3447,8 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="5">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1121</X>
-                          <Y>1193</Y>
+                          <X>762</X>
+                          <Y>1086</Y>
                           <W>73</W>
                           <H>20</H>
                         </item>
@@ -3521,8 +3456,8 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginTop" type_name="gh_int32" type_code="3">0</item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1121.596</X>
-                          <Y>1193.335</Y>
+                          <X>762.9356</X>
+                          <Y>1086.1725</Y>
                         </item>
                       </items>
                     </chunk>
@@ -3553,7 +3488,7 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                   <items count="10">
                     <item name="Border" type_name="gh_int32" type_code="3">3</item>
                     <item name="Colour" type_name="gh_drawing_color" type_code="36">
-                      <ARGB>150;170;135;255</ARGB>
+                      <ARGB>150;0;255;72</ARGB>
                     </item>
                     <item name="Description" type_name="gh_string" type_code="10">A group of Grasshopper objects</item>
                     <item name="ID" index="0" type_name="gh_guid" type_code="9">5cc0082f-23fa-4ef8-9a71-66bbe1f676f7</item>
@@ -3587,14 +3522,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1621</X>
-                          <Y>719</Y>
+                          <X>1445</X>
+                          <Y>466</Y>
                           <W>62</W>
                           <H>28</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>1653</X>
-                          <Y>733</Y>
+                          <X>1477</X>
+                          <Y>480</Y>
                         </item>
                       </items>
                     </chunk>
@@ -3613,14 +3548,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1623</X>
-                              <Y>721</Y>
+                              <X>1447</X>
+                              <Y>468</Y>
                               <W>15</W>
                               <H>24</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632</X>
-                              <Y>733</Y>
+                              <X>1456</X>
+                              <Y>480</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3639,14 +3574,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1668</X>
-                              <Y>721</Y>
+                              <X>1492</X>
+                              <Y>468</Y>
                               <W>13</W>
                               <H>24</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1674.5</X>
-                              <Y>733</Y>
+                              <X>1498.5</X>
+                              <Y>480</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3676,16 +3611,20 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
-                      <items count="4">
+                      <items count="5">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1753</X>
-                          <Y>705</Y>
+                          <X>1577</X>
+                          <Y>452</Y>
                           <W>160</W>
                           <H>57</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginTop" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                          <X>1577.5494</X>
+                          <Y>452.73953</Y>
+                        </item>
                       </items>
                     </chunk>
                     <chunk name="PanelProperties">
@@ -3776,14 +3715,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>515</X>
-                          <Y>886</Y>
+                          <X>282</X>
+                          <Y>577</Y>
                           <W>50</W>
                           <H>24</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>540.98126</X>
-                          <Y>898.9808</Y>
+                          <X>307.49155</X>
+                          <Y>589.46545</Y>
                         </item>
                       </items>
                     </chunk>
@@ -3834,21 +3773,21 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                       <items count="3">
                         <item name="Expression" type_name="gh_string" type_code="10">0</item>
                         <item name="Name" type_name="gh_string" type_code="10">GAN</item>
-                        <item name="Selected" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
                       </items>
                     </chunk>
                     <chunk name="ListItem" index="1">
                       <items count="3">
                         <item name="Expression" type_name="gh_string" type_code="10">1</item>
                         <item name="Name" type_name="gh_string" type_code="10">FNO</item>
-                        <item name="Selected" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Selected" type_name="gh_bool" type_code="1">false</item>
                       </items>
                     </chunk>
                     <chunk name="Attributes">
                       <items count="1">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>284</X>
-                          <Y>1005</Y>
+                          <X>148</X>
+                          <Y>750</Y>
                           <W>72</W>
                           <H>22</H>
                         </item>
@@ -3876,14 +3815,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>798</X>
-                          <Y>819</Y>
+                          <X>622</X>
+                          <Y>566</Y>
                           <W>63</W>
                           <H>44</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>828</X>
-                          <Y>841</Y>
+                          <X>652</X>
+                          <Y>588</Y>
                         </item>
                       </items>
                     </chunk>
@@ -3902,14 +3841,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>800</X>
-                              <Y>821</Y>
+                              <X>624</X>
+                              <Y>568</Y>
                               <W>13</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>808</X>
-                              <Y>831</Y>
+                              <X>632</X>
+                              <Y>578</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3929,14 +3868,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>800</X>
-                              <Y>841</Y>
+                              <X>624</X>
+                              <Y>588</Y>
                               <W>13</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>808</X>
-                              <Y>851</Y>
+                              <X>632</X>
+                              <Y>598</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3956,14 +3895,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>843</X>
-                              <Y>821</Y>
+                              <X>667</X>
+                              <Y>568</Y>
                               <W>16</W>
                               <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>851</X>
-                              <Y>841</Y>
+                              <X>675</X>
+                              <Y>588</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3991,14 +3930,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>660</X>
-                          <Y>809</Y>
+                          <X>484</X>
+                          <Y>556</Y>
                           <W>95</W>
                           <H>44</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>705</X>
-                          <Y>831</Y>
+                          <X>529</X>
+                          <Y>578</Y>
                         </item>
                       </items>
                     </chunk>
@@ -4027,14 +3966,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>662</X>
-                                  <Y>811</Y>
+                                  <X>486</X>
+                                  <Y>558</Y>
                                   <W>28</W>
                                   <H>20</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>677.5</X>
-                                  <Y>821</Y>
+                                  <X>501.5</X>
+                                  <Y>568</Y>
                                 </item>
                               </items>
                             </chunk>
@@ -4056,14 +3995,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>662</X>
-                                  <Y>831</Y>
+                                  <X>486</X>
+                                  <Y>578</Y>
                                   <W>28</W>
                                   <H>20</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>677.5</X>
-                                  <Y>841</Y>
+                                  <X>501.5</X>
+                                  <Y>588</Y>
                                 </item>
                               </items>
                             </chunk>
@@ -4083,14 +4022,14 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>720</X>
-                                  <Y>811</Y>
+                                  <X>544</X>
+                                  <Y>558</Y>
                                   <W>33</W>
                                   <H>40</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>728.5</X>
-                                  <Y>831</Y>
+                                  <X>552.5</X>
+                                  <Y>578</Y>
                                 </item>
                               </items>
                             </chunk>
@@ -4152,6 +4091,95 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
                 </chunk>
               </chunks>
             </chunk>
+            <chunk name="Object" index="59">
+              <items count="2">
+                <item name="GUID" type_name="gh_guid" type_code="9">c552a431-af5b-46a9-a8a4-0fcbc27ef596</item>
+                <item name="Name" type_name="gh_string" type_code="10">Group</item>
+              </items>
+              <chunks count="1">
+                <chunk name="Container">
+                  <items count="8">
+                    <item name="Border" type_name="gh_int32" type_code="3">3</item>
+                    <item name="Colour" type_name="gh_drawing_color" type_code="36">
+                      <ARGB>150;170;135;255</ARGB>
+                    </item>
+                    <item name="Description" type_name="gh_string" type_code="10">A group of Grasshopper objects</item>
+                    <item name="ID" index="0" type_name="gh_guid" type_code="9">caacb479-d217-431f-b2fe-5dd6c05c6935</item>
+                    <item name="ID_Count" type_name="gh_int32" type_code="3">1</item>
+                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">73356478-9281-4b43-933d-415ae2ce34be</item>
+                    <item name="Name" type_name="gh_string" type_code="10">Group</item>
+                    <item name="NickName" type_name="gh_string" type_code="10">Wind Speed</item>
+                  </items>
+                  <chunks count="1">
+                    <chunk name="Attributes" />
+                  </chunks>
+                </chunk>
+              </chunks>
+            </chunk>
+            <chunk name="Object" index="60">
+              <items count="2">
+                <item name="GUID" type_name="gh_guid" type_code="9">7f5c6c55-f846-4a08-9c9a-cfdc285cc6fe</item>
+                <item name="Name" type_name="gh_string" type_code="10">Scribble</item>
+              </items>
+              <chunks count="1">
+                <chunk name="Container">
+                  <items count="13">
+                    <item name="Bold" type_name="gh_bool" type_code="1">false</item>
+                    <item name="Ca" type_name="gh_drawing_pointf" type_code="31">
+                      <X>82.59238</X>
+                      <Y>103.55055</Y>
+                    </item>
+                    <item name="Cb" type_name="gh_drawing_pointf" type_code="31">
+                      <X>583.03186</X>
+                      <Y>103.55055</Y>
+                    </item>
+                    <item name="Cc" type_name="gh_drawing_pointf" type_code="31">
+                      <X>583.03186</X>
+                      <Y>393.5774</Y>
+                    </item>
+                    <item name="Cd" type_name="gh_drawing_pointf" type_code="31">
+                      <X>82.59238</X>
+                      <Y>393.5774</Y>
+                    </item>
+                    <item name="Description" type_name="gh_string" type_code="10">A quick note</item>
+                    <item name="Font" type_name="gh_string" type_code="10">Agency FB</item>
+                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">876c7630-a08a-4fc2-964d-82b2a232d91d</item>
+                    <item name="Italic" type_name="gh_bool" type_code="1">false</item>
+                    <item name="Name" type_name="gh_string" type_code="10">Scribble</item>
+                    <item name="NickName" type_name="gh_string" type_code="10">Scribble</item>
+                    <item name="Size" type_name="gh_single" type_code="5">25</item>
+                    <item name="Text" type_name="gh_string" type_code="10">How to?
+
+-Please downlaod the ML models first (GAN and FNO). 
+ Then assign them in the "File Path" components, respectively.
+
+-Connect your input geometry to "Builidngs"
+
+-Define wind speed/direction (optional).
+
+-Define legend (optional).
+
+</item>
+                  </items>
+                  <chunks count="1">
+                    <chunk name="Attributes">
+                      <items count="2">
+                        <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                          <X>77.59238</X>
+                          <Y>98.55055</Y>
+                          <W>510.43948</W>
+                          <H>300.02686</H>
+                        </item>
+                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                          <X>82.59238</X>
+                          <Y>103.55055</Y>
+                        </item>
+                      </items>
+                    </chunk>
+                  </chunks>
+                </chunk>
+              </chunks>
+            </chunk>
           </chunks>
         </chunk>
       </chunks>
@@ -4159,7 +4187,7 @@ assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted
     <chunk name="Thumbnail">
       <items count="1">
         <item name="Thumbnail" type_name="gh_drawing_bitmap" type_code="37">
-          <bitmap length="18266">iVBORw0KGgoAAAANSUhEUgAAAOEAAACWCAIAAACn9nhUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAEbvSURBVHhe7b33c9vntf/5/Q929rfv7Hdndufeubv7vSV37+be9MRJHMdx4rjLJS6x49gptiSrF0qU2BtYQAAE0YjeeyMBEI0AAQIkSBSikUTvlSBFUl3CzgePBFOgRJGybFMU3nOGAvEphIAXnnLOec7z3/5bXXXtfZXrqmuv6ktG43XVtfdUZ7Suva46o3XtddUZrWuvq85oXXtddUbr2uuqM1rXXled0br2uuqM1rXXVWe0rr2uOqN17XXVGa1rr6vOaF17XXVG69rr2vOMJhLxVCqeyUA/63oqtXcZTSQS8UIhms1GFhejbnckFIoWCvFcrva8hylZEXS3HSudTqfu/UpUL08mk+BQ4q4ymQw4uvlnXY9Re5TRRCoVzmTi4+OlpqaNv/519aOPNj7/vNjbm7XbsysrsdrTH6hEIhEKhcLhcCKRKBQK2Wy2WCxmMplY7IH3SCQSPp8vEAgUCoVisVgoFACF+Xw+m80uLS15vd5cLpdKpZLJZCQScblciUQCPJPP5zOZTD6fr71pXV9Be5HRZCq1FIthPvlk9rnnIr/73fivfkX7yU9mf/tbz3PPTf7mNxN0eqpUqr3mASoUCng8vru7m0QiSaVSrVZLIpEMBkM2m6099a6y2WxvRUKhkEqlcrlci8XC4/HIZLLdbheLxSQSicPh8Hg8AoFgMBjOnj1Lp9NFIhGTySSTyWg0Wi6X1zTDdX0V7UVGE8vLwZER6r//O/1HPxr4z/8U/PzntJ/85My//iv3mWd6v/Mdyve+lzeZ4oVC7WVblEwmC4WCUChEIBAjIyMEAoHBYLS3t8tk0lKplEwmay+oKJPJ4PF4OBxOo9E6OjouXryoUqkUCkVra+vk5KROp0MikTQajUwmI5FIq9WqUqnU6vH+/n4CgUClUpFIJBwOr3f6j1F7j9FMJuJ2r3zwQeyNN4Lvvbfw7ru5P30cfOed6IcfBt57L/juuyuvvlo4dSqSSkHTqQcrmUwuLi7Oz897vT6fz+d2u+fn5xcW/D6fz+Pxzs/PLy4u3hfTRCIRDocjkUgulwsEAgqFYn5+3ufzORwOrxe6cG5uzuv1ejweh8Ph8XgWFxe9Xq/L5fL7fYlEIlpRHdDHqD3HaGx5Oc7hXH3+eVdnt9sf9NvdPS1txz7/rL+9M+QL2O3zgc8P3n7zzazDkb90Kb9FuYqKxWI4HNLpDHa7d3Z23uHw2u1eh8PndC44HD6bzeV0+rVaQyAQKBaL4JLNKhQKy8vLoVBQrzf6fEGHA7qJ1xucn19wOLxOp8/h8IIH8/ML4FeXy2+1zi0uLmYymfuiX9cja88xGl1eXkajzb/8RU8PfHR85kIz7NCRI0wO5yfP/ByOJIlVls6jJ0Z/8IOxwUHp+LhcLpdKpWKxWCQSCSri8/kCgUAqlTY3N+FwtP5+PBw+wuOpOFw1gz2BwzFGRnitrf0cjhKHo128eEEgEHDuJ6FQeOFCIxZLFYv1RCKvubm3uRk2MIDn8ca5XBWXq+LxoJ8EAodOl4LHNJpYrdYAn0AulwPzp3qD+tW15xiNLS8Xhoc9z/2q7WzTEFV++GTrSwfepHLZv33tjcb2IThR3P+Xz2Z+8XMTiTRps01VZLVaZ2ZmbDbb7Oys3W53OBxut1upVGAwlMFBChxOJFOkODRp6MKbTRc6MVhOby8Wj+eh0eSxsVG32+24n9xu99jYKBZLpVKlBAIPBsN2dqLgcCKJJBoZ4VdMQCQKzp5tO3HiIhxOpNHkVKr4yJGjSCRyZGSEQqFIpdLp6eloNJrP59PpdO3/s64da88xGi8WY2Lx7Zdf0n/y98EL3SNNPR/96oX3f/7Ltr8eGmnuHWxoW3j/j7fffz/ldmeXlzN3lb6rVEXpdDqXy1KpPAyGg8Nx0Tgx7NTbyC/+bxSKjSfwiETB8DCLRGKD68Alm5VOpytepzyNxicQ+FSqlMUaq5gChaI2N/W2NPe2NPehh+hksgiDYWGxbDJZhMUyx8bGlpYW5+bm9Ho9n8/HYrFIJJLNZjudzjqpj6y9x2g6HQkEip9+euXAGytvv7X69lvXPvzwygcfrL/7Lvj1yiuvZJqbo7ncNnOmQqHAYNA7Owe7u4dbWgb6+rANp8/1DTCHh5n9/YQTJ5qGh9kdHXAKhVy41z8Qi8UA63Nzc319vXA4rr0d2djY1dzc39zc19Y+iECQzzV0nDvXcf5cBxJJIRIFIyN8AoGHx3MxGKbH483nc+l0OpvNgr7e6/VKJJLBwUESieTxeAqFQr333632HqPxeKxYjMnla6+9dvmddzY++GDj/ffv2AcfXDnwRumPf4w6HNsHnHK5nEIx1tLS19OD7+xE9/cT+/vJA3DywACppwd7/jxsYIDc3Nwrk0lz994nnU4HAgESiSQWi6lU6uAgvrcXd/Jkc2Njd2NjT2srfGBg5Mzploq1wuHEkRE+Hs/F4ThYLBuFong83mw2s/mGqVQKfA1GR0d7e3slEglo9TefU9f22ouMAkzjQmHpvfc2Xnll48CBjbfe2njjjfVXXin87W9RiyVeLMYfHCgCyuVyLJYADscPDZGQSCIKRUQiIUOhiGg0BQ7H0WjcGp4AUkQicXp6ulQqFYtFPJ4+NMTA4bh4PI9AgPr9gYGR1lZ4Wxu8rcJrSwu8ubm/txePQFAGBkZoNFoqdZ+4K4hyBQKBkZERDAYTDAZrvht1baM9ymg8kYgVixGnM4nBZM+ezR0/nrlwIcFgREIhyHv/MECr8fRoNPIgAydsviSbzRqNRqFQWCqV8vk8j8dta+vHYNinT7eeO9fZ0jJw8WIvEkkdGmIAQ6FoJ040HTx4+q9/Pdbc3I9AkFtaWiORyIN8T+l0Op/Pj46OwmAwl8tVD5nuUHuVUaBsNra8HMlkIolENJeDXKe7iTFW0z4epJrz8/k8n8+fmZkBMXcul3PhQjcCQTt/vufIkcZjxy42NsIGBoiVkcMdg8PJg4OU7m4sDIZvb0eZTObtG8hEIlEsFk0mU09Pz+zsbB3TnWhvMwqUSNyxr1npdJrBYCwuLgKC0+kUDkft7kbD4QQ4fAQOHxkYwPf1Ybdafz+urw8Hg6Hdbs9OxpqFQsFms9Ux3aGeBEa/EYEwJoPBqKZEJRKJSCS8sLCwuCMtBAKBrW3zg1QoFGZmZrq7u+fn57dveuuqM3pHyWTS7/czmcxM5suJFMgW3aEeNAx9kAqFwuTkJAwGCwaDm/9oXTV62hiNJRKpRKKwyVLxONRwptNpm83G5/O/yc63WCyOjo4iEIhq6nRdW/V0MZpIpJaWvO55uccz6vGMuudlS0veCqYQLgqFQq1Wf5M9L/BJMRgMMpmcz+d3PlR4qvSUMZosejzS6xuvlK8fuHn1jWvrL/t9o8kklJmfTCYJBEIgENhtl/0VlUwmM5kMGo2WyWTFYrH2cF1PG6PRWH7KTLpx5bVLK6+Xb759+9rrlilaIlFwu90jIyMTExPfZEdfVTqdDoVCvb29FovlW3kBe1CJZDyVjqcysVQ6+hQxmsvl9HrrEOrzq1fe9i39rnzrD+Xy+0jEIVgvis1mT09Pf5O9fI1yuZzdbofBYAsLC0/5/CmVjifT0VAo4nVG7ebEjD71FDGaTCYXFuNKRd/Na2/cuPp2+cYfbl9/Qzk24PNFQP5H7QXfrAqFwvj4+ODg4FM7f0qm4olU1DcftYyn9fyihnVJy1zXsjaeIkYr78Kq38cq33iuXH4VsuvPLS1w0+lLted9SyoUCkwmk0QiPYXzp1QmtrQQMSszGtaqjrUxwV2f4K0Be8oYTeZ8XoPfc2HR37bob/N7Lvh8hmTy0bt4qEIFGDZBI6evGgsD86fh4WGhUPj0zJ8SCahzd9niWk4JopP3JZ1PI6MV/2g6FC6GQgXIwsVEIg38o4+gVDqWSmYW5lP2qbjTmvC7Y7F4NPXwUOh2SqfT0Wi0v79fo9E8DZgCQOdMCQ1zTb+p7XyaGX08qryzMfdsgoqc4mNCBu41A/eajr02KSv43dFU+hGhB8pms36/v6enx2Qy1aRg7z+lMlH7VELDWNvcudcZfQxKpqN2c1LNuPTZB90n/oZsOk49/tfBhkN4Qs/MpOCq1xn7KpjGYrFcLjc/P9/T02M2m/dxa5pKx32uqIa5ug2gdUYfRdA7Ox/VstYMnKv9jUpUi5Y+6Ow9Jz36ZyQL6Tfxb+t5y6Fg5CuGAnK5nMvl6unp0el0xWJx51MoMKjNZDLVulTgmVwuV81IBAtWQSUscE7tXb5+JZLxSCQyISzoORtbuawz+pWUSEXNiqyefVktDJiUcbVocRg2SkJqx0Vew2hYLQhPsK7ZTal09k4Ca+31O1Yul/P5fH19fSKRKJeDlknVnrFFyWRyaWlpriKfz5dKpaLRqN/vB8sAQQW1VCplt9tjsdji4mIwGEyn09tUv9qJdlvyDSiVic2ZElrGdi1ondFHUSIZD4UiRuEaAzWnmzC43N7m1qaLzQ2HDv9dJh/z+PxSyTgL4TeP5ZPpeBLKhYKcndlsFqy4z+VygJIdfqjZbDYSieDxeBwOt7i4WCgUtg/VZjIZh8PR3Nzc29uLQqFAYR8+n0+j0bq6unA4XHt7OwaDaWpqwuFwGAymq6sLgUCIxeKvEr8Ih8PVemzgv5mtaJvab4lkPByO6AUFA/e6gXdje6szujslk/HAYkzDLJ093onD09vbUQcPHnQ6nb29sPff/4RKlQ+hCW+/9ud3Xjl86NBBGKyHQqGQyWQKhcLlcqVSqUajsdlsgUAArMUrlUrgswQ/Ab5g8TRYVF1FHCzZk0qlsVisUChsbVOrfXc4HFYoFFqtVqmEUmTodLrBYLDZbH6/32g0MJlMgUDAZrOEQoFKpeRwOEwm0+l0ZLNZcIea226vZDIZDAZbWlr4fL5er7fZbFqtVq1Wi8ViOp0+Ozu79XUCpTLx+dmYlrmuYkWUbLeS7VGyvQ+yOqO7E2hHJ0XrpAFLe+dAPxz3xoE3P/zTuz/6yQ8azrcPIgntbUgmwiOleyRSIQwGGxgYmJ6eNpvNHR0dOByOwWD09/c3NjZ2dHRgMBgKhTI7O6tQKCgUiquihYUFp9M5MzMzPz/v9/sXFxer6VF+v59CoQwODopEIo8HSvgHLRYAOplMOp0up9Plcs37/Qs+n79ivspj6F+32+PzQTf0Q1rw+xe8Xq/fv7CwsOB2e5xOp8Ph9Hi8O2zggZLJZCAQaG9vRyAQcDi8v7+/t7d3ZGSku7u7ra2NSqU+aMKXTEetmoyScs2gbvZ5XnDOvep2vvYgqzO6ayWS0anKeJSMMpJQenTPaONRXF8Lj4I24uEqFnbWyL3psuRWLkGFS2UyGRqN1ul08oqGh4e7u7svXLjQ0NBw/PjxDz/88Ny5c1988cVf/vKXEydOHDx4cHh4mEAgnDp1qrW19fjx40KhsOp+AlDOz89zOBwkEonBYEDrNTc3t7S0pFardTqz3e6z2TybbXbWOzlp0+stMzNuq9VptTrvPcE9O+udnfXabG6bzTM1NZ1M7oLRylKFiMVicTgcTqezUvtt3ufzzszMzM7aHA5H7QUVJRLxaCxilBRU1Gsm7ZlF7zPz9ue9rt/c13zzv6kzumul0nGvK6plrpmFN83CGxbxLZu8PC0tm4U3zMIbJv5NHW85GIgkkvessCOTyR6Px2w2WywWm81mNputVqvL5fJ4PNPT02q1GofDNTU1dXd3EwgEkUhks9mcTmc0Gs3lcpu7YEBqLBabnp6WSqUUCoVAIKDR6CNHjjCZMiZzjMkc3Wxc7jgcPtLQ0H7+fOeFCz0NDe1YLIvDUd49YYxKlVAo4sqFY2y2MBjc6YqXSunMvN3udLsXFhbCRqNlYAAhlY4uLobd7gWPZ8lmc3q9XjAy2axsNh2NJCZFazp2ecZ4Ph75dXDhpUjg5fDSy5HAy/HwK5EA9CAafCUafCW0+FKd0UdRMhV1WjKT/OtG/lWT8IpJdNUouGzgbxh4V/WctaA/l83fGUpmMpnV1VW/3z8yMsLj8eLx+Orq6vr6eiQSASUgo9Ho8nKsWExmMlDZXpPJJJVKSSQSFotlMplKpXJubi4UCgE0QecORq75fL5YLIISPel0enJykkoVslj3MMpmK8AzDIacSBRQqRISSUCjQaWBqgT39+M7O5E83jifr+nuHuBw2MvLy7X/4XsFpoChUMhgmCAQKCMjXCyWQaEIz55q/uSjz04dbySReDSahMdT4fFEi8UyNzdn26Q5u23SOC3EBxAtk7apzxORFy4VDwT9L11de8sy+Xwi8urta3+Ytf5mY/Utn+vFuekX6ow+itLptMttJw2Lx2hxITbMRS8qqQUte1XBjMxafUIR1+VyRaPRQCDgcDhmZmY8Hs/ExIRAIEAgEAwGg0ajicXiUqlkt8/FYgkmK63V5kqFdCgU9Pl8oOHx+Xw6nY7FYmGx2KGhIQKBwGQypVKpXq+fnp6ulDv1BwKBcDgci8Wy2czs7CyVKtwMKIs1RiIJGQw5YJTFGuNwVDzeOIs1Bp4ERqGIyWRR5bGCQmG53fPbZF2BkoAWi4VIJGIwmPb2tpaWzo6OoRPHm2A92KPNPS0E8kdfHOvsGOrsRONw3HPnGonEEYFAwNskvoBHp3IQLepDn8Bt0x9fWnntyqW3VvIHbl/7QzbxWiH9+u1rfyhm31grvVnMvFFIv15n9FFUKBREIpFYKsBgMI1nO04fa20619vTgRwcHHB7XTBY7+DgYGNjIwwGO3jwYEtLCxaLbWtrW1hYiEQiBoNhYGCASCSGw2GpVGwyWdpaHQP9ZhyVTyIynE476GqrBSJTqdTS0pLNZlOr1UKhkMFgEIlE4DnCVoTD4YaH0UePHmUwpAwGhCMwLne8oaH93Dmolz95sun8+c6Wlv6GhnYcjs1mK6qnAVIZDDmFIlEq9dns/R1GlW9CNhwOE4lEFAql0+mCwWCxWKBS2W1tQ/19xObG/ucvNv2G1ve7piNtF+C9vYSmJvjoqHJtba2mRmyxmI9HMxbpdQXlqmfuRLl84OaVd8q33i1f/0P59rt3Htx6t3yz8vj2u/cwWl3Ivp/s6xBYRKpWq6emTAajzjgJmUIpn56xRqMRtVoNqpJrNJrR0VGdTjcxMeFyuZaWlioF/XKrq6szMzOLi4uxWMzhcHC4xAEFrW324JGhzz1271YHUDVQVPWwgkFCMBhcXFz0+XwLCwtyuZxM5jMYcjpdBozBkOPxHCSSjEbT0Gg6DsceHCR2dw9RKKLNp1WNQpGMjqrvO2cCgPr9/v7+foFAAAYelVeVnptz8PkSkUguloyOikZHefJRkUIsHhWJ5EKhzOfzb22VIedoKDIhXFZQriy5z5TLr9+4/A7E5YNsM6ORfadoNFrzBj0WgfJ6yWRybs7hcnk9ngWPZ8HnW5yf983OOqemLICbhYWFpYpcLlcmkymVSsCtPT09LRaLrVarUqk0TkwcPX7up5JDH4X/tw8Jr3tm/IDRZDKdSmWqBnyoANN8Pl+4q2JFa2uXfD4/icSj02U0mrRqDAbU4zMYcvAY9Pg15wBAaTQphSKWSBSZTC1SYAC6uLgIg8FANlZ1UgXeh3w+9yBLpZL3bZXjiYhpNC8nXg76DpXLL5ZvvVYuv/5g28SoQVS4r01UzCAuGiWFXZlBXLnwWzK9oDg5CgUDv47WNJVK+XxeKlXQ0YGo1CnB9vQMtbUNYDAsHk/qds8Df6fL5fL5fOPj411dXTKZjMVicTic7u5uDAZjMBjgcPjExASTxoAxRzp5CKKAOe90LS8v5/P5hQX//LzD7XbNz7vc7nmrddpgMGq1WpVKNTo6Wq1eLRQK+Xw+j8c7d+4chSKk0e7hj0aTMpmjvb3Ykyebjh1rPHWq+dSppuFhBpM5Wj2KQJAGBkYq41dFXx9ybExes6Yqk8lEIpG+vr7x8fEH+Tt3q1QmNmtMKinXptSoJe9nC86jS+4H2j2M6rkb97UJ7oaBt6FhripIq2PEnZqCvKJlXzLwNvSc2ht+M6ZjXTGIC5XyY7Xv0VdXOp3yer0wGObkybbDh88fPnz+yJELR49evHgRjkYTbbZp613Nzs5KJBIsFmuz2TweD/jUlUqlyWQCtaedLqfdOjNjnDZNTAqEAplMRqMLXPazq6sfXSp+srLykc99lM0Wjo0pxsfHdTqd0WgErquZmZm5uTm73e52u1ks1sgIl0aTUqmSzUajyTAYJgJBHhwkDg6SBgYIRCK/ehqNJsPjOTgcpzI2GEUgMHq9bnNcFMS6kEikRCJ5XIBWbhv3e6I69qqaeXWMsqagro9RHmj3MLo1nA/MIFhTUlZEyA0x4poYea8hbogHb0KGuF5zSIS4Kh5aUzNXDPzaG34zpudsGCX5r4lR4L4WieQcjlggkAsEMj4fMjZbxOMJJycnjXdlMBhMJhMYUILaucViMRAIqNVqPp9PIBAGBwfhcDiFQlEqlVqt1gzJGQsduXX7pfKNA+Xyq5nE32KxzJUrVy9VtLq6ulJRqaLl5eX19fVgMDgywq0BFPg+6XTZXVeUkssdB9169ShoUCkUMZEolMnGc7lstXcGXi0sFstms7ev7huLxcBoBAQ/K9Wy0tucDykZMcmhUAjks9vWHs6ogb+uYZVEyA0p6qZ06Lp06Lps6IZ8+JZs6LZksCxGXpbgSlL8JTHimgRelg3dAucAk6BuitGX9NzVrbfd+le2PvkV7WtlFHwSuVw2l8vca5AHE4TOge5WLi9Eo9G5uTmVSgWi5AKBYHx8fHp6emFhIZlMVnc1WV1dJYwwva4/xxK/zWZfK5ffiQQ+bmvrGRtTgmDVfdXW1kYk8igUCLsao1Kl/f0EFIpaceZ3IBCkygyp9jQiUSiRKFOpO9l6+Xw+Go2i0WgGg1ETR9iqdDo9OztrtVrdbjcI/TscjkgEKqBZe+pdQaEQZ1TDvLR1cUiNPZxRo2BNQS6Jkdc2wXeN27smQC2rlC6jc0I9Jx01C/Q2g3o0IBu+PjZc3nTmDTHysppZ2h5BI39Dx1k1i65ZJDenxDdMomuTwitT4htT4usm4VU999LWS3ZiXzej2yudToN9HD0ej1ar5XK5NBqNy+VqNJpqAAnkCtXktuVyOQ5H6nH+6dq1N65dfrtcfjsS+AiHI1mtUNz/vrJYLFgslkBgA2dnjVGpksFBEgyG6e5Gt7YOEAjczadRqZKK40lMIPDl8vFSCRoNg6BANS1we0Dj8XipVCISicePH29qaurs7EQikY2NjTweb/t0qmQ6alGntczd5I9uPXyHUdKXjCpwt3EXg4c/7u/HwTowp5kqHGMMd7jhrxguDMFoPnLyZP9pyyZMK4wytmPUIrlBgJlaTzLYQ250h5YAMwvxAcrADG1wjoF0CnCBScHlrVeZxddNoqv3PnPNJLznmQnuZZNs+ZtkFCRoggj77OwsNLKk0RgMxtjYGEjZBM6jre6YzUokkqFgKhX7rLJ49c1y+bVc6qNgMJrPQ8TfV8vLy+FwmEBgk0jC+xoYgNJoMg5HSaGIq89TKOKhIVpb2yAOx6FSpRgMUSqVSKVSNBo9PDw8MzOzfRdfVSaTsVqtfD5foVDI5XKZTCaXy2022/b/02QlzdkgKujY22G6e0YxZWyzl8BHDDG7Pvnij839Z9njRJII3QJv+OvRjxoHDncPDIgREJ07YdTA35iRlxHNysYviB2nOWc+x3zx576/f9B+7hDh4lHKh2+e7TrDn5HdqoQZv7yDgb9RwXfJIrkxJblhkdw0ia5yh31SUswsugZaX7Pomoa5quGDROPad+fxCvTU+Xw+FAqZzWaw0SiHw5mYmFhcXARj0AdlqW1VIpEIBhN+T2Mq9WEm8Uk69dGi7+TSUjiRuH9jlkgkUqkkFovFYBgkkohIhDbl2WyVPU9YQ0M0JJLS1NQLhxMrPTt0iEqV9PfjDx48jcWy6PTRrq6BtrZWgBfYeaL2j91PqVQqEon4/f54PA5SXlQqVSKR8Pv9wCV8f/dTRal0fGkhquctb4PprhmVwMtyid0clCmnhWNTAtW0WDUtNrgUKqtIauQop4WGBZGEHpIOgqZ0O0b13DUFLati5MQjYSp8VjISkRCjfOySCB8UEUIyUpyPXRKPRFT03Bg1rWF9eROL5Aaqbby7QXDxGLnxi5FTfx9ioz2n/j509JN+2HlRwyFcywl611ke7Lz0yKddLtf811HfAUwLQG/u9/t1Oh2Hw6FSqUKh0GKxRCJQXYmd9JL3VSKRCASjPu+iz7fk8y0tBbYb2IG8TxRqCIOhE4nCu9tHfWlksgiJpEI1/NsGz55tGx5mkEhfnkYkCslkiGw8ns9iCbJZqB/Y5h2rBsCy2WwyCbk/g8Hg2NgY2NO6o6Pjb3/72+uvv263269cuaLT6Vwu1/ataSoDYTohLFQ6/ftwsltGb4iRV3Q27dgMx2S2Li1FxRL5W2+99evnn9doDIGlmFqv0fn4+kmHYqisxEE2hikbeVes0pugzYNMfH1KfN0qKWt48cBSOB5JJ2K5dHI5Fk5HQ6lYOJNJLiei2UgoFYtkouF0KJCIRRMm9VJlfA29JJPwqpycYCCd8IvK5qPs84coXHRg8KK685QI3WY88ZdhZLNu8KJ6sGl8uEvlcDgzmZ22YdsLcAngi0QiNptNLpfTKxodHbXboTBmdS/x2ot3qQp4KWAPakGrymSygUAAi4XgI5GgUSb4WXlwp1snEqFDDMYoABTs2rPZMBiOSDSWTt+Hp+oYJpFIOJ1OrVYrEonYbDaDwWCz2Ugksrm5ORaLqdXqZ599FofDvf766y0tLYVCgUAgsNnshzqtUmkoLX9KldYwL+mhBvUeUnfJKOqWBLuqnpM2dZ5j0KH0mQ/e/+jDD//4wx/84OWXD8jlZjyWcbbtCGpkuOeYse+Uuf+0pfekCd2ux8NMBJh5pHeK2Gcl989Q4LOIZg1ygJjKxDSacZN5UqNVJ1OJfD67slpyuuyB4GKpVMzns7l8tlDIrVzK20xLGib0ekBrauRvmEU3JqUlqzo9rc4aR2OTYzGzMmlWJqdUabMyOTmW0HFWLaOX4vFH9+FXulEoDb5QKIBo9ezsLJiY02g0Ho+n1+v9fj/4/Hbemz92pdMpOp0+NERFIMj9/QQYDNPXh+/rw/f2YgcGCHA4cWiI3t2NRiDIXV1oJJKKw3FAa4rHcwkEHthianiYJRYrwPcZtM3VZKtoNGq1WsEYhs1mK5VKi8XidrsDgUAsFkulUgqFYnJy0uFwvPvuu9/5zneef/55rVY7NzcnlUqXlpZ20pmAQjoee2xSltOwVrVMyK1eWS+6A/9oDaPi4VWdY6wf29nbQxhCsX/7wqvf+6//+sd/+Md33v4zDiPo7EQiKB0sER93MYBvWSK0BDAXPZT+OTrSQR2co8Jnyf3T5P4ZKnwW2awZ7CN4vfNCoVChUIjFYrfHk0vnDBrtKy/93mQ2V7LHIWk0GuOkXsLXy0mZigdgRc9dNfA3JPjkhHq2UEqms4nVS8XVS8VLGyura6XSSn7lUrFQSqr5YYOotJM5E1gcB1LpqvHGdDodDAadTufExIREImGxWAwGg8/ng4k52OPhkXvzx6gKT4ne3l4EgnT8+MWjR8+DqNLJk80NDR3HjjU2NHR0dCC/+KLh7Nm2w4fPwuHEhoaOzz8/eeZM69Gj5zEYJhbLxuGgDQGJREY4HEokEqFQyOv1Tk9Pj4+Pc7lcKpXK5/PNZnM4HAZvzmZ3RCqVCofDZrN5ZmZmcnKSw+Go1WqbzWYymXw+366+uqkMFCb1uaIzuqRRktPzlrXslV0yOnRDPHhdMzWhcwv7USgkGt/U1vHiqy+++8f34Kjh/sHhISLGEpWNq5xyZHkMC3X08uGbE5yNahcPPEpT4uuz8rKaH/F4nZFIOFTRwsLCqHH08z8foI3gU+kMlUrV6XROp1MsFo+Pj5PIhM8/biX1zXSd5cObRkdglk/fb5TKhDMzMxaLBVpYEwq7XbN+jyOegN67QNCvFSSs8supVLLis4QEHJB30m8qhGWzWbB4cmlpaX5+3mq1gpx5Ho/HYDDodDqHw5HL5SaTyeuF1lHsZGL+DQu8Kr/fj0JRMBjWyIig2jRW9zUdHmYSicLK/ElMIPDOnGn79NMv3nnnoyNHznV0IP/+9+MIBJlMlrS29rS2toD/O4vFEggEarUaeCRAT/KgMQx4DSA8AWK51dWFtac+THfKE6VjsXgkGIgseO+t7bgV0C2MQnMmGcdvXBJOuGVap9jgHbUGtFNLav28TOuUGHxyvVcsHslIEbfvO2cy8NctkpuTgiucIT+qj2Z3zIrFYhCGdrs9TDFl+OJxj9fr9nhsNpvdbp+bmxsbG9NqxzkMOXd4ScteUdIzKkZOyy5xhhbkYn0ovBQMBvV6PXoYDzt9QMQhzdggP3kkGkT1sSiIKbPZbDKZjEbjxMSETqdTq9UKhUImk4lEIh6Px2azmUwmg8FgMpkcDkcsFisUCqPRaLfbwQb3m+cHtW/nt6HqmBi09LFYLBAILC0t8fl8FIqMx3PvNoqQYTAsJJIKhxMRCDIKRUUiqb29OAyGdfp0y8cfH/zb3479/e8nUChafz+hsuspB4Mhzc+7wF8B7ogdrplOpVLz8/NOpxMsXs1kMj6fr/akXQoqBpOExgC7ZhTCDnFdqTNOBkQG75jB86UZfaPGJYFc4pDAAaA1jF4yi65N8NawXQbYeVHzUUZne59tdppMpqhUKqlUCq1d9Pg8lpl5p3N+ft7j8bgr8ng8voX5CZXLIipbpDenZbet0ltW6S0D55pSYvH6oOUW1ulpGAx24dwpm21Wo9HweLxwONjZOgi7wJXKpHK5fHR0VKFQqFQqjUYzMTFhMpmmp6cdDofX611aWopGo9XpKiBy58uLvzEBaCKRyMzMjFKp5PF41W8Xi8U8ffo0Gk3DYqFdIYHhcBwkknrkyPnjxy8eP36xqam3oaHj4MHTYEu+zk7U0BC9rw+PxbLxeF5lL0m6SDSaz+/I31Qj4MM/ffp0R0cHHA7H4/FNTU3A/1976u71CIxelyJviVGXx9TmCZ/QuCg2LkghWxTp3GK52CkevHnXObqZUchhJCVFW08y8D0mDXt5WloWU9wKlVyn0+p0Oq1WOz4+rlKpxjUaVUXqcbX2rjQ6JRHDG4HN4LqN6HYtsnV8qF179FMYh8sCfuPFxUUCAT+EHvZ4PIDv2TmrlOq3Ka5XnCnV7v1O/w4iyyBh4itWavi6BbrRRCJhNpurQ0OtVjs7O7uwsAC+XcvLy06nC4EgYTCsGhseZoIHKBQVjWaAxhWH4xAIEJfg17sn0LlcSTr9KN1FNps1mUw0Gq2yMBoSn8+fmpraSRv8UD0So2CCP3hLSo2PjlnHdLoxnV4um5WM5CTw8iZAq4wuW2U3BbhA0zHKGDU1LbtdaVbXrbKbF08O/8d3v/PjH/34+9///ssvv/z222///ve/f/XVV1988cXnnnvuhz/84Y9+9KP/+t53X/39O7geI6lvmoF0cod9QnxARoqRem0shmDe7QDJmiBTs/rY7rLK6L5J8cpO5kx7ViBNTqlUkkgkgUBgs9nAKgDQBVdnLZlMZnxcDYePDA9DUNYYBsNCoxmg7ezvHxkaotccBRMmJJLG5UpKpeU7g/e7C6dAZgn4Ple/0lWBEAaohhKLxXw+n1wun5ycjMfjYDXLIwxJa/QojMrRN6GcEvQN8UCZ31XmdF7ndt0U9JSlg2UVHpoq1TBq4F6WkWNNx6ga1rJZfG2Cd8fNOTdWbjtD/e//43/5f/7nP/3T//UPP/rx9157/aW3//DGa2+89If33nzmFz/+P//hf//Hf/o//vv/+F9fe/EDp7JskdyEAp6iq5PCK0bB5SnRLTnTMzAAb2q6CNTU1NTa2nrx4sXzjedwaOo4Kz0p/UZjoY9RYOyh1+sJBIJcLg+FQg9ybwFWmpqaKowy0WhGjQ0PswYHSceONR48ePrEiaa+PjygFo1mYDCsvj78+fPdZ8+2o9HM7m44l8uZmpoyGo0mk2lzBqDL5fJ6vQsL0FZpoVAI5I9XA0gajSadTpdKpb6+vo8//vjNN9/0er0bGxtGo9Hn833FofyuGR3D3KJ0xo59SO4+MtVzxMZoz+LOxw69TRpuCKFO+8/+mU9oDYxiqtlPN+TDN0bJmeYTVAUtA8ajVTOLro3Rks0nCX/54NxrL/7ps4+amk+ONJ0caTpBuHgc33SC0HKK1HKKeOEYBg/T10TnKy9s3cC99tF7n7/+5u9/9+ILz/36l7978Tcvv/LiGwde++nPv9d0jDwrK3+LOSWPLFA3LxQKgeom4XD4oUHzTCZjNpv7+wloNGNoiF7hEoJ1aIheMQjHgQGoBa1Mnmh3n6djMKzubvTp061nzrRhMOz29l4CAadWq8EIXiqVSiQSkUgE0qg5HA6bzWaxWNVxMIPB4HA4KBSqubkZkPrrX/96ZGTkjTfeaGlpWV5eHhkZ2YkPf3vtmlElrjzU6Dr3iazxU8Urvzhx6J2RwZOeho+lh9+hHPjVuQ9/33v6TzwZ+k47OoaBkvcufEEREYJTkhvVFtTAX7dKb2nYy6S+aWSrmtQ3o2Yt2+Tl2dGyTX7XRqFfIRsrWyS37pf9tG4W3Th9uP+dtz58/+1PP3zv7++9/el7b33y8R8/P/Da+3iYwSK+9SQyCrZpxGAwFoulWCzupBECjPb14QF5CASlrw+PREIDUBSKhkIBaqG2s7JjNL3y5B0DXT8Gw4LDKXQ6H+Q9bRUYx28eYMRisWg0CtbkSCSSqakpu91+4MCB7373u88++6xKpXK5XCKRyOu9zwqtXWnXjMqGb7B6loW9ZdLFAup0cORCht97fQxVxjcmB0/4CY1pZscl/sC6DH1DiSuLEOun/8xiIFxW6a0qoBbJTR13Fds10XGaQ4BB8yer9Nak8MrWP70TmxRc0XEuTXDX9Jw16Cd3TceBkv8nhVe+3dy8R1OxWNRqtXg8PhQK7XAfnGpf39eHA8B1dg79+c+HPvvs5MGDZ7q60MeOXfjii3MVazh06AwMhr3L7j02MEBmsYT3jYXeV9UhaTqdDofDRqPRarWOj49jMBiRSDQzM2MwGNxu9zaVyXaoXTMqRl7h997kwa5PKL3uuaRCYv3sk9MfvnvQqPG47XEVf0kEK0sR5THsbXyL/8wnHELrkpF3DaTim0XQaJLUb207xSLAzBCv0pv3TTfZuRn468YtmdsGPpRE88QxCvbaI5PJYJpSe/jBymQyKtU4DIZBoWhIJA2BoMBguO7u4a4udFcXuq8PDx5cuADr6cEMDkLdPRIJuUuRSCoKRUOjmRU/FJHLlRSLUGm+7YcWWwUKXgB3cqlUKhQK1W1Ua0/dvXbHqAx9Q4S4wum83nqcI5HLVerJo8ePHnjzlf/vu//2988OmqbsdAb3/N8E3V9YLn4mbv9CxYevjGFuj9OXjYINq/SWEB/sOM1Btal1nBWL9NZXpPOh9mQxWiwWx8fHKRTKzuMFVZ/uysqKw+Hs7cVWyauOOFEoOhxOQqOh3nx4GPIxgcFAFVA4nNjaCu/pwSCRtMFBzOysLRQKgcXKIOa5Pa/gTBBSSiaT4MUDtwMoALj95TvRozF6reEwBjmEG0LTn3/+hd+/9MK///u//PZ3rxBJAlgf4sSfCchTXk5fUYUry4dvixAbE9zLRsEGolXVdZYvJycg93ulnfu67UlhFEQaTSYTkUgEcfDaM7YIYOF0OjUajVgs5nK5J0+e7O+HxqAIBKVqlSAT6dChM4cPn/3ss5OHD5+t9P5DKBSEKQJBGRqit7bCP/vsZFcXeniY3djY1tBwFtQgIRKJQqHQarUCF9iDWsRUKgUWFwSDQVCfzOPx0Gg0m80WDoe9Xi8oGVR72W60O0ZBXy/su0VrK7U3Y+H9lMOfN/77v37vJz96rq1lqBeG77zAEPaUxYO3ZWjISyobuqnElVkoX9spBrHPMiW5UZsq/3Xak8JoNpudn5/HYDDgI689vEX5fH56eppCobBYLJVKBbDgcrnd3cMIBGVwkFxjMBi2ubn/woXetjbExYu9vb246mmVmBNxYICIRFL7+4nDw6RwOATYslgsYDkrCoUSi8VLS0ugB9/6YtRqNYVCOXXqFBKJbGlpcbvdSqUSh8MdOXKku7t7ZmZmh7nSD9KuGZWir/N6NwS9ZUbHKq2tyOpe4/Ve5vVeZnSuUNsK7K4NPuwWf2BDhr4+irk9hr3dc3yi9QRLSc9Upk21N/9a7YlgFLSaGAzG6/Vuk1lcVT6fVyqVRCLR5/OVSiWwRnRjY93v93d3owcHyXA4qWqDg+QKf7SKb5+FRjOHh1kIBKXmHHAVDIZnMAS5HJQ4AlLAQF/vcrnYbDYcDudyuX6/vya5JJlMLi4uulwuhUJhMBhAsqLX652YmBAKhV1dXQ6HYyf/r220a0ah7h55hdtzVdRXBibuhww8EPaWubDLEtRVFb7MG1g+/zdh78lJaF3RFu/mN2BPBKNgb3C9Xl8oFB46/81kMtPT0zQabX19PZlMOhwOg8GgVCplMlljY2NPzzAcDkFZNQSCcuJE09Gj50+dajl9uvXEieYjR853dw8DdoFVYe3pwdHpvGy2dq4GlhuAtBU4HE6j0axWK3DigtyG5eXlWCwWCoWgXYMrldiCwWA0Gg2Hw263eydDl+21a0YBpsLBy9yeK3zYLWHvbUHvbfCT33OzAui1cUIZ0+Q5+ymb2hlVYssPWivyddveZzSfz0N1SpjMHXq5c7kcl8s1Go1isZhKpXK5XLlcrtfrrVYrDofv7BwaGCBtZhQOJzU19Z8719XQ0NnYCDtxovns2fbubgwc/uVp/f0j4CcMhsdiyZkMNA+r1paqpteA4uihUGhsbAyU8qNSqWKxWKfT6fV6NpsNOvSVlZXlilZWVhKJxFcPMu2Y0dq1y9dl6Osi5BVe7wa3B2pTIYNd5vWtjw7fGsXc7Diibj4ol6AuK7Bl0Q7WLn9NtscZTaVSoVAIh8NFo9GdfJDgnAsXLlCp1KmpKbDKFJBUKi0vLi6BcHzVQCeOQt2Z3SORtIoDnwGHk/r6CNVzmpsHDh06e+ECDImkNzS0NDc3geqTXC53dHR0cnLS7XZXE2fBAACUnpyYmBCJRBwOBw6Hd3Z2hsNhtVoNak0C+Xw+j8ezk//a9no4owb+upa9It5UA6LamsrQ18WoqyLEZRHiigR1dZxQZvXmGv7CQzTMqvBl+fAtCfKGZPiSnvfwGhBfh+1xRguFAovFmpyc3KGvvlAoUCiUtrY2sNND9XnQyA0OItraEP39I4C/7m7MiRPNZ860nTrVcuZM+7lzXadPt5082XLiRHNn51B/P7Gvj9DXRxgYIHZ0oM6f7664UYldXXCtVmO1WvV6vUKhEAgEZDIZrGOm0WgajQYEjfL5PGgpQau5uro6Nzfn9/vD4XAgEHA6nW63GwD6DTEKaumoaCti1LoYcVWMvI/Jhm4osGVEw9zpT9i0roQCWxYjr0K1dNCXNKyVb6UR3eOMZrNZMLLcIaDZbNZqtaLRaKlUWpOUCSI9lTk1HImkIxBUBII6MEBqaOhsaOg8frzpyJHGSi/fcfx407FjF7u7MRXfE3Ta4CAFtK9IJK2nB08ms1dWoOJ+1Rp94MswPz+vUqkoFMrQ0BAGg6HRaDKZDIwxQCV8mUzm8XimpqaCwSCRRDp+vrEHBgOV1L8hRgGmWvaKilZSUkuqu6asmJ59ZZRcaDvB7z0vH6dDq6XA8ypaqbLwqPZW35jtZUbT6fTIyIjX691hPCmXyzGZzNnZWQ6Hs/VTT6fTgUCwra0fxDyPHm08ceLiqVPNJ040nT7dWvm16dSplpMnm0+ehJ48dqzx+PGLx45dOHoUyoA+cuTc4cMNR440stnCbLZ2Dg6+AwDZWCwG1oUKhUI6nU4kEkkkUldXV1NT0+LiokKhWAgGZzUaye9+q2CxHJUU9a3uqt1qp4xWOn0o1cgoWDMI1iu2ZhJdnpbfYqPnW0/RWUOuadmtSeGGoXICOG3i2wN0LzMKfIoikWiHUyWwCI5Go2UyGQaDEQjcZ1uF5eXl0dHRZ5752QsvvPAv//LP3/nOvz3zzDO//e1vn3vuV6+//vozz/zsJz/5yW9+8/yvf/3cz3/+zLPP/vI///O73//+95999pf//M///MMf/vA//uP/PXDgwENDXJt5ra5YSqfTBoPBbrdD+4r4fO6pKfOpk/NTU7OV9RTfKKM1ZpXeUrOKfRekvY0SDWvZAqU11Z7z7dreZBSUYB4ZGdl5ACaZTHq9Xjabvbq6KhAIpqent3ocgWP/Rz/64c9//vMf/OAH3/nOd37xi188++wvf/CDH7zwwgvPPffcT3/601/+8pfPPvvsz372s1/+8hc//OEPf1bRv/3bv/34xz/+r//6z8OHD5dKpZrbPlRglbNarZ6enrZYLNAuTy6XKxh0ud1Wi+WhBSB2okdhtFKs5spI71TbSSYT5bJIbhrvV5LpW7e9yWihUJBKpSqVauf7fieTSZ/Px2KxlpeXJyYmZDLZg64Fq4enpqYsFgtYbDg1NTU5OWk2m6empkwVgQeWikA9M7PZ/MjJyJlMxmaztbe3GwwGgUDgdDrBbqUOh8NsNn8LjJory46ZqPmOMxx0u1bPu1TJCq09bY/YHmQU7DlLJBJ3lVtUqQAVpNPpqVRqcXGRRqM9aBRb7YV3q+oq09o7PkwgPU8ikYBFaVN3ZbFYtFqt3W5/0EvduXbEaGXBMRRqZw+5uxr4A01yBS1dSQ35dibsO7Q9yGixWOTz+QaDYbcLJlOpFIPBAEFzJpP5WNqnxyXg6DUajdWm2mQygcY7EAg8Qttco+0YNfDXzaJrVulNDWuZ1G/tauAPNitk5DiUkrwnO/ca22uMplJQeXIymbx1NPlQ5fN5kUhktVpLpRKoUvGg7v5bESi8U80ZBXosiXn3YdTAW4fq00IFE29o2SU22jPYrOhuEGC7DUp69qskzH/zttcYBU57q9X6CHlA2WzWaDRKpdJisRgMBqlU6ldvn54U3cOoWXRNx1kRj4RJ/dPwptHucwJk6zgPs2Dkb1QmRt9E0udjtD3FaCaTsdvtO3fa1wiqDhQIUKlUEDfncrn3nd3vS93DaN8FGey8GN48NtI7JSKEoGGoFCo/u/XjfyJsTzGaz+dpNJrdbn9ksPL5PJvNttvthULBYrHw+fw91d1/fbqH0VFqCnItVTr6J6hPf5DtHUaz2azFYmGxWF+Fqmw2Ozk5CTz/iUSCQqGEw+HHMuDb47qH0SeuN9/e9g6jmUwGZCV/lcl4IpGIxWIkEikSiRSLRalUOjExsVv/wJOo2jnTfrI9wmihUNBoNPeNfCYqdeEqpQwhg+rEbvtSC4UC8ERWCjw5mUxmndEn2/YCo8lkMhKJ4PH4SCRSnYmDEpvJVDQcguprehwx91zM64wt+qGSCsl0NPUAtzcIOFGpVFCOgUqlgr2das/bX7qHUS1zfT+Zhn5ZL/iWGS0WizweT6vVVqfzEH+JiMcRm1KlJwRFLXtFy7qkZV6CfnJWDKLCtDbl90STqWjyfuOCQqHAZrNnZmZWV1flcrlOd8/WiftS9zA6Z07sK5tMOKxf1s365pXNZufm5shkMsAIaj4zMb8nOinLapiXdKw79d43tf3res6GlrmhYa1OjaeDgUgqU/viM5nM7Owsk8kslUpzc3NcLvfRnFlPkO5hNJWJ7Tfb0mneqQ5csa+1fQXp8Xg8/k6SaALa1s1hjWtZK9vsRVSFFdq0gLfsc0W3YprL5ahUqsfjSSQSNBrtW/wSfjO6h9Hag/tI0NQkE0sko5FwJLgUCSxGg4FINBpJpqKpDDR3eewqFosCgUChUAB/UyodtZsTGsZape3cCuV9DGpT2ateJ/Rl23xn4IQSCARra2ssFuuxrL3cy9r/jCaTEB+BxYjdnDCNZSaEBWhXNW5Jz1s2iApTqrRrJhYOQ73qY2xW8/n81NRUtZdPZWLzszEN49LOAa1iquOUlvy1s6hUKkUmkxOJhFQqtVgsjxwXeCK0zxlNZWKhUGRam9JxSlrmOtTJciujwIpBBLA2NMw1vaBgn0rE4pH7TlN2q0wms7i4ODw8HAqFoCpIqXgwENHxlqENh7ZQ+FDTsTYmZbl4/J6ZXz6fHx8f12qhMu1Go/EREgCeIO1nRlMZyKGj5xehTf62bcD0nA0NY31SlgsGalus3QqU5sJisXa7HTSiyXR0Wpd66O7C25iGseaauafHTyQS4XCYxWLJZDKz2Vxn9IlUpXuNa1irO2+9dKwNPX85sPDomCaTSRBSMhgMoO5IMnmnEd3+S7K96dkbRlkunojENzWlhUJBoVB0dnb6/f6vEr7a+9qfjEItqCumZa3ulgxoMCAohkKP0umDGklkMnl8fLwaUkpl4s7puJYJJeM+uvE2tOyVBe89HtN8Pj8zM3Py5MmvkgPwRGgfMppMxkOhiJ5f3HkLutm0zA2zIpNIRjc3WtsL1OCMx+NEInF8fHwzNMl01KpJ6ViXVbSiklYYZywraXklrVCx6oP7GnR0nLGsoObVjJKOteGwQt890NEXCoVoNEqlUgcHB+vt6JOn1Fcf/zHX3HMxaO/KnalQKHi9XiwWOzk5WRuUT0RM8oKSkfE4w8lY0e0ILnhiVfO7oz53JLiQCi2mQ0vpJX/S745Wj/rmI15XOJ0oWY0L47Q1t2VleQUqOxoIBLRaLQ6Hm5ubm5qakkql+7sp3W+MJlPxwFJExy3ttpffbHp2ZSqdeHgQFdQ/UqvVWCx2fn6+JuSTSMQj0YhRuDLOSXi8zi+OHLrY1Li2vprJJiuWSmeS+gmt3TGrVI3pJ7T+BU++kAFHc/l0OpP86E9/HEQMOFy2hi+QRKRaJIb2tgNlQoLBYD6fryY+b/67+0z7jdFUJmafimuZjw5oxaASVwtQ0Lz2/lWB/cAdDgeFQuHxeGCDzZqQTyod981H9ezLClbYaNIeOXbobMOpYGhx3u0A5vY6jZN6oYjLE7CZLJpOP+71z4NDHq/LNW//8KP3+wd6dPrxtrMU1rDTarUuLEA9ez6fTyaToCwZm812OBz7GNP9xmgiGTUrMnr2FR0L8n0+gmlZG3o2FDSfMye2xiHBUg2wqJzJZFKpVJAYf59ITyKeSEXMiswE+6qSkZILTZNap1I6NSqaHBObqqaUWtSj0+rRac3YjEpmGRV9eUgunFSPThu1Dgl7ysC7Mim4tuSFmtjNfySfz2squ1fu46j9vmIU6lsjEYNoWc3OGxUh+2RuWpc0joUmFeGKhSaVYasmbh6PmlURiyZuUkWMii+PGhWhWUNm1pDWy0ITnKsz2nwml6juaA+cnQ6HY2xsjEqlslgsm80G6snUvo6K0iC2xIQaZgN/Q8ta0zBXtaxLGubqjg1KhlIzVnVsaHavZa7P6JM1X5tUKuVwOLhc7j7OftpXjN5xRnJWtaJgOhfmC9njmrGNK6vFUrZYyi6XsvlCet5jT6SgHE2vz5XKxJZXcneP5lYuFZhsqmlKHwwvYHs0Sk7Q4ZwDhQ7lcjmHw6HT6Ww2W6PRLC4ugjrcta/grpKpeChY41sAKU6PZtAd9JwNg6g21RCUh2AwGPdpyPeL9hujgaWInnNJKw6NKsT/8q//cr7xfCqV9Pm8Pp/X7/e5PW4SmUQiEVlsFh6P02o1S4HF6tFoNPL7l37/8ssvWayTJw439zXz+AJudUd7p9MZjUZBg/oQIBJQ/vKUKg1l39WOdL+0SeGVLUU07vnVKIB2Qtt8VMtaXfDcJ5mLwWBEIpH9urZpXzGaSEKt1wT/kozuM5mhQvECgQAUM6pqctKk0+kNEwajcXLz8+Agm82ZNE2qlON8bMCuW88XoGn7bne0T2WgvHoN81INczX8SUYiOu6qVXrLIrlpkUDrb02iq6BakVl0zSi4rGLkxCNhS2UJpFV6C3pecNsxlV5egb4k1flZIpFgMBihUGiHL++J0/5iNBGPxiJGSUHLuiSnhlWshIqVlFPDcmrkjtEio7ToGD06SgN29/m7puakxujRMVp8gn11WptKpqO1f+NhSiTj0WjEIMpvE0Ewi67xMP6+C1ICzIxqU/dflKE7tJ1nuE3HKCO9UyO9U4PNysHmMXL/dPtpdv9F2VC7pu0kc7hT3984hurhkykEj8cD6iglEolIJEKn02tfxz7SvmIUxHUsaiiuY+Rf+SqmZYI0jtr7P1SpTMxhiWsYD2xBJ3hrJuFV8UgY3jQ20DR6+rNh2DlR6wnG6c8w7Se5PQ3i458iu84IMZ1GyoC9p0HceoLVeJjYcoLec0741/fazhyG43BYh+POOv1MJjM3N8fhcOrz+idGqUy8Mpveuknzboy7ruMuB5Yi2w87two05Abxdo0oMKPgsppZ0HNX9dxL0MCUt6Hh5Ma5MRUnqmJHx5ghFTuqYIVHGQE1N65iJ4yCK0b+BrRvr3A5GoFSVYCWl5fpdLrVat1mAveka78xCkI7UCLzwyjZxnTMDYs6/QgdfSod97qiUC7LlntutU1ZIxvj9JVRkcXj8zmdnvl5v9uz6Jr3uVw+p9M77/YZ9TYlPWfkXzbwNib4pWAgmkxC9cXBKvv97Xjah4yC3tY5HYdWZWzBYkfGhYJMi/5HSn3KxGyGJIhyGWr9R19a5dCXf9Eqvd3fJEChMZUNP0lUqmhoiEImCyhUEZer5HAVDNqojrNiEl4zCa6ZJeupZDaXgzYLpdFoPB7vodvOPunah4xCn1ciah7LPFpaiYaxPme6T4RpJwJRrgnOFTXjuoJyTUGFTEW7rqJdB4/vGOW6nnO1upuFWXSNiXLB+0YQSHJl93nUiWMX2tsQPT3DOBwHg2Ghh2iE3gk5OcHDLFGRFpFIxGDQGQzG9PR0Pp/f34DuT0aBCz0cgnr87T2UW03L2LCMQ4l5j/C5JxLxWCxiki2raGtmDc5t7/bM9npm+xwWmMMC88z2VX6FzD3XMc7TmYVl4HWyQlbGIaV4AptEErW3IQ6fPn/sfPOFxp7BQWi/LzSGdOivjYPNKmSzloQcN08ZFxYXtwlx7TPtT0bB0DAYiBrEhUprut0s+45x1zWMdct4Op6ARnuPIDBhMkkutZwmZVJvlcsvlcuvlsuvL+deiAR/VS6/XvkV2Msi/ufnDnHxPabhTj2+x9x4FNsDQzY0dJ4/393Rgvhd38HfIA6ePd2OxbDRaHovjCAhRmbkZRP/lsdWKBR3tH/4vtG+ZRRgCu2ork5rmKuVBvUBpHKhxexaTsluTiSSjwjoHSWiU6OrfRfFidir5fLvKpi+VL7x4o0rdx/fsRck/EP9F0xstIeBdHLQXnizrK11oLm192ITDDlEQcCJiAHiIIIIHxyBIwi9MIKKkYM8YpzS0sKjDJSfaO1nRkF0FArNuyrDU05Jw1zTsjZ07DsG1dthrul4y1ZNamnhMSxfTqajM7q0jnltQsqb0uAs6hGLesSqIU5rieAxsCn1sJY/ZxFDRYmBTUvL2H5FbzdxAEbr7SL3dVGA9XaRYV1EeDdLw17Wsa48WljhSdc+ZxQolYZmM0v+iNMan9alppQZ01hmSpW2TSTnZ2PBAJRi8lgap1Q67nFEtaw1HbusYWxnE9zrE7wvnbiVwP26hlXSslZqTMMq6blrE5wrE4JCOLxrl+0+0FPBKBAoVZJMRxOpKDQrSkVTaSg/4zF+6tC0KR4xSnM7qJZTawYe5Ci9r+nZl3W85UXfoy9YfaL1FDH6zSiVji94o1r2ysOCCJUKFOxN6dXsDeiSL6uUQQ/07A0NY80ozS0tQDV/nk7VGX38SqWhldM6bul+tSegWila5pqOWzKK82ZFxqJOW7UpqzptVmSMkryOt6xlQanQWtaqjlualOWc01DbnHwqW1CgOqNfi1KZWGAxYhlPV0i9VKmHugbVc+SWzGMZ1wx0NBqLQG6EVBQaDaeh4Uc0BtVL881DVXN9LqhGVTzxGGZyT7rqjH5dSqagTOfAYsQ9By0DdEzF3XMQmokkVK7xvmXFQd3JnZcef0pUZ/Tr1R3m7hZDfYzzs6dHdUbr2uuqM1rXXled0br2uuqM1rXXVWe0rr2uOqN17XXVGa1rr6vOaF17XXVG69rrqjNa115XndG69rrqjNa113UPo3XVtTd1h9G66trL+v8B7qmbZTqVm8sAAAAASUVORK5CYII=</bitmap>
+          <bitmap length="19408">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</bitmap>
         </item>
       </items>
     </chunk>
