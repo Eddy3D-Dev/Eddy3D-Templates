@@ -1,4 +1,4 @@
-# Eddy3D Outdoor + Indoor Templates
+# Eddy3D Templates
 
 This repository stores Grasshopper template files used by Eddy3D.
 
@@ -10,7 +10,7 @@ This repository stores Grasshopper template files used by Eddy3D.
 
 ## How Eddy Loads Templates
 
-- Eddy targets this repository (`Eddy3D-Dev/Eddy3D-OutdoorIndoorTemplates`).
+- Eddy targets this repository (`Eddy3D-Dev/Eddy3D-Templates`).
 - By default, Eddy uses the branch matching `EddyVersion.ProductVersion`.
 - Template metadata and downloaded files are cached locally under:
   - `%AppData%/Eddy3D/Templates/GitHub` (main repo cache)
