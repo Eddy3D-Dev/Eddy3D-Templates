@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Archive name="Root">
   <!--Grasshopper archive-->
   <!--Grasshopper and GH_IO.dll are copyrighted by Robert McNeel & Associates-->
@@ -849,17 +849,17 @@ concrete_roof</item>
               <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">02b6baf5-126e-4b3b-a78e-05203d9bd922</item>
                 <item name="Lib" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
-                <item name="Name" type_name="gh_string" type_code="10">Date to HOY</item>
+                <item name="Name" type_name="gh_string" type_code="10">Hour of Year</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
                   <items count="4">
-                    <item name="Description" type_name="gh_string" type_code="10">Convert a date and time into an Eddy3D hour-of-year integer (1-8760).</item>
+                    <item name="Description" type_name="gh_string" type_code="10">Convert a start date/time and optional end date/time into hour-of-year values (1-8760).</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">b9f5547e-7fb0-4dd0-b837-da36aa902e62</item>
-                    <item name="Name" type_name="gh_string" type_code="10">Date to HOY</item>
+                    <item name="Name" type_name="gh_string" type_code="10">Hour of Year</item>
                     <item name="NickName" type_name="gh_string" type_code="10">HOY</item>
                   </items>
-                  <chunks count="5">
+                  <chunks count="15">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -875,113 +875,96 @@ concrete_roof</item>
                       </items>
                     </chunk>
                     <chunk name="param_input" index="0">
-                      <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Month [1-12].</item>
+                      <items count="16"><item name="Access" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Start month [1-12].</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">94fde59c-5fba-4bf7-b19a-fb8acc009503</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Month</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">M</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Start Month</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">StartMonth</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">18794f91-7422-42ba-b5a2-e7d7b99c0132</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1209</X>
-                              <Y>491</Y>
-                              <W>17</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1219</X>
-                              <Y>501</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
+                      
                     </chunk>
                     <chunk name="param_input" index="1">
-                      <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Day [1-31].</item>
+                      <items count="16"><item name="Access" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Start day [1-31].</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">8f2cc609-4c26-4004-9ac2-a53851052b60</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Day</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">D</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Start Day</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">StartDay</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">86e61b4e-6a1b-403d-ae32-7f8f20e9527f</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1209</X>
-                              <Y>511</Y>
-                              <W>17</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1219</X>
-                              <Y>521</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
+                      
                     </chunk>
                     <chunk name="param_input" index="2">
-                      <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Hour [0-23].</item>
+                      <items count="16"><item name="Access" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Start hour [0-23].</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ceb8e695-002e-4b7b-b1c1-ecec16b04f66</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Hour</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">H</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Start Hour</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">StartHour</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">e2b22732-0996-4597-959c-42d2bce1518d</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1209</X>
-                              <Y>531</Y>
-                              <W>17</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1219</X>
-                              <Y>541</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
+                      
                     </chunk>
-                    <chunk name="param_output" index="0">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Hour of year [1-8760].</item>
+                    <chunk name="param_input" index="3">
+                      <items count="15"><item name="Access" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional end month [1-12].</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">f2b89a67-393d-4d66-b84a-32a6628e0646</item>
+                        <item name="Name" type_name="gh_string" type_code="10">End Month</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">EndMonth</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      
+                    </chunk><chunk name="param_input" index="4">
+                      <items count="15"><item name="Access" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional end day [1-31].</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">9c0a2638-18f6-45d1-a993-0e10b32ac7d9</item>
+                        <item name="Name" type_name="gh_string" type_code="10">End Day</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">EndDay</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      
+                    </chunk><chunk name="param_input" index="5">
+                      <items count="15"><item name="Access" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional end hour [0-23].</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">79ad2147-a9bd-4021-bd34-4ea97d4e76ae</item>
+                        <item name="Name" type_name="gh_string" type_code="10">End Hour</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">EndHour</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      
+                    </chunk><chunk name="param_output" index="0">
+                      <items count="14"><item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Inclusive hour-of-year values [1-8760].</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4d78dd34-65ee-40b8-b2ac-927e956b11e2</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Hour of Year</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Hours of Year</item>
                         <item name="NickName" type_name="gh_string" type_code="10">HOY</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1256</X>
-                              <Y>491</Y>
-                              <W>32</W>
-                              <H>60</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1272</X>
-                              <Y>521</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
+                      
                     </chunk>
-                  </chunks>
+                  <chunk name="param_output" index="1">
+                      <items count="14"><item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Corresponding date and time values.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c55b72ec-64f7-4227-b805-950d5b95654e</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Date Times</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Dates</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      
+                    </chunk></chunks>
                 </chunk>
               </chunks>
             </chunk>
