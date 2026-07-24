@@ -557,8 +557,8 @@
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
                         <item name="Description" type_name="gh_string" type_code="10">Status message</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a2c63250-5cc3-4d39-85a2-1b021bab328a</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Status</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Msg</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Vectors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Vec</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5259,8 +5259,8 @@
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Wind direction index (0=N, 1=NNE, 2=NE, 3=ENE, 4=E, 5=ESE, 6=SE, 7=SSE, 8=S, 9=SSW, 10=SW, 11=WSW, 12=W, 13=WNW, 14=NW, 15=NNW)</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">f3f5a53e-f85c-497b-a235-4dbc3b1a9374</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Direction Index</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Idx</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Wind Direction</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Dir</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">a69a7bfc-1e8c-448d-8421-1d864db59f07</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -5491,8 +5491,8 @@
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Compass circle curve</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5d551e96-1af6-4056-9acc-dca8769a2e03</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Circle</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">C</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Vector</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Vec</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5517,8 +5517,8 @@
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Wind direction arrow (points in the direction of flow)</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">bd76f7ef-fd2d-4db7-8e12-f498a36b559d</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Arrow</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">A</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Direction Name</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Name</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -14065,7 +14065,7 @@ Poyraz 1.0</item>
                         <item name="Description" type_name="gh_string" type_code="10">HuggingFace access token (starts with hf_) or a file path to a .txt file containing the token. Required for private models (Esen, Poyraz). Not required for public models (Yel).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">acf948dc-e7e0-48fd-b552-326c1286fe85</item>
                         <item name="Name" type_name="gh_string" type_code="10">HF Token</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">HF_Token</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">HFToken</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">b96f2004-56b3-42d2-8ea0-4599a9ab8b80</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -14353,8 +14353,8 @@ Version 1.2.0.827</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Pedestrian mount height (m). Default = 1.8</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">257eabc7-bc3d-460a-8723-948872d9b159</item>
-                        <item name="Name" type_name="gh_string" type_code="10">pedestrian_level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">pedestrian_level</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Pedestrian Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PedLevel</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -14400,7 +14400,7 @@ Version 1.2.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Margin (in meters) to mask out from the outer perimeter of the prediction plane due to unstable boundary effects. Default = 100.0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">551a0a2a-b636-4c2b-8b65-94f959832f25</item>
                         <item name="Name" type_name="gh_string" type_code="10">Filter Margin</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">filter_margin</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">FiltMargin</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -14925,7 +14925,7 @@ Roof Level</item>
                         <item name="Description" type_name="gh_string" type_code="10">Predicted roof-level field values at each valid input point. Outputs wind speed or TKE depending on the Field input. Branches represent different wind directions. Empty unless a 4-channel model is used.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">db768b34-2c18-4351-83d9-74aabaa9dd36</item>
                         <item name="Name" type_name="gh_string" type_code="10">Values (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">V_roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Vroof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>

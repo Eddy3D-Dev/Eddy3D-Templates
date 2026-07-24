@@ -721,7 +721,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Case folder name (no spaces). Optional — if left blank, a friendly random name is generated automatically (e.g. swift-otter-fjord-lantern).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ed8382b4-85c2-4613-9bd7-dd1e45634b11</item>
                         <item name="Name" type_name="gh_string" type_code="10">Case Name</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Case Name</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Name</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">32998db5-6af2-4eca-9e57-2a9562862e57</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -748,7 +748,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Folder for case files and results (default: %USERPROFILE%/Eddy3dOutdoor).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">17995290-58c8-42bc-826f-242196220bab</item>
                         <item name="Name" type_name="gh_string" type_code="10">Working Directory</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Working Directory</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Dir</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -774,7 +774,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component, carrying the wind directions (required for Write Case).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">cb4fb1c5-7f0c-4fa4-8d5d-8b962edda88a</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Boundary Conditions</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BC</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">6e32fcf0-9b72-4ba4-b676-1bbefe1fac8b</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -802,7 +802,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Domain parameters from the Box Domain or Cylinder Domain component (box with auto extents when empty).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">60e4c139-e64f-4b35-a6ef-15ee2e7b1746</item>
                         <item name="Name" type_name="gh_string" type_code="10">Domain Parameters</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Domain Parameters</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Domain</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">fb90d2df-e5ed-42c5-8ab2-84a98b0b1d17</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -830,7 +830,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Closed building meshes (required for Write Case).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0376a575-657c-4518-a4de-2892d1a5b39c</item>
                         <item name="Name" type_name="gh_string" type_code="10">Buildings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Buildings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Bldgs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">8c5133b2-50c0-4947-baac-408d0e2cf4f1</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -911,7 +911,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Mesh settings from the Mesh Settings component.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b3058525-c0b6-4dc9-a4ea-eb00ccb87894</item>
                         <item name="Name" type_name="gh_string" type_code="10">Mesh Settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh Settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">MeshSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">46861c2b-d219-45a9-8010-0b3f2e5b7d5d</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -938,7 +938,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Run settings from the Run Settings component.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0dc08ef9-527a-48f3-9e96-3c13e57ab640</item>
                         <item name="Name" type_name="gh_string" type_code="10">Run Settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Run Settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RunSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">ddf3d508-e937-4e3a-bfff-b343f4e6714d</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -964,8 +964,8 @@ Version 1.1.0.827</item>
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Write the case files to the working directory.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">496a38f1-c025-4d43-82be-8570bf284cf3</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Write Case</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Write Case</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Write</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Write</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_bool" type_code="1">true</item>
@@ -1012,7 +1012,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Delete all files for this case in the working directory.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">683ac14a-060c-4efd-9a55-32101928fed3</item>
                         <item name="Name" type_name="gh_string" type_code="10">Clear Case</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Clear Case</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Clear</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_bool" type_code="1">false</item>
@@ -1085,7 +1085,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">WriteCase logs formatted for component input.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3751e478-1456-4725-b1fc-1647019f7d42</item>
                         <item name="Name" type_name="gh_string" type_code="10">Write Logs</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Write Logs</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">WriteLog</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1166,7 +1166,7 @@ Version 1.1.0.827</item>
                         <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4719108d-03e1-43e6-9456-c2bafcf3f7cb</item>
                         <item name="Name" type_name="gh_string" type_code="10">Refinement Box</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Refinement Box</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Refine</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1193,7 +1193,7 @@ Version 1.1.0.827</item>
                         <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">dbeb598e-377c-4659-978f-09b857f9c4b2</item>
                         <item name="Name" type_name="gh_string" type_code="10">Buildings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Buildings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Bldgs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1358,7 +1358,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">ABL or Uniform Flow boundary conditions (provides simulated directions, reference speeds, z0, zRef). Required for comfort analysis.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">bb96409c-f183-4534-8817-c12fbb26a583</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Boundary Conditions</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BC</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1384,7 +1384,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Path to an EPW weather file. When provided together with BC, the ParaView script computes pedestrian wind comfort at 1.5 m.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">933a0d03-9ff5-42a9-9a09-9da2249c9bc6</item>
                         <item name="Name" type_name="gh_string" type_code="10">EPW Path</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">EPW Path</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">EPW</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1548,7 +1548,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Residuals file being monitored.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">d7bc1f91-4fb1-4a95-b2d1-e6ad04801ef4</item>
                         <item name="Name" type_name="gh_string" type_code="10">File</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">File</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">F</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1607,7 +1607,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level inside the refinement box (higher is finer). Optional; default is 2.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">71d93b03-4b55-47f7-a41e-9a9c69f93f5d</item>
                         <item name="Name" type_name="gh_string" type_code="10">Refinement Box Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Refinement Box Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RefLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1653,7 +1653,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for building surfaces. Optional; default is 2.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a5bf0a8-2380-4149-a912-a0960dbb1bcc</item>
                         <item name="Name" type_name="gh_string" type_code="10">Building Surface Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Building Surface Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BldgLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1699,7 +1699,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for building edges and corners. Optional; default is 2.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">19131ef0-c64c-4ce0-9436-a3edb4255190</item>
                         <item name="Name" type_name="gh_string" type_code="10">Building Feature Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Building Feature Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">FeatLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1745,7 +1745,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for ground/terrain surfaces. Optional; default is 2.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">45cc170b-0f89-416a-b937-57994ec2eb1b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Ground Surface Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Ground Surface Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">GroundLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1791,7 +1791,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of prism layers to add. Optional; default is 4.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c995d5b2-7a19-43de-9acb-e949ed9aea83</item>
                         <item name="Name" type_name="gh_string" type_code="10">Layer Count</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Layer Count</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Layers</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1837,7 +1837,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Enable prism layer addition. Optional; default is false.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c92ca64d-ae9c-4ed5-906c-58f5d15b14b7</item>
                         <item name="Name" type_name="gh_string" type_code="10">Add Layers</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Add Layers</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">AddLayers</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1929,7 +1929,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Adaptive grading strength in X/Y: 1 = uniform, up to 10 = cells concentrate hard over the building and coarsen toward the domain edges.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b69e931f-c38f-4a50-b9e8-97a8969b784b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Grading Strength (Horizontal)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Grading Strength (Horizontal)</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">GradXY</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1975,7 +1975,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Adaptive grading strength in Z: 1 = uniform, up to 10 = cells concentrate over the building height and coarsen aloft.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fafc0755-9b60-4483-a9cf-47135a65729b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Grading Strength (Vertical)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Grading Strength (Vertical)</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">GradZ</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2021,7 +2021,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Enable adaptive grading near buildings. Optional; default is true.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3a921372-d14c-40a8-852b-d7e9522d1df5</item>
                         <item name="Name" type_name="gh_string" type_code="10">Adaptive Grading</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Adaptive Grading</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Adaptive</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2067,7 +2067,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Mesh settings for snappyHexMesh and blockMesh.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">46861c2b-d219-45a9-8010-0b3f2e5b7d5d</item>
                         <item name="Name" type_name="gh_string" type_code="10">Mesh Settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh Settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">MeshSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2431,7 +2431,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Tree/vegetation geometry (one per tree for correct sizing).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5e05694e-5061-4408-8305-f96e1298f2f8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Geometry</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Geometry</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Geo</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">66a2dc5a-7b12-40d4-b3e2-3333c513fe8d</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -4042,7 +4042,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Cell size of the inner core blocks in meters. Default: 25.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">9a625fda-7a6d-4648-a500-90a59ad49deb</item>
                         <item name="Name" type_name="gh_string" type_code="10">Core Cell Size</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Core Cell Size</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Cell</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4088,7 +4088,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Half-size of the square inner core in meters. -1 = auto from the building footprint.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">f9986851-08b3-428c-87bb-85cdd0cb5f58</item>
                         <item name="Name" type_name="gh_string" type_code="10">Inner Core Size</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Inner Core Size</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Inner</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4134,7 +4134,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Outer radius of the cylindrical domain in meters. -1 = auto from the building height.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">153180f2-d4c2-4d00-ac5e-3b35d81d7434</item>
                         <item name="Name" type_name="gh_string" type_code="10">Outer Radius</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Outer Radius</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Radius</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4226,7 +4226,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Cell growth factor from the core toward the perimeter. Default: 2.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ccd90c51-4668-4649-af98-9046d71a3da3</item>
                         <item name="Name" type_name="gh_string" type_code="10">Radial Multiplier</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Radial Multiplier</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RadMult</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4272,7 +4272,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Cells per core block (and per perimeter segment, tangentially). Refines the core without changing the block layout that Core Cell Size sets; the preview core grid densifies to match. Default: 1.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5ec1713b-d304-4918-b410-cc3e045e5d14</item>
                         <item name="Name" type_name="gh_string" type_code="10">Core Divisions</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Core Divisions</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Divs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4318,7 +4318,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Padding of the refinement box around the geometry (m). -1 = auto: 27.5% of the building footprint.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3ca694e1-864f-4be8-a7cf-48b05d2e41e4</item>
                         <item name="Name" type_name="gh_string" type_code="10">Refinement Box Extension</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Refinement Box Extension</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Refine</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4364,7 +4364,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Far-field cell coarsening across the perimeter ring (outer cell size / inner cell size). 1 = uniform; &gt;1 keeps fine cells at the buildings but grows the outer cells. The default 7 coarsens the far field aggressively (far fewer cells downwind); lower it (1-3) for a gentler, more uniform ring. Default: 7.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1867a884-932f-454c-8de7-258cfe796e7e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Radial Grading</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Radial Grading</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Grade</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4410,7 +4410,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Rounds the O-grid inner core from a square (0) toward a circle (1). Higher values even out the radial gap to the outer boundary, cutting the corner non-orthogonality of the square core. 0 keeps the classic square core. 0.65 is the checkMesh-sweep optimum (lowest max non-orthogonality across mesh resolutions; skewness stays well within limits). Default: 0.65.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7e9f305e-2998-4a9d-8525-8b8c844b7831</item>
                         <item name="Name" type_name="gh_string" type_code="10">Core Roundness</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Core Roundness</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Round</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4456,7 +4456,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Vertical cell expansion ratio (top cell size / bottom cell size). 1 = uniform; &gt;1 keeps fine cells near the ground and coarsens aloft (typical for an ABL). A checkMesh sweep showed non-orthogonality/skewness are unaffected by this; the only cost is background aspect ratio. The default 35 strongly refines the near-ground layer; ease it down if convergence struggles. Default: 35.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">204b159b-f4e4-40dc-882c-01a8ae81f638</item>
                         <item name="Name" type_name="gh_string" type_code="10">Vertical Grading</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Vertical Grading</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">GradeZ</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4502,7 +4502,7 @@ Docker</item>
                         <item name="Description" type_name="gh_string" type_code="10">Cylindrical domain parameters (-1 entries mean auto-sized from the building geometry); plug into the wind case Domain input.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fb90d2df-e5ed-42c5-8ab2-84a98b0b1d17</item>
                         <item name="Name" type_name="gh_string" type_code="10">Domain Parameters</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Domain Parameters</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Domain</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4773,7 +4773,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Total solver iterations (endTime). Optional; default is 1000.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">042d7539-df8c-4beb-9c2d-c9c1fb7b6647</item>
                         <item name="Name" type_name="gh_string" type_code="10">Iterations</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Iterations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Iter</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4819,7 +4819,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write interval in iterations. Optional; default is 20.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">be960fd9-5801-4f11-9384-7eda8b68979a</item>
                         <item name="Name" type_name="gh_string" type_code="10">Write Interval</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Write Interval</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">WriteInt</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4865,7 +4865,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of time directories to keep (purgeWrite). Optional; default is 3.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">029ba91e-94fa-4ec5-a791-9d3d9ac04a03</item>
                         <item name="Name" type_name="gh_string" type_code="10">Keep Time Steps</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Keep Time Steps</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Keep</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4963,7 +4963,7 @@ kOmegaSST</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of CPUs/subdomains for parallel runs. -1 (default) = auto: all cores but one. Optional.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6dc51c47-f0f2-4f93-ac62-7499921598d7</item>
                         <item name="Name" type_name="gh_string" type_code="10">CPU Count</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">CPU Count</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">CPU</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5059,7 +5059,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Solve the mean age of air (OpenFOAM 'age' function object) during the run. Age [s] is the time since the air at each point entered the domain — the urban ventilation/stagnation map (low = well flushed, high = trapped in canyons/courtyards). Adds a cheap scalar transport solved at each write; the 'age' field is then viewable in ParaView or probe-able. Optional; default is false.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">583eba6c-1916-4457-bb24-94fce7e3f96b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Age of Air</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Age of Air</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Age</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5158,7 +5158,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Initialise velocity/pressure with a quick potentialFoam (potential-flow Laplace) solve before simpleFoam, so the run starts from a developed, divergence-free field instead of a uniform one. Removes the first-iteration velocity overshoot of a cold start and shortens convergence. Complements the Warm-up Iterations ramp (potentialFoam seeds the field; the ramp damps the first iterations with first-order upwind + heavy turbulence relaxation). Optional; default is off (shipped behaviour).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">61cf8a85-8a9d-41b4-ad15-1c6c943d5a4a</item>
                         <item name="Name" type_name="gh_string" type_code="10">Potential Foam Init</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Potential Foam Init</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PotFoam</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5204,7 +5204,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Run this many initial iterations with robust 1st-order upwind + heavy turbulence under-relaxation, then ramp up to the numerics dial for the rest of the run. Tames the cold-start velocity overshoot without losing final accuracy. -1 (default) = automatic: scales with the robustness dial (robust levels 4-5 warm up, accurate levels 1-2 do not). 0 = force off. &gt;0 = explicit count.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">80d9a1b6-4c39-4f2f-856b-7f1f3013e600</item>
                         <item name="Name" type_name="gh_string" type_code="10">Warm-up Iterations</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Warm-up Iterations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Warmup</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5250,7 +5250,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write the domain min/max-magnitude and volume-average of the solved fields (U, p, k, ε/ω, νt) each write-time. Cheap convergence + stability monitor — the max |U| trace flags a cold-start overshoot or divergence early. Default off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">bc7820f3-af99-405b-9ffd-7acdce1e5d36</item>
                         <item name="Name" type_name="gh_string" type_code="10">Field Monitors</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Field Monitors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Monitors</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5296,7 +5296,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write the area-average of U on a horizontal plane at pedestrian height (1.75 m) each write — the comfort-relevant mean wind speed, sampled from the live mesh (no topoSet). Default off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4b3e7873-c3ec-4189-b7c4-37ddc39799e9</item>
                         <item name="Name" type_name="gh_string" type_code="10">Pedestrian Average</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Pedestrian Average</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PedAvg</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5342,7 +5342,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write the surface pressure coefficient (Cp) field each write, computed from the ABL wind speed at building height (dynamic pressure reference). View it on the building surfaces in ParaView. Default off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">9d6fa0ed-4442-493f-88a3-e99f50f6df1c</item>
                         <item name="Name" type_name="gh_string" type_code="10">Pressure Coefficient</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Pressure Coefficient</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Cp</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5388,7 +5388,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Auto-stop tolerance: the solver stops once the p, U and turbulence initial residuals all drop below this value (SIMPLE residualControl) — typically 30-60 % faster than running the full iteration count. Default 1e-4; 0 disables auto-stop (always runs all iterations).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">96c0ad22-9a8d-4f54-88c0-7e8705d1ad69</item>
                         <item name="Name" type_name="gh_string" type_code="10">Convergence</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Convergence</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Conv</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5434,7 +5434,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Watches the live residuals while the run is going; once every field's residual has been flat for about 100 iterations after any warm-up ramp, writes stopAt=writeNow — exactly what the manual right-click 'Stop Simulation Gracefully' action does — so the solver finishes its current iteration, writes the latest fields, and exits cleanly instead of grinding out the rest of the iteration count. Requires a Live Residuals component monitoring the case. Optional; default is off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">78d0120d-c14d-4aff-b13f-a65de4dc6228</item>
                         <item name="Name" type_name="gh_string" type_code="10">Auto-stop on Plateau</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Auto-stop on Plateau</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">AutoStop</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5480,7 +5480,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Run settings for the solver.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ddf3d508-e937-4e3a-bfff-b343f4e6714d</item>
                         <item name="Name" type_name="gh_string" type_code="10">Run Settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Run Settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RunSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5506,7 +5506,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Debug logs from settings generation.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">385e5507-82df-4ed4-bcc9-f651e03fb746</item>
                         <item name="Name" type_name="gh_string" type_code="10">Debug Logs</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Debug Logs</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Logs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>

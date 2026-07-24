@@ -2336,8 +2336,8 @@
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Reference height for the simulations (m). Default = 10.0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5b62f13a-8889-46bd-970c-bf21b521f147</item>
-                        <item name="Name" type_name="gh_string" type_code="10">z_ref</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">z_ref</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Reference Height</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">zRef</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2382,8 +2382,8 @@
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Roughness length (m). Default = 1.0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6b1f38b0-ae08-414c-bec9-f6f2970ec115</item>
-                        <item name="Name" type_name="gh_string" type_code="10">z_0</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">z_0</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Roughness Length (z0)</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">z0</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2623,7 +2623,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Optional roof-level wind speeds (m/s) DataTree.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">f4b30a71-da24-4405-a250-57c47d6de029</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Speeds (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">W_roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Wroof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">0602675a-18cc-46bc-8eaf-57cab1497f8a</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -2651,7 +2651,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Optional roof-level TKE (m²/s²) DataTree.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6de86aa4-f722-41e3-a56f-383c8ee725b5</item>
                         <item name="Name" type_name="gh_string" type_code="10">TKE (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">k_roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">kroof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2946,7 +2946,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Wind comfort rank (integer) for roof level.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">8eca37cc-35c1-4818-ba88-b5d88d9fe473</item>
                         <item name="Name" type_name="gh_string" type_code="10">Comfort Rank (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Rank_Roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RankRoof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2973,7 +2973,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Wind comfort class letter for roof level.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4174f8d3-f28a-492b-887f-029ed2882be3</item>
                         <item name="Name" type_name="gh_string" type_code="10">Class Letter (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Letter_Roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">LetterRoof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3000,7 +3000,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Wind comfort class description for roof level.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">57688cf9-8368-47a4-ae91-13ca48ea0712</item>
                         <item name="Name" type_name="gh_string" type_code="10">Class (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Class_Roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">ClassRoof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -13301,7 +13301,7 @@ Poyraz 1.0</item>
                         <item name="Description" type_name="gh_string" type_code="10">HuggingFace access token (starts with hf_) or a file path to a .txt file containing the token. Required for private models (Esen, Poyraz). Not required for public models (Yel).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a1c952d8-a2ec-4cca-b089-9a27982dfbaf</item>
                         <item name="Name" type_name="gh_string" type_code="10">HF Token</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">HF_Token</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">HFToken</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">ae66192b-3e07-4b96-aee6-694e3d5df87c</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
