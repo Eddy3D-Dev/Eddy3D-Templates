@@ -1241,7 +1241,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Simulation write interval.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a1653f56-5a8f-4d3d-a3e2-ebf7844eb58b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Write Interval</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Write</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">WriteInt</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">06e2584d-b8ca-4f4e-9e45-79931d1c880b</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -1287,7 +1287,7 @@ Version 1.1.0.827</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Number of time steps to keep in simulation folder..</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7e97fcbe-fe85-43fd-880a-9352e4a0911e</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Timesteps to Keep</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Keep Time Steps</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Keep</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
@@ -1334,7 +1334,7 @@ Version 1.1.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Turbulence model.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">58fbf3f4-16ec-4499-bb68-147db8885881</item>
                         <item name="Name" type_name="gh_string" type_code="10">Turbulence Model</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Turb</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Turbulence Model</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">realizableKE
 kEpsilon
@@ -1385,8 +1385,8 @@ kOmegaSST</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Relaxation factors</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">550cf38b-ba86-4812-ac86-2695d57138f1</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Relaxation Factors</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Relax</item>
+                        <item name="Name" type_name="gh_string" type_code="10">CPU Count</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">CPU</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1432,7 +1432,7 @@ kOmegaSST</item>
                         <item name="Description" type_name="gh_string" type_code="10">Solution and algorithm control. May alter the robustness of the solver</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">53e7bbb3-974d-45b9-9863-e7e47ddf4c17</item>
                         <item name="Name" type_name="gh_string" type_code="10">Numerical Schemes</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Schemes</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Solver Algorithm</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">SIMPLE
 SIMPLEC</item>
@@ -1481,8 +1481,8 @@ SIMPLEC</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Initialization with potentialFoam. Solves for the velocity potential to provide velocity and incompressible flux fields, typically used to initialise viscous calculations.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1151665d-4b9e-4742-93a2-d3668ef13390</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Potential Flow Init</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">PotInit</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Age of Air</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Age</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1528,7 +1528,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Evaluate age of air throughout the simulation domain.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6a910901-6a6a-49d4-be59-43a6bde3e075</item>
                         <item name="Name" type_name="gh_string" type_code="10">Age of Air</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">AoA</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Robustness</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">1
 2
@@ -1580,8 +1580,8 @@ SIMPLEC</item>
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Number of CPUs. Set to -1 to set the number of CPUs for the simulation automatically.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">87b7d49e-d39f-44ab-aaea-17a02f611baf</item>
-                        <item name="Name" type_name="gh_string" type_code="10">CPU Cores</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">CPUs</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Potential Foam Init</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PotFoam</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">abfbb7ce-5d84-485b-9a95-8e2c3361f6db</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -1620,8 +1620,8 @@ SIMPLEC</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Operating System.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5947feaf-fbf3-46bb-86e3-3f8663ecc931</item>
-                        <item name="Name" type_name="gh_string" type_code="10">BlueCFD Folder</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">CFDFolder</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Warm-up Iterations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Warmup</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1666,8 +1666,8 @@ SIMPLEC</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Custom BlueCFD installation path. Default: C:\Program Files\blueCFD-Core-2020</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">dc329ca3-5709-484e-9058-aec6afa48281</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Stability Limiter</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Stab</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Field Monitors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Monitors</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1705,8 +1705,8 @@ SIMPLEC</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Enable additional diagnostic function objects (fieldMinMax and volume averages) in solver logs. Keep off for faster runs.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">025582bd-96bc-4960-b518-0f986ce9d20f</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Debug Diagnostics</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Dbg</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Pedestrian Average</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PedAvg</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1751,8 +1751,8 @@ SIMPLEC</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Use SIMPLEC pressure-velocity coupling (consistent yes). Can reduce iterations for steady runs; turn off if convergence becomes oscillatory.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a9956f31-50b9-423f-8018-a0e40ce313eb</item>
-                        <item name="Name" type_name="gh_string" type_code="10">SIMPLEC</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">SPLC</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Pressure Coefficient</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Cp</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -1889,8 +1889,8 @@ SIMPLEC</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Run Settings</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3bd2633e-850d-453a-914b-e63796f7b998</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Run settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">RSet</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Run Settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RunSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7141,8 +7141,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Minimum refinement level for building surfaces. Higher = finer. Typical: 2-3. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e3a2a977-f5c3-46c6-a79c-cb133884132a</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Building Min Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">BldMin</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Refinement Box Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RefLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">c01d2f7d-845b-4b66-95cc-8f3e849a052e</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -7188,8 +7188,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Maximum refinement level for building surfaces. Must be &gt;= min. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">debb7ce7-38cf-428a-b13d-932a64d69980</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Building Max Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">BldMax</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Building Surface Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BldgLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">ff9cf0b0-15f4-495e-844d-6d7f54e1bcd4</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -7235,8 +7235,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for building corners and features. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">30470016-0b52-4919-b52e-813879c74fe7</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Feature Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Feat</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Building Feature Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">FeatLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7281,8 +7281,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for region around buildings. 0 = no extra refinement. Default: 0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">107653cc-5c98-4881-abc2-06814bad1abf</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Bounding Box Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">BBox</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Ground Surface Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">GroundLvl</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7327,8 +7327,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Refinement level for ground surface. Default: 2</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">dc74da9d-65f8-4659-bad0-caf0665fc141</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Ground Level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Gnd</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Layer Count</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Layers</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">13032679-5ce5-45e8-ab5b-dafb869f57ea</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -7374,8 +7374,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">0: Default, 1: Optimized quality settings</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">d9d8dfe9-7e47-4c78-9181-78f31d049e14</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Boundary Layers</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">nLay</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Add Layers</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">AddLayers</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7413,8 +7413,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Number of mesh layers near walls. More = better boundary layer resolution. Default: 4</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1da7d0bd-bc18-4fc1-a362-e2bc5a03a4ed</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Cells Between Levels</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">nCells</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Snap</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Snap</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7452,8 +7452,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Number of cells between refinement levels. More = smoother transition. Default: 4</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">831dbb50-f23f-46c7-aefd-9fce058bcca4</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Mesh Mode</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mode</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Grading Strength (Horizontal)</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">GradXY</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">2e74a031-f54f-47b5-af3b-92fc711c61d0</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -7492,8 +7492,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">0: No snapping (fast debug), 1: With snapping (production), 2: With layers (accurate but slow)</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">9960363a-909e-4570-afa4-0cab912bea3f</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Preset</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Preset</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Grading Strength (Vertical)</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">GradZ</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7577,8 +7577,8 @@ Eddy3D 0.4.18.815</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Mesh settings object to connect to Simulation component</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">257879be-a9fd-4606-ad08-8d46011064fe</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Mesh settings</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">MSet</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Mesh Settings</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">MeshSet</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
