@@ -5362,14 +5362,15 @@ Version 1.2.0.827</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="10">
-                      <items count="7">
+                      <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
                         <item name="Description" type_name="gh_string" type_code="10">Metric Type from Thermal Comfort: UTCI, PET (Temperate), or PET (Humid).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ca6d1812-f8be-45fb-823b-6b45c5653015</item>
                         <item name="Name" type_name="gh_string" type_code="10">Metric</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Metric</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Source" index="0" type_name="gh_guid" type_code="9">496bc191-b7a0-4677-a7ad-cdc8f5cff809</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
@@ -8647,19 +8648,20 @@ Version 1.2.0.827</item>
                       </items>
                     </chunk>
                     <chunk name="ParameterData">
-                      <items count="10">
+                      <items count="11">
                         <item name="InputCount" type_name="gh_int32" type_code="3">5</item>
                         <item name="InputId" index="0" type_name="gh_guid" type_code="9">47e6606f-4707-4697-b812-40dbf3b593e4</item>
                         <item name="InputId" index="1" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
                         <item name="InputId" index="2" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
                         <item name="InputId" index="3" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
                         <item name="InputId" index="4" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
-                        <item name="OutputCount" type_name="gh_int32" type_code="3">3</item>
+                        <item name="OutputCount" type_name="gh_int32" type_code="3">4</item>
                         <item name="OutputId" index="0" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
                         <item name="OutputId" index="1" type_name="gh_guid" type_code="9">3ede854e-c753-40eb-84cb-b48008f14fd4</item>
                         <item name="OutputId" index="2" type_name="gh_guid" type_code="9">3ede854e-c753-40eb-84cb-b48008f14fd4</item>
+                        <item name="OutputId" index="3" type_name="gh_guid" type_code="9">3ede854e-c753-40eb-84cb-b48008f14fd4</item>
                       </items>
-                      <chunks count="8">
+                      <chunks count="9">
                         <chunk name="InputParam" index="0">
                           <items count="9">
                             <item name="Description" type_name="gh_string" type_code="10">Comfort metric to compute; the inputs adapt to the choice.</item>
@@ -8944,9 +8946,9 @@ Heat Index</item>
                             </chunk>
                           </chunks>
                         </chunk>
-                        <chunk name="OutputParam" index="2">
-                          <items count="6">
-                            <item name="Description" type_name="gh_string" type_code="10">Calculation details.</item>
+                    <chunk name="OutputParam" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Calculation details.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">a66cc348-b973-4da1-8289-a6d90343881b</item>
                             <item name="Name" type_name="gh_string" type_code="10">Details</item>
                             <item name="NickName" type_name="gh_string" type_code="10">Details</item>
@@ -8965,6 +8967,28 @@ Heat Index</item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                                   <X>3897.5</X>
                                   <Y>1133.3333</Y>
+                                </item>
+                              </items>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                        <chunk name="OutputParam" index="3">
+                          <items count="6">
+                            <item name="Description" type_name="gh_string" type_code="10">Metric identifier for metric-aware downstream components such as UTCI Legend.</item>
+                            <item name="InstanceGuid" type_name="gh_guid" type_code="9">496bc191-b7a0-4677-a7ad-cdc8f5cff809</item>
+                            <item name="Name" type_name="gh_string" type_code="10">Metric Type</item>
+                            <item name="NickName" type_name="gh_string" type_code="10">Metric</item>
+                            <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                            <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Attributes">
+                              <items count="2">
+                                <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                                  <X>3876</X><Y>1150</Y><W>43</W><H>34</H>
+                                </item>
+                                <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                                  <X>3897.5</X><Y>1167</Y>
                                 </item>
                               </items>
                             </chunk>
