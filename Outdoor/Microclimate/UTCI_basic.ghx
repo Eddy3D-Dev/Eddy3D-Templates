@@ -5823,7 +5823,7 @@ Version 1.2.0.827</item>
                     <item name="Name" type_name="gh_string" type_code="10">UTCI Legend</item>
                     <item name="NickName" type_name="gh_string" type_code="10">UTCILegend</item>
                   </items>
-                  <chunks count="18">
+                  <chunks count="19">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -5841,10 +5841,10 @@ Version 1.2.0.827</item>
                     <chunk name="param_input" index="0">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">UTCI values to categorize and color.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">UTCI or PET values to categorize and color.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">061bb139-b392-43ba-9e17-153e9f820eaa</item>
-                        <item name="Name" type_name="gh_string" type_code="10">UTCI</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">UTCI</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Values</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Values</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">cba3495a-dcfa-4e0e-97f7-1985aba87ff6</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -6227,6 +6227,49 @@ Version 1.2.0.827</item>
                                 <chunk name="Item" index="0">
                                   <items count="1">
                                     <item name="number" type_name="gh_double" type_code="6">1</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="10">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Metric Type from Thermal Comfort: UTCI, PET (Temperate), or PET (Humid).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">b7c8ec79-96c8-4e25-9eab-21ca2cc927d8</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Metric</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Metric</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3012</X><Y>332</Y><W>45</W><H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3036</X><Y>342</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="string" type_name="gh_string" type_code="10">UTCI</item>
                                   </items>
                                 </chunk>
                               </chunks>
