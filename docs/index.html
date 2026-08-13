@@ -99,7 +99,7 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .chip .count{opacity:.65;font-weight:500}
 
 /* sections */
-main{padding:40px 0 24px}
+main.wrap{padding-top:72px;padding-bottom:24px}
 .section{margin-bottom:44px}
 .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
 .section-head h2{font-size:22px;font-weight:750;letter-spacing:-.3px}
@@ -277,7 +277,7 @@ async function load(){
     const name=n.path.split("/").pop();
     return {path:n.path,name,size:n.size||0,cat,
       desc:ghxDesc[name]||DESC[name]||"Grasshopper template for Eddy3D workflows.",
-      url:`https://github.com/${OWNER}/${REPO}/raw/${branch}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
+      url:`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
   });
   $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} templates`;
   $("#stats").innerHTML=`
@@ -321,7 +321,7 @@ function render(){
           <p>${t.desc}</p>
           <div class="card-foot">
             <span class="size">${fmtSize(t.size)}</span>
-            <a class="dl" href="${t.url}" download title="Download ${t.name}">
+            <a class="dl" href="${t.url}" download="${t.name}" target="_blank" rel="noopener" data-name="${t.name}" title="Download ${t.name}">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download
             </a>
@@ -331,6 +331,29 @@ function render(){
   }).join("");
   $("#empty").classList.toggle("hidden",vis.length>0||ALL.length===0);
 }
+
+/* GitHub serves .ghx as text/plain, and the download attribute is ignored
+   cross-origin — both would show raw XML instead of saving. Fetch the file
+   and hand the browser a same-origin blob so it downloads properly. */
+$("#sections").addEventListener("click",async e=>{
+  const a=e.target.closest("a.dl");
+  if(!a||e.metaKey||e.ctrlKey||e.shiftKey||a.dataset.busy)return;
+  e.preventDefault();
+  const label=a.innerHTML;
+  a.dataset.busy="1";a.textContent="Downloading…";
+  try{
+    const res=await fetch(a.href);
+    if(!res.ok)throw new Error(res.status);
+    const url=URL.createObjectURL(await res.blob());
+    const tmp=Object.assign(document.createElement("a"),{href:url,download:a.dataset.name});
+    document.body.appendChild(tmp);tmp.click();tmp.remove();
+    URL.revokeObjectURL(url);
+  }catch(err){
+    window.open(a.href,"_blank","noopener");
+  }finally{
+    delete a.dataset.busy;a.innerHTML=label;
+  }
+});
 
 $("#q").addEventListener("input",render);
 load().catch(()=>{$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")});
