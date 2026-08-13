@@ -262,28 +262,25 @@ function catOf(path){
   return best;
 }
 
-/* Branch names are Eddy versions (1.7.0.827); sort newest first, with any
-   non-version branches after them. */
+/* Only version branches (1.7.0.827) are offered — main and working
+   branches are not releases and would just be noise in the picker. */
+const isVersion=n=>/^\d+(\.\d+)+$/.test(n);
+
 function compareBranches(a,b){
   const va=a.split(".").map(Number),vb=b.split(".").map(Number);
-  const numeric=v=>v.every(n=>Number.isInteger(n));
-  if(numeric(va)&&numeric(vb)){
-    for(let i=0;i<Math.max(va.length,vb.length);i++){
-      const d=(vb[i]||0)-(va[i]||0);
-      if(d)return d;
-    }
-    return 0;
+  for(let i=0;i<Math.max(va.length,vb.length);i++){
+    const d=(vb[i]||0)-(va[i]||0);
+    if(d)return d;
   }
-  if(numeric(va))return -1;
-  if(numeric(vb))return 1;
-  return a.localeCompare(b);
+  return 0;
 }
 
 async function loadBranches(){
   const info=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}`).then(r=>{if(!r.ok)throw 0;return r.json()});
   const list=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/branches?per_page=100`)
     .then(r=>r.ok?r.json():[]).catch(()=>[]);
-  const names=list.length?list.map(b=>b.name).sort(compareBranches):[info.default_branch];
+  let names=list.map(b=>b.name).filter(isVersion).sort(compareBranches);
+  if(!names.length)names=[info.default_branch];
   const wanted=new URLSearchParams(location.search).get("branch")||store.get("eddy-branch");
   branch=names.includes(wanted)?wanted:(names.includes(info.default_branch)?info.default_branch:names[0]);
   $("#branch").innerHTML=names.map(n=>
