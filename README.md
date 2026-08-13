@@ -23,6 +23,15 @@ This repository stores Grasshopper template files used by Eddy3D.
 - `Indoor/` Indoor-focused templates.
 - `Internal (beta)/` Experimental/internal templates.
 
+## Template Gallery (GitHub Pages)
+
+- `docs/index.html` is a static gallery site served via GitHub Pages (Settings → Pages → deploy from branch, `/docs` folder).
+- The site lists all `.ghx` files live via the GitHub API — no rebuild needed when templates are added.
+- **Documenting a template:** add a Panel component nicknamed `Description` to the Grasshopper definition. On push, the
+  `extract-descriptions` workflow runs `scripts/extract_descriptions.py`, which pulls the panel text into
+  `docs/descriptions.json`; the gallery shows it on the template's card. Templates without a Description panel fall back
+  to generic text baked into the site.
+
 ## Notes For Contributors
 
 - Keep template file paths and names stable when possible (they appear in component menus).

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eddy3D Templates</title>
 <meta name="description" content="Grasshopper template files for Eddy3D — outdoor microclimate, CFD, LBM and ML workflows.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AC%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="https://github.com/Eddy3D-Dev.png">
 <style>
 :root{
   --bg:#f6f8fa; --surface:#ffffff; --surface2:#f0f3f6;
@@ -49,8 +49,8 @@ header.hero::after{
 .hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:40px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px;letter-spacing:.2px}
 .brand .logo{
-  width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.15);
-  display:grid;place-items:center;font-size:20px;
+  width:38px;height:38px;border-radius:10px;background:#fff;padding:3px;
+  display:block;object-fit:contain;
 }
 .hero-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .hero-links a,.theme-btn{
@@ -167,7 +167,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header class="hero">
   <div class="wrap">
     <div class="hero-top">
-      <div class="brand"><span class="logo">🌬️</span> Eddy3D</div>
+      <div class="brand"><img class="logo" src="https://github.com/Eddy3D-Dev.png" alt="Eddy3D logo"> Eddy3D</div>
       <nav class="hero-links">
         <a href="https://www.eddy3d.com" target="_blank" rel="noopener">Docs</a>
         <a href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener">GitHub</a>
@@ -269,6 +269,9 @@ function catOf(path){
 }
 
 async function load(){
+  /* Descriptions extracted from a "Description" panel inside each .ghx
+     (see scripts/extract_descriptions.py); override the baked-in fallbacks. */
+  const ghxDesc=await fetch("descriptions.json").then(r=>r.ok?r.json():{}).catch(()=>({}));
   const info=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}`).then(r=>{if(!r.ok)throw 0;return r.json()});
   const branch=info.default_branch;
   const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`).then(r=>{if(!r.ok)throw 0;return r.json()});
@@ -276,7 +279,7 @@ async function load(){
     const cat=catOf(n.path)||"Other";
     const name=n.path.split("/").pop();
     return {path:n.path,name,size:n.size||0,cat,
-      desc:DESC[name]||"Grasshopper template for Eddy3D workflows.",
+      desc:ghxDesc[name]||DESC[name]||"Grasshopper template for Eddy3D workflows.",
       url:`https://github.com/${OWNER}/${REPO}/raw/${branch}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
   });
   $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} templates`;
