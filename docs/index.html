@@ -166,9 +166,13 @@ main.wrap{padding-top:72px;padding-bottom:24px}
   15%,60%{box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
 }
 .card.flash{animation:flash 2s ease-in-out}
+.card{transition:transform .15s,box-shadow .15s,opacity .3s}
+.card.dimmed{opacity:.38}
+.card.dimmed:hover{opacity:.75}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .card.flash{animation:none;box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
+  .card{transition:opacity .01s}
 }
 .badge{
   font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
@@ -295,7 +299,7 @@ const applyTheme=t=>{
 applyTheme(store.get("eddy-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
 $("#themeBtn").onclick=()=>applyTheme(root.dataset.theme==="dark"?"light":"dark");
 
-let ALL=[],activeCat="all",branch=null;
+let ALL=[],activeCat="all",branch=null,spotlightId=null;
 
 function catOf(path){
   let best=null;
@@ -364,6 +368,7 @@ async function load(){
 $("#branch").addEventListener("change",async e=>{
   branch=e.target.value;
   activeCat="all";
+  spotlightId=null;
   store.set("eddy-branch",branch);
   const url=new URL(location);url.searchParams.set("branch",branch);
   history.replaceState(null,"",url);
@@ -381,7 +386,7 @@ function buildChips(){
   $("#chips").innerHTML=chips.join("");
   $("#chips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
     $("#chips").querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
-    c.classList.add("active");activeCat=c.dataset.cat;render();
+    c.classList.add("active");activeCat=c.dataset.cat;spotlightId=null;render();
   });
 }
 
@@ -397,7 +402,7 @@ function render(){
       <div class="section-head"><span class="bar"></span><h2>${m.label}</h2></div>
       ${m.desc?`<p class="desc">${m.desc}</p>`:""}
       <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
-        <article class="card" id="${anchorOf(t.path)}" style="--card-color:${m.color}">
+        <article class="card${spotlightId&&spotlightId!==anchorOf(t.path)?" dimmed":""}" id="${anchorOf(t.path)}" style="--card-color:${m.color}">
           <div class="card-head">
             <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
           </div>
@@ -472,11 +477,12 @@ function focusTemplate(id){
   if(!id)return;
   const target=ALL.find(t=>anchorOf(t.path)===id);
   if(!target)return;
+  spotlightId=id;
   if(activeCat!=="all"&&activeCat!==target.cat){
     activeCat="all";
     $("#chips").querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.cat==="all"));
-    render();
   }
+  render();
   const el=document.getElementById(id);
   if(!el)return;
   el.scrollIntoView({block:"center",behavior:"smooth"});
@@ -484,10 +490,23 @@ function focusTemplate(id){
   setTimeout(()=>el.classList.remove("flash"),2000);
 }
 
+/* Any deliberate action to browse elsewhere — searching, clicking another
+   card — drops the spotlight so the rest of the grid reads normally again. */
+function clearSpotlight(){
+  if(!spotlightId)return;
+  spotlightId=null;
+  render();
+}
+
 const focusFromHash=()=>focusTemplate(decodeURIComponent(location.hash.slice(1)));
 addEventListener("hashchange",focusFromHash);
 
-$("#q").addEventListener("input",render);
+$("#sections").addEventListener("click",e=>{
+  const card=e.target.closest(".card");
+  if(card&&spotlightId&&card.id!==spotlightId)clearSpotlight();
+});
+
+$("#q").addEventListener("input",()=>{spotlightId=null;render()});
 load().catch(()=>{$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")});
 </script>
 </body>
