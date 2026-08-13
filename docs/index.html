@@ -61,6 +61,7 @@ header.hero::after{
   cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;
 }
 .hero-links a:hover,.theme-btn:hover{background:rgba(255,255,255,.2)}
+.collapse-btn{display:none}
 h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
 .hero p.sub{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.92}
 .hero-stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
@@ -156,7 +157,26 @@ main{padding:40px 0 24px}
 
 footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media (max-width:600px){.hero-stats{gap:18px}.toolbar-inner{padding:10px}}
+@media (max-width:600px){
+  .hero-stats{gap:18px}
+  .toolbar-inner{padding:10px}
+  header.hero{padding-bottom:56px}
+  .collapse-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:34px;height:34px;padding:0;border-radius:50%;
+    color:#fff;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);
+    cursor:pointer;transition:background .15s;
+  }
+  .collapse-btn:hover{background:rgba(255,255,255,.2)}
+  .collapse-btn svg{transition:transform .2s}
+  .collapse-btn.is-collapsed svg{transform:rotate(180deg)}
+  header.hero.collapsed h1,
+  header.hero.collapsed p.sub,
+  header.hero.collapsed .hero-stats{
+    display:none;
+  }
+  header.hero.collapsed .hero-top{margin-bottom:0}
+}
 </style>
 </head>
 <body>
@@ -169,6 +189,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <a href="https://www.eddy3d.com" target="_blank" rel="noopener">Docs</a>
         <a href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener">GitHub</a>
         <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">◐ Theme</button>
+        <button class="collapse-btn" id="collapseBtn" aria-label="Collapse header" aria-expanded="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
       </nav>
     </div>
     <h1>Grasshopper Templates</h1>
@@ -256,6 +279,18 @@ const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},s
 const applyTheme=t=>{root.dataset.theme=t;store.set("eddy-theme",t)};
 applyTheme(store.get("eddy-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
 $("#themeBtn").onclick=()=>applyTheme(root.dataset.theme==="dark"?"light":"dark");
+
+/* collapsible hero (mobile only — hidden via CSS on larger screens) */
+const heroEl=$("header.hero"),collapseBtn=$("#collapseBtn");
+const applyCollapse=c=>{
+  heroEl.classList.toggle("collapsed",c);
+  collapseBtn.classList.toggle("is-collapsed",c);
+  collapseBtn.setAttribute("aria-expanded",String(!c));
+  collapseBtn.setAttribute("aria-label",c?"Expand header":"Collapse header");
+  store.set("eddy-hero-collapsed",c?"1":"0");
+};
+applyCollapse(store.get("eddy-hero-collapsed")==="1");
+collapseBtn.onclick=()=>applyCollapse(!heroEl.classList.contains("collapsed"));
 
 let ALL=[],activeCat="all";
 
