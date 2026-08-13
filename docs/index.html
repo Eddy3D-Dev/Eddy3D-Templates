@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- Eddy3D template gallery — served via GitHub Pages from /docs -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eddy3D Templates</title>
+<meta name="description" content="Grasshopper template files for Eddy3D — outdoor microclimate, CFD, LBM and ML workflows.">
+<link rel="icon" href="https://github.com/Eddy3D-Dev.png">
+<style>
+:root{
+  --bg:#f6f8fa; --surface:#ffffff; --surface2:#f0f3f6;
+  --text:#1a2330; --muted:#5b6b7d; --border:#e2e8ef;
+  --accent:#0f7fbf; --accent-soft:#e3f2fb;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 12px rgba(16,24,40,.06);
+  --shadow-lg:0 4px 8px rgba(16,24,40,.08),0 12px 28px rgba(16,24,40,.12);
+  --c-microclimate:#e8734a; --c-openfoam:#0f7fbf; --c-lbm:#7c5cd6; --c-ml:#2a9d6f; --c-outdoorplus:#c9464e;
+  --radius:14px;
+}
+html[data-theme="dark"]{
+  --bg:#0e141b; --surface:#161e28; --surface2:#1d2733;
+  --text:#e7edf4; --muted:#93a4b8; --border:#283445;
+  --accent:#4db3e6; --accent-soft:#12303f;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 12px rgba(0,0,0,.3);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.4),0 16px 32px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.55;
+  -webkit-font-smoothing:antialiased;transition:background .25s,color .25s;
+}
+a{color:var(--accent)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* hero */
+header.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#0b3b57 0%,#0f7fbf 55%,#2a9d6f 130%);
+  color:#fff;padding:64px 0 88px;
+}
+header.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 20%,rgba(255,255,255,.14),transparent),
+    radial-gradient(ellipse 40% 40% at 10% 90%,rgba(255,255,255,.08),transparent);
+}
+.hero .wrap{position:relative;z-index:1}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:40px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px;letter-spacing:.2px}
+.brand .logo{
+  width:38px;height:38px;border-radius:10px;background:#fff;padding:3px;
+  display:block;object-fit:contain;
+}
+.hero-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hero-links a,.theme-btn{
+  color:#fff;text-decoration:none;font-size:14px;font-weight:600;
+  padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08);transition:background .15s;
+  cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;
+}
+.hero-links a:hover,.theme-btn:hover{background:rgba(255,255,255,.2)}
+h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
+.hero p.sub{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.92}
+.hero-stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.stat b{font-size:24px;font-weight:800;display:block;line-height:1.1}
+.stat span{font-size:13px;opacity:.85;text-transform:uppercase;letter-spacing:.6px}
+
+/* toolbar */
+.toolbar{
+  position:sticky;top:0;z-index:20;margin-top:-44px;
+}
+.toolbar-inner{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);padding:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+}
+.search{
+  flex:1 1 260px;position:relative;
+}
+.search input{
+  width:100%;padding:11px 14px 11px 40px;font-size:15px;font-family:inherit;
+  border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text);
+  outline:none;transition:border-color .15s,box-shadow .15s;
+}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.5}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
+  padding:8px 14px;border-radius:999px;border:1px solid var(--border);
+  background:var(--surface2);color:var(--muted);transition:all .15s;
+  display:inline-flex;align-items:center;gap:7px;
+}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--dot,var(--muted))}
+.chip:hover{border-color:var(--accent);color:var(--text)}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip.active .dot{background:#fff}
+.chip .count{opacity:.65;font-weight:500}
+
+/* sections */
+main{padding:40px 0 24px}
+.section{margin-bottom:44px}
+.section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.section-head h2{font-size:22px;font-weight:750;letter-spacing:-.3px}
+.section-head .bar{width:26px;height:5px;border-radius:3px;background:var(--sec-color,var(--accent));align-self:center}
+.section p.desc{color:var(--muted);font-size:14.5px;margin-bottom:18px;max-width:720px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px;
+  transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--card-color,var(--accent))}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.card-head{display:flex;align-items:flex-start;gap:12px}
+.card-head>div:last-child{min-width:0}
+.card h3{font-size:16.5px;font-weight:700;letter-spacing:-.2px;word-break:break-word}
+.card .file{font-size:12.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card p{font-size:14px;color:var(--muted);flex:1}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px}
+.size{font-size:12.5px;color:var(--muted)}
+.dl{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+  font-size:13.5px;font-weight:650;padding:8px 14px;border-radius:9px;
+  background:var(--card-color,var(--accent));color:#fff;transition:filter .15s;
+}
+.dl:hover{filter:brightness(1.12)}
+.badge{
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  padding:3px 9px;border-radius:999px;color:var(--card-color);
+  background:color-mix(in srgb,var(--card-color) 13%,transparent);
+}
+
+/* states */
+.state{padding:56px 0;text-align:center;color:var(--muted)}
+.spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.state.error a{font-weight:600}
+.hidden{display:none}
+
+/* getting started */
+.info{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:24px;margin-bottom:44px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;
+}
+.info h3{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.info p{font-size:14px;color:var(--muted)}
+.info .num{
+  width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;
+  display:inline-grid;place-items:center;font-size:13px;font-weight:700;flex:0 0 auto;
+}
+
+footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:600px){.hero-stats{gap:18px}.toolbar-inner{padding:10px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="brand"><img class="logo" src="https://github.com/Eddy3D-Dev.png" alt="Eddy3D logo"> Eddy3D</div>
+      <nav class="hero-links">
+        <a href="https://www.eddy3d.com" target="_blank" rel="noopener">Docs</a>
+        <a href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">◐ Theme</button>
+      </nav>
+    </div>
+    <h1>Grasshopper Templates</h1>
+    <p class="sub">Ready-to-run <strong>.ghx</strong> workflows for Eddy3D — outdoor microclimate analysis, OpenFOAM &amp; LBM airflow simulation, and machine-learning surrogate models.</p>
+    <div class="hero-stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="wrap toolbar">
+  <div class="toolbar-inner">
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+      <input id="q" type="search" placeholder="Search templates… (e.g. UTCI, OpenFOAM, comfort)" autocomplete="off">
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="state" id="loading"><div class="spinner"></div>Loading templates from GitHub…</div>
+  <div class="state error hidden" id="error">
+    Couldn’t reach the GitHub API (rate limit or network issue).<br>
+    Browse the files directly on <a href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener">the repository</a>.
+  </div>
+  <div id="sections"></div>
+  <div class="state hidden" id="empty">No templates match your search.</div>
+
+  <div class="info">
+    <div><h3><span class="num">1</span> Download</h3><p>Grab a template with its download button — a single <code>.ghx</code> file, no unpacking needed.</p></div>
+    <div><h3><span class="num">2</span> Open in Grasshopper</h3><p>Open the file in Grasshopper for Rhino with the <a href="https://www.eddy3d.com" target="_blank" rel="noopener">Eddy3D plugin</a> installed.</p></div>
+    <div><h3><span class="num">3</span> Plug in your model</h3><p>Replace the example geometry and weather file with your own, then run the workflow.</p></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Eddy3D — templates are provided as-is under the repository license.</span>
+    <span id="meta"></span>
+  </div>
+</footer>
+
+<script>
+const OWNER="Eddy3D-Dev", REPO="Eddy3D-Templates";
+
+/* Category metadata — keyed by top-level path segment(s) */
+const CATS={
+  "Outdoor/Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",
+    desc:"Outdoor thermal comfort and radiation studies — UTCI, mean radiant temperature, sun hours and surface temperatures."},
+  "Outdoor/OpenFOAM":{label:"OpenFOAM",color:"var(--c-openfoam)",
+    desc:"Steady-state RANS wind simulations with OpenFOAM using box- or cylinder-shaped computational domains."},
+  "Outdoor/LBM":{label:"LBM",color:"var(--c-lbm)",
+    desc:"GPU-accelerated Lattice-Boltzmann airflow simulation via FluidX3D and OpenLB."},
+  "Outdoor/ML":{label:"Machine Learning",color:"var(--c-ml)",
+    desc:"Machine-learning surrogate models for fast airflow and comfort inference — no full CFD run required."},
+  "Outdoor+":{label:"Outdoor+",color:"var(--c-outdoorplus)",
+    desc:"Extended workflows combining airflow and thermal comfort pipelines."}
+};
+
+/* Curated descriptions per filename (fallback: generic) */
+const DESC={
+  "MRT_Mixed.ghx":"Mean radiant temperature with a mixed (fast) calculation approach for outdoor comfort studies.",
+  "MRT_Radiance.ghx":"Mean radiant temperature computed with Radiance-based raytracing for higher accuracy.",
+  "Sun_Hours.ghx":"Direct sun-hours analysis on ground and façade surfaces across a chosen period.",
+  "SurfaceTemps_FFT.ghx":"Transient surface temperature estimation using an FFT-based thermal model.",
+  "UTCI_annual.ghx":"Annual Universal Thermal Climate Index (UTCI) maps combining wind, radiation and weather data.",
+  "UTCI_surrogate.ghx":"Fast UTCI prediction using a pre-trained surrogate model instead of full simulation.",
+  "BoxDomain.ghx":"OpenFOAM wind simulation in a rectangular (box) domain — standard urban wind study setup.",
+  "CylinderDomain.ghx":"OpenFOAM wind simulation in a cylindrical domain — run multiple wind directions without remeshing.",
+  "FluidX3D.ghx":"GPU Lattice-Boltzmann airflow simulation powered by FluidX3D — very fast transient wind fields.",
+  "OpenLB.ghx":"Lattice-Boltzmann airflow simulation using the OpenLB solver backend.",
+  "ML_basic.ghx":"Minimal example for setting up and running an ML-based airflow inference workflow.",
+  "ML_Inference.ghx":"Wind-field inference with a pre-trained neural network — CFD-like results in seconds.",
+  "ML_Inference_Comfort.ghx":"ML wind inference chained into an outdoor thermal comfort (UTCI) evaluation.",
+  "ML_Inference_moving_circle.ghx":"Interactive demo: real-time ML wind inference around movable geometry.",
+  "umcf_utci.ghx":"Urban microclimate framework: coupled airflow + radiation + UTCI comfort pipeline."
+};
+
+const $=s=>document.querySelector(s);
+const fmtSize=b=>b>1048576?(b/1048576).toFixed(1)+" MB":Math.max(1,Math.round(b/1024))+" KB";
+const titleOf=f=>f.replace(/\.ghx?$/i,"").replace(/_/g," ");
+
+/* theme */
+const root=document.documentElement;
+const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+const applyTheme=t=>{root.dataset.theme=t;store.set("eddy-theme",t)};
+applyTheme(store.get("eddy-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
+$("#themeBtn").onclick=()=>applyTheme(root.dataset.theme==="dark"?"light":"dark");
+
+let ALL=[],activeCat="all";
+
+function catOf(path){
+  let best=null;
+  for(const k in CATS) if(path.startsWith(k+"/")&&(!best||k.length>best.length)) best=k;
+  return best;
+}
+
+async function load(){
+  /* Descriptions extracted from a "Description" panel inside each .ghx
+     (see scripts/extract_descriptions.py); override the baked-in fallbacks. */
+  const ghxDesc=await fetch("descriptions.json").then(r=>r.ok?r.json():{}).catch(()=>({}));
+  const info=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}`).then(r=>{if(!r.ok)throw 0;return r.json()});
+  const branch=info.default_branch;
+  const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`).then(r=>{if(!r.ok)throw 0;return r.json()});
+  ALL=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)).map(n=>{
+    const cat=catOf(n.path)||"Other";
+    const name=n.path.split("/").pop();
+    return {path:n.path,name,size:n.size||0,cat,
+      desc:ghxDesc[name]||DESC[name]||"Grasshopper template for Eddy3D workflows.",
+      url:`https://github.com/${OWNER}/${REPO}/raw/${branch}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
+  });
+  $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} templates`;
+  $("#stats").innerHTML=`
+    <div class="stat"><b>${ALL.length}</b><span>Templates</span></div>
+    <div class="stat"><b>${new Set(ALL.map(t=>t.cat)).size}</b><span>Categories</span></div>
+    <div class="stat"><b>Free</b><span>MIT-friendly</span></div>`;
+  buildChips();render();
+  $("#loading").classList.add("hidden");
+}
+
+function buildChips(){
+  const counts={};ALL.forEach(t=>counts[t.cat]=(counts[t.cat]||0)+1);
+  const chips=[`<button class="chip active" data-cat="all">All <span class="count">${ALL.length}</span></button>`];
+  for(const k in CATS){
+    if(!counts[k])continue;
+    chips.push(`<button class="chip" data-cat="${k}" style="--dot:${CATS[k].color}"><span class="dot"></span>${CATS[k].label} <span class="count">${counts[k]}</span></button>`);
+  }
+  $("#chips").innerHTML=chips.join("");
+  $("#chips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
+    $("#chips").querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
+    c.classList.add("active");activeCat=c.dataset.cat;render();
+  });
+}
+
+function render(){
+  const q=$("#q").value.trim().toLowerCase();
+  const vis=ALL.filter(t=>(activeCat==="all"||t.cat===activeCat)&&
+    (!q||t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q)||t.cat.toLowerCase().includes(q)));
+  const byCat={};vis.forEach(t=>(byCat[t.cat]=byCat[t.cat]||[]).push(t));
+  const order=Object.keys(CATS).filter(k=>byCat[k]).concat(Object.keys(byCat).filter(k=>!CATS[k]));
+  $("#sections").innerHTML=order.map(k=>{
+    const m=CATS[k]||{label:k,color:"var(--accent)",desc:""};
+    return `<section class="section" style="--sec-color:${m.color}">
+      <div class="section-head"><span class="bar"></span><h2>${m.label}</h2></div>
+      ${m.desc?`<p class="desc">${m.desc}</p>`:""}
+      <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
+        <article class="card" style="--card-color:${m.color}">
+          <div class="card-head">
+            <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
+          </div>
+          <p>${t.desc}</p>
+          <div class="card-foot">
+            <span class="size">${fmtSize(t.size)}</span>
+            <a class="dl" href="${t.url}" download title="Download ${t.name}">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+          </div>
+        </article>`).join("")}</div>
+    </section>`;
+  }).join("");
+  $("#empty").classList.toggle("hidden",vis.length>0||ALL.length===0);
+}
+
+$("#q").addEventListener("input",render);
+load().catch(()=>{$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")});
+</script>
+</body>
+</html>

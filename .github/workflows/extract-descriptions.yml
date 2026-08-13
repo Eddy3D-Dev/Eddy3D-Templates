@@ -1,0 +1,36 @@
+name: Extract template descriptions
+
+on:
+  push:
+    paths:
+      - "**/*.ghx"
+      - "scripts/extract_descriptions.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Extract descriptions from .ghx panels
+        run: python scripts/extract_descriptions.py
+
+      - name: Commit descriptions.json if changed
+        run: |
+          if ! git diff --quiet docs/descriptions.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add docs/descriptions.json
+            git commit -m "Update template descriptions from .ghx panels"
+            git push
+          else
+            echo "No description changes."
+          fi
