@@ -140,6 +140,30 @@ main.wrap{padding-top:72px;padding-bottom:24px}
   background:var(--card-color,var(--accent));color:#fff;transition:filter .15s;
 }
 .dl:hover{filter:brightness(1.12)}
+.actions{display:inline-flex;align-items:center;gap:8px}
+.share{
+  display:inline-grid;place-items:center;width:34px;height:34px;flex:0 0 auto;
+  border:1px solid var(--border);border-radius:9px;background:var(--surface2);
+  color:var(--muted);cursor:pointer;font-family:inherit;position:relative;
+  transition:color .15s,border-color .15s;
+}
+.share:hover{color:var(--card-color);border-color:var(--card-color)}
+.share.copied{color:var(--card-color);border-color:var(--card-color)}
+.share.copied::after{
+  content:"Link copied";position:absolute;bottom:calc(100% + 8px);left:50%;
+  transform:translateX(-50%);white-space:nowrap;
+  background:var(--text);color:var(--surface);font-size:12px;font-weight:600;
+  padding:4px 9px;border-radius:6px;pointer-events:none;
+}
+@keyframes flash{
+  0%,100%{box-shadow:var(--shadow)}
+  15%,60%{box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
+}
+.card.flash{animation:flash 2s ease-in-out}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .card.flash{animation:none;box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
+}
 .badge{
   font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
   padding:3px 9px;border-radius:999px;color:var(--card-color);
@@ -244,6 +268,8 @@ const CATS={
 };
 
 const $=s=>document.querySelector(s);
+/* Stable per-template anchor, e.g. Outdoor/ML/ML_basic.ghx -> t-outdoor-ml-ml_basic */
+const anchorOf=path=>"t-"+path.replace(/\.ghx?$/i,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const fmtSize=b=>b>1048576?(b/1048576).toFixed(1)+" MB":Math.max(1,Math.round(b/1024))+" KB";
 const titleOf=f=>f.replace(/\.ghx?$/i,"").replace(/_/g," ");
 
@@ -313,6 +339,7 @@ async function loadTree(){
     <div class="stat"><b>Free</b><span>MIT-friendly</span></div>`;
   buildChips();render();
   $("#loading").classList.add("hidden");
+  focusFromHash();
 }
 
 async function load(){
@@ -356,17 +383,22 @@ function render(){
       <div class="section-head"><span class="bar"></span><h2>${m.label}</h2></div>
       ${m.desc?`<p class="desc">${m.desc}</p>`:""}
       <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
-        <article class="card" style="--card-color:${m.color}">
+        <article class="card" id="${anchorOf(t.path)}" style="--card-color:${m.color}">
           <div class="card-head">
             <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
           </div>
           ${t.desc?`<p>${t.desc}</p>`:""}
           <div class="card-foot">
             <span class="size">${fmtSize(t.size)}</span>
-            <a class="dl" href="${t.url}" download="${t.name}" target="_blank" rel="noopener" data-name="${t.name}" title="Download ${t.name}">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download
-            </a>
+            <span class="actions">
+              <button class="share" data-path="${t.path}" title="Copy link to ${t.name}" aria-label="Copy link to ${t.name}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7L12 19"/></svg>
+              </button>
+              <a class="dl" href="${t.url}" download="${t.name}" target="_blank" rel="noopener" data-name="${t.name}" title="Download ${t.name}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download
+              </a>
+            </span>
           </div>
         </article>`).join("")}</div>
     </section>`;
@@ -396,6 +428,50 @@ $("#sections").addEventListener("click",async e=>{
     delete a.dataset.busy;a.innerHTML=label;
   }
 });
+
+function shareUrl(path){
+  const url=new URL(location.href);
+  url.search="";url.hash="";
+  url.searchParams.set("branch",branch);
+  url.hash=anchorOf(path);
+  return url.toString();
+}
+
+$("#sections").addEventListener("click",async e=>{
+  const btn=e.target.closest("button.share");
+  if(!btn)return;
+  const url=shareUrl(btn.dataset.path);
+  try{
+    await navigator.clipboard.writeText(url);
+    btn.classList.add("copied");
+    setTimeout(()=>btn.classList.remove("copied"),1400);
+  }catch(err){
+    /* Clipboard blocked (insecure context or denied) — let the user copy manually. */
+    prompt("Copy this link:",url);
+  }
+  history.replaceState(null,"",url);
+});
+
+/* A shared link names one template; clear any filter that would hide it,
+   then scroll to it and flash it so it is obvious which card was meant. */
+function focusTemplate(id){
+  if(!id)return;
+  const target=ALL.find(t=>anchorOf(t.path)===id);
+  if(!target)return;
+  if(activeCat!=="all"&&activeCat!==target.cat){
+    activeCat="all";
+    $("#chips").querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.cat==="all"));
+    render();
+  }
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.scrollIntoView({block:"center",behavior:"smooth"});
+  el.classList.add("flash");
+  setTimeout(()=>el.classList.remove("flash"),2000);
+}
+
+const focusFromHash=()=>focusTemplate(decodeURIComponent(location.hash.slice(1)));
+addEventListener("hashchange",focusFromHash);
 
 $("#q").addEventListener("input",render);
 load().catch(()=>{$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")});
