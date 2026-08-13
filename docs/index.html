@@ -158,12 +158,22 @@ main{padding:40px 0 24px}
 footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:600px){
-  .hero-stats{gap:18px}
-  .toolbar-inner{padding:10px}
-  header.hero{padding-bottom:56px}
+  /* Material Design compact-width (<600dp) spacing: 16dp screen margins,
+     8dp baseline grid for vertical rhythm, 48dp minimum touch targets. */
+  .wrap{padding:0 16px}
+  header.hero{padding:40px 0 56px}
+  .hero-top{margin-bottom:24px}
+  .hero-stats{gap:16px;margin-top:24px}
+  .toolbar-inner{padding:12px;gap:8px}
+  .section{margin-bottom:40px}
+  main{padding:24px 0 16px}
+  .card{padding:16px;gap:8px}
+  .info{padding:20px;gap:16px;margin-bottom:40px}
+  footer{padding:24px 0 32px}
+  .hero-links a,.theme-btn{padding:13px 16px;min-height:48px}
   .collapse-btn{
     display:inline-flex;align-items:center;justify-content:center;
-    width:34px;height:34px;padding:0;border-radius:50%;
+    width:48px;height:48px;padding:0;border-radius:50%;
     color:#fff;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);
     cursor:pointer;transition:background .15s;
   }
