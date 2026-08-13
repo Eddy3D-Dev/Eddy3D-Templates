@@ -85,6 +85,18 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 }
 .search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.5}
+.branch{
+  display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:6px 8px 6px 14px;border:1px solid var(--border);border-radius:10px;
+  background:var(--surface2);
+}
+.branch span{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+.branch select{
+  font-family:inherit;font-size:14px;font-weight:600;color:var(--text);
+  background:transparent;border:0;outline:none;cursor:pointer;padding:4px 2px;
+}
+.branch select option{background:var(--surface);color:var(--text)}
+.branch:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{
   font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
@@ -183,6 +195,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
       <input id="q" type="search" placeholder="Search templates… (e.g. UTCI, OpenFOAM, comfort)" autocomplete="off">
     </div>
+    <label class="branch hidden" id="branchWrap">
+      <span>Version</span>
+      <select id="branch" aria-label="Repository branch"></select>
+    </label>
     <div class="chips" id="chips"></div>
   </div>
 </div>
@@ -197,9 +213,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="state hidden" id="empty">No templates match your search.</div>
 
   <div class="info">
-    <div><h3><span class="num">1</span> Download</h3><p>Grab a template with its download button — a single <code>.ghx</code> file, no unpacking needed.</p></div>
+    <div><h3><span class="num">1</span> Download</h3><p>Grab a template via its download button.</p></div>
     <div><h3><span class="num">2</span> Open in Grasshopper</h3><p>Open the file in Grasshopper for Rhino with the <a href="https://www.eddy3d.com" target="_blank" rel="noopener">Eddy3D plugin</a> installed.</p></div>
-    <div><h3><span class="num">3</span> Plug in your model</h3><p>Replace the example geometry and weather file with your own, then run the workflow.</p></div>
+    <div><h3><span class="num">3</span> Plug in your data</h3><p>Replace the example geometry and weather file with your own.</p></div>
   </div>
 </main>
 
@@ -238,7 +254,7 @@ const applyTheme=t=>{root.dataset.theme=t;store.set("eddy-theme",t)};
 applyTheme(store.get("eddy-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
 $("#themeBtn").onclick=()=>applyTheme(root.dataset.theme==="dark"?"light":"dark");
 
-let ALL=[],activeCat="all";
+let ALL=[],activeCat="all",branch=null;
 
 function catOf(path){
   let best=null;
@@ -246,14 +262,46 @@ function catOf(path){
   return best;
 }
 
-async function load(){
-  /* Descriptions come only from a "Description" panel inside each .ghx
-     (see scripts/extract_descriptions.py). Templates without one show no
-     description rather than invented text. */
-  const ghxDesc=await fetch("descriptions.json").then(r=>r.ok?r.json():{}).catch(()=>({}));
+/* Branch names are Eddy versions (1.7.0.827); sort newest first, with any
+   non-version branches after them. */
+function compareBranches(a,b){
+  const va=a.split(".").map(Number),vb=b.split(".").map(Number);
+  const numeric=v=>v.every(n=>Number.isInteger(n));
+  if(numeric(va)&&numeric(vb)){
+    for(let i=0;i<Math.max(va.length,vb.length);i++){
+      const d=(vb[i]||0)-(va[i]||0);
+      if(d)return d;
+    }
+    return 0;
+  }
+  if(numeric(va))return -1;
+  if(numeric(vb))return 1;
+  return a.localeCompare(b);
+}
+
+async function loadBranches(){
   const info=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}`).then(r=>{if(!r.ok)throw 0;return r.json()});
-  const branch=info.default_branch;
-  const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`).then(r=>{if(!r.ok)throw 0;return r.json()});
+  const list=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/branches?per_page=100`)
+    .then(r=>r.ok?r.json():[]).catch(()=>[]);
+  const names=list.length?list.map(b=>b.name).sort(compareBranches):[info.default_branch];
+  const wanted=new URLSearchParams(location.search).get("branch")||store.get("eddy-branch");
+  branch=names.includes(wanted)?wanted:(names.includes(info.default_branch)?info.default_branch:names[0]);
+  $("#branch").innerHTML=names.map(n=>
+    `<option value="${n}"${n===branch?" selected":""}>${n}${n===info.default_branch?" (default)":""}</option>`).join("");
+  $("#branchWrap").classList.remove("hidden");
+}
+
+async function loadTree(){
+  $("#loading").classList.remove("hidden");
+  $("#error").classList.add("hidden");
+  $("#sections").innerHTML="";
+  /* Descriptions come only from a "Description" panel inside each .ghx
+     (see scripts/extract_descriptions.py). Read them from the selected
+     branch so they match the templates being shown. */
+  const ghxDesc=await fetch(`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/docs/descriptions.json`)
+    .then(r=>r.ok?r.json():{}).catch(()=>({}));
+  const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`)
+    .then(r=>{if(!r.ok)throw 0;return r.json()});
   ALL=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)).map(n=>{
     const cat=catOf(n.path)||"Other";
     const name=n.path.split("/").pop();
@@ -261,7 +309,7 @@ async function load(){
       desc:ghxDesc[name]||"",
       url:`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
   });
-  $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} templates`;
+  $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} template${ALL.length===1?"":"s"}`;
   $("#stats").innerHTML=`
     <div class="stat"><b>${ALL.length}</b><span>Templates</span></div>
     <div class="stat"><b>${new Set(ALL.map(t=>t.cat)).size}</b><span>Categories</span></div>
@@ -269,6 +317,21 @@ async function load(){
   buildChips();render();
   $("#loading").classList.add("hidden");
 }
+
+async function load(){
+  await loadBranches();
+  await loadTree();
+}
+
+$("#branch").addEventListener("change",async e=>{
+  branch=e.target.value;
+  activeCat="all";
+  store.set("eddy-branch",branch);
+  const url=new URL(location);url.searchParams.set("branch",branch);
+  history.replaceState(null,"",url);
+  try{await loadTree()}
+  catch(err){$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")}
+});
 
 function buildChips(){
   const counts={};ALL.forEach(t=>counts[t.cat]=(counts[t.cat]||0)+1);
