@@ -29,8 +29,12 @@ This repository stores Grasshopper template files used by Eddy3D.
 - The site lists all `.ghx` files live via the GitHub API — no rebuild needed when templates are added.
 - **Documenting a template:** add a Panel component nicknamed `Description` to the Grasshopper definition. On push, the
   `extract-descriptions` workflow runs `scripts/extract_descriptions.py`, which pulls the panel text into
-  `docs/descriptions.json`; the gallery shows it on the template's card. Templates without a Description panel fall back
-  to generic text baked into the site.
+  `docs/descriptions.json`; the gallery shows it on the template's card.
+
+> **Note:** The gallery only shows a description when the `.ghx` actually contains a Panel nicknamed `Description`.
+> There is no fallback text — a template without that panel appears on the site with just its name, path and size.
+> This is deliberate: the description lives with the definition, so it stays accurate as the template changes, and no
+> one has to maintain a second list of blurbs elsewhere. To describe a template, add the panel and push.
 
 ## Notes For Contributors
 
