@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Eddy3D template gallery — served via GitHub Pages from /docs -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -116,10 +117,6 @@ main{padding:40px 0 24px}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .card-head{display:flex;align-items:flex-start;gap:12px}
 .card-head>div:last-child{min-width:0}
-.card-icon{
-  flex:0 0 auto;width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:21px;
-  background:color-mix(in srgb,var(--card-color) 14%,transparent);
-}
 .card h3{font-size:16.5px;font-weight:700;letter-spacing:-.2px;word-break:break-word}
 .card .file{font-size:12.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card p{font-size:14px;color:var(--muted);flex:1}
@@ -218,15 +215,15 @@ const OWNER="Eddy3D-Dev", REPO="Eddy3D-Templates";
 
 /* Category metadata — keyed by top-level path segment(s) */
 const CATS={
-  "Outdoor/Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",icon:"🌡️",
+  "Outdoor/Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",
     desc:"Outdoor thermal comfort and radiation studies — UTCI, mean radiant temperature, sun hours and surface temperatures."},
-  "Outdoor/OpenFOAM":{label:"OpenFOAM",color:"var(--c-openfoam)",icon:"💨",
+  "Outdoor/OpenFOAM":{label:"OpenFOAM",color:"var(--c-openfoam)",
     desc:"Steady-state RANS wind simulations with OpenFOAM using box- or cylinder-shaped computational domains."},
-  "Outdoor/LBM":{label:"LBM",color:"var(--c-lbm)",icon:"🌀",
+  "Outdoor/LBM":{label:"LBM",color:"var(--c-lbm)",
     desc:"GPU-accelerated Lattice-Boltzmann airflow simulation via FluidX3D and OpenLB."},
-  "Outdoor/ML":{label:"Machine Learning",color:"var(--c-ml)",icon:"🤖",
+  "Outdoor/ML":{label:"Machine Learning",color:"var(--c-ml)",
     desc:"Machine-learning surrogate models for fast airflow and comfort inference — no full CFD run required."},
-  "Outdoor+":{label:"Outdoor+",color:"var(--c-outdoorplus)",icon:"➕",
+  "Outdoor+":{label:"Outdoor+",color:"var(--c-outdoorplus)",
     desc:"Extended workflows combining airflow and thermal comfort pipelines."}
 };
 
@@ -312,14 +309,13 @@ function render(){
   const byCat={};vis.forEach(t=>(byCat[t.cat]=byCat[t.cat]||[]).push(t));
   const order=Object.keys(CATS).filter(k=>byCat[k]).concat(Object.keys(byCat).filter(k=>!CATS[k]));
   $("#sections").innerHTML=order.map(k=>{
-    const m=CATS[k]||{label:k,color:"var(--accent)",icon:"📄",desc:""};
+    const m=CATS[k]||{label:k,color:"var(--accent)",desc:""};
     return `<section class="section" style="--sec-color:${m.color}">
-      <div class="section-head"><span class="bar"></span><h2>${m.icon} ${m.label}</h2></div>
+      <div class="section-head"><span class="bar"></span><h2>${m.label}</h2></div>
       ${m.desc?`<p class="desc">${m.desc}</p>`:""}
       <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
         <article class="card" style="--card-color:${m.color}">
           <div class="card-head">
-            <div class="card-icon">${m.icon}</div>
             <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
           </div>
           <p>${t.desc}</p>
