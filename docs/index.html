@@ -64,9 +64,11 @@ header.hero::after{
 .hero-links .icon-link{
   padding:8px;width:36px;height:36px;box-sizing:border-box;justify-content:center;
   color:#fff;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);
-  cursor:pointer;font-family:inherit;
+  cursor:pointer;font-family:inherit;border-radius:999px;
+  display:inline-flex;align-items:center;
 }
 .hero-links .icon-link:hover{background:rgba(255,255,255,.2)}
+.collapse-btn{display:none}
 h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
 .hero p.sub{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.92}
 .hero-stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
@@ -202,7 +204,63 @@ main.wrap{padding-top:72px;padding-bottom:24px}
 
 footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media (max-width:600px){.hero-stats{gap:18px}.toolbar-inner{padding:10px}}
+@media (max-width:600px){
+  /* Material Design compact-width (<600dp): 16dp screen margins, 8dp baseline
+     grid for vertical rhythm, 48dp minimum touch targets, type one step down. */
+  .wrap{padding:0 16px}
+  header.hero{padding:40px 0 56px}
+  .hero-top{margin-bottom:24px}
+  .hero-stats{gap:16px;margin-top:24px}
+  .toolbar-inner{padding:12px;gap:8px}
+  main.wrap{padding-top:56px;padding-bottom:16px}
+  .section{margin-bottom:40px}
+  .state{padding:40px 0}
+  .card{padding:16px;gap:8px}
+  .info{padding:20px;gap:16px;margin-bottom:40px}
+  footer{padding:24px 0 32px}
+
+  /* touch targets — keep the nav on one row at 360dp and up */
+  .hero-links{gap:6px;flex-wrap:nowrap}
+  .hero-links a{padding:13px 12px;min-height:48px;font-size:13px}
+  .hero-links .icon-link{width:48px;height:48px;padding:12px;flex:0 0 auto}
+  .share{width:44px;height:44px}
+
+  /* type scale */
+  .brand{font-size:17px;gap:8px;min-width:0}
+  .brand .logo{width:30px;height:30px;flex:0 0 auto}
+  h1{font-size:26px}
+  .hero p.sub{font-size:14px}
+  .stat b{font-size:20px}
+  .stat span{font-size:11px}
+  .search input{font-size:14px}
+  .branch select{font-size:13px}
+  .chip{font-size:12.5px;padding:7px 12px}
+  .section-head h2{font-size:18px}
+  .section p.desc{font-size:13.5px}
+  .card h3{font-size:15px}
+  .card p{font-size:13.5px}
+  .dl{font-size:12.5px}
+  .info h3{font-size:14px}
+  .info p{font-size:13px}
+
+  /* collapsible hero */
+  .collapse-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:48px;height:48px;padding:0;border-radius:50%;
+    color:#fff;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);
+    cursor:pointer;transition:background .15s;
+  }
+  .collapse-btn:hover{background:rgba(255,255,255,.2)}
+  .collapse-btn svg{transition:transform .2s}
+  .collapse-btn.is-collapsed svg{transform:rotate(180deg)}
+  header.hero.collapsed h1,
+  header.hero.collapsed p.sub,
+  header.hero.collapsed .hero-stats{
+    display:none;
+  }
+  header.hero.collapsed .hero-top{margin-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){.collapse-btn svg{transition:none}}
 </style>
 </head>
 <body>
@@ -218,6 +276,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </a>
         <button class="icon-link" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="themeIcon"></svg>
+        </button>
+        <button class="collapse-btn" id="collapseBtn" aria-label="Collapse header" aria-expanded="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
         </button>
       </nav>
     </div>
@@ -298,6 +359,18 @@ const applyTheme=t=>{
 };
 applyTheme(store.get("eddy-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
 $("#themeBtn").onclick=()=>applyTheme(root.dataset.theme==="dark"?"light":"dark");
+
+/* collapsible hero (mobile only — the button is hidden via CSS on larger screens) */
+const heroEl=$("header.hero"),collapseBtn=$("#collapseBtn");
+const applyCollapse=c=>{
+  heroEl.classList.toggle("collapsed",c);
+  collapseBtn.classList.toggle("is-collapsed",c);
+  collapseBtn.setAttribute("aria-expanded",String(!c));
+  collapseBtn.setAttribute("aria-label",c?"Expand header":"Collapse header");
+  store.set("eddy-hero-collapsed",c?"1":"0");
+};
+applyCollapse(store.get("eddy-hero-collapsed")==="1");
+collapseBtn.onclick=()=>applyCollapse(!heroEl.classList.contains("collapsed"));
 
 let ALL=[],activeCat="all",branch=null,spotlightId=null;
 
