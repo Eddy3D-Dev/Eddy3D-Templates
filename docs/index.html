@@ -243,6 +243,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .info h3{font-size:14px}
   .info p{font-size:13px}
 
+  /* the sticky toolbar is three rows tall here, so slide it away while
+     scrolling down and bring it back on any upward scroll */
+  .toolbar{transition:transform .25s ease}
+  .toolbar.toolbar-hidden{transform:translateY(calc(-100% - 24px))}
+
   /* collapsible hero */
   .collapse-btn{
     display:inline-flex;align-items:center;justify-content:center;
@@ -260,7 +265,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   }
   header.hero.collapsed .hero-top{margin-bottom:0}
 }
-@media (prefers-reduced-motion:reduce){.collapse-btn svg{transition:none}}
+@media (prefers-reduced-motion:reduce){.collapse-btn svg,.toolbar{transition:none}}
 </style>
 </head>
 <body>
@@ -371,6 +376,27 @@ const applyCollapse=c=>{
 };
 applyCollapse(store.get("eddy-hero-collapsed")==="1");
 collapseBtn.onclick=()=>applyCollapse(!heroEl.classList.contains("collapsed"));
+
+/* Scroll-away toolbar (the CSS transform is mobile-only): hide it while the
+   reader scrolls down, reveal it again on any upward scroll or near the top.
+   Stays put whenever something inside it — search box, version picker — has
+   focus, so it can't slide out from under the user mid-interaction. */
+const toolbarEl=$(".toolbar");
+let lastY=Math.max(0,window.scrollY),queued=false;
+const syncToolbar=()=>{
+  queued=false;
+  const y=Math.max(0,window.scrollY),dy=y-lastY;
+  lastY=y;
+  if(toolbarEl.contains(document.activeElement)) return;
+  if(y<=88||dy<-4) toolbarEl.classList.remove("toolbar-hidden");
+  else if(dy>4) toolbarEl.classList.add("toolbar-hidden");
+};
+addEventListener("scroll",()=>{
+  if(queued) return;
+  queued=true;requestAnimationFrame(syncToolbar);
+},{passive:true});
+/* never leave it hidden when focus lands inside it (e.g. tabbing to search) */
+toolbarEl.addEventListener("focusin",()=>toolbarEl.classList.remove("toolbar-hidden"));
 
 let ALL=[],activeCat="all",branch=null,spotlightId=null;
 
