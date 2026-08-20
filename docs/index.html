@@ -47,20 +47,36 @@ header.hero::after{
     radial-gradient(ellipse 40% 40% at 10% 90%,rgba(255,255,255,.08),transparent);
 }
 .hero .wrap{position:relative;z-index:1}
-.hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:40px}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+/* Collapsible hero body. The 1fr -> 0fr grid row animates to a real height,
+   which display:none cannot do; the spacing under .hero-top lives on the inner
+   element so it collapses along with the content instead of leaving a gap. */
+.hero-body{
+  display:grid;grid-template-rows:1fr;
+  transition:grid-template-rows .34s cubic-bezier(.4,0,.2,1),opacity .22s ease;
+}
+.hero-body-inner{overflow:hidden;min-height:0;padding-top:40px}
+header.hero.collapsed .hero-body{grid-template-rows:0fr;opacity:0}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px;letter-spacing:.2px}
 .brand .logo{
   width:38px;height:38px;border-radius:10px;background:#fff;padding:3px;
   display:block;object-fit:contain;
 }
 .hero-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.hero-links a,.theme-btn{
+.hero-links a{
   color:#fff;text-decoration:none;font-size:14px;font-weight:600;
   padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);
   background:rgba(255,255,255,.08);transition:background .15s;
-  cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;
+  display:inline-flex;align-items:center;gap:6px;
 }
-.hero-links a:hover,.theme-btn:hover{background:rgba(255,255,255,.2)}
+.hero-links a:hover{background:rgba(255,255,255,.2)}
+.hero-links .icon-link{
+  padding:8px;width:36px;height:36px;box-sizing:border-box;justify-content:center;
+  color:#fff;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);
+  cursor:pointer;font-family:inherit;border-radius:999px;
+  display:inline-flex;align-items:center;
+}
+.hero-links .icon-link:hover{background:rgba(255,255,255,.2)}
 .collapse-btn{display:none}
 h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
 .hero p.sub{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.92}
@@ -72,9 +88,24 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .toolbar{
   position:sticky;top:0;z-index:20;margin-top:-44px;
 }
+/* Watched to decide when the toolbar has docked. A separate element because
+   the toolbar itself is transformed when it slides away on mobile, which would
+   corrupt any measurement taken from it. Occupies no layout space. */
+.toolbar-sentinel{height:1px;margin-bottom:-1px;pointer-events:none}
 .toolbar-inner{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
   box-shadow:var(--shadow-lg);padding:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+}
+/* Docked state: once the toolbar reaches the top edge it squares off and runs
+   full width, so its corners are not left clipped against the viewport and
+   cards stop showing through beside it. Deliberately not animated and kept to
+   the smallest possible change — same height, same opaque surface — so it
+   reads as the bar settling rather than as a transformation. */
+.toolbar.docked{max-width:none;padding:0}
+.toolbar.docked .toolbar-inner{
+  border-radius:0;border-color:transparent transparent var(--border);
+  padding:14px max(24px,calc((100% - 1072px) / 2));
+  box-shadow:0 2px 10px rgba(16,24,40,.06);
 }
 .search{
   flex:1 1 260px;position:relative;
@@ -86,6 +117,18 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 }
 .search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.5}
+.branch{
+  display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:6px 8px 6px 14px;border:1px solid var(--border);border-radius:10px;
+  background:var(--surface2);
+}
+.branch span{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
+.branch select{
+  font-family:inherit;font-size:14px;font-weight:600;color:var(--text);
+  background:transparent;border:0;outline:none;cursor:pointer;padding:4px 2px;
+}
+.branch select option{background:var(--surface);color:var(--text)}
+.branch:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{
   font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
@@ -100,7 +143,7 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .chip .count{opacity:.65;font-weight:500}
 
 /* sections */
-main{padding:40px 0 24px}
+main.wrap{padding-top:88px;padding-bottom:24px}
 .section{margin-bottom:44px}
 .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
 .section-head h2{font-size:22px;font-weight:750;letter-spacing:-.3px}
@@ -121,7 +164,7 @@ main{padding:40px 0 24px}
 .card h3{font-size:16.5px;font-weight:700;letter-spacing:-.2px;word-break:break-word}
 .card .file{font-size:12.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card p{font-size:14px;color:var(--muted);flex:1}
-.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:2px}
 .size{font-size:12.5px;color:var(--muted)}
 .dl{
   display:inline-flex;align-items:center;gap:7px;text-decoration:none;
@@ -129,6 +172,34 @@ main{padding:40px 0 24px}
   background:var(--card-color,var(--accent));color:#fff;transition:filter .15s;
 }
 .dl:hover{filter:brightness(1.12)}
+.actions{display:inline-flex;align-items:center;gap:8px}
+.share{
+  display:inline-grid;place-items:center;width:34px;height:34px;flex:0 0 auto;
+  border:1px solid var(--border);border-radius:9px;background:var(--surface2);
+  color:var(--muted);cursor:pointer;font-family:inherit;position:relative;
+  transition:color .15s,border-color .15s;
+}
+.share:hover{color:var(--card-color);border-color:var(--card-color)}
+.share.copied{color:var(--card-color);border-color:var(--card-color)}
+.share.copied::after{
+  content:"Link copied";position:absolute;bottom:calc(100% + 8px);left:50%;
+  transform:translateX(-50%);white-space:nowrap;
+  background:var(--text);color:var(--surface);font-size:12px;font-weight:600;
+  padding:4px 9px;border-radius:6px;pointer-events:none;
+}
+@keyframes flash{
+  0%,100%{box-shadow:var(--shadow)}
+  15%,60%{box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
+}
+.card.flash{animation:flash 2s ease-in-out}
+.card{transition:transform .15s,box-shadow .15s,opacity .3s}
+.card.dimmed{opacity:.38}
+.card.dimmed:hover{opacity:.75}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .card.flash{animation:none;box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
+  .card{transition:opacity .01s}
+}
 .badge{
   font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
   padding:3px 9px;border-radius:999px;color:var(--card-color);
@@ -158,19 +229,53 @@ main{padding:40px 0 24px}
 footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:600px){
-  /* Material Design compact-width (<600dp) spacing: 16dp screen margins,
-     8dp baseline grid for vertical rhythm, 48dp minimum touch targets. */
+  /* Material Design compact-width (<600dp): 16dp screen margins, 8dp baseline
+     grid for vertical rhythm, 48dp minimum touch targets, type one step down. */
   .wrap{padding:0 16px}
   header.hero{padding:40px 0 56px}
   .hero-top{margin-bottom:24px}
   .hero-stats{gap:16px;margin-top:24px}
   .toolbar-inner{padding:12px;gap:8px}
+  main.wrap{padding-top:68px;padding-bottom:16px}
   .section{margin-bottom:40px}
-  main{padding:24px 0 16px}
+  .state{padding:40px 0}
   .card{padding:16px;gap:8px}
   .info{padding:20px;gap:16px;margin-bottom:40px}
   footer{padding:24px 0 32px}
-  .hero-links a,.theme-btn{padding:13px 16px;min-height:48px}
+
+  /* touch targets — keep the nav on one row at 360dp and up */
+  .hero-links{gap:6px;flex-wrap:nowrap}
+  .hero-links a{padding:13px 12px;min-height:48px;font-size:13px}
+  .hero-links .icon-link{width:48px;height:48px;padding:12px;flex:0 0 auto}
+  .share{width:44px;height:44px}
+
+  /* type scale */
+  .brand{font-size:17px;gap:8px;min-width:0}
+  .brand .logo{width:30px;height:30px;flex:0 0 auto}
+  h1{font-size:26px}
+  .hero p.sub{font-size:14px}
+  .stat b{font-size:20px}
+  .stat span{font-size:11px}
+  .search input{font-size:14px}
+  .branch select{font-size:13px}
+  .chip{font-size:12.5px;padding:7px 12px}
+  .section-head h2{font-size:18px}
+  .section p.desc{font-size:13.5px}
+  .card h3{font-size:15px}
+  .card p{font-size:13.5px}
+  .dl{font-size:12.5px}
+  .info h3{font-size:14px}
+  .info p{font-size:13px}
+
+  .hero-body-inner{padding-top:24px}
+
+  /* the sticky toolbar is three rows tall here, so slide it away while
+     scrolling down and bring it back on any upward scroll */
+  .toolbar{transition:transform .25s ease}
+  .toolbar.toolbar-hidden{transform:translateY(calc(-100% - 24px))}
+  .toolbar.docked .toolbar-inner{padding:12px 16px}
+
+  /* collapsible hero */
   .collapse-btn{
     display:inline-flex;align-items:center;justify-content:center;
     width:48px;height:48px;padding:0;border-radius:50%;
@@ -180,12 +285,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .collapse-btn:hover{background:rgba(255,255,255,.2)}
   .collapse-btn svg{transition:transform .2s}
   .collapse-btn.is-collapsed svg{transform:rotate(180deg)}
-  header.hero.collapsed h1,
-  header.hero.collapsed p.sub,
-  header.hero.collapsed .hero-stats{
-    display:none;
-  }
-  header.hero.collapsed .hero-top{margin-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .collapse-btn svg,.toolbar,.hero-body{transition:none}
 }
 </style>
 </head>
@@ -196,26 +298,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="hero-top">
       <div class="brand"><img class="logo" src="https://github.com/Eddy3D-Dev.png" alt="Eddy3D logo"> Eddy3D</div>
       <nav class="hero-links">
-        <a href="https://www.eddy3d.com" target="_blank" rel="noopener">Docs</a>
-        <a href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener">GitHub</a>
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">◐ Theme</button>
+        <a href="https://docs.eddy3d.com" target="_blank" rel="noopener">Docs</a>
+        <a class="icon-link" href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener" aria-label="View on GitHub" title="View on GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.44 3.44 10.05 8.21 11.68.6.12.82-.27.82-.6 0-.3-.01-1.09-.02-2.14-3.34.75-4.04-1.65-4.04-1.65-.55-1.44-1.34-1.82-1.34-1.82-1.09-.77.08-.75.08-.75 1.21.09 1.84 1.29 1.84 1.29 1.07 1.87 2.81 1.33 3.5 1.02.11-.79.42-1.33.76-1.64-2.67-.31-5.47-1.38-5.47-6.15 0-1.36.47-2.47 1.24-3.34-.12-.31-.54-1.56.12-3.25 0 0 1.01-.33 3.3 1.28a11.2 11.2 0 0 1 3-.41c1.02 0 2.04.14 3 .41 2.29-1.6 3.3-1.28 3.3-1.28.66 1.69.24 2.94.12 3.25.77.87 1.24 1.98 1.24 3.34 0 4.78-2.81 5.83-5.49 6.14.43.38.81 1.13.81 2.28 0 1.65-.02 2.98-.02 3.38 0 .33.22.72.83.6C20.56 22.34 24 17.74 24 12.3 24 5.5 18.63 0 12 0Z"/></svg>
+        </a>
+        <button class="icon-link" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="themeIcon"></svg>
+        </button>
         <button class="collapse-btn" id="collapseBtn" aria-label="Collapse header" aria-expanded="true">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
         </button>
       </nav>
     </div>
-    <h1>Grasshopper Templates</h1>
-    <p class="sub">Ready-to-run <strong>.ghx</strong> workflows for Eddy3D — outdoor microclimate analysis, OpenFOAM &amp; LBM airflow simulation, and machine-learning surrogate models.</p>
-    <div class="hero-stats" id="stats"></div>
+    <div class="hero-body" id="heroBody">
+      <div class="hero-body-inner">
+        <h1>Grasshopper Templates</h1>
+        <p class="sub">Ready-to-run <strong>.ghx</strong> workflows for Eddy3D — outdoor microclimate analysis, OpenFOAM &amp; LBM airflow simulation, and machine-learning surrogate models.</p>
+        <div class="hero-stats" id="stats"></div>
+      </div>
+    </div>
   </div>
 </header>
 
+<div class="toolbar-sentinel" aria-hidden="true"></div>
 <div class="wrap toolbar">
   <div class="toolbar-inner">
     <div class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
       <input id="q" type="search" placeholder="Search templates… (e.g. UTCI, OpenFOAM, comfort)" autocomplete="off">
     </div>
+    <label class="branch hidden" id="branchWrap">
+      <span>Version</span>
+      <select id="branch" aria-label="Repository branch"></select>
+    </label>
     <div class="chips" id="chips"></div>
   </div>
 </div>
@@ -230,9 +345,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="state hidden" id="empty">No templates match your search.</div>
 
   <div class="info">
-    <div><h3><span class="num">1</span> Download</h3><p>Grab a template with its download button — a single <code>.ghx</code> file, no unpacking needed.</p></div>
-    <div><h3><span class="num">2</span> Open in Grasshopper</h3><p>Open the file in Grasshopper for Rhino with the <a href="https://www.eddy3d.com" target="_blank" rel="noopener">Eddy3D plugin</a> installed.</p></div>
-    <div><h3><span class="num">3</span> Plug in your model</h3><p>Replace the example geometry and weather file with your own, then run the workflow.</p></div>
+    <div><h3><span class="num">1</span> Download</h3><p>Grab a template via its download button.</p></div>
+    <div><h3><span class="num">2</span> Open in Grasshopper</h3><p>Open the file in Grasshopper for Rhino with the <a href="https://docs.eddy3d.com" target="_blank" rel="noopener">Eddy3D plugin</a> installed.</p></div>
+    <div><h3><span class="num">3</span> Plug in your data</h3><p>Replace the example geometry and weather file with your own.</p></div>
   </div>
 </main>
 
@@ -260,37 +375,25 @@ const CATS={
     desc:"Extended workflows combining airflow and thermal comfort pipelines."}
 };
 
-/* Curated descriptions per filename (fallback: generic) */
-const DESC={
-  "MRT_Mixed.ghx":"Mean radiant temperature with a mixed (fast) calculation approach for outdoor comfort studies.",
-  "MRT_Radiance.ghx":"Mean radiant temperature computed with Radiance-based raytracing for higher accuracy.",
-  "Sun_Hours.ghx":"Direct sun-hours analysis on ground and façade surfaces across a chosen period.",
-  "SurfaceTemps_FFT.ghx":"Transient surface temperature estimation using an FFT-based thermal model.",
-  "UTCI_annual.ghx":"Annual Universal Thermal Climate Index (UTCI) maps combining wind, radiation and weather data.",
-  "UTCI_surrogate.ghx":"Fast UTCI prediction using a pre-trained surrogate model instead of full simulation.",
-  "BoxDomain.ghx":"OpenFOAM wind simulation in a rectangular (box) domain — standard urban wind study setup.",
-  "CylinderDomain.ghx":"OpenFOAM wind simulation in a cylindrical domain — run multiple wind directions without remeshing.",
-  "FluidX3D.ghx":"GPU Lattice-Boltzmann airflow simulation powered by FluidX3D — very fast transient wind fields.",
-  "OpenLB.ghx":"Lattice-Boltzmann airflow simulation using the OpenLB solver backend.",
-  "ML_basic.ghx":"Minimal example for setting up and running an ML-based airflow inference workflow.",
-  "ML_Inference.ghx":"Wind-field inference with a pre-trained neural network — CFD-like results in seconds.",
-  "ML_Inference_Comfort.ghx":"ML wind inference chained into an outdoor thermal comfort (UTCI) evaluation.",
-  "ML_Inference_moving_circle.ghx":"Interactive demo: real-time ML wind inference around movable geometry.",
-  "umcf_utci.ghx":"Urban microclimate framework: coupled airflow + radiation + UTCI comfort pipeline."
-};
-
 const $=s=>document.querySelector(s);
+/* Stable per-template anchor, e.g. Outdoor/ML/ML_basic.ghx -> t-outdoor-ml-ml_basic */
+const anchorOf=path=>"t-"+path.replace(/\.ghx?$/i,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const fmtSize=b=>b>1048576?(b/1048576).toFixed(1)+" MB":Math.max(1,Math.round(b/1024))+" KB";
 const titleOf=f=>f.replace(/\.ghx?$/i,"").replace(/_/g," ");
 
 /* theme */
 const root=document.documentElement;
 const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
-const applyTheme=t=>{root.dataset.theme=t;store.set("eddy-theme",t)};
+const SUN_ICON='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+const MOON_ICON='<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/>';
+const applyTheme=t=>{
+  root.dataset.theme=t;store.set("eddy-theme",t);
+  $("#themeIcon").innerHTML=t==="dark"?SUN_ICON:MOON_ICON;
+};
 applyTheme(store.get("eddy-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
 $("#themeBtn").onclick=()=>applyTheme(root.dataset.theme==="dark"?"light":"dark");
 
-/* collapsible hero (mobile only — hidden via CSS on larger screens) */
+/* collapsible hero (mobile only — the button is hidden via CSS on larger screens) */
 const heroEl=$("header.hero"),collapseBtn=$("#collapseBtn");
 const applyCollapse=c=>{
   heroEl.classList.toggle("collapsed",c);
@@ -302,7 +405,38 @@ const applyCollapse=c=>{
 applyCollapse(store.get("eddy-hero-collapsed")==="1");
 collapseBtn.onclick=()=>applyCollapse(!heroEl.classList.contains("collapsed"));
 
-let ALL=[],activeCat="all";
+/* Scroll-away toolbar (the CSS transform is mobile-only): hide it while the
+   reader scrolls down, reveal it again on any upward scroll or near the top.
+   Stays put whenever something inside it — search box, version picker — has
+   focus, so it can't slide out from under the user mid-interaction. */
+const toolbarEl=$(".toolbar");
+let lastY=Math.max(0,window.scrollY),queued=false;
+const syncToolbar=()=>{
+  queued=false;
+  const y=Math.max(0,window.scrollY),dy=y-lastY;
+  lastY=y;
+  if(toolbarEl.contains(document.activeElement)) return;
+  if(y<=88||dy<-4) toolbarEl.classList.remove("toolbar-hidden");
+  else if(dy>4) toolbarEl.classList.add("toolbar-hidden");
+};
+addEventListener("scroll",()=>{
+  if(queued) return;
+  queued=true;requestAnimationFrame(syncToolbar);
+},{passive:true});
+/* never leave it hidden when focus lands inside it (e.g. tabbing to search) */
+toolbarEl.addEventListener("focusin",()=>toolbarEl.classList.remove("toolbar-hidden"));
+syncToolbar();/* the page can load already scrolled, e.g. via a #template deep link */
+
+/* Dock the bar once it meets the top edge. The sentinel sits where the toolbar
+   begins, offset by the -44px the toolbar is pulled up into the hero. Using an
+   observer rather than a scroll measurement means it also stays correct when
+   the hero collapses and moves the toolbar. */
+new IntersectionObserver(
+  ([e])=>toolbarEl.classList.toggle("docked",!e.isIntersecting),
+  {rootMargin:"-44px 0px 0px 0px"}
+).observe($(".toolbar-sentinel"));
+
+let ALL=[],activeCat="all",branch=null,spotlightId=null;
 
 function catOf(path){
   let best=null;
@@ -310,28 +444,74 @@ function catOf(path){
   return best;
 }
 
-async function load(){
-  /* Descriptions extracted from a "Description" panel inside each .ghx
-     (see scripts/extract_descriptions.py); override the baked-in fallbacks. */
-  const ghxDesc=await fetch("descriptions.json").then(r=>r.ok?r.json():{}).catch(()=>({}));
+/* Only version branches (1.7.0.827) are offered — main and working
+   branches are not releases and would just be noise in the picker. */
+const isVersion=n=>/^\d+(\.\d+)+$/.test(n);
+
+function compareBranches(a,b){
+  const va=a.split(".").map(Number),vb=b.split(".").map(Number);
+  for(let i=0;i<Math.max(va.length,vb.length);i++){
+    const d=(vb[i]||0)-(va[i]||0);
+    if(d)return d;
+  }
+  return 0;
+}
+
+async function loadBranches(){
   const info=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}`).then(r=>{if(!r.ok)throw 0;return r.json()});
-  const branch=info.default_branch;
-  const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`).then(r=>{if(!r.ok)throw 0;return r.json()});
+  const list=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/branches?per_page=100`)
+    .then(r=>r.ok?r.json():[]).catch(()=>[]);
+  let names=list.map(b=>b.name).filter(isVersion).sort(compareBranches);
+  if(!names.length)names=[info.default_branch];
+  const wanted=new URLSearchParams(location.search).get("branch")||store.get("eddy-branch");
+  branch=names.includes(wanted)?wanted:(names.includes(info.default_branch)?info.default_branch:names[0]);
+  $("#branch").innerHTML=names.map(n=>
+    `<option value="${n}"${n===branch?" selected":""}>${n}${n===info.default_branch?" (default)":""}</option>`).join("");
+  $("#branchWrap").classList.remove("hidden");
+}
+
+async function loadTree(){
+  $("#loading").classList.remove("hidden");
+  $("#error").classList.add("hidden");
+  $("#sections").innerHTML="";
+  /* Descriptions come only from a "Description" panel inside each .ghx
+     (see scripts/extract_descriptions.py). Read them from the selected
+     branch so they match the templates being shown. */
+  const ghxDesc=await fetch(`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/docs/descriptions.json`)
+    .then(r=>r.ok?r.json():{}).catch(()=>({}));
+  const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`)
+    .then(r=>{if(!r.ok)throw 0;return r.json()});
   ALL=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)).map(n=>{
     const cat=catOf(n.path)||"Other";
     const name=n.path.split("/").pop();
     return {path:n.path,name,size:n.size||0,cat,
-      desc:ghxDesc[name]||DESC[name]||"Grasshopper template for Eddy3D workflows.",
-      url:`https://github.com/${OWNER}/${REPO}/raw/${branch}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
+      desc:ghxDesc[name]||"",
+      url:`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
   });
-  $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} templates`;
+  $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} template${ALL.length===1?"":"s"}`;
   $("#stats").innerHTML=`
     <div class="stat"><b>${ALL.length}</b><span>Templates</span></div>
-    <div class="stat"><b>${new Set(ALL.map(t=>t.cat)).size}</b><span>Categories</span></div>
-    <div class="stat"><b>Free</b><span>MIT-friendly</span></div>`;
+    <div class="stat"><b>${new Set(ALL.map(t=>t.cat)).size}</b><span>Categories</span></div>`;
   buildChips();render();
   $("#loading").classList.add("hidden");
+  focusFromHash();
 }
+
+async function load(){
+  await loadBranches();
+  await loadTree();
+}
+
+$("#branch").addEventListener("change",async e=>{
+  branch=e.target.value;
+  activeCat="all";
+  spotlightId=null;
+  store.set("eddy-branch",branch);
+  const url=new URL(location);url.searchParams.set("branch",branch);
+  history.replaceState(null,"",url);
+  try{await loadTree()}
+  catch(err){$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")}
+});
 
 function buildChips(){
   const counts={};ALL.forEach(t=>counts[t.cat]=(counts[t.cat]||0)+1);
@@ -343,7 +523,7 @@ function buildChips(){
   $("#chips").innerHTML=chips.join("");
   $("#chips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
     $("#chips").querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
-    c.classList.add("active");activeCat=c.dataset.cat;render();
+    c.classList.add("active");activeCat=c.dataset.cat;spotlightId=null;render();
   });
 }
 
@@ -359,17 +539,22 @@ function render(){
       <div class="section-head"><span class="bar"></span><h2>${m.label}</h2></div>
       ${m.desc?`<p class="desc">${m.desc}</p>`:""}
       <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
-        <article class="card" style="--card-color:${m.color}">
+        <article class="card${spotlightId&&spotlightId!==anchorOf(t.path)?" dimmed":""}" id="${anchorOf(t.path)}" style="--card-color:${m.color}">
           <div class="card-head">
             <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
           </div>
-          <p>${t.desc}</p>
+          ${t.desc?`<p>${t.desc}</p>`:""}
           <div class="card-foot">
             <span class="size">${fmtSize(t.size)}</span>
-            <a class="dl" href="${t.url}" download title="Download ${t.name}">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download
-            </a>
+            <span class="actions">
+              <button class="share" data-path="${t.path}" title="Copy link to ${t.name}" aria-label="Copy link to ${t.name}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7L12 19"/></svg>
+              </button>
+              <a class="dl" href="${t.url}" download="${t.name}" target="_blank" rel="noopener" data-name="${t.name}" title="Download ${t.name}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download
+              </a>
+            </span>
           </div>
         </article>`).join("")}</div>
     </section>`;
@@ -377,7 +562,88 @@ function render(){
   $("#empty").classList.toggle("hidden",vis.length>0||ALL.length===0);
 }
 
-$("#q").addEventListener("input",render);
+/* GitHub serves .ghx as text/plain, and the download attribute is ignored
+   cross-origin — both would show raw XML instead of saving. Fetch the file
+   and hand the browser a same-origin blob so it downloads properly. */
+$("#sections").addEventListener("click",async e=>{
+  const a=e.target.closest("a.dl");
+  if(!a||e.metaKey||e.ctrlKey||e.shiftKey||a.dataset.busy)return;
+  e.preventDefault();
+  const label=a.innerHTML;
+  a.dataset.busy="1";a.textContent="Downloading…";
+  try{
+    const res=await fetch(a.href);
+    if(!res.ok)throw new Error(res.status);
+    const url=URL.createObjectURL(await res.blob());
+    const tmp=Object.assign(document.createElement("a"),{href:url,download:a.dataset.name});
+    document.body.appendChild(tmp);tmp.click();tmp.remove();
+    URL.revokeObjectURL(url);
+  }catch(err){
+    window.open(a.href,"_blank","noopener");
+  }finally{
+    delete a.dataset.busy;a.innerHTML=label;
+  }
+});
+
+function shareUrl(path){
+  const url=new URL(location.href);
+  url.search="";url.hash="";
+  url.searchParams.set("branch",branch);
+  url.hash=anchorOf(path);
+  return url.toString();
+}
+
+$("#sections").addEventListener("click",async e=>{
+  const btn=e.target.closest("button.share");
+  if(!btn)return;
+  const url=shareUrl(btn.dataset.path);
+  try{
+    await navigator.clipboard.writeText(url);
+    btn.classList.add("copied");
+    setTimeout(()=>btn.classList.remove("copied"),1400);
+  }catch(err){
+    /* Clipboard blocked (insecure context or denied) — let the user copy manually. */
+    prompt("Copy this link:",url);
+  }
+  history.replaceState(null,"",url);
+});
+
+/* A shared link names one template; clear any filter that would hide it,
+   then scroll to it and flash it so it is obvious which card was meant. */
+function focusTemplate(id){
+  if(!id)return;
+  const target=ALL.find(t=>anchorOf(t.path)===id);
+  if(!target)return;
+  spotlightId=id;
+  if(activeCat!=="all"&&activeCat!==target.cat){
+    activeCat="all";
+    $("#chips").querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.cat==="all"));
+  }
+  render();
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.scrollIntoView({block:"center",behavior:"smooth"});
+  el.classList.add("flash");
+  setTimeout(()=>el.classList.remove("flash"),2000);
+}
+
+/* Any deliberate action to browse elsewhere — searching, clicking another
+   card — drops the spotlight so the rest of the grid reads normally again. */
+function clearSpotlight(){
+  if(!spotlightId)return;
+  spotlightId=null;
+  render();
+}
+
+const focusFromHash=()=>focusTemplate(decodeURIComponent(location.hash.slice(1)));
+addEventListener("hashchange",focusFromHash);
+
+$("#sections").addEventListener("click",e=>{
+  const card=e.target.closest(".card");
+  if(card&&spotlightId&&card.id!==spotlightId)clearSpotlight();
+});
+
+$("#q").addEventListener("input",()=>{spotlightId=null;render()});
 load().catch(()=>{$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")});
 </script>
 </body>
