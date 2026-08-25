@@ -481,7 +481,8 @@ async function loadTree(){
     .then(r=>r.ok?r.json():{}).catch(()=>({}));
   const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`)
     .then(r=>{if(!r.ok)throw 0;return r.json()});
-  ALL=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)).map(n=>{
+  /* Internal templates are for development only — never show them in the gallery. */
+  ALL=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)&&!/^Internal\//.test(n.path)).map(n=>{
     const cat=catOf(n.path)||"Other";
     const name=n.path.split("/").pop();
     return {path:n.path,name,size:n.size||0,cat,
