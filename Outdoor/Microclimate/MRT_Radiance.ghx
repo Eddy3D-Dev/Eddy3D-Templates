@@ -2630,11 +2630,11 @@
                     <chunk name="param_input" index="0">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Sensor mesh; one probe per face center.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Sensor geometry: meshes (one probe per face center, facing the face normal) and/or points (one probe each, facing the Normal input).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">642e7e65-58e5-4716-8779-4897b7b1b2aa</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Mesh</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Sensors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">S</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">5c7a59bd-4b18-465e-be1c-4023d71a0591</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
@@ -2658,36 +2658,10 @@
                     <chunk name="param_input" index="1">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Explicit sensor points. When connected, these take priority over Mesh.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">beb51b0a-e8f4-4710-bca2-94e60f381f8a</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Points</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Points</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>932</X>
-                              <Y>1059</Y>
-                              <W>37</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>952</X>
-                              <Y>1069</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_input" index="2">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Sensor normal for point input (default world Z).</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Sensor normals for POINT inputs: one vector per point (for example, Vectors from Brep Grid Points), or one vector shared by every point. Default world Z. Mesh probes always face their face normal.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">9efffd83-8ab9-435f-8043-a57dd3d97c8e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Normal</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Normal</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">N</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2716,6 +2690,48 @@
                                 <item name="Count" type_name="gh_int32" type_code="3">1</item>
                                 <item name="Path" type_name="gh_string" type_code="10">{0}</item>
                               </items>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Offsets every sensor along its own normal by this many meters. Point sensors use their corresponding Normal input; mesh sensors use their face normal. Default 1.1 m places upward-facing ground sensors at pedestrian body height.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c32a6f9a-3272-47d2-816f-c4b6d125f330</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Height</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Height</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">1.1</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
                             </chunk>
                           </chunks>
                         </chunk>

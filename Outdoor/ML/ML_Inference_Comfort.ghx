@@ -5311,7 +5311,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Predicted wind speeds (m/s) as a DataTree from WindPredictor.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">d914b659-ca01-48b8-94e2-b74772ea56e3</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Speeds</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">W</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">U</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">7ddc3ee7-7103-408b-979b-c90b30015abe</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -5364,8 +5364,8 @@
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Reference height for the simulations (m). Default = 10.0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">14d12f11-0aa0-478f-9c9c-68b89780eece</item>
-                        <item name="Name" type_name="gh_string" type_code="10">z_ref</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">z_ref</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Reference Height</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">zRef</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5410,8 +5410,8 @@
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Roughness length (m). Default = 1.0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e31966b9-1e4b-4058-9e34-99823c584150</item>
-                        <item name="Name" type_name="gh_string" type_code="10">z_0</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">z_0</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Roughness Length (z0)</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">z0</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5453,12 +5453,18 @@
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="5">
-                      <items count="7">
+                      <items count="8">
                         <item name="Description" type_name="gh_string" type_code="10">Comfort metric to use.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">48db5046-14e1-4c63-9e7e-f82fec8b52f3</item>
                         <item name="Name" type_name="gh_string" type_code="10">Metric</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Metric</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Options" type_name="gh_string" type_code="10">Lawson General
+Lawson LDDC
+Lawson 2001
+Davenport
+NEN8100 Comfort
+NEN8100 Safety</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">3c22fbd7-ed0e-4b3e-95ae-09fc4397466c</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
@@ -5500,12 +5506,14 @@
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="6">
-                      <items count="6">
+                      <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Interpolate between wind directions. Default = true</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a4cda8d5-25df-4d6a-a961-18a2e60bb5b8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Interpolate</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Interp</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Options" type_name="gh_string" type_code="10">True
+False</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
                       <chunks count="2">
@@ -5546,12 +5554,14 @@
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="7">
-                      <items count="6">
+                      <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Use Method of Moments for ultra-fast Weibull estimation. Default = true</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6f1a48fb-19e2-41eb-b14d-6b8b3965488e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Fast Mode (MoM)</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Fast</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Options" type_name="gh_string" type_code="10">True
+False</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
                       <chunks count="2">
@@ -5593,7 +5603,7 @@
                     </chunk>
                     <chunk name="param_input" index="8">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Optional simulation metadata to automate z_ref, z_0, and U_ref_sim.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional simulation metadata to automate zRef, z0, and Uref (sim).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">73de220d-6f2b-4d91-bd14-f20d0368decc</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -5651,7 +5661,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Optional roof-level wind speeds (m/s) DataTree.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">89fa9fe9-3568-4404-ad54-ca6952d8fa4b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Speeds (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">W_roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Wroof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">0cd2b620-684f-4580-bf2f-1c53d48c5684</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -5679,7 +5689,7 @@
                         <item name="Description" type_name="gh_string" type_code="10">Optional roof-level TKE (m²/s²) DataTree.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">dafd03a0-47f7-45fd-bb45-9add8c29f204</item>
                         <item name="Name" type_name="gh_string" type_code="10">TKE (Roof)</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">k_roof</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">kroof</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6783,7 +6793,7 @@
                     <chunk name="param_output" index="0">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Grid points on surfaces</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Centered sample points inside the actual input subsurfaces; never seeded on shared face edges.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">f7b14a19-0721-4a65-ba6c-a34f92d2281e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Points</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Pts</item>
@@ -6810,10 +6820,54 @@
                     <chunk name="param_output" index="1">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Status message</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Outward unit surface normals corresponding one-to-one with the grid points.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">cbdaf7f2-6fa9-4de8-9ec6-3316a15c7d3d</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Vectors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Vec</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Joined mesh representation of the sampled input geometry.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">e7edbdf7-0614-4c8c-bd13-7efa1487964f</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Mesh</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Mesh</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Status message or warnings.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4d2c4b49-95e9-4913-bac8-32a6d6e78747</item>
                         <item name="Name" type_name="gh_string" type_code="10">Status</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Msg</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Status</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6829,58 +6883,6 @@
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1038</X>
                               <Y>261</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_output" index="2">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Joined mesh representation of the sampled input geometry.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">1de9cd33-3e80-4cdb-9df4-c5d52feae939</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Mesh</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1020</X>
-                              <Y>271</Y>
-                              <W>36</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1038</X>
-                              <Y>281</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_output" index="3">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Status message or warnings.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c8727cad-d157-4792-aabf-5a0f68a363ae</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Status</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Status</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1020</X>
-                              <Y>291</Y>
-                              <W>36</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1038</X>
-                              <Y>301</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15930,10 +15932,10 @@ Version 1.7.0.827</item>
                     <chunk name="param_input" index="0">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Wind directions to simulate. Units: degrees (0-359). 0° = North, 90° = East. Use multiple for annual studies.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Wind directions as meteorological degrees (wind-from, clockwise from north) or flow vectors. One solver case is created per direction. Optional; default is flow toward -Y (south).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7b7072bd-5716-4d0e-89eb-ac4d10abc5fa</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Directions</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Dir</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Dirs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">19c7df22-7b84-45d0-891c-5f707a6a1f67</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -15958,10 +15960,10 @@ Version 1.7.0.827</item>
                     <chunk name="param_input" index="1">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Wind speed at reference height. Units: m/s. Typical urban: 3-8 m/s. Default: 5 m/s</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Wind speed at the reference height (m/s), one value per wind direction. A single value applies to all directions; a shorter list repeats its last value. Optional; default is 5.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">07941d7d-da4f-45ab-a410-47c8a1af1533</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Reference Velocity</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Uref</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Wind Speed</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">U</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">d2eb16d5-c0c5-4fbc-93fb-1c03867f119c</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -15985,14 +15987,14 @@ Version 1.7.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="2">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Height where velocity is measured (weather station height). Units: m. Standard: 10m. Default: 10m</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Reference height for wind speed (m). Optional; default is 10.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c0a72ead-e9f1-463b-8628-3ca6a82bc29c</item>
                         <item name="Name" type_name="gh_string" type_code="10">Reference Height</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Zref</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
-                      <chunks count="1">
+                      <chunks count="2">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -16007,18 +16009,38 @@ Version 1.7.0.827</item>
                             </item>
                           </items>
                         </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">10</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Aerodynamic roughness length. Units: m. Examples: 0.01 (open terrain), 0.3 (suburban), 1.0 (urban). Default: 1m</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Aerodynamic roughness length (m). Higher values indicate rougher terrain. Optional; default is 1.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1fa5e05b-00bc-4394-b07b-a25dd9f28ef0</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Aerodynamic roughness length</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Roughness Length (z0)</item>
                         <item name="NickName" type_name="gh_string" type_code="10">z0</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
-                      <chunks count="1">
+                      <chunks count="2">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -16033,18 +16055,38 @@ Version 1.7.0.827</item>
                             </item>
                           </items>
                         </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">1</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="4">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Height of the ground plane in the simulation. Default: 0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Ground/displacement height for the ABL log-law profile (m). Optional; default is 0.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ccd102ae-224e-4c0d-a0f8-cd357bb7c269</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Ground Level</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Ground Height</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Zgnd</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
-                      <chunks count="1">
+                      <chunks count="2">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -16059,29 +16101,45 @@ Version 1.7.0.827</item>
                             </item>
                           </items>
                         </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">0</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="5">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Optional: EnergyPlus Weather file (.epw) for annual wind analysis.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">9eccd419-b4c3-4c5e-9a16-964f2d84dfd0</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Weather File</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">EPW</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Inlet/initial turbulent kinetic energy k (m^2/s^2) for the ABL. Used by the k field and the turbulence transports; the inlet patch still uses the atmBoundaryLayer k profile. Optional; default is 0.015.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">2c4294cf-9186-4c62-b409-3906445f895e</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Turbulent KE (k)</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">k</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
-                          <items count="2">
+                          <items count="1">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>961</X>
-                              <Y>937</Y>
-                              <W>37</W>
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
                               <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>981</X>
-                              <Y>947</Y>
                             </item>
                           </items>
                         </chunk>
@@ -16095,6 +16153,13 @@ Version 1.7.0.827</item>
                                 <item name="Count" type_name="gh_int32" type_code="3">1</item>
                                 <item name="Path" type_name="gh_string" type_code="10">{0}</item>
                               </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">0.015</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
                             </chunk>
                           </chunks>
                         </chunk>
@@ -16689,7 +16754,7 @@ Version 1.7.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. U_ref, z_ref, z_0, wind directions, and EPW path are extracted automatically.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Uref, zRef, z0, wind directions, and EPW path are extracted automatically.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">9b5c0d02-33ca-41f6-abe7-6839507cdeca</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -16718,8 +16783,8 @@ Version 1.7.0.827</item>
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Pedestrian mount height (m). Default = 1.8</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">8fcbf1aa-ae79-4352-b209-781d15acc176</item>
-                        <item name="Name" type_name="gh_string" type_code="10">pedestrian_level</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">pedestrian_level</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Pedestrian Level</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PedLevel</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -16765,7 +16830,7 @@ Version 1.7.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Margin (in meters) to mask out from the outer perimeter of the prediction plane due to unstable boundary effects. Default = 100.0</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3b6f9567-1454-4cfd-ad28-f82c5ce98aba</item>
                         <item name="Name" type_name="gh_string" type_code="10">Filter Margin</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">filter_margin</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">FiltMargin</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -16892,11 +16957,11 @@ gray</item>
                     </chunk>
                     <chunk name="param_input" index="8">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">If true, generates a smooth, continuous interpolated mesh. If false, generates a pixelated blocky mesh.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Visualization style. Flat (pixelated) vs Smooth (interpolated colors).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0aef5842-39c5-4f4d-9040-1b034577b00d</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Interpolate</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Interpolate</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Interp</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">Flat
 Smooth</item>

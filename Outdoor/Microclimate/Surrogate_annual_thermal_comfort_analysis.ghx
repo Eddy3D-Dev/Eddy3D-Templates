@@ -2132,7 +2132,7 @@ Wind Direction</item>
                     <chunk name="ParameterData">
                       <items count="7">
                         <item name="InputCount" type_name="gh_int32" type_code="3">1</item>
-                        <item name="InputId" index="0" type_name="gh_guid" type_code="9">47e6606f-4707-4697-b812-40dbf3b593e4</item>
+                        <item name="InputId" index="0" type_name="gh_guid" type_code="9">8ec86459-bf01-4409-baee-174d0d2b13d0</item>
                         <item name="OutputCount" type_name="gh_int32" type_code="3">4</item>
                         <item name="OutputId" index="0" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
                         <item name="OutputId" index="1" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
@@ -2141,56 +2141,13 @@ Wind Direction</item>
                       </items>
                       <chunks count="5">
                         <chunk name="InputParam" index="0">
-                          <items count="10">
-                            <item name="Description" type_name="gh_string" type_code="10">Weather variables to output. Every column of the EPW record is listed, plus the derived series (absolute humidity, solar angles, hour of year) and the header values. Check any number of them — one output socket appears per checked variable, always in the order of this list.</item>
+                          <items count="9">
+                            <item name="Description" type_name="gh_string" type_code="10">Weather object, or an EPW file path (e.g. from Download Weather), to deconstruct.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">53cc886e-371e-44f6-83e7-d1b724c5777c</item>
                             <item name="Multiple" type_name="gh_bool" type_code="1">true</item>
-                            <item name="Name" type_name="gh_string" type_code="10">Variables</item>
-                            <item name="NickName" type_name="gh_string" type_code="10">Variables</item>
+                            <item name="Name" type_name="gh_string" type_code="10">Weather</item>
+                            <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
                             <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                            <item name="Options" type_name="gh_string" type_code="10">Dry Bulb Temperature
-Relative Humidity
-Wind Speed
-Wind Direction
-Solar Elevation
-Solar Azimuth
-Dew Point Temperature
-Absolute Humidity
-Atmospheric Pressure
-Global Horizontal Radiation
-Direct Normal Radiation
-Diffuse Horizontal Radiation
-Horizontal Infrared Radiation
-Extraterrestrial Horizontal Radiation
-Extraterrestrial Direct Normal Radiation
-Global Horizontal Illuminance
-Direct Normal Illuminance
-Diffuse Horizontal Illuminance
-Zenith Luminance
-Total Sky Cover
-Opaque Sky Cover
-Visibility
-Ceiling Height
-Present Weather Observation
-Present Weather Codes
-Precipitable Water
-Aerosol Optical Depth
-Snow Depth
-Days Since Last Snowfall
-Albedo
-Liquid Precipitation Depth
-Liquid Precipitation Quantity
-Hour of Year
-Month
-Day
-Hour
-Timestamp
-Data Source Flags
-Location
-Latitude
-Longitude
-Time Zone
-EPW File</item>
                             <item name="Source" index="0" type_name="gh_guid" type_code="9">a4e57dbc-49c9-4190-89af-69d8e0996be4</item>
                             <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                             <item name="Value" type_name="gh_string" type_code="10"></item>

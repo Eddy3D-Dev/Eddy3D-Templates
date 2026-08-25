@@ -845,7 +845,7 @@ Wind Direction</item>
                     <chunk name="ParameterData">
                       <items count="7">
                         <item name="InputCount" type_name="gh_int32" type_code="3">1</item>
-                        <item name="InputId" index="0" type_name="gh_guid" type_code="9">47e6606f-4707-4697-b812-40dbf3b593e4</item>
+                        <item name="InputId" index="0" type_name="gh_guid" type_code="9">8ec86459-bf01-4409-baee-174d0d2b13d0</item>
                         <item name="OutputCount" type_name="gh_int32" type_code="3">4</item>
                         <item name="OutputId" index="0" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
                         <item name="OutputId" index="1" type_name="gh_guid" type_code="9">3e8ca6be-fda8-4aaf-b5c0-3c54c8bb7312</item>
@@ -854,56 +854,13 @@ Wind Direction</item>
                       </items>
                       <chunks count="5">
                         <chunk name="InputParam" index="0">
-                          <items count="10">
-                            <item name="Description" type_name="gh_string" type_code="10">Weather variables to output. Every column of the EPW record is listed, plus the derived series (absolute humidity, solar angles, hour of year) and the header values. Check any number of them — one output socket appears per checked variable, always in the order of this list.</item>
+                          <items count="9">
+                            <item name="Description" type_name="gh_string" type_code="10">Weather object, or an EPW file path (e.g. from Download Weather), to deconstruct.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">b92f8614-43cd-43c3-9bbe-4098c1d44403</item>
                             <item name="Multiple" type_name="gh_bool" type_code="1">true</item>
-                            <item name="Name" type_name="gh_string" type_code="10">Variables</item>
-                            <item name="NickName" type_name="gh_string" type_code="10">Variables</item>
+                            <item name="Name" type_name="gh_string" type_code="10">Weather</item>
+                            <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
                             <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                            <item name="Options" type_name="gh_string" type_code="10">Dry Bulb Temperature
-Relative Humidity
-Wind Speed
-Wind Direction
-Solar Elevation
-Solar Azimuth
-Dew Point Temperature
-Absolute Humidity
-Atmospheric Pressure
-Global Horizontal Radiation
-Direct Normal Radiation
-Diffuse Horizontal Radiation
-Horizontal Infrared Radiation
-Extraterrestrial Horizontal Radiation
-Extraterrestrial Direct Normal Radiation
-Global Horizontal Illuminance
-Direct Normal Illuminance
-Diffuse Horizontal Illuminance
-Zenith Luminance
-Total Sky Cover
-Opaque Sky Cover
-Visibility
-Ceiling Height
-Present Weather Observation
-Present Weather Codes
-Precipitable Water
-Aerosol Optical Depth
-Snow Depth
-Days Since Last Snowfall
-Albedo
-Liquid Precipitation Depth
-Liquid Precipitation Quantity
-Hour of Year
-Month
-Day
-Hour
-Timestamp
-Data Source Flags
-Location
-Latitude
-Longitude
-Time Zone
-EPW File</item>
                             <item name="Source" index="0" type_name="gh_guid" type_code="9">a0be44fe-b34f-49d3-b2d2-767e7ab20978</item>
                             <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                             <item name="Value" type_name="gh_string" type_code="10"></item>
@@ -4907,7 +4864,7 @@ Version 1.8.0.827</item>
                     <item name="Name" type_name="gh_string" type_code="10">Velocity Amplification Factors (VAF)</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Velocity Amplification Factors (VAF)</item>
                   </items>
-                  <chunks count="10">
+                  <chunks count="11">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -5187,7 +5144,7 @@ Annual (per hour)</item>
                         <item name="Description" type_name="gh_string" type_code="10">Annual wind field object (every point's 8760-hour wind-speed series) for the Pedestrian Wind Comfort component. A single object rather than a data tree, so a few thousand probes stay fast.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ceba80c2-ccd7-4e75-8622-e8d56f851a18</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Speed</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Wind Speed</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Wind</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5211,10 +5168,10 @@ Annual (per hour)</item>
                     <chunk name="param_output" index="1">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">2</item>
-                        <item name="Description" type_name="gh_string" type_code="10">DataTree {direction}[probe] of Velocity Amplification Factors (VAF) — local wind speed normalized by the reference (undisturbed) speed.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Velocity Amplification Factors (VAF) — local wind speed normalized by the reference (undisturbed) speed. Indexing follows the Factors setting: {direction}(probes) per simulated direction (default), or {hour}(probes) across all 8760 weather hours when Factors is set to Annual.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4b3e8a61-0ca1-4ad2-b16e-862f3b8f6c1f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Velocity Amplification Factors</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Velocity Amplification Factors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">VAF</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -5230,6 +5187,28 @@ Annual (per hour)</item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>4013.5</X>
                               <Y>368</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">The direction-mapped Velocity Amplification Factor at every probe for every weather hour, carried as ONE object (probes × 8760, dimensionless) — wire it into Deconstruct Wind for statistics, a colored mesh and per-hour values. Needs the EPW; empty until it is connected. This is the fast path: the tree output above materializes the same numbers as millions of items on the canvas.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">67306764-3283-43ca-874a-7e41347acf91</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Annual VAF</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">AVAF</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
                             </item>
                           </items>
                         </chunk>
@@ -5972,7 +5951,9 @@ Annual (per hour)</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="6">
+                    <item name="DeUtciInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="DeUtciOutputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                     <item name="Description" type_name="gh_string" type_code="10">Probe-specific statistics, comfort hours/% and a colored probe mesh from a UTCI Result, without putting the full 8760-hour year on the canvas.
 
 Version 1.8.0.827
@@ -5986,7 +5967,7 @@ Version 1.8.0.827</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct UTCI</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Deconstruct UTCI</item>
                   </items>
-                  <chunks count="17">
+                  <chunks count="10">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -6006,7 +5987,7 @@ Version 1.8.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Result output of the UTCI (Simulation) component.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">23f106ec-6a3e-4b56-9fcb-1e503a3c1f5b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Result</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Result</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">R</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">95031a3d-1053-4db3-b6f7-4338f8c95910</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -6055,214 +6036,13 @@ Version 1.8.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_input" index="2">
-                      <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Value used to color the probe mesh: Comfort % (no-thermal-stress share of the selected hours), or the Mean, Min or Max UTCI over them. Defaults to Comfort %.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">814dc696-bbf8-4804-a4ad-c809ec047a5c</item>
-                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Statistic</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Statistic</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="Options" type_name="gh_string" type_code="10">Comfort %
-Mean
-Min
-Max</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                        <item name="Value" type_name="gh_string" type_code="10">Mean</item>
-                      </items>
-                      <chunks count="2">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4614</X>
-                              <Y>1295</Y>
-                              <W>42</W>
-                              <H>34</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4636.5</X>
-                              <Y>1312.3333</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                        <chunk name="PersistentData">
-                          <items count="1">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Branch" index="0">
-                              <items count="2">
-                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                              </items>
-                              <chunks count="1">
-                                <chunk name="Item" index="0">
-                                  <items count="2">
-                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                    <item name="string" type_name="gh_string" type_code="10">Mean</item>
-                                  </items>
-                                </chunk>
-                              </chunks>
-                            </chunk>
-                          </chunks>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_input" index="3">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Half-width of each colored square centered on a probe point.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c1bb95f3-bdf0-4a96-97a1-ceaab7cacde2</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Radius</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Radius</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="2">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4614</X>
-                              <Y>1329</Y>
-                              <W>42</W>
-                              <H>33</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4636.5</X>
-                              <Y>1345.6666</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                        <chunk name="PersistentData">
-                          <items count="1">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Branch" index="0">
-                              <items count="2">
-                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                              </items>
-                              <chunks count="1">
-                                <chunk name="Item" index="0">
-                                  <items count="1">
-                                    <item name="number" type_name="gh_double" type_code="6">0.75</item>
-                                  </items>
-                                </chunk>
-                              </chunks>
-                            </chunk>
-                          </chunks>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_input" index="4">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Base plane for the colored legend bar.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">bbd5ee9b-9a6d-400f-9aa4-0b51f2d5cedf</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Legend Plane</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Plane</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="2">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4614</X>
-                              <Y>1362</Y>
-                              <W>42</W>
-                              <H>33</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4636.5</X>
-                              <Y>1379</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                        <chunk name="PersistentData">
-                          <items count="1">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Branch" index="0">
-                              <items count="2">
-                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                              </items>
-                              <chunks count="1">
-                                <chunk name="Item" index="0">
-                                  <items count="1">
-                                    <item name="plane" type_name="gh_plane" type_code="72">
-                                      <Ox>0</Ox>
-                                      <Oy>0</Oy>
-                                      <Oz>0</Oz>
-                                      <Xx>1</Xx>
-                                      <Xy>0</Xy>
-                                      <Xz>0</Xz>
-                                      <Yx>0</Yx>
-                                      <Yy>1</Yy>
-                                      <Yz>0</Yz>
-                                    </item>
-                                  </items>
-                                </chunk>
-                              </chunks>
-                            </chunk>
-                          </chunks>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_input" index="5">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Width of each legend color block.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">2f99dd60-96ee-4445-af83-f80be3ffcee6</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Legend Size</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Size</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="2">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4614</X>
-                              <Y>1395</Y>
-                              <W>42</W>
-                              <H>34</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4636.5</X>
-                              <Y>1412.3333</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                        <chunk name="PersistentData">
-                          <items count="1">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Branch" index="0">
-                              <items count="2">
-                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                              </items>
-                              <chunks count="1">
-                                <chunk name="Item" index="0">
-                                  <items count="1">
-                                    <item name="number" type_name="gh_double" type_code="6">2</item>
-                                  </items>
-                                </chunk>
-                              </chunks>
-                            </chunk>
-                          </chunks>
-                        </chunk>
-                      </chunks>
-                    </chunk>
                     <chunk name="param_output" index="0">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
                         <item name="Description" type_name="gh_string" type_code="10">Mean UTCI (°C) per probe over the selected hours — the annual average when HOY is unconnected.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">88fd331f-9f60-4503-9a22-370b196b0b4d</item>
                         <item name="Name" type_name="gh_string" type_code="10">Mean</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mean</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Avg</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6343,7 +6123,7 @@ Max</item>
                         <item name="Description" type_name="gh_string" type_code="10">No-thermal-stress hours per probe, counted over the selected hours.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ce911895-c6cd-4f7a-a2d5-07e47b89ed6a</item>
                         <item name="Name" type_name="gh_string" type_code="10">Comfort Hours</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Comfort Hours</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">H</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6370,7 +6150,7 @@ Max</item>
                         <item name="Description" type_name="gh_string" type_code="10">No-thermal-stress share (%) of the selected hours, per probe.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6156ecf1-adfb-4a1d-93e5-d0cd483bee5a</item>
                         <item name="Name" type_name="gh_string" type_code="10">Comfort %</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Comfort %</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">%</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6397,7 +6177,7 @@ Max</item>
                         <item name="Description" type_name="gh_string" type_code="10">UTCI (°C) at each selected hour — one branch per HOY, each holding every probe's value {hoy}(probe count). Populated ONLY when HOY is connected; with HOY unconnected this would be the entire year, which is the tree this component exists to avoid.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">adcfbf11-82fe-412d-acc0-ed18d6bfdf09</item>
                         <item name="Name" type_name="gh_string" type_code="10">UTCI</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">UTCI</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">U</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6419,106 +6199,23 @@ Max</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_output" index="6">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Colored probe mesh for the selected statistic. Requires the Result to carry probe positions (wire the MRT component's Result into UTCI, not a bare tree).</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">bb20e472-73ac-4150-a95a-1a66110522bd</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Mesh</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4704</X>
-                              <Y>1349</Y>
-                              <W>77</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4742.5</X>
-                              <Y>1359</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_output" index="7">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Colored legend bar matching the selected mesh statistic.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">34e92b3e-d66b-4920-9dd5-b7f3a73b1f8f</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Legend Mesh</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">LM</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4704</X>
-                              <Y>1369</Y>
-                              <W>77</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4742.5</X>
-                              <Y>1379</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_output" index="8">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Text anchors for the legend title and labels.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">63df226c-7efa-4275-a676-54bf9426a746</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Legend Points</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">LP</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Probe positions carried inside the Result, aligned by index with every list above. Wire these into the Thermal Comfort Legend's Sensor Points to draw a map — or wire the Result straight into that component, which takes the positions itself.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">84e2821b-dcbf-4b9b-aed7-88fd6d4ac107</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Points</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">P</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
                       <chunks count="1">
                         <chunk name="Attributes">
-                          <items count="2">
+                          <items count="1">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4704</X>
-                              <Y>1389</Y>
-                              <W>77</W>
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
                               <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4742.5</X>
-                              <Y>1399</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_output" index="9">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Legend title and value/band labels matching Legend Points.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">56a11bea-e965-4646-8875-258fb52f761a</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Legend Labels</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Labels</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4704</X>
-                              <Y>1409</Y>
-                              <W>77</W>
-                              <H>20</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4742.5</X>
-                              <Y>1419</Y>
                             </item>
                           </items>
                         </chunk>

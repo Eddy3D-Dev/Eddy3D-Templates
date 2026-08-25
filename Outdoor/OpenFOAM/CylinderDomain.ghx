@@ -712,7 +712,7 @@ Version 1.7.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">a6b96764-b9d5-4ed2-b3c4-862cfda7b5b6</item>
                     <item name="Name" type_name="gh_string" type_code="10">Outdoor Case</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Outdoor Case</item>
-                    <item name="OutdoorCaseInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="OutdoorCaseInputLayoutVersion" type_name="gh_int32" type_code="3">3</item>
                     <item name="PreviewBuildings" type_name="gh_bool" type_code="1">false</item>
                     <item name="PreviewDimensions" type_name="gh_bool" type_code="1">true</item>
                     <item name="PreviewGrid3D" type_name="gh_bool" type_code="1">true</item>
@@ -720,7 +720,7 @@ Version 1.7.0.827</item>
                     <item name="PreviewRefinementBox" type_name="gh_bool" type_code="1">true</item>
                     <item name="PreviewWindArrows" type_name="gh_bool" type_code="1">true</item>
                   </items>
-                  <chunks count="19">
+                  <chunks count="20">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -1010,6 +1010,29 @@ Version 1.7.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="10">
                       <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">2</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Pollutant emission sources from the Pollutant Source component (optional). Each becomes a cell zone in the mesh; every species becomes a passive concentration field (kg/m3) solved alongside the wind on all direction cases. Sources sharing a Species solve as one field.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">efdc2076-6185-4dcf-bd02-898b57f80d68</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Sources</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Sources</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="11">
+                      <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Write the case files to the working directory.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0547df86-09df-4c3b-ad78-3e9012179f0f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Write</item>
@@ -1055,7 +1078,7 @@ Version 1.7.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_input" index="11">
+                    <chunk name="param_input" index="12">
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Delete all files for this case in the working directory.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">aa33d444-d905-4858-9f67-315a1514979a</item>
@@ -6784,15 +6807,16 @@ Version 1.7.0.827</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Configure solver run controls for Eddy3D.
 
 Version 1.7.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">2657c46a-d6a0-4438-a844-354849bd8f46</item>
                     <item name="Name" type_name="gh_string" type_code="10">Run Settings</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Run Settings</item>
+                    <item name="RunSettingsInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                   </items>
-                  <chunks count="18">
+                  <chunks count="22">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -6812,7 +6836,7 @@ Version 1.7.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Total solver iterations (endTime). Optional; default is 1000.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1b31a62e-3479-4b33-95fe-817ad35e5400</item>
                         <item name="Name" type_name="gh_string" type_code="10">Iterations</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Iterations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Iter</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">79823e2e-b774-4d90-a7f9-21358117ae99</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -6859,7 +6883,7 @@ Version 1.7.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write interval in iterations. Optional; default is 20.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">901c5f73-ff2c-4cbe-afa9-6b61d000a3c5</item>
                         <item name="Name" type_name="gh_string" type_code="10">Write Interval</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Write Interval</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">WriteInt</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6905,7 +6929,7 @@ Version 1.7.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of time directories to keep (purgeWrite). Optional; default is 3.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">2991ab26-7105-4c12-bbb9-be1d474c3d56</item>
                         <item name="Name" type_name="gh_string" type_code="10">Keep Time Steps</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Keep Time Steps</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Keep</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -6952,7 +6976,7 @@ Version 1.7.0.827</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">900eb905-5953-4099-bba2-36a8a6473650</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Turbulence Model</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Turbulence Model</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Turb</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">realizableKE
 kEpsilon
@@ -7004,7 +7028,7 @@ kOmegaSST</item>
                         <item name="Description" type_name="gh_string" type_code="10">Number of CPUs/subdomains for parallel runs. -1 (default) = auto: all cores but one. Optional.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">97eed669-c1b7-48e7-b5e7-3503d408da4d</item>
                         <item name="Name" type_name="gh_string" type_code="10">CPU Count</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">CPU Count</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">CPU</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7051,10 +7075,11 @@ kOmegaSST</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">433b3fb0-31e3-480d-beee-89207ae88ccd</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Solver Algorithm</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Solver Algorithm</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Algo</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">SIMPLE
-SIMPLEC</item>
+SIMPLEC
+PIMPLE</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">SIMPLE</item>
                       </items>
@@ -7101,7 +7126,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Solve the mean age of air (OpenFOAM 'age' function object) during the run. Age [s] is the time since the air at each point entered the domain — the urban ventilation/stagnation map (low = well flushed, high = trapped in canyons/courtyards). Adds a cheap scalar transport solved at each write; the 'age' field is then viewable in ParaView or probe-able. Optional; default is false.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6101cec3-f41d-4096-8bf0-7162d56a9bd8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Age of Air</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Age of Air</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Age</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7148,7 +7173,7 @@ SIMPLEC</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e37b5060-a18a-42d3-b5c9-a165ea4caae9</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Robustness</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Robustness</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Robust</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">1
 2
@@ -7201,7 +7226,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Initialise velocity/pressure with a quick potentialFoam (potential-flow Laplace) solve before simpleFoam, so the run starts from a developed, divergence-free field instead of a uniform one. Removes the first-iteration velocity overshoot of a cold start and shortens convergence. Complements the Warm-up Iterations ramp (potentialFoam seeds the field; the ramp damps the first iterations with first-order upwind + heavy turbulence relaxation). Optional; default is off (shipped behaviour).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0da0547e-23c0-465e-a7bd-a8bdf3e65c66</item>
                         <item name="Name" type_name="gh_string" type_code="10">Potential Foam Init</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Potential Foam Init</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PotFoam</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7247,7 +7272,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Run this many initial iterations with robust 1st-order upwind + heavy turbulence under-relaxation, then ramp up to the numerics dial for the rest of the run. Tames the cold-start velocity overshoot without losing final accuracy. -1 (default) = automatic: scales with the robustness dial (robust levels 4-5 warm up, accurate levels 1-2 do not). 0 = force off. &gt;0 = explicit count.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">aaeea5b7-eb9a-4947-a310-c29b058049d9</item>
                         <item name="Name" type_name="gh_string" type_code="10">Warm-up Iterations</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Warm-up Iterations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Warmup</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7293,7 +7318,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write the domain min/max-magnitude and volume-average of the solved fields (U, p, k, ε/ω, νt) each write-time. Cheap convergence + stability monitor — the max |U| trace flags a cold-start overshoot or divergence early. Default off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3d2dd238-bc58-4369-b09c-a18d21170926</item>
                         <item name="Name" type_name="gh_string" type_code="10">Field Monitors</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Field Monitors</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Monitors</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7339,7 +7364,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write the area-average of U on a horizontal plane at pedestrian height (1.75 m) each write — the comfort-relevant mean wind speed, sampled from the live mesh (no topoSet). Default off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">17bac558-3d42-4d9f-b525-a3bc900bb42b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Pedestrian Average</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Pedestrian Average</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PedAvg</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7385,7 +7410,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Write the surface pressure coefficient (Cp) field each write, computed from the ABL wind speed at building height (dynamic pressure reference). View it on the building surfaces in ParaView. Default off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b741c19d-ca16-4cf0-8bf3-651cc8caffed</item>
                         <item name="Name" type_name="gh_string" type_code="10">Pressure Coefficient</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Pressure Coefficient</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Cp</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7431,7 +7456,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Auto-stop tolerance: the solver stops once the p, U and turbulence initial residuals all drop below this value (SIMPLE residualControl) — typically 30-60 % faster than running the full iteration count. Default 1e-4; 0 disables auto-stop (always runs all iterations).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0007e782-84e4-4460-8ca8-6ebeb07ab284</item>
                         <item name="Name" type_name="gh_string" type_code="10">Convergence</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Convergence</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Conv</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7477,7 +7502,7 @@ SIMPLEC</item>
                         <item name="Description" type_name="gh_string" type_code="10">Watches the live residuals while the run is going; once every field's residual has been flat for about 100 iterations after any warm-up ramp, writes stopAt=writeNow — exactly what the manual right-click 'Stop Simulation Gracefully' action does — so the solver finishes its current iteration, writes the latest fields, and exits cleanly instead of grinding out the rest of the iteration count. Requires a Live Residuals component monitoring the case. Optional; default is off.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">029c8844-f3f9-4416-9968-10c311822dc7</item>
                         <item name="Name" type_name="gh_string" type_code="10">Auto-stop on Plateau</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Auto-stop on Plateau</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">AutoStop</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -7510,6 +7535,174 @@ SIMPLEC</item>
                                 <chunk name="Item" index="0">
                                   <items count="1">
                                     <item name="boolean" type_name="gh_bool" type_code="1">false</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="15">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">PIMPLE only: how long to simulate, in SECONDS of physical time (the steady solver's Iterations input is ignored). Size it from the domain flow-through time L/U - the statistics need several flow-throughs before they settle, and a run that is too short produces a confident-looking mean of the start-up transient. 0 or blank defaults to 600 s and says so on the component. Optional.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">2e8aa4d1-c2d7-4056-ae2e-a3ceca4cdac3</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Duration</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Dur</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">-1</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="16">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">PIMPLE only: initial time step in seconds. This is only a SEED - the run uses adjustTimeStep, so the step is re-derived every iteration from the Max Courant limit and climbs away from this value within a few steps. Leave at 0 for the default (0.01 s), which is small enough never to start a run unstable. Optional.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">e7774208-3358-4b9f-aa18-a185325b542a</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Time Step</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">dt</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">-1</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="17">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">PIMPLE only: Courant number cap that sets the time step. PIMPLE's outer correctors license Co &gt; 1, unlike an explicit scheme. 0 defaults to 2, matching the indoor species path. Raising it buys wall-clock at the cost of time accuracy; lower it if the run goes unstable. Optional.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">846aa40e-1f15-43f0-9636-3b172a0a853c</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Max Courant</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Co</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">-1</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="18">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">PIMPLE only: averaging time constant in SECONDS. A transient run's U is an instantaneous, gusty snapshot, so the case also writes UMean/pMean (plus UPrime2Mean, the resolved variance) - read THOSE downstream, not U. The window damps the start-up transient exponentially, weighting a contribution by about exp(-age/window); it does NOT hard-cut it, because OpenFOAM 12's fieldAverage has no timeStart. So keep the run long relative to the window. 0 or blank uses half the Duration. Optional.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">af3c1db9-0faf-4bad-a120-795107eda3a5</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Averaging Window</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Win</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">-1</item>
                                   </items>
                                 </chunk>
                               </chunks>

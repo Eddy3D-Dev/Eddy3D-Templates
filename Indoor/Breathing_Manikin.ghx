@@ -2018,7 +2018,7 @@ Version 1.9.0.827</item>
                     <item name="Name" type_name="gh_string" type_code="10">Indoor Species Case</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Species</item>
                   </items>
-                  <chunks count="18">
+                  <chunks count="19">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -2515,6 +2515,49 @@ Version 1.9.0.827</item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1471.5</X>
                               <Y>420</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="13">
+                      <items count="7">
+                        <item name="Description" type_name="gh_string" type_code="10">Click to delete the case folder. Resets automatically so it never re-deletes on recompute.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">30f9d25c-ad97-49fe-be76-cb22f98cf8a6</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Clear</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">X</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
                             </item>
                           </items>
                         </chunk>
