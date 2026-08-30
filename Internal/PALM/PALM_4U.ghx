@@ -692,7 +692,7 @@ Version 1.11.0.827</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Static Driver</item>
                     <item name="NickName" type_name="gh_string" type_code="10">PALM Static</item>
                   </items>
-                  <chunks count="21">
+                  <chunks count="22">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -1266,6 +1266,57 @@ Version 1.11.0.827</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="15">
+                      <items count="9">
+                        <item name="Description" type_name="gh_string" type_code="10">PALM soil_type under every vegetation and pavement cell — drives the soil column's heat and moisture transport.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">e12219f5-1ddb-4797-8e15-5f105425b162</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Soil Type</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Soil Type</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Options" type_name="gh_string" type_code="10">1 — Coarse
+2 — Medium
+3 — Medium-fine
+4 — Fine
+5 — Very fine
+6 — Organic</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_string" type_code="10">3 — Medium-fine</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10">3 — Short grass</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="16">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Leaf area density written inside tree crowns (m² m⁻³). 1–2 is a typical broadleaf canopy.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5509245c-1a72-493b-9256-d3523db5b7ce</item>
@@ -1307,7 +1358,7 @@ Version 1.11.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_input" index="16">
+                    <chunk name="param_input" index="17">
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Rasterize and write the static driver into the case's INPUT folder.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5087d1e4-c27b-4681-b4de-b2e48f4e36f9</item>
@@ -1837,7 +1888,7 @@ Version 1.11.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">PALM data_output names, one per item. Empty uses the default set: pedestrian-level u/v/w/theta, surface temperature, and PET/UTCI/MRT when Comfort is on.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">95716c36-6f0f-4ee6-a6c7-a2a41f522430</item>
                         <item name="Name" type_name="gh_string" type_code="10">Output Variables</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Out</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Output Variables</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2762,7 +2813,7 @@ Instantaneous XY (…_xy)</item>
                         <item name="Description" type_name="gh_string" type_code="10">The PALM variable to read (see the Variables output for what the file offers). Empty picks the first biometeorology variable present, else the first variable.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c45b10a7-377a-4d17-9333-010f4cbf1980</item>
                         <item name="Name" type_name="gh_string" type_code="10">Variable</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">V</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Variable</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
