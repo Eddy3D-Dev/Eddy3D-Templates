@@ -2305,7 +2305,7 @@ Version 1.11.0.827</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Run</item>
                     <item name="NickName" type_name="gh_string" type_code="10">PALM Run</item>
                   </items>
-                  <chunks count="14">
+                  <chunks count="15">
                     <chunk name="param_input" index="0">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">The root the case folder sits under; empty uses ~/Eddy3D/PALM.</item>
@@ -2603,6 +2603,53 @@ docker.io/pkastner/palm:25.10.1-arm64</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="7">
+                      <items count="7">
+                        <item name="Description" type_name="gh_string" type_code="10">Delete this case's PALM artifacts — the JOBS tree (driver, namelist, results, monitoring), the live-run tmp tree and the launch script. The case folder itself and anything else in it are left alone. Refused while a run is active.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c507f634-3984-425a-88d8-e308b03fb453</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Clear</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Cl</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1170</X>
+                              <Y>450</Y>
+                              <W>35</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1189</X>
+                              <Y>460</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="8">
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Write the namelist and script, then launch the container.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">db64fb9f-0ee3-408f-8b28-3378d03ff169</item>
