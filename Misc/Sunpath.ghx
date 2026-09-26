@@ -10,7 +10,7 @@
       <Revision>2</Revision>
     </item>
   </items>
-  <chunks count="2">
+  <chunks count="1">
     <chunk name="Definition">
       <items count="1">
         <item name="plugin_version" type_name="gh_version" type_code="80">
@@ -77,37 +77,37 @@
                 <item name="Author" type_name="gh_string" type_code="10">Robert McNeel &amp; Associates</item>
                 <item name="Id" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
                 <item name="Name" type_name="gh_string" type_code="10">Grasshopper</item>
-                <item name="Version" type_name="gh_string" type_code="10">8.28.26041.11001</item>
+                <item name="Version" type_name="gh_string" type_code="10">8.27.26019.16021</item>
               </items>
             </chunk>
             <chunk name="Library" index="1">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.10.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.10.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.15.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.15.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.10.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.15.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="2">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.10.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.10.0.827</item>
-                <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Patrick Kastner</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.15.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.15.0.827</item>
+                <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Ilker Karadag, Patrick Kastner</item>
                 <item name="Id" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.10.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.15.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="3">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.10.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.10.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.15.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.15.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">a3f7d2c4-9b18-4e56-8a2f-1d6c0b9e4f30</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-Radiance</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.10.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.15.0.827</item>
               </items>
             </chunk>
           </chunks>
@@ -126,19 +126,21 @@
               <chunks count="1">
                 <chunk name="Container">
                   <items count="4">
-                    <item name="Description" type_name="gh_string" type_code="10">Download an EPW weather file from a direct URL, or search climate.onebuilding.org by station name, WMO ID, or dataset year.</item>
+                    <item name="Description" type_name="gh_string" type_code="10">Download an EPW weather file from a direct URL, or search climate.onebuilding.org by station name, WMO ID, or dataset year.
+
+Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a27e707-8186-4e8b-bb03-e58da81dfc3d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
                   </items>
-                  <chunks count="5">
+                  <chunks count="10">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>391</X>
-                          <Y>241</Y>
-                          <W>105</W>
-                          <H>64</H>
+                          <X>389</X>
+                          <Y>221</Y>
+                          <W>356</W>
+                          <H>126</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>447</X>
@@ -147,27 +149,109 @@
                       </items>
                     </chunk>
                     <chunk name="param_input" index="0">
-                      <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Direct EPW or weather ZIP URL; or a station name, WMO ID, country, state, or dataset year (e.g. 'New York', '725030', '2009-2023').</item>
+                      <items count="10">
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Browse library… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fbba5cec-80cf-4d94-bb6c-911a1bda82a9</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Search</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Search</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Station</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Station</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Options" type_name="gh_string" type_code="10"></item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">eba66539-2ca1-4c8a-b38e-e5cd94380f61</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Value" type_name="gh_string" type_code="10"></item>
                       </items>
                       <chunks count="1">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>393</X>
-                              <Y>243</Y>
-                              <W>39</W>
-                              <H>60</H>
+                              <X>391</X>
+                              <Y>223</Y>
+                              <W>41</W>
+                              <H>25</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>414</X>
+                              <X>413</X>
+                              <Y>235.5</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="1">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Site latitude in decimal degrees (north positive). With a site, the browser lists the nearest stations first, every row states its distance, and the map shows both. Optional — leave empty and the catalog is listed in publisher order.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">56c6bf0a-e46b-43f8-b3cf-0e06364cb3a5</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Latitude</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Lat</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>391</X>
+                              <Y>248</Y>
+                              <W>41</W>
+                              <H>25</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>413</X>
+                              <Y>260.5</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Site longitude in decimal degrees (east positive). See Latitude.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">910c1c91-149b-4ca1-88d4-8826a4c51bff</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Longitude</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Lon</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>391</X>
                               <Y>273</Y>
+                              <W>41</W>
+                              <H>25</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>413</X>
+                              <Y>285.5</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="3">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Extra folders of .epw files to list beside the online catalogs — a studio library, measured AMY years, or a Morph Weather output folder (whose files are labelled with their scenario and horizon). Scanned recursively; each file's own LOCATION header supplies its position.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">4fabd370-10c6-42e7-8010-3307c86e4c3c</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Folders</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Dirs</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>391</X>
+                              <Y>298</Y>
+                              <W>41</W>
+                              <H>25</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>413</X>
+                              <Y>310.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -186,14 +270,14 @@
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>462</X>
-                              <Y>243</Y>
+                              <X>711</X>
+                              <Y>223</Y>
                               <W>32</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>478</X>
-                              <Y>253</Y>
+                              <X>727</X>
+                              <Y>233</Y>
                             </item>
                           </items>
                         </chunk>
@@ -212,14 +296,14 @@
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>462</X>
-                              <Y>263</Y>
+                              <X>711</X>
+                              <Y>243</Y>
                               <W>32</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>478</X>
-                              <Y>273</Y>
+                              <X>727</X>
+                              <Y>253</Y>
                             </item>
                           </items>
                         </chunk>
@@ -239,14 +323,67 @@
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>462</X>
+                              <X>711</X>
+                              <Y>263</Y>
+                              <W>32</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>727</X>
+                              <Y>273</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">What the chosen file is: station, period, publisher, WMO id, position, elevation, time zone, ASHRAE climate zone and the design conditions its publisher states.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">d47cd991-4e12-4d66-83b8-5b7d5fd2772c</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Station</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">S</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>711</X>
                               <Y>283</Y>
                               <W>32</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>478</X>
+                              <X>727</X>
                               <Y>293</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="4">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The .stat and .ddy files that came with the EPW, when the publisher ships them — design days and the climate summary. Empty for a file that has none.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c54fb335-a09b-4bd5-a8d2-56f959b83014</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Extra Files</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">X</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>711</X>
+                              <Y>303</Y>
+                              <W>32</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>727</X>
+                              <Y>313</Y>
                             </item>
                           </items>
                         </chunk>
@@ -848,7 +985,9 @@
                     <item name="Description" type_name="gh_string" type_code="10">Read an EPW file and create a Weather object for the simulation.
 OutdoorPlus
 
-Version 1.10.0.827</item>
+Version 1.10.0.827
+
+Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">9e2e9f7f-93c3-48d5-9978-bc20161e11f5</item>
                     <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -928,13 +1067,6 @@ Version 1.10.0.827</item>
           </chunks>
         </chunk>
       </chunks>
-    </chunk>
-    <chunk name="Thumbnail">
-      <items count="1">
-        <item name="Thumbnail" type_name="gh_drawing_bitmap" type_code="37">
-          <bitmap length="3675">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</bitmap>
-        </item>
-      </items>
     </chunk>
   </chunks>
 </Archive>
