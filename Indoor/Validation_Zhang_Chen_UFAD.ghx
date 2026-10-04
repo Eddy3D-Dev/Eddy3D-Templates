@@ -5429,14 +5429,14 @@ PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupa
                     <item name="Name" type_name="gh_string" type_code="10">Indoor Inlet</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Inlet</item>
                   </items>
-                  <chunks count="5">
+                  <chunks count="6">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1129</X>
-                          <Y>1448</Y>
-                          <W>61</W>
-                          <H>64</H>
+                          <X>1128</X>
+                          <Y>1438</Y>
+                          <W>62</W>
+                          <H>84</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1160</X>
@@ -5458,14 +5458,14 @@ PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupa
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1131</X>
-                              <Y>1450</Y>
-                              <W>14</W>
+                              <X>1130</X>
+                              <Y>1440</Y>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1139.5</X>
-                              <Y>1460</Y>
+                              <X>1139</X>
+                              <Y>1450</Y>
                             </item>
                           </items>
                         </chunk>
@@ -5484,14 +5484,14 @@ PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupa
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1131</X>
-                              <Y>1470</Y>
-                              <W>14</W>
+                              <X>1130</X>
+                              <Y>1460</Y>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1139.5</X>
-                              <Y>1480</Y>
+                              <X>1139</X>
+                              <Y>1470</Y>
                             </item>
                           </items>
                         </chunk>
@@ -5531,14 +5531,14 @@ PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupa
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1131</X>
-                              <Y>1490</Y>
-                              <W>14</W>
+                              <X>1130</X>
+                              <Y>1480</Y>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1139.5</X>
-                              <Y>1500</Y>
+                              <X>1139</X>
+                              <Y>1490</Y>
                             </item>
                           </items>
                         </chunk>
@@ -5564,6 +5564,32 @@ PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupa
                         </chunk>
                       </chunks>
                     </chunk>
+                    <chunk name="param_input" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Optional supply flow in LITRES PER SECOND (L/s) through this opening — the unit a diffuser schedule is written in (1 L/s = 3.6 m³/h). Replaces Speed when given.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">3c4607f4-a943-4954-adc5-86bcdfded1a3</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Flow Rate</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Q</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1130</X>
+                              <Y>1500</Y>
+                              <W>15</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1139</X>
+                              <Y>1510</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
                     <chunk name="param_output" index="0">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Indoor inlet for the case component.</item>
@@ -5578,9 +5604,9 @@ PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupa
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1175</X>
-                              <Y>1450</Y>
+                              <Y>1440</Y>
                               <W>13</W>
-                              <H>60</H>
+                              <H>80</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1181.5</X>
@@ -6457,18 +6483,21 @@ PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupa
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="5">
+                  <items count="6">
                     <item name="Description" type_name="gh_string" type_code="10">Build an isothermal indoor ventilation case (room + inlets + outlets + sinks) for OpenFOAM 12.
 
 Version 1.10.0.827
 
 Version 1.10.0.827
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="IndoorInputLayoutVersion" type_name="gh_int32" type_code="3">6</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">84f66c04-6e8a-4d70-93bb-1fcf517a356b</item>
                     <item name="Name" type_name="gh_string" type_code="10">Indoor Case</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Indoor</item>
+                    <item name="RepairGeometry" type_name="gh_bool" type_code="1">true</item>
                   </items>
                   <chunks count="21">
                     <chunk name="Attributes">
@@ -7164,6 +7193,8 @@ Containerized</item>
 Version 1.10.0.827
 
 Version 1.10.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="DirectionIndex" type_name="gh_int32" type_code="3">-1</item>

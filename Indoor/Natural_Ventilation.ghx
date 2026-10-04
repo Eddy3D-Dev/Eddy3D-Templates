@@ -1991,14 +1991,14 @@ Action toggles ship OFF.</item>
                     <item name="Name" type_name="gh_string" type_code="10">Indoor Inlet</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Inlet</item>
                   </items>
-                  <chunks count="5">
+                  <chunks count="6">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>956</X>
-                          <Y>774</Y>
-                          <W>61</W>
-                          <H>64</H>
+                          <X>955</X>
+                          <Y>764</Y>
+                          <W>62</W>
+                          <H>84</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>987</X>
@@ -2020,14 +2020,14 @@ Action toggles ship OFF.</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>958</X>
-                              <Y>776</Y>
-                              <W>14</W>
+                              <X>957</X>
+                              <Y>766</Y>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>966.5</X>
-                              <Y>786</Y>
+                              <X>966</X>
+                              <Y>776</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2047,14 +2047,14 @@ Action toggles ship OFF.</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>958</X>
-                              <Y>796</Y>
-                              <W>14</W>
+                              <X>957</X>
+                              <Y>786</Y>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>966.5</X>
-                              <Y>806</Y>
+                              <X>966</X>
+                              <Y>796</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2093,14 +2093,14 @@ Action toggles ship OFF.</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>958</X>
-                              <Y>816</Y>
-                              <W>14</W>
+                              <X>957</X>
+                              <Y>806</Y>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>966.5</X>
-                              <Y>826</Y>
+                              <X>966</X>
+                              <Y>816</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2126,6 +2126,32 @@ Action toggles ship OFF.</item>
                         </chunk>
                       </chunks>
                     </chunk>
+                    <chunk name="param_input" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Optional supply flow in LITRES PER SECOND (L/s) through this opening — the unit a diffuser schedule is written in (1 L/s = 3.6 m³/h). Replaces Speed when given.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">77c9a66d-6038-47f7-803a-bc73cdb4a0d1</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Flow Rate</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Q</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>957</X>
+                              <Y>826</Y>
+                              <W>15</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>966</X>
+                              <Y>836</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
                     <chunk name="param_output" index="0">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Indoor inlet for the case component.</item>
@@ -2140,9 +2166,9 @@ Action toggles ship OFF.</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1002</X>
-                              <Y>776</Y>
+                              <Y>766</Y>
                               <W>13</W>
-                              <H>60</H>
+                              <H>80</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1008.5</X>
@@ -2262,6 +2288,8 @@ Version 1.9.0.827
 Version 1.9.0.827
 
 Version 1.11.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">14f4af23-f09a-459f-adce-bb39fdfddaa1</item>
@@ -3455,7 +3483,7 @@ IV — Dense urban</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="6">
+                  <items count="7">
                     <item name="AutoName" type_name="gh_string" type_code="10">fancy-cobra-valley-hammer</item>
                     <item name="Description" type_name="gh_string" type_code="10">Build an isothermal indoor ventilation case (room + inlets + outlets + sinks) for OpenFOAM 12.
 
@@ -3469,11 +3497,14 @@ Version 1.9.0.827
 
 Version 1.11.0.827
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="IndoorInputLayoutVersion" type_name="gh_int32" type_code="3">6</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">88988132-e81b-47cb-97af-8379697e222c</item>
                     <item name="Name" type_name="gh_string" type_code="10">Indoor Case</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Indoor</item>
+                    <item name="RepairGeometry" type_name="gh_bool" type_code="1">true</item>
                   </items>
                   <chunks count="21">
                     <chunk name="Attributes">
@@ -4199,6 +4230,8 @@ Version 1.9.0.827
 
 Version 1.11.0.827
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">606c1581-0490-4aae-a426-67a75415cff9</item>
                     <item name="Name" type_name="gh_string" type_code="10">Probe</item>
@@ -4916,6 +4949,8 @@ Version 1.9.0.827
 
 Version 1.11.0.827
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">17a5e7d7-f9f2-447b-9590-12d1c543a42c</item>
                     <item name="Name" type_name="gh_string" type_code="10">Wind Field Viewer</item>
@@ -5496,6 +5531,8 @@ Flat XY (Keep Speed)</item>
                     <item name="Description" type_name="gh_string" type_code="10">Mesh and run an OpenFOAM case on the selected engine (wind / indoor / UMF).
 
 Version 1.11.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="DirectionIndex" type_name="gh_int32" type_code="3">-1</item>

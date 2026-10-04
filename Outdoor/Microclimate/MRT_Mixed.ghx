@@ -2641,19 +2641,21 @@
                   <items count="4">
                     <item name="Description" type_name="gh_string" type_code="10">Download an EPW weather file from climate.onebuilding.org nearest to your project location. Use the Search input to filter by station name, WMO ID, or dataset year.
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">14c83c45-923e-4ec6-b810-cd4b2c417d23</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Download Weather</item>
                   </items>
-                  <chunks count="10">
+                  <chunks count="12">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1413</X>
-                          <Y>232</Y>
+                          <Y>212</Y>
                           <W>356</W>
-                          <H>126</H>
+                          <H>166</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1471</X>
@@ -2679,13 +2681,13 @@ Version 1.15.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1415</X>
-                              <Y>234</Y>
+                              <Y>214</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1437</X>
-                              <Y>246.5</Y>
+                              <Y>231.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2705,13 +2707,13 @@ Version 1.15.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1415</X>
-                              <Y>259</Y>
+                              <Y>249</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1437</X>
-                              <Y>271.5</Y>
+                              <Y>266.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2733,11 +2735,11 @@ Version 1.15.0.827</item>
                               <X>1415</X>
                               <Y>284</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1437</X>
-                              <Y>296.5</Y>
+                              <Y>301.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2758,13 +2760,13 @@ Version 1.15.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1415</X>
-                              <Y>309</Y>
+                              <Y>319</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1437</X>
-                              <Y>321.5</Y>
+                              <Y>336.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2776,6 +2778,32 @@ Version 1.15.0.827</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0696cb46-d784-4ff8-aa81-9920e36b5fd1</item>
                         <item name="Name" type_name="gh_string" type_code="10">EPW File</item>
                         <item name="NickName" type_name="gh_string" type_code="10">EPW File</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1716</X>
+                              <Y>214</Y>
+                              <W>51</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1741.5</X>
+                              <Y>224</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="1">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Execution log.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">ab553f3d-7320-488e-b866-6702569d32ff</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Logs</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Logs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2796,12 +2824,13 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="1">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Execution log.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">ab553f3d-7320-488e-b866-6702569d32ff</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Logs</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Logs</item>
+                    <chunk name="param_output" index="2">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Stations matching the search filter.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">93023204-b9eb-46bf-8ac2-acf9034fa1fa</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Stations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Stations</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2822,13 +2851,12 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="2">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Stations matching the search filter.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">93023204-b9eb-46bf-8ac2-acf9034fa1fa</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Stations</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Stations</item>
+                    <chunk name="param_output" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">What the chosen file is: station, period, publisher, WMO id, position, elevation, time zone, ASHRAE climate zone and the design conditions its publisher states.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">48982835-5f29-4011-be92-797838f8b317</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Station</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">S</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2849,12 +2877,13 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="3">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">What the chosen file is: station, period, publisher, WMO id, position, elevation, time zone, ASHRAE climate zone and the design conditions its publisher states.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">48982835-5f29-4011-be92-797838f8b317</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Station</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">S</item>
+                    <chunk name="param_output" index="4">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The .stat and .ddy files that came with the EPW, when the publisher ships them — design days and the climate summary. Empty for a file that has none.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">aed8e42a-b362-4541-9488-243253338573</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Extra Files</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">X</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2875,13 +2904,12 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="4">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">The .stat and .ddy files that came with the EPW, when the publisher ships them — design days and the climate summary. Empty for a file that has none.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">aed8e42a-b362-4541-9488-243253338573</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Extra Files</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">X</item>
+                    <chunk name="param_output" index="5">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Latitude of the SITE in decimal degrees (north positive): the Latitude/Longitude inputs when BOTH are given, else the document's Earth Anchor Point (which also replaces a half-given pair); empty when neither gives a full site — half a site is not a site. NOT the weather station's position — that is Deconstruct Weather's Latitude, and a station can sit tens of km from the site (an airfield, usually, whose open land cover is the wrong answer). Wire it into Land Cover Roughness's Latitude so land cover and terrain are fetched where the model is. Available as soon as the site is known, before any file is downloaded.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">bf7e8b1b-8360-4e45-ab94-014c9766c424</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Site Latitude</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Lat</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -2897,6 +2925,32 @@ Version 1.15.0.827</item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1741.5</X>
                               <Y>324</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="6">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Longitude of the SITE in decimal degrees (east positive), from the same source as Site Latitude — never the weather station's. Wire it into Land Cover Roughness's Longitude.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">ee773080-5aca-4109-a62d-16d7e263a9bf</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Site Longitude</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Lon</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1716</X>
+                              <Y>334</Y>
+                              <W>51</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1741.5</X>
+                              <Y>344</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3161,7 +3215,7 @@ Version 1.15.0.827</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="5">
+                  <items count="6">
                     <item name="Description" type_name="gh_string" type_code="10">Tags Breps or Meshes as a radiation surface for an MRT analysis. Breps are meshed at Patch Size; Meshes are used face-for-face as given.
 
 Version 1.6.0.827
@@ -3212,9 +3266,12 @@ Version 1.6.0.827
 
 Version 1.8.0.827
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">593f9aed-af29-438f-8f32-4420d2ffc034</item>
+                    <item name="LegacyOpaqueTrees" type_name="gh_bool" type_code="1">true</item>
                     <item name="Name" type_name="gh_string" type_code="10">MRT Surface</item>
                     <item name="NickName" type_name="gh_string" type_code="10">MRT Surface</item>
                   </items>
@@ -3289,7 +3346,7 @@ Ground
 Vegetation
 Tree</item>
                             <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                            <item name="Value" type_name="gh_string" type_code="10">Ground</item>
+                            <item name="Value" type_name="gh_string" type_code="10"></item>
                           </items>
                           <chunks count="2">
                             <chunk name="Attributes">
@@ -3313,17 +3370,9 @@ Tree</item>
                               <chunks count="1">
                                 <chunk name="Branch" index="0">
                                   <items count="2">
-                                    <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                    <item name="Count" type_name="gh_int32" type_code="3">0</item>
                                     <item name="Path" type_name="gh_string" type_code="10">{0}</item>
                                   </items>
-                                  <chunks count="1">
-                                    <chunk name="Item" index="0">
-                                      <items count="2">
-                                        <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                        <item name="string" type_name="gh_string" type_code="10">Ground</item>
-                                      </items>
-                                    </chunk>
-                                  </chunks>
                                 </chunk>
                               </chunks>
                             </chunk>
@@ -3567,7 +3616,7 @@ Tree</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="5">
+                  <items count="6">
                     <item name="Description" type_name="gh_string" type_code="10">Tags Breps or Meshes as a radiation surface for an MRT analysis. Breps are meshed at Patch Size; Meshes are used face-for-face as given.
 
 Version 1.6.0.827
@@ -3620,9 +3669,12 @@ Version 1.6.0.827
 
 Version 1.8.0.827
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">4f2fd146-8900-4909-aa11-59f7d1ff26b5</item>
+                    <item name="LegacyOpaqueTrees" type_name="gh_bool" type_code="1">true</item>
                     <item name="Name" type_name="gh_string" type_code="10">MRT Surface</item>
                     <item name="NickName" type_name="gh_string" type_code="10">MRT Surface</item>
                   </items>
@@ -3697,7 +3749,7 @@ Ground
 Vegetation
 Tree</item>
                             <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                            <item name="Value" type_name="gh_string" type_code="10">Building</item>
+                            <item name="Value" type_name="gh_string" type_code="10"></item>
                           </items>
                           <chunks count="2">
                             <chunk name="Attributes">
@@ -3721,17 +3773,9 @@ Tree</item>
                               <chunks count="1">
                                 <chunk name="Branch" index="0">
                                   <items count="2">
-                                    <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                    <item name="Count" type_name="gh_int32" type_code="3">0</item>
                                     <item name="Path" type_name="gh_string" type_code="10">{0}</item>
                                   </items>
-                                  <chunks count="1">
-                                    <chunk name="Item" index="0">
-                                      <items count="2">
-                                        <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                        <item name="string" type_name="gh_string" type_code="10">Building</item>
-                                      </items>
-                                    </chunk>
-                                  </chunks>
                                 </chunk>
                               </chunks>
                             </chunk>
@@ -4023,6 +4067,8 @@ Version 1.6.0.827
 Version 1.6.0.827
 
 Version 1.8.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">9d959bd8-57ff-46ec-9dd9-8e071119180c</item>
@@ -4390,6 +4436,8 @@ Version 1.6.0.827
 Version 1.6.0.827
 
 Version 1.8.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
@@ -4966,6 +5014,8 @@ Version 1.6.0.827
 Version 1.6.0.827
 
 Version 1.8.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">50533761-ac05-48e4-a0ed-b048a4fd86b8</item>
@@ -6141,6 +6191,8 @@ Version 1.6.0.827
 Version 1.6.0.827
 
 Version 1.8.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>

@@ -3084,19 +3084,21 @@
                   <items count="4">
                     <item name="Description" type_name="gh_string" type_code="10">Download an EPW weather file from climate.onebuilding.org nearest to your project location. Use the Search input to filter by station name, WMO ID, or dataset year.
 
+Version 1.15.0.827
+
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a3e45d0-5f10-4c24-a480-adb1f091013a</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Download Weather</item>
                   </items>
-                  <chunks count="10">
+                  <chunks count="12">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1252</X>
-                          <Y>1130</Y>
+                          <Y>1110</Y>
                           <W>356</W>
-                          <H>126</H>
+                          <H>166</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1310</X>
@@ -3122,13 +3124,13 @@ Version 1.15.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1254</X>
-                              <Y>1132</Y>
+                              <Y>1112</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1276</X>
-                              <Y>1144.5</Y>
+                              <Y>1129.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3148,13 +3150,13 @@ Version 1.15.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1254</X>
-                              <Y>1157</Y>
+                              <Y>1147</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1276</X>
-                              <Y>1169.5</Y>
+                              <Y>1164.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3176,11 +3178,11 @@ Version 1.15.0.827</item>
                               <X>1254</X>
                               <Y>1182</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1276</X>
-                              <Y>1194.5</Y>
+                              <Y>1199.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3201,13 +3203,13 @@ Version 1.15.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1254</X>
-                              <Y>1207</Y>
+                              <Y>1217</Y>
                               <W>41</W>
-                              <H>25</H>
+                              <H>35</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1276</X>
-                              <Y>1219.5</Y>
+                              <Y>1234.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3219,6 +3221,32 @@ Version 1.15.0.827</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">48eda543-755e-4752-877f-f4b61683b44e</item>
                         <item name="Name" type_name="gh_string" type_code="10">EPW File</item>
                         <item name="NickName" type_name="gh_string" type_code="10">EPW File</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1555</X>
+                              <Y>1112</Y>
+                              <W>51</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1580.5</X>
+                              <Y>1122</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="1">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Execution log.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">1203264e-b36a-4ec9-aab0-87eb9834b3c9</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Logs</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Logs</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3239,12 +3267,13 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="1">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Execution log.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">1203264e-b36a-4ec9-aab0-87eb9834b3c9</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Logs</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Logs</item>
+                    <chunk name="param_output" index="2">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Stations matching the search filter.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">3638ac8d-34c5-4176-bf3e-be9e5c0b3db4</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Stations</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Stations</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3265,13 +3294,12 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="2">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Stations matching the search filter.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">3638ac8d-34c5-4176-bf3e-be9e5c0b3db4</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Stations</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Stations</item>
+                    <chunk name="param_output" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">What the chosen file is: station, period, publisher, WMO id, position, elevation, time zone, ASHRAE climate zone and the design conditions its publisher states.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">7ed85e67-bcb1-4c16-993f-395aa81f0a26</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Station</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">S</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3292,12 +3320,13 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="3">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">What the chosen file is: station, period, publisher, WMO id, position, elevation, time zone, ASHRAE climate zone and the design conditions its publisher states.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">7ed85e67-bcb1-4c16-993f-395aa81f0a26</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Station</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">S</item>
+                    <chunk name="param_output" index="4">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The .stat and .ddy files that came with the EPW, when the publisher ships them — design days and the climate summary. Empty for a file that has none.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">1a56f35e-8587-4abf-adbe-742981c0a5e9</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Extra Files</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">X</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3318,13 +3347,12 @@ Version 1.15.0.827</item>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="4">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">The .stat and .ddy files that came with the EPW, when the publisher ships them — design days and the climate summary. Empty for a file that has none.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">1a56f35e-8587-4abf-adbe-742981c0a5e9</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Extra Files</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">X</item>
+                    <chunk name="param_output" index="5">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Latitude of the SITE in decimal degrees (north positive): the Latitude/Longitude inputs when BOTH are given, else the document's Earth Anchor Point (which also replaces a half-given pair); empty when neither gives a full site — half a site is not a site. NOT the weather station's position — that is Deconstruct Weather's Latitude, and a station can sit tens of km from the site (an airfield, usually, whose open land cover is the wrong answer). Wire it into Land Cover Roughness's Latitude so land cover and terrain are fetched where the model is. Available as soon as the site is known, before any file is downloaded.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">f2f3d049-6c07-4228-85c3-8dfc9bb467e8</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Site Latitude</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Lat</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -3340,6 +3368,32 @@ Version 1.15.0.827</item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1580.5</X>
                               <Y>1222</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="6">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Longitude of the SITE in decimal degrees (east positive), from the same source as Site Latitude — never the weather station's. Wire it into Land Cover Roughness's Longitude.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">0fdfeab7-6dc5-4d86-8d33-d0af13bc026c</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Site Longitude</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Lon</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1555</X>
+                              <Y>1232</Y>
+                              <W>51</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1580.5</X>
+                              <Y>1242</Y>
                             </item>
                           </items>
                         </chunk>
@@ -8757,6 +8811,8 @@ Version 1.15.0.827</item>
 OutdoorPlus
 
 Version 1.8.0.827
+
+Version 1.15.0.827
 
 Version 1.15.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">85f40e83-8b57-4969-b1f2-7f01b6241ff2</item>
