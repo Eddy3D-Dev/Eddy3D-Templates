@@ -136,9 +136,9 @@
         </chunk>
         <chunk name="DefinitionObjects">
           <items count="1">
-            <item name="ObjectCount" type_name="gh_int32" type_code="3">159</item>
+            <item name="ObjectCount" type_name="gh_int32" type_code="3">160</item>
           </items>
-          <chunks count="159">
+          <chunks count="160">
             <chunk name="Object" index="0">
               <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">a7f82b91-cf84-4a2e-9c1b-2e8f3a64d8e7</item>
@@ -17946,6 +17946,54 @@ Version 1.15.0.827</item>
                           <X>1663.1759</X>
                           <Y>659.01935</Y>
                         </item>
+                      </items>
+                    </chunk>
+                    <chunk name="PanelProperties">
+                      <items count="7">
+                        <item name="Colour" type_name="gh_drawing_color" type_code="36">
+                          <ARGB>255;255;250;90</ARGB>
+                        </item>
+                        <item name="DrawIndices" type_name="gh_bool" type_code="1">true</item>
+                        <item name="DrawPaths" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Multiline" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SpecialCodes" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Stream" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Wrap" type_name="gh_bool" type_code="1">true</item>
+                      </items>
+                    </chunk>
+                  </chunks>
+                </chunk>
+              </chunks>
+            </chunk>
+            <chunk name="Object" index="159">
+              <items count="2">
+                <item name="GUID" type_name="gh_guid" type_code="9">59e0b89a-e487-49f8-bab8-b5bab16be14c</item>
+                <item name="Name" type_name="gh_string" type_code="10">Panel</item>
+              </items>
+              <chunks count="1">
+                <chunk name="Container">
+                  <items count="8">
+                    <item name="Description" type_name="gh_string" type_code="10">A panel for custom notes and text values</item>
+                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">c0ed5bda-f8be-5f2f-b9fa-485deca5b286</item>
+                    <item name="Name" type_name="gh_string" type_code="10">Panel</item>
+                    <item name="NickName" type_name="gh_string" type_code="10">Description</item>
+                    <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                    <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
+                    <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Classifies year-round pedestrian wind comfort from machine-learning wind fields, with no CFD run. Wind Predictor runs Yel 2.0 for 16 directions (0 to 337.5 degrees, 5 m/s) on a 2 m grid 1.8 m above the terrain. Wind Comfort Predictor (ML) merges these with the hourly EPW from Download Weather (Istanbul), fits Weibull statistics per point and applies Lawson General, or another Lawson, Davenport or NEN 8100 metric; where the model supplies roof speeds, roofs are classified too. Outputs: class-colored comfort mesh and legend. Swap buildings (three samples), station and metric. Screening only; confirm important results with a Wind Study.</item>
+                  </items>
+                  <chunks count="2">
+                    <chunk name="Attributes">
+                      <items count="4">
+                        <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                          <X>207</X>
+                          <Y>-160</Y>
+                          <W>420</W>
+                          <H>240</H>
+                        </item>
+                        <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
+                        <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
+                        <item name="MarginTop" type_name="gh_int32" type_code="3">0</item>
                       </items>
                     </chunk>
                     <chunk name="PanelProperties">

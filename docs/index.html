@@ -438,6 +438,11 @@ new IntersectionObserver(
 
 let ALL=[],activeCat="all",branch=null,spotlightId=null;
 
+/* Description text comes from a Panel inside the .ghx, so it is data, not
+   markup: escape it, and keep paragraph breaks (blank lines) as paragraphs. */
+const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const descHtml=d=>d?d.split(/\n\s*\n/).map(p=>`<p>${esc(p.trim()).replace(/\n/g,"<br>")}</p>`).join(""):"";
+
 function catOf(path){
   let best=null;
   for(const k in CATS) if(path.startsWith(k+"/")&&(!best||k.length>best.length)) best=k;
@@ -463,10 +468,17 @@ async function loadBranches(){
     .then(r=>r.ok?r.json():[]).catch(()=>[]);
   let names=list.map(b=>b.name).filter(isVersion).sort(compareBranches);
   if(!names.length)names=[info.default_branch];
-  const wanted=new URLSearchParams(location.search).get("branch")||store.get("eddy-branch");
-  branch=names.includes(wanted)?wanted:(names.includes(info.default_branch)?info.default_branch:names[0]);
+  /* The site always opens on the highest version branch. GitHub's own default
+     branch is deliberately NOT used: it only advances on a stable release, so
+     it lags every beta (names is sorted newest first). Only an explicit
+     ?branch= link - a shared template, or the Select Template component -
+     overrides it; a remembered picker choice must not pin visitors to an old
+     version, so none is stored. */
+  const latest=names[0];
+  const wanted=new URLSearchParams(location.search).get("branch");
+  branch=names.includes(wanted)?wanted:latest;
   $("#branch").innerHTML=names.map(n=>
-    `<option value="${n}"${n===branch?" selected":""}>${n}${n===info.default_branch?" (default)":""}</option>`).join("");
+    `<option value="${n}"${n===branch?" selected":""}>${n}${n===latest?" (latest)":""}</option>`).join("");
   $("#branchWrap").classList.remove("hidden");
 }
 
@@ -507,7 +519,6 @@ $("#branch").addEventListener("change",async e=>{
   branch=e.target.value;
   activeCat="all";
   spotlightId=null;
-  store.set("eddy-branch",branch);
   const url=new URL(location);url.searchParams.set("branch",branch);
   history.replaceState(null,"",url);
   try{await loadTree()}
@@ -544,7 +555,7 @@ function render(){
           <div class="card-head">
             <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
           </div>
-          ${t.desc?`<p>${t.desc}</p>`:""}
+          ${descHtml(t.desc)}
           <div class="card-foot">
             <span class="size">${fmtSize(t.size)}</span>
             <span class="actions">

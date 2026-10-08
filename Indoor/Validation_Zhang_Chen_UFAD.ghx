@@ -4807,24 +4807,16 @@
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">VALIDATION - Zhang &amp; Chen (2006) UFAD chamber
-
-The underfloor-air-distribution experiment of Zhang &amp; Chen (Atmospheric Environment 40, 3396-3408, doi:10.1016/j.atmosenv.2006.01.014): a 4.91 x 4.31 x 2.44 m room, air supplied at floor level through two 0.26 m square diffusers (0.70 m/s at 20.4 / 19.9 degC) and extracted through the ceiling. Four occupants dissipate 100 W each (closed boxes carved out of the room as obstacles), six flush ceiling luminaires 64 W each, and every wall holds its measured temperature from the paper Table 2. The case solves buoyant stratified mixed convection on OpenFOAM 12 (fluid module, k-epsilon).
-
-WHAT TO EXPECT - temperature rising continuously floor to ceiling at roughly 1.1-1.7 K/m, supply jets climbing to about 1.5 m before falling back, and thermal plumes above the occupants.
-
-MESH - Cell Size defaults to 0.10 m for a fast first run; the paper grid was 389k cells (about 0.022 here, ~15 min on 16 cores). The quantitative validation (digitised measurements, error metrics, profile figure) lives in the Eddy3D repo: MetaFOAM.Lib.Tests / TestZhangChenUfad*.
-
-PROVENANCE - room, loads and temperatures are the paper values; diffuser, occupant and luminaire POSITIONS are reconstructed (the paper publishes no coordinates), matching the Simvia code_saturne setup.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Validation of underfloor air distribution against Zhang and Chen (Atmospheric Environment, 2006): a 4.91 x 4.31 x 2.44 m chamber. Two 0.26 m square floor-level Indoor Inlet diffusers carry 0.70 m/s at 20.4 and 19.9 degC, which Indoor Case averages; an Indoor Outlet extracts at the ceiling. Indoor Wall components carry measured wall temperatures, four 100 W occupant boxes carved out of the room and six 64 W flush ceiling luminaires. Run solves. Expect roughly 1.1 to 1.7 K/m floor to ceiling. Cell Size defaults to 0.10 m, against the paper's 389k-cell grid. Diffuser, occupant and luminaire positions are reconstructed.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>480</X>
-                          <Y>3330</Y>
-                          <W>160</W>
-                          <H>100</H>
+                          <X>100</X>
+                          <Y>-312</Y>
+                          <W>420</W>
+                          <H>220</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
