@@ -9579,16 +9579,21 @@ in urban areas. Building and Environment, 212, 108639.</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Climate-driven CFD for an Atlanta site on Kastner and Dogan's (2020) cylindrical mesh, serving every wind direction from one mesh. Download Weather and Deconstruct Weather feed hourly wind to Wind Rose Cluster, which reduces it to up to 8 directions and speeds for Atmospheric Boundary Layer. Land Cover Roughness fetches OpenStreetMap ground zones and AWS terrain tiles (Radius 700 m) on Fetch. Live oak, dense and silver birch Tree zones join the buildings in Outdoor Case with Cylinder Domain. Probe samples U 1.5 m above terrain; Vector Display Ex shows one direction per slider step. Change station, coordinates and geometry.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Pedestrian-level wind around an Atlanta site for every prevailing wind direction, solved on one mesh.
+Fidelity: Engineering - steady RANS, not validated for this site. Cite: Kastner and Dogan (2020), cylindrical mesh.
+Method: Steady RANS in OpenFOAM on a cylindrical mesh; Wind Rose Cluster reduces the EPW to up to 8 directions and speeds.
+Result: Velocity U probed 1.5 m above terrain, one direction per slider step.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: hours.
+Edit: Station, site coordinates, buildings, tree zones; toggle Fetch for land cover and terrain.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>141</X>
-                          <Y>-20</Y>
+                          <Y>-50</Y>
                           <W>420</W>
-                          <H>240</H>
+                          <H>270</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

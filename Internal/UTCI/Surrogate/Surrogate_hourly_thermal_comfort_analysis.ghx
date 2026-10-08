@@ -7076,7 +7076,12 @@ Probes × Hours</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Hourly UTCI at sensors on a circular patch, with the wind field predicted by machine learning. ML Model downloads Yel 2.0; Wind Predictor evaluates the context Brep for eight directions at 45 degree steps, using a 7 m/s reference wind from the Atmospheric Boundary Layer. Velocity Amplification Factors (VAF), in Annual per hour mode, map predictions onto each Atlanta TMY3 hour. MRT Surface, MRT Sensors, MRT View Factors (192 sky patches, Fast) and a native MRT Solve supply radiant temperature to UTCI (Simulation); Deconstruct UTCI reduces it to statistics. Buildings only, no trees; swap in your own. Screening, not CFD.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: UTCI at sensors on a circular patch for single hours, with machine-learning wind.
+Fidelity: Screening - machine-learning wind (Yel 2.0); buildings only, no trees.
+Method: Wind Predictor at 7 m/s for 8 directions, VAF per Atlanta hour; MRT View Factors (192 sky patches, Fast) and MRT Solve feed UTCI (Simulation).
+Result: UTCI per sensor; Deconstruct UTCI reduces it to statistics.
+Needs: Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: minutes.
+Edit: Context Brep, sensor patch, weather file; add trees to model their shade.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">

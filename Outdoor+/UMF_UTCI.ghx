@@ -28950,16 +28950,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">From a coupled urbanMicroclimateFoam simulation to UTCI maps, using Outdoor+. Air, Vegetation, Building and Terrain regions, Box Domain Dimensions, Timing Parameters from an Istanbul EPW at a Calendar-picked hour, and solver settings feed UMCF Case, which Run meshes and simulates on BlueCFD, WSL or containers. Probe samples air temperature, wind and humidity on a plane 1.8 m above a refinement-box face, plus building and terrain surface temperatures and tree temperatures. MRT View Factors and MRT Solve turn those into mean radiant temperature, then UTCI (Simulation) and a legend colour mean UTCI per sensor. Replace embedded building, tree and terrain meshes.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: UTCI at 1.8 m for one hour in Istanbul from a fully coupled microclimate simulation.
+Fidelity: Engineering - coupled urbanMicroclimateFoam, not validated for this site. Cite: Kubilay et al., urbanMicroclimateFoam.
+Method: Air, Building, Vegetation and Terrain regions with Timing Parameters from the EPW at a Calendar hour; MRT View Factors and MRT Solve.
+Result: Mean UTCI per sensor with a legend; probed air temperature, wind, humidity, surface and tree temperatures.
+Needs: Eddy3D Setup &gt; Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam), on BlueCFD, WSL or container. Runtime: hours.
+Edit: Embedded building, tree and terrain meshes; weather file and Calendar hour.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>21</X>
-                          <Y>-299</Y>
+                          <Y>-339</Y>
                           <W>420</W>
-                          <H>240</H>
+                          <H>280</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

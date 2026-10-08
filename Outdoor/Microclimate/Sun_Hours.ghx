@@ -9335,16 +9335,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Direct sun exposure of a site over the whole year, ray cast at hourly steps rather than simulated in Radiance. Quad Remesh, with a Target Count of 20000, remeshes 181 context meshes and a ground surface; Mesh Join combines them, and Brep Grid Points and Deconstruct Mesh turn the vertices into analysis points. Sun Hours takes the remeshed context, Atlanta weather from Download Weather and Weather, and a Canopy of three crown surfaces passing 20 percent of the beam all year. Bounds and Gradient color a Construct Mesh by each point's sun hours. Replace the context, ground, canopy and station.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Annual direct-sun hours across a site and its context.
+Fidelity: Screening - geometric direct beam only; no diffuse or reflected light, not Radiance.
+Method: Hourly ray casting toward the sun for every daylight hour of an Atlanta year; tree crowns pass 20 percent of the beam.
+Result: Points and a mesh coloured by annual sun hours.
+Needs: Nothing to install; runs inside Rhino. Runtime: seconds to minutes, growing with point count.
+Edit: Context meshes, ground surface, canopy crowns, weather station.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>168</X>
-                          <Y>410</Y>
+                          <Y>390</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>240</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

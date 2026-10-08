@@ -3602,16 +3602,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Runs a lattice-Boltzmann wind study on buildings with OpenLB (D3Q19, Smagorinsky LES). The Atmospheric Boundary Layer and Geometry go into LBM Case with LBM Run Settings: 6 m grid, GPU on, inflow jitter on, Auto runtime (Podman, then Docker, then native). GPU on selects the CUDA build, needing an NVIDIA GPU and container toolkit; macOS and native runs use CPU. LBM Run launches the solver; LBM Field reads the time-averaged pedestrian-level wind field into a Vector Field Viewer beside the domain wireframe. Assign your Geometry; halving Grid Spacing costs eight times the memory and about sixteen times the run time.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Time-averaged pedestrian wind around buildings from lattice-Boltzmann LES.
+Fidelity: Engineering - OpenLB D3Q19 with Smagorinsky LES, not validated for this site.
+Method: LBM Case with LBM Run Settings: 6 m grid, GPU on, inflow jitter on; runtime tries Podman, then Docker, then native.
+Result: The time-averaged pedestrian-level wind field in a Vector Field Viewer beside the domain wireframe.
+Needs: Eddy3D Setup &gt; LBM CFD (OpenLB); the GPU build needs NVIDIA. Runtime: minutes to hours.
+Edit: Geometry; Grid Spacing (halving it costs 8x the memory and about 16x the time).</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>49</X>
-                          <Y>-158</Y>
+                          <Y>-188</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

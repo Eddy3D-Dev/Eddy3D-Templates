@@ -6793,16 +6793,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Wind-driven cross ventilation of a 5 x 4 x 2.5 m room, joining an outdoor wind estimate to an indoor CFD run. Facade Wind Pressure (EN 1991-1-4; 25 m/s basic wind, opening at 5 m, windward zone D, suburban terrain) gives mean wind at the opening. Window Air Exchange (Maas 1995; 1 m2 opening, 1.5 m sash, 10 K difference) converts it to m3/h, and dividing by 3600 sets the Indoor Inlet speed. Indoor Case puts that window on x=0 and an equal outlet on x=5; Run solves; Probe with Wind Field Viewer draws velocity vectors. Change the wind inputs.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Air flow through a room ventilated by one window, driven by an outdoor wind estimate.
+Fidelity: Engineering - EN 1991-1-4 wind and Maas (1995) window exchange set the inflow of a steady RANS room solve.
+Method: Facade Wind Pressure gives wind at the opening; Window Air Exchange sets the inlet speed of a 5 x 4 x 2.5 m room.
+Result: Velocity vectors through the room from Probe and Wind Field Viewer.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: minutes.
+Edit: Basic wind speed, terrain category, opening size and height, room geometry.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>146</X>
-                          <Y>-173</Y>
+                          <Y>-223</Y>
                           <W>420</W>
-                          <H>200</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

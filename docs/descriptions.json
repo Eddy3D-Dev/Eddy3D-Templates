@@ -1,39 +1,298 @@
 {
-  "SimpleWall.ghx": "Conjugate heat transfer through a two-layer brick wall, after Kastner and Dogan (SimAUD 2020). Two Box 2Pt blocks, 0.15 m thick and 1 m square, become CHT Solid regions with CHT Material Brick. CHT Boundary components hold the west face at 20 degC and the east at -5 degC; unassigned faces stay adiabatic. CHT Case starts at 10 degC with 0.05 m background cells for 10000 s. Run solves in a Docker or Podman container while Live Residuals tracks convergence. Probe reads T on the wall region at Brep Grid Points, drawn by Scalar Field Viewer. Edit boxes, materials, temperatures.",
-  "Breathing_Manikin.ghx": "A breathing 1.75 m manikin exhales CO2 into a 3 x 3 x 2.4 m room, solved transiently with OpenFOAM multicomponentFluid. Manikin stands at (1.0, 1.5, 0) facing +X with a 0.02 m mouth patch; Indoor Species Case adds a pressure-outlet Vent at (3, 1.5, 2.2) and 12 breaths per minute of 40000 ppm over a 400 ppm ambient for 10 s. Probes sit 0.15 m ahead of the mouth and in the far corner; judge the trace: the near value swings from about 20000 ppm to ambient every breath. Solving needs 10 to 15 minutes and the UMF image.",
-  "CO2_Occupancy.ghx": "Two CO2 routes. The CFD route solves a 6 x 4 x 3 m room with Indoor Case: an Indoor Inlet (1 m2, 0.5 m/s) on x=0, an Indoor Outlet on x=6, and a CO2 Emitter spanning (4, 1, 1) to (5, 3, 2) injecting 1.076e-4 as a passive scalar, with Age of Air on. Run solves; Probe feeds Scalar and Wind Field Viewers with CO2, age and velocity. The analytic route, Occupant CO2 for age 25 at 1.2 met, gives 0.0043 L/s per person (Persily and de Jonge). Indoor Case warns the emitter zone is thin; lower Cell Size.",
-  "Natural_Ventilation.ghx": "Wind-driven cross ventilation of a 5 x 4 x 2.5 m room, joining an outdoor wind estimate to an indoor CFD run. Facade Wind Pressure (EN 1991-1-4; 25 m/s basic wind, opening at 5 m, windward zone D, suburban terrain) gives mean wind at the opening. Window Air Exchange (Maas 1995; 1 m2 opening, 1.5 m sash, 10 K difference) converts it to m3/h, and dividing by 3600 sets the Indoor Inlet speed. Indoor Case puts that window on x=0 and an equal outlet on x=5; Run solves; Probe with Wind Field Viewer draws velocity vectors. Change the wind inputs.",
-  "Thermal_Comfort.ghx": "A 3000 W Heat Source in a 6 x 4 x 3 m room switches Indoor Case to the buoyant fluid solver, so warm air rises and the ceiling reads warmer than the floor. A low Indoor Inlet (0.1 m/s, 20 degC) on x=0 and high Indoor Outlet on x=6 let the plume leave. Indoor Wall bands hold 40 degC high on x=0 and 10 degC low on x=6. Run solves, Live Residuals plots convergence, Open In ParaView shows fields. Two-Node Comfort (Gagge: SET, PMV) waits at 0.1 m/s air speed; feed it air and radiant temperatures from the results.",
-  "Validation_Zhang_Chen_UFAD.ghx": "Validation of underfloor air distribution against Zhang and Chen (Atmospheric Environment, 2006): a 4.91 x 4.31 x 2.44 m chamber. Two 0.26 m square floor-level Indoor Inlet diffusers carry 0.70 m/s at 20.4 and 19.9 degC, which Indoor Case averages; an Indoor Outlet extracts at the ceiling. Indoor Wall components carry measured wall temperatures, four 100 W occupant boxes carved out of the room and six 64 W flush ceiling luminaires. Run solves. Expect roughly 1.1 to 1.7 K/m floor to ceiling. Cell Size defaults to 0.10 m, against the paper's 389k-cell grid. Diffuser, occupant and luminaire positions are reconstructed.",
-  "ClimateCharts.ghx": "Climate diagrams for one site, drawn from a single EPW file. Download Weather fetches the file for the station named in a panel, here Istanbul, and Weather reads it. Monthly Climate Chart plots dry-bulb temperature and relative humidity as two aligned minimum, mean and maximum charts. Sun Path draws daily sun arcs and hourly analemmas on a dome. Wind Compass, fed the same weather, shows a 16-sector annual wind rose stacked by wind speed. A panel value of 100 sets chart width, height, dome radius and wind rose radius. Type another station name and all three redraw for that climate.",
-  "Solar_radiation.ghx": "Cumulative solar irradiation, in kWh/m2, mapped over a ground surface and its context faces. Weather loads the Istanbul file from Download Weather. Brep Grid Points samples the ground Brep and the joined context Breps at 1 m spacing, with normals. Sky Exposure gives each point a sky view fraction; Solar Irradiation adds beam, sky and ground-reflected light for every daylight hour of the year, an interactive preview, not a Radiance simulation. Flex Legend colors both surfaces on one range set by the context totals, and Text Tag prints rounded ground values. Replace the stored ground Brep and ten context Breps.",
-  "PALM_4U.ghx": "Skeleton workflow for PALM-4U, the large-eddy urban microclimate model, ending in pedestrian-level PET maps. PALM Domain sets a 64 x 64 x 48 grid of 2 m cells. Sample STL meshes (three buildings, two tree crowns, all wired to Buildings), a terrain surface and OpenStreetMap land cover from PALM Land Cover (toggle Fetch) feed PALM Case, which writes the static driver and namelist. PALM Settings holds 2 h, a 3 m/s westerly wind and comfort on. PALM Run starts the container, PALM Progress follows it, PALM Results reads the averaged bio_pet field. Needs the PALM container image from Eddy3D Setup.",
-  "Surrogate_annual_thermal_comfort_analysis.ghx": "Replaces CFD with a machine-learning wind model to map UTCI across a circular site with Atlanta weather, for one hour or the whole year. ML Model supplies Yel 2.0 to Wind Predictor, predicting pedestrian-level wind for eight directions at 45 degree steps, treating trees as solid obstructions. Velocity Amplification Factors (VAF) scale those speeds to each weather hour. MRT Surface for ground, buildings and trees, MRT Sensors on a 4 m grid at 1.8 m, MRT View Factors and MRT Solve feed UTCI (Simulation). An Hourly/Annual list sets Deconstruct UTCI's hour; Thermal Comfort Legend maps the result. Screening, not CFD.",
-  "Surrogate_hourly_thermal_comfort_analysis.ghx": "Hourly UTCI at sensors on a circular patch, with the wind field predicted by machine learning. ML Model downloads Yel 2.0; Wind Predictor evaluates the context Brep for eight directions at 45 degree steps, using a 7 m/s reference wind from the Atmospheric Boundary Layer. Velocity Amplification Factors (VAF), in Annual per hour mode, map predictions onto each Atlanta TMY3 hour. MRT Surface, MRT Sensors, MRT View Factors (192 sky patches, Fast) and a native MRT Solve supply radiant temperature to UTCI (Simulation); Deconstruct UTCI reduces it to statistics. Buildings only, no trees; swap in your own. Screening, not CFD.",
-  "UMF_UTCI_sloped_terrain.ghx": "Coupled urbanMicroclimateFoam run over sloped terrain, ending in UTCI maps for a single hour. The Atmospheric Boundary Layer (z0 1 m) takes wind speed and direction from the Istanbul IWEC weather file at the Calendar hour, 20 July 09:00. Remeshed terrain, buildings and vegetation feed Terrain Region, Building Region and Vegetation Region, which Outdoor+ Case assembles; Write, Run to mesh and solve, then Probe. Probed surface and canopy temperatures feed MRT Surface, MRT View Factors and MRT Solve; probed air temperature, velocity and humidity complete UTCI (Simulation) on a 1 m grid at 1.8 m. Saved with the BlueCFD engine.",
-  "UMF_UTCI_water_surface.ghx": "Adds an evaporating water surface to the coupled microclimate chain and maps UTCI in Istanbul on 20 May at 16:00. Water Surface (0.5 m mixed depth) exchanges heat and moisture with the air inside Outdoor+ Case, beside Terrain Region, Building Region and Vegetation Region on flat terrain. The Atmospheric Boundary Layer reads wind from the weather file, Run meshes and solves one hour, and Probe samples air and surface temperatures, velocity and humidity. MRT Surface, MRT View Factors and MRT Solve feed UTCI (Simulation). Saved with the BlueCFD engine, which carries the simpleWater model; the default container image does not.",
-  "ViewShed.ghx": "Visual openness and target visibility for points on a surface, by ray casting against surrounding geometry. Each observer Brep passes through Mesh Brep and Quad Remesh, and Deconstruct Mesh turns the vertices into points. Viewshed measures the unobstructed fraction of a view cone around each point: 26 degrees half-angle, 48 m view distance. With no normals wired, cones point straight up, a plan-view measure rather than a daylight metric. View Target rates how much of a target each point sees, the shared context blocking rays. Both return values from 0 to 1 and colors. Supply context, observer surfaces and target.",
-  "WRF.ghx": "From GFS download to site weather, centred on Atlanta. WRF Met Data fetches 0.25 degree NOAA GFS files from NOMADS, no account, for 25 August 2026, 12:00 to 21:00 UTC. WRF Domain nests a 3 km Lambert grid at 33.76 N, 84.39 W inside a 9 km parent; WRF Geo Data supplies low-resolution geography; WRF Namelist writes namelist.wps. WRF Run executes WPS then WRF in a Docker or Podman container. WRF Probe feeds 2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow. NOMADS keeps about ten days, so change the dates.",
-  "Stormwater.ghx": "Experimental surface-runoff check for a graded site: where can water pond, and which way does it run? The stored terrain Surface enters Stormwater Grid, which rasterises it at 1 m. Stormwater Run starts in Fast mode, terrain analytics only, so Deconstruct Stormwater draws depression capacity as a mesh and Stormwater Flowlines traces runoff paths up to 240 m, colored by contributing area. Design Storm, 100-year, 60-minute, alternating block, matters once Mode is Full for shallow-water depths; its IDF coefficients a, b, c are 1, 2, 3, so enter your own. Land Cover Runoff sits unconnected. Surface routing only, no pipes.",
-  "Sunpath.ghx": "A sun path diagram for Istanbul, drawn as editable Rhino curves and points. Download Weather fetches the EPW that matches its Station panel, Weather converts it to a weather object, and Sun Path reads latitude, longitude and time zone from it. Outputs are daily sun arcs (by default June 21, March 20 and December 21), one analemma per clock hour, a horizon compass circle and a text report, centred on the origin. Swap the station to move the diagram to another city, set Radius, North and Arc Days to suit your model, or wire sun vectors to plot sample positions.",
-  "WeatherMorphing.ghx": "Morphs a present-day Atlanta weather file into future-climate files and sets baseline and result side by side. Download Weather supplies the baseline EPW; Morph Weather passes it to the Future Weather Generator, using a File Path to the generator jar and Morph Settings (engine-default interpolation and uncertainty, 8 threads). A List Item picks one morphed file, and two Deconstruct Weather components expose dry-bulb temperature, relative humidity, wind speed and direction, solar angles and hour of year for each. Needs Java 17+ and the jar, which Eddy3D does not ship. Run starts off, and a full run takes minutes to hours.",
-  "WindRose.ghx": "Annual wind rose for Istanbul, drawn in the Rhino viewport at the origin. Download Weather fetches the station's EPW; Wind Compass bins every hour into 16 direction sectors: petal length is occurrence frequency and the stacked colours are wind-speed ranges in m/s, from 0.5-2 up to 12+. Hours below 0.5 m/s count as calm and are left out, and the banner reports the hours plotted. Wind Compass expects a Weather object, not the file path Download Weather outputs, so insert a Weather component between them. Change the Station panel for another city, Radius to rescale, Base Point to move it.",
-  "FluidX3D.ghx": "GPU wind simulation around buildings, watched live in the viewport, on the FluidX3D lattice-Boltzmann engine. An Atmospheric Boundary Layer at its defaults (5 m/s at 10 m, z0 1 m) and the Geometry buildings feed LBM Case, with FluidX3D Run Settings fixing a 2 m grid and 720 s of simulated time; LBM Run launches the solver. A domain face is raised one unit and quad-remeshed to about 10,000 quads; its vertices are probed for the Scalar and Vector Field Viewers while FluidX3D Live View colours the mesh. Eddy3D builds FluidX3D locally; its licence excludes commercial use. Set your Geometry.",
-  "OpenLB.ghx": "Runs a lattice-Boltzmann wind study on buildings with OpenLB (D3Q19, Smagorinsky LES). The Atmospheric Boundary Layer and Geometry go into LBM Case with LBM Run Settings: 6 m grid, GPU on, inflow jitter on, Auto runtime (Podman, then Docker, then native). GPU on selects the CUDA build, needing an NVIDIA GPU and container toolkit; macOS and native runs use CPU. LBM Run launches the solver; LBM Field reads the time-averaged pedestrian-level wind field into a Vector Field Viewer beside the domain wireframe. Assign your Geometry; halving Grid Spacing costs eight times the memory and about sixteen times the run time.",
-  "ML_CreateDataset.ghx": "Training-data pipeline for wind surrogates: CFD solutions become labelled CSV rows. Atmospheric Boundary Layer defines eight directions (0 to 315 degrees) at 5 m/s; Outdoor Case writes a Cylinder Domain study (realizableKE, SIMPLE, 600 iterations) around your Breps and terrain (radius above 500 m). Add Run to solve. Probe samples U on a 2 m Brep Grid Points lattice 1.8 m above ground. Dataset Curator writes one CSV per direction (SDF, building height, direction features) plus a script merging probed U and k, so k needs probing too; Dataset Reader previews dimensionless mag_U as colored points. Needs an OpenFOAM engine.",
-  "ML_Inference.ghx": "Pedestrian-height wind maps from a trained ONNX model instead of CFD. Choose one of three sample building sets (AIJ Case E, OpenFOAM Wind Around Buildings, Eddy3D Validation Sample) and a compass direction; Atmospheric Boundary Layer sets 5 m/s, Brep Grid Points lays a 2 m grid 1.8 m above the terrain, and Wind Predictor runs the Yel 2.0 model that ML Model downloads. The jet-colored velocity mesh has a 0 to 5 m/s legend and Wind Compass. Swap in your Breps, centered on the fixed terrain. ML screening, not CFD. Related work to cite: Karadag and Kastner (Routledge, in press).",
-  "ML_Inference_Comfort.ghx": "Classifies year-round pedestrian wind comfort from machine-learning wind fields, with no CFD run. Wind Predictor runs Yel 2.0 for 16 directions (0 to 337.5 degrees, 5 m/s) on a 2 m grid 1.8 m above the terrain. Wind Comfort Predictor (ML) merges these with the hourly EPW from Download Weather (Istanbul), fits Weibull statistics per point and applies Lawson General, or another Lawson, Davenport or NEN 8100 metric; where the model supplies roof speeds, roofs are classified too. Outputs: class-colored comfort mesh and legend. Swap buildings (three samples), station and metric. Screening only; confirm important results with a Wind Study.",
-  "ML_Inference_moving_circle.ghx": "Wind prediction inside a 450 m radius circle dragged across the stored context with an MD Slider. Settle Data holds the slider position until you release the mouse, so Brep Grid Points places a 2 m grid 1.8 m above the circle and Wind Predictor (Yel 2.0 via ML Model) reruns only then, not per drag step. A Value List picks one of eight directions (southeast by default) for Atmospheric Boundary Layer at 5 m/s. Results show as a jet velocity mesh with a 0 to 5 m/s legend and Wind Compass sized from the circle. ML screening, not CFD.",
-  "MRT_Mixed.ghx": "Annual mean radiant temperature at ground and building sensors, from the staged pipeline on the fast path, with surfaces at air temperature and no Radiance or EnergyPlus. Two MRT Surface components tag the ground and 22 context Breps. Two Brep Grid Points at 2 m feed two MRT Sensors, ground probes lifted 1.1 m, building probes offset 0.5 m along their normals, both wired into MRT View Factors. MRT Solve reads Atlanta weather from Download Weather. Deconstruct MRT supplies a colored mesh and Text Tag values; Fisheye View draws one sensor's dome. Two Buttons start the run; replace both Breps.",
-  "MRT_Radiance.ghx": "One MRT component runs the high-fidelity chain, Radiance shortwave with interreflection plus EnergyPlus surface temperatures for the longwave exchange. A script downloads an Istanbul IWEC weather file into the Eddy3D Cases folder. Brep Grid Points meshes the ground and ten context Breps at 2 m spacing, MRT Sensors makes a probe per mesh face, and MRT Surface tags the ground. MRT Settings uses Standard quality with Auto parallelism across cores. Deconstruct MRT returns the annual mean per probe for Gradient and Text Tag display. Install Engines installs Radiance and EnergyPlus; Run ships off. Replace the Breps and the EPW URL.",
-  "Solar_Access.ghx": "A tiny solar-access scene: a 0.5 m square, 10 m tall box at the corner of a 5 x 5 m ground plane, with Ithaca weather from Download Weather and Weather. Facade Grid lays 1 m cells on the plane, with normals and areas. Sun Hours covers a single day (1 July, hours 4344 to 4368), which Sun Stats at a 2 h threshold and Sunlight Compliance for BRE amenity overshadowing then evaluate. Shadow with Deconstruct Shadow and Solar Irradiation cover every daylight hour of the year. Replace the Box 2Pt context, the plane and the station with your site.",
-  "Sun_Hours.ghx": "Direct sun exposure of a site over the whole year, ray cast at hourly steps rather than simulated in Radiance. Quad Remesh, with a Target Count of 20000, remeshes 181 context meshes and a ground surface; Mesh Join combines them, and Brep Grid Points and Deconstruct Mesh turn the vertices into analysis points. Sun Hours takes the remeshed context, Atlanta weather from Download Weather and Weather, and a Canopy of three crown surfaces passing 20 percent of the beam all year. Bounds and Gradient color a Construct Mesh by each point's sun hours. Replace the context, ground, canopy and station.",
-  "SurfaceTemps_EnergyPlus.ghx": "EnergyPlus surface temperatures for MRT, staged as MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve. A 10 x 10 x 15 m block on a 40 x 40 m ground is tagged by two MRT Surface components, a 5 m Facade Grid supplies sensors at 1.1 m, and Download Weather supplies Ithaca. MRT Settings keeps EnergyPlus Surfaces on and Radiance Reflections off, so the first run stays cheap. The three Run toggles ship off; click them in order, since the view-factor sweep is solved once and reused. Set the CHANGE-ME Working Directory and install EnergyPlus or the container image.",
-  "SurfaceTemps_FFT.ghx": "Outdoor surface temperatures for a full year from the frequency-domain admittance method of Beckett, Owens and Acred, with no thermal mesh and no warm-up. Brep Grid Points samples a ground Brep and ten context Breps every 2 m, Sky Exposure supplies sky view factors, and two SurfaceTemp components solve grass_ground and brick_wall constructions against an Istanbul file from Download Weather, with Indoor Temp 22 degC for walls. Deconstruct SurfaceTemp reduces each point's 8760-hour series to Mean, Min and Max; Bounds and Gradient turn the mean into point colors and rounded Text Tag labels. Replace the Breps, weather station and materials.",
-  "ABL_Verification.ghx": "Approach-flow verification, a partial take on the ASCE/SEI CWE Prestandard check: does the atmospheric boundary layer imposed at the inlet survive to the buildings? Atmospheric Boundary Layer (5 m/s at 10 m, z0 of 1 m) feeds Outdoor Case with Box Domain, Mesh Settings and Run Settings (realizable k-epsilon, 400 iterations). Probe reads U on two 16-point vertical rakes at x = 0 and x = 40 m, y = 60 m, from 2.5 to 77.5 m, and Wind Field Viewer plots both profiles for comparison. It uses the real domain, not the standard's empty one. Some decay is expected.",
-  "BoxDomain.ghx": "Rectangular-domain wind study around sample buildings and dense tree canopy. Atmospheric Boundary Layer sets the inflow; Outdoor Case combines it with Box Domain, Mesh Settings, Run Settings (realizable k-epsilon, SIMPLE, 12 CPUs) and the Containerized engine, needing Podman or Docker. Run meshes and solves. Probe samples U at a point cloud; Wind Field Viewer draws arrows and feeds its range to Flex Legend. Export to Visualizer writes a CSV for viz.eddy3d.com, and Streamlines traces flow from a seed line. Meshing Progress, Parse Case Logs, Plot Residuals and Live Residuals follow the run. Swap in your own geometry and probe points.",
-  "CylinderDomain.ghx": "Climate-driven CFD for an Atlanta site on Kastner and Dogan's (2020) cylindrical mesh, serving every wind direction from one mesh. Download Weather and Deconstruct Weather feed hourly wind to Wind Rose Cluster, which reduces it to up to 8 directions and speeds for Atmospheric Boundary Layer. Land Cover Roughness fetches OpenStreetMap ground zones and AWS terrain tiles (Radius 700 m) on Fetch. Live oak, dense and silver birch Tree zones join the buildings in Outdoor Case with Cylinder Domain. Probe samples U 1.5 m above terrain; Vector Display Ex shows one direction per slider step. Change station, coordinates and geometry.",
-  "Facade_Pressure.ghx": "Wind-driven facade pressure coefficients for building energy modelling, across eight wind directions. Atmospheric Boundary Layer takes directions from Series (0 to 315 degrees, 45 degree steps); Outdoor Case sets up two 40 x 20 x 20 m blocks in a Cylinder Domain, and Run Settings enables Cp output. Facade Grid places points at 1 m spacing, 0.05 m offset, on faces within 45 degrees of vertical. Probe reads Cp there (set Field to Cp), and Airflow Network Cp writes an EnergyPlus AirflowNetwork .idf snippet for Ladybug Tools. Probe warns until the case is solved. Replace the blocks with your building.",
-  "Pollutant_Canyon.ghx": "Street-canyon dispersion of a passive tracer: where does an emission go, and how much reaches pedestrians? Two 40 x 20 x 20 m blocks form a canyon along X, and Pollutant Source releases species exhaust at 0.01 kg/s from a 15 x 16 x 10 m volume inside it. Outdoor Case combines Atmospheric Boundary Layer, Box Domain, Mesh Settings, Run Settings and the source; Run meshes, creates zones, then simulates. Probe, with Field set to exhaust, reads tracer concentration in kg/m3 at three points 2 m above ground along the canyon centreline. An OpenFOAM engine is required; toggles ship off.",
-  "UMF_UTCI.ghx": "From a coupled urbanMicroclimateFoam simulation to UTCI maps, using Outdoor+. Air, Vegetation, Building and Terrain regions, Box Domain Dimensions, Timing Parameters from an Istanbul EPW at a Calendar-picked hour, and solver settings feed UMCF Case, which Run meshes and simulates on BlueCFD, WSL or containers. Probe samples air temperature, wind and humidity on a plane 1.8 m above a refinement-box face, plus building and terrain surface temperatures and tree temperatures. MRT View Factors and MRT Solve turn those into mean radiant temperature, then UTCI (Simulation) and a legend colour mean UTCI per sensor. Replace embedded building, tree and terrain meshes."
+  "SimpleWall.ghx": {
+    "Purpose": "Heat flow through a two-layer brick wall held at 20 degC on one face and -5 degC on the other.",
+    "Fidelity": "Engineering - transient conjugate heat transfer, not validated for this wall. Cite: Kastner and Dogan (SimAUD 2020).",
+    "Method": "CHT Case solves conduction in two 0.15 m CHT Solid blocks of CHT Material Brick for 10000 s; unassigned faces stay adiabatic.",
+    "Result": "Wall temperature T probed on a Brep Grid and drawn by Scalar Field Viewer; Live Residuals tracks convergence.",
+    "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam). Runtime: minutes.",
+    "Edit": "Wall blocks, materials, boundary temperatures and simulated time."
+  },
+  "Breathing_Manikin.ghx": {
+    "Purpose": "Where exhaled CO2 goes around a breathing person in a small room.",
+    "Fidelity": "Engineering - transient CFD around a simplified manikin, not validated.",
+    "Method": "Indoor Species Case solves CO2 as mass (OpenFOAM multicomponentFluid): 12 breaths a minute at 40000 ppm for 10 s.",
+    "Result": "CO2 traces 0.15 m ahead of the mouth and in the far corner; the near one swings from about 20000 ppm to ambient each breath.",
+    "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam); multicomponentFluid ships only in the UMF image. Runtime: minutes.",
+    "Edit": "Manikin position and facing, breathing rate, room size, vent position."
+  },
+  "CO2_Occupancy.ghx": {
+    "Purpose": "CO2 in an occupied, mechanically ventilated room, by CFD and by a quick analytic estimate.",
+    "Fidelity": "Engineering - steady RANS with CO2 as a passive scalar; the analytic route uses Persily and de Jonge's per-person rate.",
+    "Method": "Indoor Case: 6 x 4 x 3 m room, 1 m2 inlet at 0.5 m/s, outlet opposite, a CO2 Emitter zone, Age of Air on.",
+    "Result": "CO2, age of air and velocity in Scalar and Wind Field Viewers; Occupant CO2 gives 0.0043 L/s per person.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: minutes.",
+    "Edit": "Room, inlet, outlet, emitter zone and rate; lower Cell Size, since Indoor Case warns the emitter zone is thin."
+  },
+  "Natural_Ventilation.ghx": {
+    "Purpose": "Air flow through a room ventilated by one window, driven by an outdoor wind estimate.",
+    "Fidelity": "Engineering - EN 1991-1-4 wind and Maas (1995) window exchange set the inflow of a steady RANS room solve.",
+    "Method": "Facade Wind Pressure gives wind at the opening; Window Air Exchange sets the inlet speed of a 5 x 4 x 2.5 m room.",
+    "Result": "Velocity vectors through the room from Probe and Wind Field Viewer.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: minutes.",
+    "Edit": "Basic wind speed, terrain category, opening size and height, room geometry."
+  },
+  "Thermal_Comfort.ghx": {
+    "Purpose": "Thermal stratification and occupant comfort in a heated, ventilated room.",
+    "Fidelity": "Engineering - steady buoyant RANS; comfort from the Gagge two-node model.",
+    "Method": "3000 W Heat Source switches Indoor Case to the buoyant solver; low 20 degC inlet, high outlet, wall bands at 40 and 10 degC.",
+    "Result": "Temperature and velocity fields, warmer at the ceiling than the floor; Two-Node Comfort gives SET and PMV.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: minutes.",
+    "Edit": "Heat load, inlet temperature and speed, wall temperatures; feed probed air and radiant temperatures to Two-Node Comfort."
+  },
+  "Validation_Zhang_Chen_UFAD.ghx": {
+    "Purpose": "Check the indoor solver against measured underfloor air distribution in a test chamber.",
+    "Fidelity": "Validated against measurements. Cite: Zhang and Chen, Atmospheric Environment 2006. Diffuser, occupant and luminaire positions are reconstructed.",
+    "Method": "Steady buoyant RANS of a 4.91 x 4.31 x 2.44 m chamber: two floor diffusers at 0.70 m/s, ceiling extract, occupants, luminaires.",
+    "Result": "Vertical temperature profile; expect roughly 1.1 to 1.7 K/m from floor to ceiling.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: about an hour.",
+    "Edit": "Nothing for the comparison itself; Cell Size (0.10 m default) for a grid-sensitivity study."
+  },
+  "ClimateCharts.ghx": {
+    "Purpose": "A climate overview of one site: temperature, humidity, sun path and wind rose from a single EPW.",
+    "Fidelity": "Screening - plots the weather file as recorded; no simulation.",
+    "Method": "Download Weather fetches the station's EPW; Monthly Climate Chart, Sun Path and Wind Compass draw from the same Weather object.",
+    "Result": "Monthly minimum, mean and maximum temperature and humidity charts, a sun-path dome and a 16-sector wind rose.",
+    "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
+    "Edit": "Station name panel (Istanbul by default); the size panel (100) scales every chart."
+  },
+  "Solar_radiation.ghx": {
+    "Purpose": "Annual solar irradiation in kWh/m2 over a ground surface and its surrounding facades.",
+    "Fidelity": "Screening - interactive beam, sky and ground-reflected estimate, not a Radiance simulation.",
+    "Method": "Brep Grid Points samples surfaces at 1 m; Sky Exposure gives sky view; Solar Irradiation sums every daylight hour of an Istanbul year.",
+    "Result": "Ground and context coloured on one legend range; Text Tag prints rounded ground values.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
+    "Edit": "Ground Brep, the ten context Breps, weather station."
+  },
+  "PALM_4U.ghx": {
+    "Purpose": "Pedestrian-level PET maps from a PALM-4U large-eddy simulation of a small site.",
+    "Fidelity": "Experimental - skeleton workflow for the PALM-4U plugin.",
+    "Method": "PALM Domain (64 x 64 x 48 cells, 2 m), buildings, trees, terrain and OSM land cover feed PALM Case; 2 h, 3 m/s westerly.",
+    "Result": "Time-averaged bio_pet field from PALM Results; PALM Progress follows the container run.",
+    "Needs": "Eddy3D Setup > Urban microclimate / LES / RANS (PALM-4U). Runtime: hours.",
+    "Edit": "Domain size and resolution, STL buildings and trees, terrain, wind, simulated time; toggle Fetch for land cover."
+  },
+  "Surrogate_annual_thermal_comfort_analysis.ghx": {
+    "Purpose": "UTCI across a circular site for one hour or the whole year, without CFD.",
+    "Fidelity": "Screening - machine-learning wind (Yel 2.0); trees count as solid obstructions.",
+    "Method": "Wind Predictor for 8 directions, scaled to each Atlanta hour by VAF; MRT Surface, Sensors, View Factors and Solve feed UTCI (Simulation).",
+    "Result": "UTCI per sensor on a 4 m grid at 1.8 m, coloured by Thermal Comfort Legend; an Hourly/Annual list picks the hour.",
+    "Needs": "Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: minutes.",
+    "Edit": "Buildings, trees, ground, weather file, sensor grid spacing."
+  },
+  "Surrogate_hourly_thermal_comfort_analysis.ghx": {
+    "Purpose": "UTCI at sensors on a circular patch for single hours, with machine-learning wind.",
+    "Fidelity": "Screening - machine-learning wind (Yel 2.0); buildings only, no trees.",
+    "Method": "Wind Predictor at 7 m/s for 8 directions, VAF per Atlanta hour; MRT View Factors (192 sky patches, Fast) and MRT Solve feed UTCI (Simulation).",
+    "Result": "UTCI per sensor; Deconstruct UTCI reduces it to statistics.",
+    "Needs": "Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: minutes.",
+    "Edit": "Context Brep, sensor patch, weather file; add trees to model their shade."
+  },
+  "UMF_UTCI_sloped_terrain.ghx": {
+    "Purpose": "UTCI at 1.8 m for one summer hour in Istanbul over sloped terrain, with air, surfaces and trees coupled.",
+    "Fidelity": "Engineering - coupled urbanMicroclimateFoam, not validated for this site. Cite: Kubilay et al., urbanMicroclimateFoam.",
+    "Method": "Outdoor+ Case couples Terrain, Building and Vegetation Regions; ABL wind from the EPW at 20 July 09:00; MRT from probed surface temperatures.",
+    "Result": "UTCI on a 1 m sensor grid; probed air temperature, velocity, humidity and surface temperatures.",
+    "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam); saved with BlueCFD. Runtime: hours.",
+    "Edit": "Terrain, building and vegetation meshes; weather file and Calendar hour."
+  },
+  "UMF_UTCI_water_surface.ghx": {
+    "Purpose": "How an evaporating water surface changes UTCI on a flat Istanbul site on 20 May at 16:00.",
+    "Fidelity": "Engineering - coupled urbanMicroclimateFoam with the simpleWater model. Cite: Kubilay et al., urbanMicroclimateFoam.",
+    "Method": "Water Surface (0.5 m mixed depth) exchanges heat and moisture inside Outdoor+ Case beside Terrain, Building and Vegetation Regions.",
+    "Result": "UTCI per sensor; probed air and surface temperatures, velocity and humidity.",
+    "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam) on BlueCFD only; the container image lacks simpleWater. Runtime: hours.",
+    "Edit": "Water outline and depth, buildings, vegetation, date and hour."
+  },
+  "ViewShed.ghx": {
+    "Purpose": "How open the view is from points on a surface, and how much of a target each point can see.",
+    "Fidelity": "Screening - geometric ray casting; a plan-view measure, not a daylight metric.",
+    "Method": "Viewshed casts a 26 degree half-angle cone out to 48 m from each mesh vertex; View Target casts rays to the target past shared context.",
+    "Result": "Values from 0 to 1, with colours, per observer point.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
+    "Edit": "Context, observer surfaces and target; wire normals to aim the cones."
+  },
+  "WRF.ghx": {
+    "Purpose": "Site weather for Atlanta from a regional WRF run driven by GFS forecasts.",
+    "Fidelity": "Experimental - mesoscale workflow; 3 km nest on low-resolution geography.",
+    "Method": "WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.",
+    "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
+    "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
+    "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
+  },
+  "Stormwater.ghx": {
+    "Purpose": "Where water can pond on a graded site, and which way it runs.",
+    "Fidelity": "Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.",
+    "Method": "Stormwater Grid rasterises the terrain at 1 m; Fast mode computes terrain analytics, Full mode solves shallow-water depths.",
+    "Result": "A depression-capacity mesh and runoff flowlines up to 240 m, coloured by contributing area.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes, Full mode the slower.",
+    "Edit": "Terrain surface; real IDF coefficients a, b, c in Design Storm; connect Land Cover Runoff."
+  },
+  "Sunpath.ghx": {
+    "Purpose": "A sun path diagram for a city, as editable Rhino curves.",
+    "Fidelity": "Screening - solar geometry only, no weather or obstructions.",
+    "Method": "Sun Path reads latitude, longitude and time zone from the station's EPW and draws daily arcs and hourly analemmas.",
+    "Result": "Arcs for 21 June, 20 March and 21 December, hourly analemmas, a horizon circle and a text report at the origin.",
+    "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
+    "Edit": "Station panel, Radius, North and Arc Days; wire sun vectors to plot positions."
+  },
+  "WeatherMorphing.ghx": {
+    "Purpose": "Future-climate weather files morphed from a present-day Atlanta EPW, set beside the baseline.",
+    "Fidelity": "Engineering - statistical morphing by the Future Weather Generator, not a climate simulation.",
+    "Method": "Morph Weather runs the generator jar with Morph Settings; two Deconstruct Weather components expose the baseline and a morphed file.",
+    "Result": "Morphed EPW files plus side-by-side temperature, humidity, wind and solar series.",
+    "Needs": "Eddy3D Setup > Morph weather (Future Weather Generator): Java 17+ and the jar, not shipped. Runtime: minutes to hours.",
+    "Edit": "Station, the jar File Path, Morph Settings; turn Run on."
+  },
+  "WindRose.ghx": {
+    "Purpose": "An annual wind rose for a city in the Rhino viewport.",
+    "Fidelity": "Screening - bins the weather file as recorded; no simulation.",
+    "Method": "Wind Compass bins every hour into 16 sectors stacked by speed; hours below 0.5 m/s count as calm.",
+    "Result": "Petals sized by frequency and coloured by wind-speed band; the banner reports the hours plotted.",
+    "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
+    "Edit": "Station panel, Radius, Base Point; insert a Weather component before Wind Compass, which rejects the file path."
+  },
+  "FluidX3D.ghx": {
+    "Purpose": "Wind around buildings on the GPU, watched live in the viewport.",
+    "Fidelity": "Engineering - transient lattice-Boltzmann CFD, not validated for this site; FluidX3D's licence excludes commercial use.",
+    "Method": "LBM Case with FluidX3D Run Settings: 2 m grid, 720 s simulated, ABL inflow of 5 m/s at 10 m.",
+    "Result": "FluidX3D Live View colours a probe mesh while it runs; Scalar and Vector Field Viewers show probed values.",
+    "Needs": "Eddy3D Setup > LBM CFD (FluidX3D), built locally; needs a GPU. Runtime: minutes.",
+    "Edit": "Geometry, grid spacing, simulated time, inflow."
+  },
+  "OpenLB.ghx": {
+    "Purpose": "Time-averaged pedestrian wind around buildings from lattice-Boltzmann LES.",
+    "Fidelity": "Engineering - OpenLB D3Q19 with Smagorinsky LES, not validated for this site.",
+    "Method": "LBM Case with LBM Run Settings: 6 m grid, GPU on, inflow jitter on; runtime tries Podman, then Docker, then native.",
+    "Result": "The time-averaged pedestrian-level wind field in a Vector Field Viewer beside the domain wireframe.",
+    "Needs": "Eddy3D Setup > LBM CFD (OpenLB); the GPU build needs NVIDIA. Runtime: minutes to hours.",
+    "Edit": "Geometry; Grid Spacing (halving it costs 8x the memory and about 16x the time)."
+  },
+  "ML_CreateDataset.ghx": {
+    "Purpose": "Turn CFD wind solutions into labelled CSV rows for training wind surrogates.",
+    "Fidelity": "Engineering - steady RANS (realizable k-epsilon, SIMPLE) labels; a dataset is only as good as its CFD.",
+    "Method": "Outdoor Case solves 8 directions on a Cylinder Domain; Probe samples U on a 2 m grid at 1.8 m; Dataset Curator writes features.",
+    "Result": "One CSV per direction (SDF, building height, direction) plus a merge script; Dataset Reader previews mag_U.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: hours.",
+    "Edit": "Buildings and terrain (radius above 500 m); probe k as well, which the merge needs."
+  },
+  "ML_Inference.ghx": {
+    "Purpose": "Pedestrian-height wind maps around buildings from a trained model instead of CFD.",
+    "Fidelity": "Screening, not CFD - Yel 2.0 model. Cite: Karadag and Kastner (Routledge, in press).",
+    "Method": "Wind Predictor runs Yel 2.0 on a 2 m grid 1.8 m above the terrain for one compass direction at 5 m/s.",
+    "Result": "A jet-coloured velocity mesh with a 0 to 5 m/s legend and a Wind Compass.",
+    "Needs": "Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: seconds to minutes.",
+    "Edit": "One of three sample building sets, or your Breps centred on the terrain; wind direction."
+  },
+  "ML_Inference_Comfort.ghx": {
+    "Purpose": "Year-round pedestrian wind comfort classes around buildings, without running CFD.",
+    "Fidelity": "Screening, not CFD - confirm decisions with a Wind Study. Cite: Karadag and Kastner (Routledge, in press).",
+    "Method": "Yel 2.0 wind for 16 directions on a 2 m grid; Weibull fit per point against Istanbul weather; Lawson General criteria.",
+    "Result": "A comfort-class mesh and legend; roofs are classified where the model supplies roof speeds.",
+    "Needs": "Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: minutes.",
+    "Edit": "Buildings (three samples included), weather station, comfort metric (Lawson, Davenport or NEN 8100)."
+  },
+  "ML_Inference_moving_circle.ghx": {
+    "Purpose": "Explore wind across a large context by dragging a 450 m analysis circle over it.",
+    "Fidelity": "Screening, not CFD - Yel 2.0 model.",
+    "Method": "Settle Data waits for the slider to be released, then Wind Predictor reruns on a 2 m grid 1.8 m above the circle.",
+    "Result": "A jet velocity mesh with a 0 to 5 m/s legend and a Wind Compass sized to the circle.",
+    "Needs": "Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: seconds to minutes.",
+    "Edit": "Context, circle radius, wind direction (Value List, southeast by default)."
+  },
+  "MRT_Mixed.ghx": {
+    "Purpose": "Annual mean radiant temperature at ground and building sensors, on the fast path.",
+    "Fidelity": "Screening - surfaces at air temperature; no Radiance or EnergyPlus.",
+    "Method": "MRT Surface tags ground and 22 context Breps; MRT Sensors on 2 m grids; MRT View Factors and MRT Solve with Atlanta weather.",
+    "Result": "A coloured MRT mesh, Text Tag values, and one sensor's sky dome in Fisheye View.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: minutes.",
+    "Edit": "Ground and context Breps, weather station; press the two Buttons to run."
+  },
+  "MRT_Radiance.ghx": {
+    "Purpose": "Annual mean radiant temperature at ground sensors, with interreflected sun and computed surface temperatures.",
+    "Fidelity": "Engineering - Radiance shortwave plus EnergyPlus surface temperatures, not validated for this site.",
+    "Method": "One MRT component runs Radiance (Standard quality) and EnergyPlus; Brep Grid Points meshes ground and context at 2 m.",
+    "Result": "Annual mean MRT per probe, shown by Gradient and Text Tag.",
+    "Needs": "Eddy3D Setup > Comfort study (Radiance / EnergyPlus). Runtime: hours.",
+    "Edit": "Ground and context Breps, the EPW URL; turn Run on."
+  },
+  "Solar_Access.ghx": {
+    "Purpose": "Sun hours and BRE amenity overshadowing on a small ground plane beside a tall box.",
+    "Fidelity": "Screening - geometric ray casting, direct beam only.",
+    "Method": "Facade Grid lays 1 m cells; Sun Hours covers 1 July for Sun Stats and Sunlight Compliance; Shadow and Solar Irradiation cover the year.",
+    "Result": "Per-cell sun hours, BRE pass or fail, annual shadow and irradiation.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds.",
+    "Edit": "The Box 2Pt context, the ground plane, the weather station (Ithaca by default)."
+  },
+  "Sun_Hours.ghx": {
+    "Purpose": "Annual direct-sun hours across a site and its context.",
+    "Fidelity": "Screening - geometric direct beam only; no diffuse or reflected light, not Radiance.",
+    "Method": "Hourly ray casting toward the sun for every daylight hour of an Atlanta year; tree crowns pass 20 percent of the beam.",
+    "Result": "Points and a mesh coloured by annual sun hours.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes, growing with point count.",
+    "Edit": "Context meshes, ground surface, canopy crowns, weather station."
+  },
+  "SurfaceTemps_EnergyPlus.ghx": {
+    "Purpose": "Surface temperatures for MRT from EnergyPlus, staged so the costly view factors are solved once.",
+    "Fidelity": "Engineering - EnergyPlus surface heat balance, not validated for this block.",
+    "Method": "MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve, for a 10 x 10 x 15 m block with Ithaca weather.",
+    "Result": "Surface temperatures and MRT at 5 m facade sensors offset 1.1 m.",
+    "Needs": "Eddy3D Setup > Comfort study (Radiance / EnergyPlus). Runtime: minutes to hours.",
+    "Edit": "Working Directory (CHANGE-ME), block and ground, station; click the three Run toggles in order."
+  },
+  "SurfaceTemps_FFT.ghx": {
+    "Purpose": "Outdoor surface temperatures for a full year, without a thermal mesh or warm-up.",
+    "Fidelity": "Engineering - frequency-domain admittance method. Cite: Beckett, Owens and Acred.",
+    "Method": "SurfaceTemp solves grass_ground and brick_wall constructions against Istanbul weather, with sky view from Sky Exposure and 22 degC indoors.",
+    "Result": "Mean, Min and Max of each point's 8760-hour series, coloured with rounded Text Tag labels.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
+    "Edit": "Ground and context Breps, weather station, materials."
+  },
+  "ABL_Verification.ghx": {
+    "Purpose": "Does the boundary layer imposed at the inlet survive to the buildings?",
+    "Fidelity": "Engineering - a partial ASCE/SEI CWE Prestandard approach-flow check, run in the real domain rather than an empty one.",
+    "Method": "Steady RANS (realizable k-epsilon, 400 iterations) in a Box Domain; ABL of 5 m/s at 10 m, z0 1 m.",
+    "Result": "U on two vertical rakes at x = 0 and x = 40 m, from 2.5 to 77.5 m, plotted together; some decay is expected.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: minutes.",
+    "Edit": "ABL speed and z0, domain, mesh settings, rake positions."
+  },
+  "BoxDomain.ghx": {
+    "Purpose": "Wind around buildings and dense tree canopy in a rectangular domain.",
+    "Fidelity": "Engineering - steady RANS (realizable k-epsilon, SIMPLE), not validated for this site.",
+    "Method": "Atmospheric Boundary Layer inflow; Outdoor Case with Box Domain, Mesh Settings and Run Settings on 12 CPUs, Containerized engine.",
+    "Result": "U at probe points as arrows with Flex Legend, Streamlines, a CSV for viz.eddy3d.com, and residual and meshing monitors.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: about an hour.",
+    "Edit": "Buildings, trees and probe points."
+  },
+  "CylinderDomain.ghx": {
+    "Purpose": "Pedestrian-level wind around an Atlanta site for every prevailing wind direction, solved on one mesh.",
+    "Fidelity": "Engineering - steady RANS, not validated for this site. Cite: Kastner and Dogan (2020), cylindrical mesh.",
+    "Method": "Steady RANS in OpenFOAM on a cylindrical mesh; Wind Rose Cluster reduces the EPW to up to 8 directions and speeds.",
+    "Result": "Velocity U probed 1.5 m above terrain, one direction per slider step.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: hours.",
+    "Edit": "Station, site coordinates, buildings, tree zones; toggle Fetch for land cover and terrain."
+  },
+  "Facade_Pressure.ghx": {
+    "Purpose": "Wind pressure coefficients on facades for building energy models, over eight wind directions.",
+    "Fidelity": "Engineering - steady RANS mean Cp, not validated for this building.",
+    "Method": "Outdoor Case with a Cylinder Domain, directions 0 to 315 degrees in 45 degree steps, Cp output on in Run Settings.",
+    "Result": "Cp at 1 m facade points (set Probe Field to Cp); Airflow Network Cp writes an EnergyPlus .idf snippet.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: hours.",
+    "Edit": "The two 40 x 20 x 20 m blocks: replace them with your building."
+  },
+  "Pollutant_Canyon.ghx": {
+    "Purpose": "Where a street-level emission goes, and how much reaches pedestrians.",
+    "Fidelity": "Engineering - steady RANS with a passive tracer, not validated for this canyon.",
+    "Method": "Two 40 x 20 x 20 m blocks form a canyon; Pollutant Source releases 0.01 kg/s of exhaust from a volume inside it.",
+    "Result": "Tracer concentration in kg/m3 at three points 2 m above ground along the canyon centreline.",
+    "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: minutes.",
+    "Edit": "Blocks, source volume and rate, probe points; turn the toggles on."
+  },
+  "UMF_UTCI.ghx": {
+    "Purpose": "UTCI at 1.8 m for one hour in Istanbul from a fully coupled microclimate simulation.",
+    "Fidelity": "Engineering - coupled urbanMicroclimateFoam, not validated for this site. Cite: Kubilay et al., urbanMicroclimateFoam.",
+    "Method": "Air, Building, Vegetation and Terrain regions with Timing Parameters from the EPW at a Calendar hour; MRT View Factors and MRT Solve.",
+    "Result": "Mean UTCI per sensor with a legend; probed air temperature, wind, humidity, surface and tree temperatures.",
+    "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam), on BlueCFD, WSL or container. Runtime: hours.",
+    "Edit": "Embedded building, tree and terrain meshes; weather file and Calendar hour."
+  }
 }

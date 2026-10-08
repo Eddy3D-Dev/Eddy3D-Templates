@@ -2643,16 +2643,21 @@ Hour of Year</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Morphs a present-day Atlanta weather file into future-climate files and sets baseline and result side by side. Download Weather supplies the baseline EPW; Morph Weather passes it to the Future Weather Generator, using a File Path to the generator jar and Morph Settings (engine-default interpolation and uncertainty, 8 threads). A List Item picks one morphed file, and two Deconstruct Weather components expose dry-bulb temperature, relative humidity, wind speed and direction, solar angles and hour of year for each. Needs Java 17+ and the jar, which Eddy3D does not ship. Run starts off, and a full run takes minutes to hours.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Future-climate weather files morphed from a present-day Atlanta EPW, set beside the baseline.
+Fidelity: Engineering - statistical morphing by the Future Weather Generator, not a climate simulation.
+Method: Morph Weather runs the generator jar with Morph Settings; two Deconstruct Weather components expose the baseline and a morphed file.
+Result: Morphed EPW files plus side-by-side temperature, humidity, wind and solar series.
+Needs: Eddy3D Setup &gt; Morph weather (Future Weather Generator): Java 17+ and the jar, not shipped. Runtime: minutes to hours.
+Edit: Station, the jar File Path, Morph Settings; turn Run on.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>58</X>
-                          <Y>-198</Y>
+                          <Y>-208</Y>
                           <W>420</W>
-                          <H>240</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

@@ -1135,16 +1135,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">A sun path diagram for Istanbul, drawn as editable Rhino curves and points. Download Weather fetches the EPW that matches its Station panel, Weather converts it to a weather object, and Sun Path reads latitude, longitude and time zone from it. Outputs are daily sun arcs (by default June 21, March 20 and December 21), one analemma per clock hour, a horizon compass circle and a text report, centred on the origin. Swap the station to move the diagram to another city, set Radius, North and Arc Days to suit your model, or wire sun vectors to plot sample positions.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: A sun path diagram for a city, as editable Rhino curves.
+Fidelity: Screening - solar geometry only, no weather or obstructions.
+Method: Sun Path reads latitude, longitude and time zone from the station's EPW and draws daily arcs and hourly analemmas.
+Result: Arcs for 21 June, 20 March and 21 December, hourly analemmas, a horizon circle and a text report at the origin.
+Needs: Nothing to install; Download Weather needs internet. Runtime: seconds.
+Edit: Station panel, Radius, North and Arc Days; wire sun vectors to plot positions.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>163</X>
-                          <Y>-99</Y>
+                          <Y>-149</Y>
                           <W>420</W>
-                          <H>200</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

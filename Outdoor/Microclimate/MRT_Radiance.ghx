@@ -5188,16 +5188,21 @@ Tree</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">One MRT component runs the high-fidelity chain, Radiance shortwave with interreflection plus EnergyPlus surface temperatures for the longwave exchange. A script downloads an Istanbul IWEC weather file into the Eddy3D Cases folder. Brep Grid Points meshes the ground and ten context Breps at 2 m spacing, MRT Sensors makes a probe per mesh face, and MRT Surface tags the ground. MRT Settings uses Standard quality with Auto parallelism across cores. Deconstruct MRT returns the annual mean per probe for Gradient and Text Tag display. Install Engines installs Radiance and EnergyPlus; Run ships off. Replace the Breps and the EPW URL.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Annual mean radiant temperature at ground sensors, with interreflected sun and computed surface temperatures.
+Fidelity: Engineering - Radiance shortwave plus EnergyPlus surface temperatures, not validated for this site.
+Method: One MRT component runs Radiance (Standard quality) and EnergyPlus; Brep Grid Points meshes ground and context at 2 m.
+Result: Annual mean MRT per probe, shown by Gradient and Text Tag.
+Needs: Eddy3D Setup &gt; Comfort study (Radiance / EnergyPlus). Runtime: hours.
+Edit: Ground and context Breps, the EPW URL; turn Run on.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>184</X>
-                          <Y>205</Y>
+                          <Y>175</Y>
                           <W>420</W>
-                          <H>240</H>
+                          <H>270</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

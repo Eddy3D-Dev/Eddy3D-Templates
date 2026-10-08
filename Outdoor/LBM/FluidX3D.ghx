@@ -5339,16 +5339,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">GPU wind simulation around buildings, watched live in the viewport, on the FluidX3D lattice-Boltzmann engine. An Atmospheric Boundary Layer at its defaults (5 m/s at 10 m, z0 1 m) and the Geometry buildings feed LBM Case, with FluidX3D Run Settings fixing a 2 m grid and 720 s of simulated time; LBM Run launches the solver. A domain face is raised one unit and quad-remeshed to about 10,000 quads; its vertices are probed for the Scalar and Vector Field Viewers while FluidX3D Live View colours the mesh. Eddy3D builds FluidX3D locally; its licence excludes commercial use. Set your Geometry.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Wind around buildings on the GPU, watched live in the viewport.
+Fidelity: Engineering - transient lattice-Boltzmann CFD, not validated for this site; FluidX3D's licence excludes commercial use.
+Method: LBM Case with FluidX3D Run Settings: 2 m grid, 720 s simulated, ABL inflow of 5 m/s at 10 m.
+Result: FluidX3D Live View colours a probe mesh while it runs; Scalar and Vector Field Viewers show probed values.
+Needs: Eddy3D Setup &gt; LBM CFD (FluidX3D), built locally; needs a GPU. Runtime: minutes.
+Edit: Geometry, grid spacing, simulated time, inflow.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>243</X>
-                          <Y>65</Y>
+                          <Y>35</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

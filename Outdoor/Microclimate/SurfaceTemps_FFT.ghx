@@ -5763,7 +5763,12 @@ concrete_roof</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Outdoor surface temperatures for a full year from the frequency-domain admittance method of Beckett, Owens and Acred, with no thermal mesh and no warm-up. Brep Grid Points samples a ground Brep and ten context Breps every 2 m, Sky Exposure supplies sky view factors, and two SurfaceTemp components solve grass_ground and brick_wall constructions against an Istanbul file from Download Weather, with Indoor Temp 22 degC for walls. Deconstruct SurfaceTemp reduces each point's 8760-hour series to Mean, Min and Max; Bounds and Gradient turn the mean into point colors and rounded Text Tag labels. Replace the Breps, weather station and materials.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Outdoor surface temperatures for a full year, without a thermal mesh or warm-up.
+Fidelity: Engineering - frequency-domain admittance method. Cite: Beckett, Owens and Acred.
+Method: SurfaceTemp solves grass_ground and brick_wall constructions against Istanbul weather, with sky view from Sky Exposure and 22 degC indoors.
+Result: Mean, Min and Max of each point's 8760-hour series, coloured with rounded Text Tag labels.
+Needs: Nothing to install; runs inside Rhino. Runtime: seconds to minutes.
+Edit: Ground and context Breps, weather station, materials.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">

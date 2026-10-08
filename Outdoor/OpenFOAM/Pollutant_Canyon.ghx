@@ -8778,16 +8778,21 @@ Run &gt; Simulate.</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Street-canyon dispersion of a passive tracer: where does an emission go, and how much reaches pedestrians? Two 40 x 20 x 20 m blocks form a canyon along X, and Pollutant Source releases species exhaust at 0.01 kg/s from a 15 x 16 x 10 m volume inside it. Outdoor Case combines Atmospheric Boundary Layer, Box Domain, Mesh Settings, Run Settings and the source; Run meshes, creates zones, then simulates. Probe, with Field set to exhaust, reads tracer concentration in kg/m3 at three points 2 m above ground along the canyon centreline. An OpenFOAM engine is required; toggles ship off.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Where a street-level emission goes, and how much reaches pedestrians.
+Fidelity: Engineering - steady RANS with a passive tracer, not validated for this canyon.
+Method: Two 40 x 20 x 20 m blocks form a canyon; Pollutant Source releases 0.01 kg/s of exhaust from a volume inside it.
+Result: Tracer concentration in kg/m3 at three points 2 m above ground along the canyon centreline.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: minutes.
+Edit: Blocks, source volume and rate, probe points; turn the toggles on.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>147</X>
-                          <Y>-140</Y>
+                          <Y>-160</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>240</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

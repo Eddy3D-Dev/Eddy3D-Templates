@@ -4729,16 +4729,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">A tiny solar-access scene: a 0.5 m square, 10 m tall box at the corner of a 5 x 5 m ground plane, with Ithaca weather from Download Weather and Weather. Facade Grid lays 1 m cells on the plane, with normals and areas. Sun Hours covers a single day (1 July, hours 4344 to 4368), which Sun Stats at a 2 h threshold and Sunlight Compliance for BRE amenity overshadowing then evaluate. Shadow with Deconstruct Shadow and Solar Irradiation cover every daylight hour of the year. Replace the Box 2Pt context, the plane and the station with your site.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Sun hours and BRE amenity overshadowing on a small ground plane beside a tall box.
+Fidelity: Screening - geometric ray casting, direct beam only.
+Method: Facade Grid lays 1 m cells; Sun Hours covers 1 July for Sun Stats and Sunlight Compliance; Shadow and Solar Irradiation cover the year.
+Result: Per-cell sun hours, BRE pass or fail, annual shadow and irradiation.
+Needs: Nothing to install; runs inside Rhino. Runtime: seconds.
+Edit: The Box 2Pt context, the ground plane, the weather station (Ithaca by default).</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>151</X>
-                          <Y>725</Y>
+                          <Y>685</Y>
                           <W>420</W>
-                          <H>200</H>
+                          <H>240</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

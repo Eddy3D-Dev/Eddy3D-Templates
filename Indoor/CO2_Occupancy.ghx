@@ -7839,16 +7839,21 @@ Inferno</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Two CO2 routes. The CFD route solves a 6 x 4 x 3 m room with Indoor Case: an Indoor Inlet (1 m2, 0.5 m/s) on x=0, an Indoor Outlet on x=6, and a CO2 Emitter spanning (4, 1, 1) to (5, 3, 2) injecting 1.076e-4 as a passive scalar, with Age of Air on. Run solves; Probe feeds Scalar and Wind Field Viewers with CO2, age and velocity. The analytic route, Occupant CO2 for age 25 at 1.2 met, gives 0.0043 L/s per person (Persily and de Jonge). Indoor Case warns the emitter zone is thin; lower Cell Size.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: CO2 in an occupied, mechanically ventilated room, by CFD and by a quick analytic estimate.
+Fidelity: Engineering - steady RANS with CO2 as a passive scalar; the analytic route uses Persily and de Jonge's per-person rate.
+Method: Indoor Case: 6 x 4 x 3 m room, 1 m2 inlet at 0.5 m/s, outlet opposite, a CO2 Emitter zone, Age of Air on.
+Result: CO2, age of air and velocity in Scalar and Wind Field Viewers; Occupant CO2 gives 0.0043 L/s per person.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: minutes.
+Edit: Room, inlet, outlet, emitter zone and rate; lower Cell Size, since Indoor Case warns the emitter zone is thin.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>453</X>
-                          <Y>-110</Y>
+                          <Y>-200</Y>
                           <W>420</W>
-                          <H>190</H>
+                          <H>280</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

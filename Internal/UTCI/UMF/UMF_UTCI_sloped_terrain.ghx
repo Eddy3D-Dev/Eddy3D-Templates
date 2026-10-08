@@ -28491,16 +28491,21 @@ w</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Coupled urbanMicroclimateFoam run over sloped terrain, ending in UTCI maps for a single hour. The Atmospheric Boundary Layer (z0 1 m) takes wind speed and direction from the Istanbul IWEC weather file at the Calendar hour, 20 July 09:00. Remeshed terrain, buildings and vegetation feed Terrain Region, Building Region and Vegetation Region, which Outdoor+ Case assembles; Write, Run to mesh and solve, then Probe. Probed surface and canopy temperatures feed MRT Surface, MRT View Factors and MRT Solve; probed air temperature, velocity and humidity complete UTCI (Simulation) on a 1 m grid at 1.8 m. Saved with the BlueCFD engine.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: UTCI at 1.8 m for one summer hour in Istanbul over sloped terrain, with air, surfaces and trees coupled.
+Fidelity: Engineering - coupled urbanMicroclimateFoam, not validated for this site. Cite: Kubilay et al., urbanMicroclimateFoam.
+Method: Outdoor+ Case couples Terrain, Building and Vegetation Regions; ABL wind from the EPW at 20 July 09:00; MRT from probed surface temperatures.
+Result: UTCI on a 1 m sensor grid; probed air temperature, velocity, humidity and surface temperatures.
+Needs: Eddy3D Setup &gt; Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam); saved with BlueCFD. Runtime: hours.
+Edit: Terrain, building and vegetation meshes; weather file and Calendar hour.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>112</X>
-                          <Y>-204</Y>
+                          <Y>-244</Y>
                           <W>420</W>
-                          <H>240</H>
+                          <H>280</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

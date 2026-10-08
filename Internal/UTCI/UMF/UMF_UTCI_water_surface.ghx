@@ -29735,16 +29735,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Adds an evaporating water surface to the coupled microclimate chain and maps UTCI in Istanbul on 20 May at 16:00. Water Surface (0.5 m mixed depth) exchanges heat and moisture with the air inside Outdoor+ Case, beside Terrain Region, Building Region and Vegetation Region on flat terrain. The Atmospheric Boundary Layer reads wind from the weather file, Run meshes and solves one hour, and Probe samples air and surface temperatures, velocity and humidity. MRT Surface, MRT View Factors and MRT Solve feed UTCI (Simulation). Saved with the BlueCFD engine, which carries the simpleWater model; the default container image does not.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: How an evaporating water surface changes UTCI on a flat Istanbul site on 20 May at 16:00.
+Fidelity: Engineering - coupled urbanMicroclimateFoam with the simpleWater model. Cite: Kubilay et al., urbanMicroclimateFoam.
+Method: Water Surface (0.5 m mixed depth) exchanges heat and moisture inside Outdoor+ Case beside Terrain, Building and Vegetation Regions.
+Result: UTCI per sensor; probed air and surface temperatures, velocity and humidity.
+Needs: Eddy3D Setup &gt; Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam) on BlueCFD only; the container image lacks simpleWater. Runtime: hours.
+Edit: Water outline and depth, buildings, vegetation, date and hour.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>321</X>
-                          <Y>264</Y>
+                          <Y>224</Y>
                           <W>420</W>
-                          <H>240</H>
+                          <H>280</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
