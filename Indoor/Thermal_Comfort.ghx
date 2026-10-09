@@ -6884,16 +6884,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">A 3000 W Heat Source in a 6 x 4 x 3 m room switches Indoor Case to the buoyant fluid solver, so warm air rises and the ceiling reads warmer than the floor. A low Indoor Inlet (0.1 m/s, 20 degC) on x=0 and high Indoor Outlet on x=6 let the plume leave. Indoor Wall bands hold 40 degC high on x=0 and 10 degC low on x=6. Run solves, Live Residuals plots convergence, Open In ParaView shows fields. Two-Node Comfort (Gagge: SET, PMV) waits at 0.1 m/s air speed; feed it air and radiant temperatures from the results.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Thermal stratification and occupant comfort in a heated, ventilated room.
+Fidelity: Engineering - steady buoyant RANS; comfort from the Gagge two-node model.
+Method: 3000 W Heat Source switches Indoor Case to the buoyant solver; low 20 degC inlet, high outlet, wall bands at 40 and 10 degC.
+Result: Temperature and velocity fields, warmer at the ceiling than the floor; Two-Node Comfort gives SET and PMV.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: minutes.
+Edit: Heat load, inlet temperature and speed, wall temperatures; feed probed air and radiant temperatures to Two-Node Comfort.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>469</X>
-                          <Y>-110</Y>
+                          <Y>-190</Y>
                           <W>420</W>
-                          <H>190</H>
+                          <H>270</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

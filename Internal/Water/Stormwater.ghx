@@ -4029,7 +4029,12 @@ Roofs drain to grade</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Experimental surface-runoff check for a graded site: where can water pond, and which way does it run? The stored terrain Surface enters Stormwater Grid, which rasterises it at 1 m. Stormwater Run starts in Fast mode, terrain analytics only, so Deconstruct Stormwater draws depression capacity as a mesh and Stormwater Flowlines traces runoff paths up to 240 m, colored by contributing area. Design Storm, 100-year, 60-minute, alternating block, matters once Mode is Full for shallow-water depths; its IDF coefficients a, b, c are 1, 2, 3, so enter your own. Land Cover Runoff sits unconnected. Surface routing only, no pipes.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Where water can pond on a graded site, and which way it runs.
+Fidelity: Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.
+Method: Stormwater Grid rasterises the terrain at 1 m; Fast mode computes terrain analytics, Full mode solves shallow-water depths.
+Result: A depression-capacity mesh and runoff flowlines up to 240 m, coloured by contributing area.
+Needs: Nothing to install; runs inside Rhino. Runtime: seconds to minutes, Full mode the slower.
+Edit: Terrain surface; real IDF coefficients a, b, c in Design Storm; connect Land Cover Runoff.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">

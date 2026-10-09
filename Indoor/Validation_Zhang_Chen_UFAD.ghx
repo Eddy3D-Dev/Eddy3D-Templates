@@ -4807,16 +4807,21 @@
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Validation of underfloor air distribution against Zhang and Chen (Atmospheric Environment, 2006): a 4.91 x 4.31 x 2.44 m chamber. Two 0.26 m square floor-level Indoor Inlet diffusers carry 0.70 m/s at 20.4 and 19.9 degC, which Indoor Case averages; an Indoor Outlet extracts at the ceiling. Indoor Wall components carry measured wall temperatures, four 100 W occupant boxes carved out of the room and six 64 W flush ceiling luminaires. Run solves. Expect roughly 1.1 to 1.7 K/m floor to ceiling. Cell Size defaults to 0.10 m, against the paper's 389k-cell grid. Diffuser, occupant and luminaire positions are reconstructed.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Check the indoor solver against measured underfloor air distribution in a test chamber.
+Fidelity: Validated against measurements. Cite: Zhang and Chen, Atmospheric Environment 2006. Diffuser, occupant and luminaire positions are reconstructed.
+Method: Steady buoyant RANS of a 4.91 x 4.31 x 2.44 m chamber: two floor diffusers at 0.70 m/s, ceiling extract, occupants, luminaires.
+Result: Vertical temperature profile; expect roughly 1.1 to 1.7 K/m from floor to ceiling.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: about an hour.
+Edit: Nothing for the comparison itself; Cell Size (0.10 m default) for a grid-sensitivity study.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>100</X>
-                          <Y>-312</Y>
+                          <Y>-342</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

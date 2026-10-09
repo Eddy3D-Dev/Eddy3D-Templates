@@ -2146,16 +2146,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Climate diagrams for one site, drawn from a single EPW file. Download Weather fetches the file for the station named in a panel, here Istanbul, and Weather reads it. Monthly Climate Chart plots dry-bulb temperature and relative humidity as two aligned minimum, mean and maximum charts. Sun Path draws daily sun arcs and hourly analemmas on a dome. Wind Compass, fed the same weather, shows a 16-sector annual wind rose stacked by wind speed. A panel value of 100 sets chart width, height, dome radius and wind rose radius. Type another station name and all three redraw for that climate.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: A climate overview of one site: temperature, humidity, sun path and wind rose from a single EPW.
+Fidelity: Screening - plots the weather file as recorded; no simulation.
+Method: Download Weather fetches the station's EPW; Monthly Climate Chart, Sun Path and Wind Compass draw from the same Weather object.
+Result: Monthly minimum, mean and maximum temperature and humidity charts, a sun-path dome and a 16-sector wind rose.
+Needs: Nothing to install; Download Weather needs internet. Runtime: seconds.
+Edit: Station name panel (Istanbul by default); the size panel (100) scales every chart.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>163</X>
-                          <Y>-249</Y>
+                          <Y>-299</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>270</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

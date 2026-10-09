@@ -6150,16 +6150,21 @@ Count</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Cumulative solar irradiation, in kWh/m2, mapped over a ground surface and its context faces. Weather loads the Istanbul file from Download Weather. Brep Grid Points samples the ground Brep and the joined context Breps at 1 m spacing, with normals. Sky Exposure gives each point a sky view fraction; Solar Irradiation adds beam, sky and ground-reflected light for every daylight hour of the year, an interactive preview, not a Radiance simulation. Flex Legend colors both surfaces on one range set by the context totals, and Text Tag prints rounded ground values. Replace the stored ground Brep and ten context Breps.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Annual solar irradiation in kWh/m2 over a ground surface and its surrounding facades.
+Fidelity: Screening - interactive beam, sky and ground-reflected estimate, not a Radiance simulation.
+Method: Brep Grid Points samples surfaces at 1 m; Sky Exposure gives sky view; Solar Irradiation sums every daylight hour of an Istanbul year.
+Result: Ground and context coloured on one legend range; Text Tag prints rounded ground values.
+Needs: Nothing to install; runs inside Rhino. Runtime: seconds to minutes.
+Edit: Ground Brep, the ten context Breps, weather station.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>88</X>
-                          <Y>-306</Y>
+                          <Y>-326</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>240</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

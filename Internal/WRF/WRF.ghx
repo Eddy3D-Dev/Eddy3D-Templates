@@ -8498,16 +8498,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">From GFS download to site weather, centred on Atlanta. WRF Met Data fetches 0.25 degree NOAA GFS files from NOMADS, no account, for 25 August 2026, 12:00 to 21:00 UTC. WRF Domain nests a 3 km Lambert grid at 33.76 N, 84.39 W inside a 9 km parent; WRF Geo Data supplies low-resolution geography; WRF Namelist writes namelist.wps. WRF Run executes WPS then WRF in a Docker or Podman container. WRF Probe feeds 2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow. NOMADS keeps about ten days, so change the dates.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Site weather for Atlanta from a regional WRF run driven by GFS forecasts.
+Fidelity: Experimental - mesoscale workflow; 3 km nest on low-resolution geography.
+Method: WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.
+Result: 2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.
+Needs: Eddy3D Setup &gt; Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.
+Edit: Dates (NOMADS keeps about ten days), domain centre and size.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>290</X>
-                          <Y>11</Y>
+                          <Y>-29</Y>
                           <W>420</W>
-                          <H>200</H>
+                          <H>240</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

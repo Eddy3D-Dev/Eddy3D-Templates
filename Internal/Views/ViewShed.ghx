@@ -2306,16 +2306,21 @@ Grayscale</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Visual openness and target visibility for points on a surface, by ray casting against surrounding geometry. Each observer Brep passes through Mesh Brep and Quad Remesh, and Deconstruct Mesh turns the vertices into points. Viewshed measures the unobstructed fraction of a view cone around each point: 26 degrees half-angle, 48 m view distance. With no normals wired, cones point straight up, a plan-view measure rather than a daylight metric. View Target rates how much of a target each point sees, the shared context blocking rays. Both return values from 0 to 1 and colors. Supply context, observer surfaces and target.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: How open the view is from points on a surface, and how much of a target each point can see.
+Fidelity: Screening - geometric ray casting; a plan-view measure, not a daylight metric.
+Method: Viewshed casts a 26 degree half-angle cone out to 48 m from each mesh vertex; View Target casts rays to the target past shared context.
+Result: Values from 0 to 1, with colours, per observer point.
+Needs: Nothing to install; runs inside Rhino. Runtime: seconds to minutes.
+Edit: Context, observer surfaces and target; wire normals to aim the cones.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>353</X>
-                          <Y>-36</Y>
+                          <Y>-56</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>240</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

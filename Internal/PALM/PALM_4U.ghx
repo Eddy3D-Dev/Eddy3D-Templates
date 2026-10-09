@@ -4067,16 +4067,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Skeleton workflow for PALM-4U, the large-eddy urban microclimate model, ending in pedestrian-level PET maps. PALM Domain sets a 64 x 64 x 48 grid of 2 m cells. Sample STL meshes (three buildings, two tree crowns, all wired to Buildings), a terrain surface and OpenStreetMap land cover from PALM Land Cover (toggle Fetch) feed PALM Case, which writes the static driver and namelist. PALM Settings holds 2 h, a 3 m/s westerly wind and comfort on. PALM Run starts the container, PALM Progress follows it, PALM Results reads the averaged bio_pet field. Needs the PALM container image from Eddy3D Setup.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Pedestrian-level PET maps from a PALM-4U large-eddy simulation of a small site.
+Fidelity: Experimental - skeleton workflow for the PALM-4U plugin.
+Method: PALM Domain (64 x 64 x 48 cells, 2 m), buildings, trees, terrain and OSM land cover feed PALM Case; 2 h, 3 m/s westerly.
+Result: Time-averaged bio_pet field from PALM Results; PALM Progress follows the container run.
+Needs: Eddy3D Setup &gt; Urban microclimate / LES / RANS (PALM-4U). Runtime: hours.
+Edit: Domain size and resolution, STL buildings and trees, terrain, wind, simulated time; toggle Fetch for land cover.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>142</X>
-                          <Y>-90</Y>
+                          <Y>-120</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

@@ -18299,16 +18299,21 @@ atlanta</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Replaces CFD with a machine-learning wind model to map UTCI across a circular site with Atlanta weather, for one hour or the whole year. ML Model supplies Yel 2.0 to Wind Predictor, predicting pedestrian-level wind for eight directions at 45 degree steps, treating trees as solid obstructions. Velocity Amplification Factors (VAF) scale those speeds to each weather hour. MRT Surface for ground, buildings and trees, MRT Sensors on a 4 m grid at 1.8 m, MRT View Factors and MRT Solve feed UTCI (Simulation). An Hourly/Annual list sets Deconstruct UTCI's hour; Thermal Comfort Legend maps the result. Screening, not CFD.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: UTCI across a circular site for one hour or the whole year, without CFD.
+Fidelity: Screening - machine-learning wind (Yel 2.0); trees count as solid obstructions.
+Method: Wind Predictor for 8 directions, scaled to each Atlanta hour by VAF; MRT Surface, Sensors, View Factors and Solve feed UTCI (Simulation).
+Result: UTCI per sensor on a 4 m grid at 1.8 m, coloured by Thermal Comfort Legend; an Hourly/Annual list picks the hour.
+Needs: Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: minutes.
+Edit: Buildings, trees, ground, weather file, sensor grid spacing.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>180</X>
-                          <Y>-184</Y>
+                          <Y>-214</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

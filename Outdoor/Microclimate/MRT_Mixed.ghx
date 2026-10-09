@@ -6783,16 +6783,21 @@ Dome</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Annual mean radiant temperature at ground and building sensors, from the staged pipeline on the fast path, with surfaces at air temperature and no Radiance or EnergyPlus. Two MRT Surface components tag the ground and 22 context Breps. Two Brep Grid Points at 2 m feed two MRT Sensors, ground probes lifted 1.1 m, building probes offset 0.5 m along their normals, both wired into MRT View Factors. MRT Solve reads Atlanta weather from Download Weather. Deconstruct MRT supplies a colored mesh and Text Tag values; Fisheye View draws one sensor's dome. Two Buttons start the run; replace both Breps.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Annual mean radiant temperature at ground and building sensors, on the fast path.
+Fidelity: Screening - surfaces at air temperature; no Radiance or EnergyPlus.
+Method: MRT Surface tags ground and 22 context Breps; MRT Sensors on 2 m grids; MRT View Factors and MRT Solve with Atlanta weather.
+Result: A coloured MRT mesh, Text Tag values, and one sensor's sky dome in Fisheye View.
+Needs: Nothing to install; runs inside Rhino. Runtime: minutes.
+Edit: Ground and context Breps, weather station; press the two Buttons to run.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>227</X>
-                          <Y>-177</Y>
+                          <Y>-197</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>240</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

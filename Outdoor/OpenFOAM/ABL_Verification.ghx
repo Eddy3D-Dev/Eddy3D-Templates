@@ -8286,16 +8286,21 @@ Flat XY (Keep Speed)</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Approach-flow verification, a partial take on the ASCE/SEI CWE Prestandard check: does the atmospheric boundary layer imposed at the inlet survive to the buildings? Atmospheric Boundary Layer (5 m/s at 10 m, z0 of 1 m) feeds Outdoor Case with Box Domain, Mesh Settings and Run Settings (realizable k-epsilon, 400 iterations). Probe reads U on two 16-point vertical rakes at x = 0 and x = 40 m, y = 60 m, from 2.5 to 77.5 m, and Wind Field Viewer plots both profiles for comparison. It uses the real domain, not the standard's empty one. Some decay is expected.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Does the boundary layer imposed at the inlet survive to the buildings?
+Fidelity: Engineering - a partial ASCE/SEI CWE Prestandard approach-flow check, run in the real domain rather than an empty one.
+Method: Steady RANS (realizable k-epsilon, 400 iterations) in a Box Domain; ABL of 5 m/s at 10 m, z0 1 m.
+Result: U on two vertical rakes at x = 0 and x = 40 m, from 2.5 to 77.5 m, plotted together; some decay is expected.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: minutes.
+Edit: ABL speed and z0, domain, mesh settings, rake positions.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>147</X>
-                          <Y>-260</Y>
+                          <Y>-330</Y>
                           <W>420</W>
-                          <H>200</H>
+                          <H>270</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

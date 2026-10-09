@@ -16849,16 +16849,21 @@ A guide for architects. Routledge.</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Wind prediction inside a 450 m radius circle dragged across the stored context with an MD Slider. Settle Data holds the slider position until you release the mouse, so Brep Grid Points places a 2 m grid 1.8 m above the circle and Wind Predictor (Yel 2.0 via ML Model) reruns only then, not per drag step. A Value List picks one of eight directions (southeast by default) for Atmospheric Boundary Layer at 5 m/s. Results show as a jet velocity mesh with a 0 to 5 m/s legend and Wind Compass sized from the circle. ML screening, not CFD.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Explore wind across a large context by dragging a 450 m analysis circle over it.
+Fidelity: Screening, not CFD - Yel 2.0 model.
+Method: Settle Data waits for the slider to be released, then Wind Predictor reruns on a 2 m grid 1.8 m above the circle.
+Result: A jet velocity mesh with a 0 to 5 m/s legend and a Wind Compass sized to the circle.
+Needs: Nothing to install; ML Model downloads Yel 2.0 on first use. Runtime: seconds to minutes.
+Edit: Context, circle radius, wind direction (Value List, southeast by default).</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>41</X>
-                          <Y>-239</Y>
+                          <Y>-259</Y>
                           <W>420</W>
-                          <H>200</H>
+                          <H>220</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

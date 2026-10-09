@@ -77410,7 +77410,12 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Rectangular-domain wind study around sample buildings and dense tree canopy. Atmospheric Boundary Layer sets the inflow; Outdoor Case combines it with Box Domain, Mesh Settings, Run Settings (realizable k-epsilon, SIMPLE, 12 CPUs) and the Containerized engine, needing Podman or Docker. Run meshes and solves. Probe samples U at a point cloud; Wind Field Viewer draws arrows and feeds its range to Flex Legend. Export to Visualizer writes a CSV for viz.eddy3d.com, and Streamlines traces flow from a seed line. Meshing Progress, Parse Case Logs, Plot Residuals and Live Residuals follow the run. Swap in your own geometry and probe points.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Wind around buildings and dense tree canopy in a rectangular domain.
+Fidelity: Engineering - steady RANS (realizable k-epsilon, SIMPLE), not validated for this site.
+Method: Atmospheric Boundary Layer inflow; Outdoor Case with Box Domain, Mesh Settings and Run Settings on 12 CPUs, Containerized engine.
+Result: U at probe points as arrows with Flex Legend, Streamlines, a CSV for viz.eddy3d.com, and residual and meshing monitors.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: about an hour.
+Edit: Buildings, trees and probe points.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">

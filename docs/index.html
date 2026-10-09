@@ -58,6 +58,9 @@ header.hero::after{
 .hero-body-inner{overflow:hidden;min-height:0;padding-top:40px}
 header.hero.collapsed .hero-body{grid-template-rows:0fr;opacity:0}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px;letter-spacing:.2px}
+/* The brand is the home link: back to the bare URL, which opens on the latest version. */
+a.brand{color:inherit;text-decoration:none}
+a.brand:hover{opacity:.85}
 .brand .logo{
   width:38px;height:38px;border-radius:10px;background:#fff;padding:3px;
   display:block;object-fit:contain;
@@ -164,6 +167,23 @@ main.wrap{padding-top:88px;padding-bottom:24px}
 .card h3{font-size:16.5px;font-weight:700;letter-spacing:-.2px;word-break:break-word}
 .card .file{font-size:12.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card p{font-size:14px;color:var(--muted);flex:1}
+/* Structured descriptions (scripts/description_format.py): Purpose leads, Fidelity is a
+   badge, the other fields are label rows in the same order on every card. */
+.card .purpose{color:var(--text);flex:0 0 auto}
+.card .fidelity{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.card .badge{flex:0 0 auto;font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;
+  padding:2px 8px;border-radius:999px;background:rgba(100,116,139,.16);color:inherit}
+.card .badge.validated{background:rgba(22,163,74,.16);color:#15803d}
+.card .badge.engineering{background:rgba(37,99,235,.14);color:#1d4ed8}
+.card .badge.screening{background:rgba(217,119,6,.16);color:#b45309}
+.card .badge.experimental{background:rgba(147,51,234,.14);color:#7e22ce}
+.card dl.fields{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13px;color:var(--muted);flex:1;margin:0}
+.card dl.fields dt{font-weight:700;font-size:11px;letter-spacing:.3px;text-transform:uppercase;padding-top:2px}
+.card dl.fields dd{margin:0}
+html[data-theme="dark"] .card .badge.validated{color:#4ade80}
+html[data-theme="dark"] .card .badge.engineering{color:#93c5fd}
+html[data-theme="dark"] .card .badge.screening{color:#fbbf24}
+html[data-theme="dark"] .card .badge.experimental{color:#d8b4fe}
 .card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:2px}
 .size{font-size:12.5px;color:var(--muted)}
 .dl{
@@ -296,7 +316,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header class="hero">
   <div class="wrap">
     <div class="hero-top">
-      <div class="brand"><img class="logo" src="https://github.com/Eddy3D-Dev.png" alt="Eddy3D logo"> Eddy3D</div>
+      <a class="brand" href="./" title="Reload the template gallery"><img class="logo" src="https://github.com/Eddy3D-Dev.png" alt="Eddy3D logo"> Eddy3D</a>
       <nav class="hero-links">
         <a href="https://docs.eddy3d.com" target="_blank" rel="noopener">Docs</a>
         <a class="icon-link" href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener" aria-label="View on GitHub" title="View on GitHub">
@@ -441,7 +461,23 @@ let ALL=[],activeCat="all",branch=null,spotlightId=null;
 /* Description text comes from a Panel inside the .ghx, so it is data, not
    markup: escape it, and keep paragraph breaks (blank lines) as paragraphs. */
 const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const descHtml=d=>d?d.split(/\n\s*\n/).map(p=>`<p>${esc(p.trim()).replace(/\n/g,"<br>")}</p>`).join(""):"";
+const ROWS=["Method","Result","Needs","Edit"];
+const FIDELITY=["Validated","Engineering","Screening","Experimental"];
+function fidelityHtml(f){
+  const m=/^(\w+)[\s.,:;-]*(.*)$/.exec(f.trim());
+  if(!m||!FIDELITY.includes(m[1]))return `<div class="fidelity">${esc(f)}</div>`;
+  return `<div class="fidelity"><span class="badge ${m[1].toLowerCase()}">${m[1]}</span><span>${esc(m[2])}</span></div>`;
+}
+/* A version branch from before the structure carries one plain string per template;
+   newer ones carry the parsed fields. Render both. */
+function descHtml(d){
+  if(!d)return "";
+  if(typeof d==="string")return d.split(/\n\s*\n/).map(p=>`<p>${esc(p.trim()).replace(/\n/g,"<br>")}</p>`).join("");
+  return (d.Purpose?`<p class="purpose">${esc(d.Purpose)}</p>`:"")
+    +(d.Fidelity?fidelityHtml(d.Fidelity):"")
+    +`<dl class="fields">${ROWS.filter(k=>d[k]).map(k=>`<dt>${k}</dt><dd>${esc(d[k])}</dd>`).join("")}</dl>`;
+}
+const descText=d=>!d?"":typeof d==="string"?d:Object.values(d).join(" ");
 
 function catOf(path){
   let best=null;
@@ -498,7 +534,7 @@ async function loadTree(){
     const cat=catOf(n.path)||"Other";
     const name=n.path.split("/").pop();
     return {path:n.path,name,size:n.size||0,cat,
-      desc:ghxDesc[name]||"",
+      desc:ghxDesc[name]||"",descText:descText(ghxDesc[name]).toLowerCase(),
       url:`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
   });
   $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} template${ALL.length===1?"":"s"}`;
@@ -542,7 +578,7 @@ function buildChips(){
 function render(){
   const q=$("#q").value.trim().toLowerCase();
   const vis=ALL.filter(t=>(activeCat==="all"||t.cat===activeCat)&&
-    (!q||t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q)||t.cat.toLowerCase().includes(q)));
+    (!q||t.name.toLowerCase().includes(q)||t.descText.includes(q)||t.cat.toLowerCase().includes(q)));
   const byCat={};vis.forEach(t=>(byCat[t.cat]=byCat[t.cat]||[]).push(t));
   const order=Object.keys(CATS).filter(k=>byCat[k]).concat(Object.keys(byCat).filter(k=>!CATS[k]));
   $("#sections").innerHTML=order.map(k=>{

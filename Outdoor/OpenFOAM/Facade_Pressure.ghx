@@ -8150,16 +8150,21 @@ hardened</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Wind-driven facade pressure coefficients for building energy modelling, across eight wind directions. Atmospheric Boundary Layer takes directions from Series (0 to 315 degrees, 45 degree steps); Outdoor Case sets up two 40 x 20 x 20 m blocks in a Cylinder Domain, and Run Settings enables Cp output. Facade Grid places points at 1 m spacing, 0.05 m offset, on faces within 45 degrees of vertical. Probe reads Cp there (set Field to Cp), and Airflow Network Cp writes an EnergyPlus AirflowNetwork .idf snippet for Ladybug Tools. Probe warns until the case is solved. Replace the blocks with your building.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Wind pressure coefficients on facades for building energy models, over eight wind directions.
+Fidelity: Engineering - steady RANS mean Cp, not validated for this building.
+Method: Outdoor Case with a Cylinder Domain, directions 0 to 315 degrees in 45 degree steps, Cp output on in Run Settings.
+Result: Cp at 1 m facade points (set Probe Field to Cp); Airflow Network Cp writes an EnergyPlus .idf snippet.
+Needs: Eddy3D Setup &gt; (U)RANS CFD (OpenFOAM). Runtime: hours.
+Edit: The two 40 x 20 x 20 m blocks: replace them with your building.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>72</X>
-                          <Y>-276</Y>
+                          <Y>-306</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

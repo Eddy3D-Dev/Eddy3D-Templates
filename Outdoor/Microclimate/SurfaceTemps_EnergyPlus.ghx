@@ -4643,16 +4643,21 @@ Containerized</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">EnergyPlus surface temperatures for MRT, staged as MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve. A 10 x 10 x 15 m block on a 40 x 40 m ground is tagged by two MRT Surface components, a 5 m Facade Grid supplies sensors at 1.1 m, and Download Weather supplies Ithaca. MRT Settings keeps EnergyPlus Surfaces on and Radiance Reflections off, so the first run stays cheap. The three Run toggles ship off; click them in order, since the view-factor sweep is solved once and reused. Set the CHANGE-ME Working Directory and install EnergyPlus or the container image.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Surface temperatures for MRT from EnergyPlus, staged so the costly view factors are solved once.
+Fidelity: Engineering - EnergyPlus surface heat balance, not validated for this block.
+Method: MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve, for a 10 x 10 x 15 m block with Ithaca weather.
+Result: Surface temperatures and MRT at 5 m facade sensors offset 1.1 m.
+Needs: Eddy3D Setup &gt; Comfort study (Radiance / EnergyPlus). Runtime: minutes to hours.
+Edit: Working Directory (CHANGE-ME), block and ground, station; click the three Run toggles in order.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>269</X>
-                          <Y>-140</Y>
+                          <Y>-170</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

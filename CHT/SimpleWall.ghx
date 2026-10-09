@@ -6248,16 +6248,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Conjugate heat transfer through a two-layer brick wall, after Kastner and Dogan (SimAUD 2020). Two Box 2Pt blocks, 0.15 m thick and 1 m square, become CHT Solid regions with CHT Material Brick. CHT Boundary components hold the west face at 20 degC and the east at -5 degC; unassigned faces stay adiabatic. CHT Case starts at 10 degC with 0.05 m background cells for 10000 s. Run solves in a Docker or Podman container while Live Residuals tracks convergence. Probe reads T on the wall region at Brep Grid Points, drawn by Scalar Field Viewer. Edit boxes, materials, temperatures.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: Heat flow through a two-layer brick wall held at 20 degC on one face and -5 degC on the other.
+Fidelity: Engineering - transient conjugate heat transfer, not validated for this wall. Cite: Kastner and Dogan (SimAUD 2020).
+Method: CHT Case solves conduction in two 0.15 m CHT Solid blocks of CHT Material Brick for 10000 s; unassigned faces stay adiabatic.
+Result: Wall temperature T probed on a Brep Grid and drawn by Scalar Field Viewer; Live Residuals tracks convergence.
+Needs: Eddy3D Setup &gt; Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam). Runtime: minutes.
+Edit: Wall blocks, materials, boundary temperatures and simulated time.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>67</X>
-                          <Y>-200</Y>
+                          <Y>-260</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>280</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>

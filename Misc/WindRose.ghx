@@ -843,16 +843,21 @@ Version 1.15.0.827</item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                    <item name="UserText" type_name="gh_string" type_code="10">Annual wind rose for Istanbul, drawn in the Rhino viewport at the origin. Download Weather fetches the station's EPW; Wind Compass bins every hour into 16 direction sectors: petal length is occurrence frequency and the stacked colours are wind-speed ranges in m/s, from 0.5-2 up to 12+. Hours below 0.5 m/s count as calm and are left out, and the banner reports the hours plotted. Wind Compass expects a Weather object, not the file path Download Weather outputs, so insert a Weather component between them. Change the Station panel for another city, Radius to rescale, Base Point to move it.</item>
+                    <item name="UserText" type_name="gh_string" type_code="10">Purpose: An annual wind rose for a city in the Rhino viewport.
+Fidelity: Screening - bins the weather file as recorded; no simulation.
+Method: Wind Compass bins every hour into 16 sectors stacked by speed; hours below 0.5 m/s count as calm.
+Result: Petals sized by frequency and coloured by wind-speed band; the banner reports the hours plotted.
+Needs: Nothing to install; Download Weather needs internet. Runtime: seconds.
+Edit: Station panel, Radius, Base Point; insert a Weather component before Wind Compass, which rejects the file path.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
                       <items count="4">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>163</X>
-                          <Y>-141</Y>
+                          <Y>-171</Y>
                           <W>420</W>
-                          <H>220</H>
+                          <H>250</H>
                         </item>
                         <item name="MarginLeft" type_name="gh_int32" type_code="3">0</item>
                         <item name="MarginRight" type_name="gh_int32" type_code="3">0</item>
