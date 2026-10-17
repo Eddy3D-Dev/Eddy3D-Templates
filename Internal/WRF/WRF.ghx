@@ -82,22 +82,22 @@
             </chunk>
             <chunk name="Library" index="1">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Wrf, Version=1.15.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.15.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Wrf, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">3f1b9c4e-5a62-47d8-9e13-0b7a6c2d48f5</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-WRF</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.15.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="2">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.15.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.15.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.15.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
               </items>
             </chunk>
           </chunks>
@@ -146,7 +146,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">b8283360-f130-4a78-be0a-f4b4b9673ef1</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Domain</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Domain</item>
@@ -812,7 +814,7 @@ default
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Download the meteorological GRIB files that drive a WRF run. The file list and the Vtable are shown before you fetch anything, so a window can be checked first.
 
 Version 1.10.0.827
@@ -843,10 +845,13 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">53076cbe-3742-4648-bd32-195198c07137</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Met Data</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Met</item>
+                    <item name="WrfMetDataInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                   </items>
                   <chunks count="15">
                     <chunk name="Attributes">
@@ -865,11 +870,11 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Where to put the downloaded GRIB files. Wire this to WRF Run's GRIB Folder.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Where to put the downloaded GRIB files. Wire this to WRF Run's GRIB Folder. Empty uses the grib folder under the resolved case (Working Directory + Case Name), which is where WRF Run looks with nothing wired.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a509b2e6-9ed1-44c0-945a-549d6e70ae44</item>
                         <item name="Name" type_name="gh_string" type_code="10">GRIB Folder</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Dir</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
                       <chunks count="2">
@@ -963,7 +968,7 @@ NCAR RDA archive (needs a free account)</item>
                     </chunk>
                     <chunk name="param_input" index="2">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">First instant the run needs, UTC. e.g. 2024-01-15_00:00:00.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">First instant the run needs, UTC. e.g. 2024-01-15_00:00:00. Defaults to the most recent GFS cycle that has finished posting.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">37fec6a6-ef6d-435c-87b6-68baf58491b8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Start</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>
@@ -1011,7 +1016,7 @@ NCAR RDA archive (needs a free account)</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Last instant the run needs, UTC.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Last instant the run needs, UTC. Defaults to a day after Start.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">86a60d8f-8f54-4cca-915c-7b371bf2a645</item>
                         <item name="Name" type_name="gh_string" type_code="10">End</item>
                         <item name="NickName" type_name="gh_string" type_code="10">E</item>
@@ -1203,14 +1208,13 @@ NCAR RDA archive (needs a free account)</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="7">
-                      <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Download the files listed above. Runs in the background.</item>
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">The root the case folder sits under when GRIB Folder is empty. Empty uses ~/Eddy3D/WRF.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c4a529b8-e01c-4771-96db-19969522ac01</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Fetch</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">F</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Working Directory</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">WD</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
@@ -1239,8 +1243,9 @@ NCAR RDA archive (needs a free account)</item>
                               </items>
                               <chunks count="1">
                                 <chunk name="Item" index="0">
-                                  <items count="1">
-                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10"></item>
                                   </items>
                                 </chunk>
                               </chunks>
@@ -1250,15 +1255,16 @@ NCAR RDA archive (needs a free account)</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="8">
-                      <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">The root the case folder sits under when GRIB Folder is empty. Empty uses ~/Eddy3D/WRF.</item>
+                      <items count="7">
+                        <item name="Description" type_name="gh_string" type_code="10">The case folder under Working Directory when GRIB Folder is empty. Empty uses the document's session case name — the one WRF Run mints.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">653bfe61-942d-438b-a52f-3883d990c9b6</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Working Directory</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">WD</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Case Name</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Case</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Source" index="0" type_name="gh_guid" type_code="9">4cd52547-73e6-4502-93e9-c1f75660c80b</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
-                      <chunks count="2">
+                      <chunks count="1">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -1273,38 +1279,17 @@ NCAR RDA archive (needs a free account)</item>
                             </item>
                           </items>
                         </chunk>
-                        <chunk name="PersistentData">
-                          <items count="1">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Branch" index="0">
-                              <items count="2">
-                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                              </items>
-                              <chunks count="1">
-                                <chunk name="Item" index="0">
-                                  <items count="2">
-                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                    <item name="string" type_name="gh_string" type_code="10"></item>
-                                  </items>
-                                </chunk>
-                              </chunks>
-                            </chunk>
-                          </chunks>
-                        </chunk>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="9">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">The case folder under Working Directory when GRIB Folder is empty. Empty uses the document's session case name — the one WRF Run mints.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Download the files listed above. Runs in the background.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b48f7890-c9c5-4148-89ea-b27136c0d4a5</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Case Name</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Case</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Fetch</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">F</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="Source" index="0" type_name="gh_guid" type_code="9">4cd52547-73e6-4502-93e9-c1f75660c80b</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
@@ -1333,9 +1318,8 @@ NCAR RDA archive (needs a free account)</item>
                               </items>
                               <chunks count="1">
                                 <chunk name="Item" index="0">
-                                  <items count="2">
-                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                    <item name="string" type_name="gh_string" type_code="10"></item>
+                                  <items count="1">
+                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
                                   </items>
                                 </chunk>
                               </chunks>
@@ -1493,7 +1477,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">3de4df98-2130-4858-8d04-ec3fceca2743</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Geo Data</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Geo</item>
@@ -1815,7 +1801,7 @@ lake_depth (2.4 MB)</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="5">
+                  <items count="6">
                     <item name="AutoCaseName" type_name="gh_string" type_code="10">fresh-heron-reef-kite</item>
                     <item name="Description" type_name="gh_string" type_code="10">Run the WRF pipeline. Writes a script into the project folder and launches it. The script and command are always shown, even before you run, so a failing run can be reproduced by hand.
 
@@ -1847,10 +1833,13 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">fef516b3-65d2-4acc-8250-ab4f171e015a</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Run</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Run</item>
+                    <item name="WrfRunInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                   </items>
                   <chunks count="16">
                     <chunk name="Attributes">
@@ -1869,11 +1858,11 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">The project folder holding run_wps and run_wrf, with the namelists already written.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The root the case folder sits under; the case itself is &lt;root&gt;/&lt;Case Name&gt;. Empty uses ~/Eddy3D/WRF. A full project path with an empty Case Name is used as-is, which is what older definitions wire.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">220534a2-acc9-4cf9-bb62-23d1a9b3d2b8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Working Directory</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Dir</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
                       <chunks count="2">
@@ -1916,7 +1905,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="1">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Folder the WRF distribution is unpacked into — its main/ holds real.exe and wrf.exe.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Folder the WRF distribution is unpacked into — its main/ holds real.exe and wrf.exe. Leave empty on the Container engine: the published image carries its own, and a folder given here is mounted OVER it.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">555b03fd-f9be-4f18-9553-27268f96da49</item>
                         <item name="Name" type_name="gh_string" type_code="10">WRF Distribution</item>
                         <item name="NickName" type_name="gh_string" type_code="10">WRF</item>
@@ -1963,7 +1952,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="2">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Folder the WPS distribution is unpacked into.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Folder the WPS distribution is unpacked into. Leave empty on the Container engine — the published image carries its own.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">02ab92c6-437b-488a-b560-a66d4ff31cc3</item>
                         <item name="Name" type_name="gh_string" type_code="10">WPS Distribution</item>
                         <item name="NickName" type_name="gh_string" type_code="10">WPS</item>
@@ -2010,7 +1999,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Folder of GRIB files to link as GRIBFILE.AAA, AAB, ... for ungrib. Leave empty if they are already linked, or if you are running the WRF half only.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Folder of GRIB files to link as GRIBFILE.AAA, AAB, ... for ungrib. Auto uses the grib folder under the case — where WRF Met Data downloads with nothing wired. Clear it if they are already linked, or if you are running the WRF half only.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c466c5e7-82b5-4006-a956-a67b33d7071d</item>
                         <item name="Name" type_name="gh_string" type_code="10">GRIB Folder</item>
                         <item name="NickName" type_name="gh_string" type_code="10">G</item>
@@ -2058,7 +2047,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="4">
                       <items count="10">
-                        <item name="Description" type_name="gh_string" type_code="10">The ungrib variable table for your meteorological product, e.g. Vtable.GFS or Vtable.ERA-interim.pl.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The ungrib variable table for your meteorological product. The list is every table the shipped WPS carries; a table you added yourself can be typed or wired in. Vtable.GFS is what WRF Met Data downloads for.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5c4aaa2a-7cc3-49d6-a416-94cd20d4600b</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Vtable</item>
@@ -2130,7 +2119,7 @@ Vtable.raphrrr</item>
                     </chunk>
                     <chunk name="param_input" index="5">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Which backend runs WRF. Auto picks the first that works here, preferring WSL. Native needs the WRF-CMake Windows build and MS-MPI. Container needs an image carrying WRF and WPS — Eddy3D does not publish one.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which backend runs WRF. Auto picks the first that works here, preferring WSL. Native needs the WRF-CMake Windows build and MS-MPI. Container runs the published Eddy3D image through Docker or Podman, and is the only backend on macOS.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3ff433fa-f347-4c10-8a23-e97872a14939</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Engine</item>
@@ -2183,7 +2172,7 @@ Container (Docker/Podman)</item>
                     </chunk>
                     <chunk name="param_input" index="6">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Container image, when the engine is Container.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Container image, when the engine is Container. Auto uses the published Eddy3D image matching this machine's architecture; pull it from the Eddy3D Setup window. A third-party image can be typed or wired in — one without Eddy3D's version marker keeps the mount-the-host-distributions behaviour.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1de4fe88-c0fb-40cf-871b-6fb1f294c04d</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Image</item>
@@ -2333,15 +2322,15 @@ WRF only (real, wrf) — reuses existing met_em</item>
                     </chunk>
                     <chunk name="param_input" index="9">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Launch the run. The script is written and shown regardless.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The case folder under Working Directory. Empty mints a friendly session name once per document — the same name every other WRF component resolves — and keeps it with the saved document.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1a527ee2-e171-43d3-b0a5-903ff7e25d9d</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Run</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">R</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Case Name</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Case</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Source" index="0" type_name="gh_guid" type_code="9">4cd52547-73e6-4502-93e9-c1f75660c80b</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
-                      <chunks count="2">
+                      <chunks count="1">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -2356,37 +2345,17 @@ WRF only (real, wrf) — reuses existing met_em</item>
                             </item>
                           </items>
                         </chunk>
-                        <chunk name="PersistentData">
-                          <items count="1">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Branch" index="0">
-                              <items count="2">
-                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                              </items>
-                              <chunks count="1">
-                                <chunk name="Item" index="0">
-                                  <items count="1">
-                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
-                                  </items>
-                                </chunk>
-                              </chunks>
-                            </chunk>
-                          </chunks>
-                        </chunk>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="10">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">The case folder under Working Directory. Empty mints a friendly session name once per document — the same name every other WRF component resolves — and keeps it with the saved document.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Launch the run. The script is written and shown regardless.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">42c268d3-da8c-43d3-a12c-6ff2f228fa4c</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Case Name</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Case</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Run</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">R</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="Source" index="0" type_name="gh_guid" type_code="9">4cd52547-73e6-4502-93e9-c1f75660c80b</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
@@ -2415,9 +2384,8 @@ WRF only (real, wrf) — reuses existing met_em</item>
                               </items>
                               <chunks count="1">
                                 <chunk name="Item" index="0">
-                                  <items count="2">
-                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                    <item name="string" type_name="gh_string" type_code="10"></item>
+                                  <items count="1">
+                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
                                   </items>
                                 </chunk>
                               </chunks>
@@ -2574,7 +2542,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">4d7ec57a-5981-4000-9e88-a51c379c4c0a</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Weather</item>
@@ -3072,7 +3042,7 @@ WRF cloud fraction (needs CLDFRA)</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Write namelist.wps for a WRF project. The text is produced on every solve; the Write toggle saves it to &lt;Working Directory&gt;/run_wps/namelist.wps.
 
 Version 1.10.0.827
@@ -3103,10 +3073,13 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">2e3091fc-e0db-4048-9270-8578dd23c46b</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Namelist</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Namelist</item>
+                    <item name="WrfNamelistInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                   </items>
                   <chunks count="11">
                     <chunk name="Attributes">
@@ -3125,7 +3098,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Project folder. namelist.wps is written to &lt;Dir&gt;/run_wps/.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The root the case folder sits under; namelist.wps is written to &lt;root&gt;/&lt;Case Name&gt;/run_wps/. Empty uses ~/Eddy3D/WRF and the document's session case name — the same folder WRF Run resolves, so the two agree with nothing wired. A full project path with an empty Case Name is used as-is.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">f1f336f8-880f-4526-ae52-575b3a4e5439</item>
                         <item name="Name" type_name="gh_string" type_code="10">Working Directory</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Dir</item>
@@ -3199,7 +3172,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="2">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Folder holding the WPS static geographical data (the WPS_GEOG extract). Leave empty and the namelist carries a placeholder path that geogrid will reject — deliberately, so an unconfigured run fails at once rather than halfway through.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Folder holding the WPS static geographical data (the WPS_GEOG extract). Defaults to the shared tree WRF Geo Data downloads into. Clear it and the namelist carries a placeholder path that geogrid will reject — deliberately, so an unconfigured run fails at once rather than halfway through.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">dbe17107-a2f2-4b24-b1b1-14b878308c8d</item>
                         <item name="Name" type_name="gh_string" type_code="10">Geog Data Path</item>
                         <item name="NickName" type_name="gh_string" type_code="10">G</item>
@@ -3247,7 +3220,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Start of the simulated period, UTC. Accepts '2024-01-15_00:00:00', '2024-01-15 00:00' or '2024-01-15'.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Start of the simulated period, UTC. Accepts '2024-01-15_00:00:00', '2024-01-15 00:00' or '2024-01-15'. Defaults to the most recent GFS cycle that has finished posting — the same default WRF Met Data uses.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">930451e2-387d-4544-bc7b-425187adf60b</item>
                         <item name="Name" type_name="gh_string" type_code="10">Start</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>
@@ -3295,7 +3268,7 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="4">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">End of the simulated period, UTC. Same formats as Start.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">End of the simulated period, UTC. Same formats as Start. Defaults to a day after Start.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">94a45dac-a375-467b-8e62-669b24b2e0fc</item>
                         <item name="Name" type_name="gh_string" type_code="10">End</item>
                         <item name="NickName" type_name="gh_string" type_code="10">E</item>
@@ -3389,15 +3362,15 @@ Version 1.15.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="6">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Write namelist.wps to disk. Resets itself after one write.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The case folder under Working Directory. Empty uses the document's session case name — the one WRF Run mints.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5acc5c5c-90f0-4b95-a46c-056eba7cef76</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Write</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">W</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Case Name</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Case</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Source" index="0" type_name="gh_guid" type_code="9">4cd52547-73e6-4502-93e9-c1f75660c80b</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                       </items>
-                      <chunks count="2">
+                      <chunks count="1">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
@@ -3412,37 +3385,17 @@ Version 1.15.0.827</item>
                             </item>
                           </items>
                         </chunk>
-                        <chunk name="PersistentData">
-                          <items count="1">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Branch" index="0">
-                              <items count="2">
-                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                              </items>
-                              <chunks count="1">
-                                <chunk name="Item" index="0">
-                                  <items count="1">
-                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
-                                  </items>
-                                </chunk>
-                              </chunks>
-                            </chunk>
-                          </chunks>
-                        </chunk>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="7">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">The case folder under Working Directory. Empty uses the document's session case name — the one WRF Run mints.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Write namelist.wps to disk. Resets itself after one write.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6a526bfc-1eda-45ba-844f-0f939c838674</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Case Name</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Case</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Write</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">W</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="Source" index="0" type_name="gh_guid" type_code="9">4cd52547-73e6-4502-93e9-c1f75660c80b</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
@@ -3471,9 +3424,8 @@ Version 1.15.0.827</item>
                               </items>
                               <chunks count="1">
                                 <chunk name="Item" index="0">
-                                  <items count="2">
-                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                    <item name="string" type_name="gh_string" type_code="10"></item>
+                                  <items count="1">
+                                    <item name="boolean" type_name="gh_bool" type_code="1">false</item>
                                   </items>
                                 </chunk>
                               </chunks>
@@ -3577,7 +3529,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">ad1993ef-beaf-49d5-8bd9-406299f385ec</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF ABL</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF ABL</item>
@@ -4117,7 +4071,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">acddec18-18a4-4925-9fd7-bdb879308f5b</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Probe</item>
@@ -4529,7 +4485,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">cc1bdb9c-3bc2-4b10-9264-d845aa3fa027</item>
                     <item name="Name" type_name="gh_string" type_code="10">Vector Field Viewer</item>
                     <item name="NickName" type_name="gh_string" type_code="10">VectorViz</item>
@@ -5129,7 +5087,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="FlexLegendInputLayoutVersion" type_name="gh_int32" type_code="3">3</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">02f2dc34-5cbd-4543-96af-7642e315175a</item>
@@ -6358,7 +6318,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">befb2d77-debc-48c1-8230-94a4c1e8fed6</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Progress</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Progress</item>
@@ -6583,7 +6545,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e9aabb71-58e5-4bf9-8803-86e3ce9d92d0</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Map</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Map</item>
@@ -7306,7 +7270,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">4d851b4c-0002-49b2-b43c-f28411c46eb6</item>
                     <item name="Name" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
@@ -7774,7 +7740,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e46cafa1-ef9a-4bb5-8c19-2899636506b6</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Probe</item>
@@ -8220,7 +8188,9 @@ Version 1.11.0.827
 
 Version 1.12.0.827
 
-Version 1.15.0.827</item>
+Version 1.15.0.827
+
+Version 1.17.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7c0a5d96-b68b-40cb-941f-473e73a10070</item>
                     <item name="Name" type_name="gh_string" type_code="10">WRF Animate</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WRF Animate</item>
