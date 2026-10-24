@@ -223,14 +223,6 @@
     "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds.",
     "Edit": "The Box 2Pt context, the ground plane, the weather station (Ithaca by default)."
   },
-  "Sun_Hours.ghx": {
-    "Purpose": "Annual direct-sun hours across a site and its context.",
-    "Fidelity": "Screening - geometric direct beam only; no diffuse or reflected light, not Radiance.",
-    "Method": "Hourly ray casting toward the sun for every daylight hour of an Atlanta year; tree crowns pass 20 percent of the beam.",
-    "Result": "Points and a mesh coloured by annual sun hours.",
-    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes, growing with point count.",
-    "Edit": "Context meshes, ground surface, canopy crowns, weather station."
-  },
   "SurfaceTemps_EnergyPlus.ghx": {
     "Purpose": "Surface temperatures for MRT from EnergyPlus, staged so the costly view factors are solved once.",
     "Fidelity": "Engineering - EnergyPlus surface heat balance, not validated for this block.",
