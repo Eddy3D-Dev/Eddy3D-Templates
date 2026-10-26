@@ -278,5 +278,13 @@
     "Result": "Tracer concentration in kg/m3 at three points 2 m above ground along the canyon centreline.",
     "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: minutes.",
     "Edit": "Blocks, source volume and rate, probe points; turn the toggles on."
+  },
+  "UMF_UTCI.ghx": {
+    "Purpose": "UTCI at 1.8 m for one hour in Istanbul from a fully coupled microclimate simulation.",
+    "Fidelity": "Engineering - coupled urbanMicroclimateFoam, not validated for this site. Cite: Kubilay et al., urbanMicroclimateFoam.",
+    "Method": "Air, Building, Vegetation and Terrain regions with Timing Parameters from the EPW at a Calendar hour; MRT View Factors and MRT Solve.",
+    "Result": "Mean UTCI per sensor with a legend; probed air temperature, wind, humidity, surface and tree temperatures.",
+    "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam), on BlueCFD, WSL or container. Runtime: hours.",
+    "Edit": "Embedded building, tree and terrain meshes; weather file and Calendar hour."
   }
 }
