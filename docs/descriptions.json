@@ -231,14 +231,6 @@
     "Needs": "Eddy3D Setup > Comfort study (Radiance / EnergyPlus). Runtime: minutes to hours.",
     "Edit": "Working Directory (CHANGE-ME), block and ground, station; click the three Run toggles in order."
   },
-  "SurfaceTemps_FFT.ghx": {
-    "Purpose": "Outdoor surface temperatures for a full year, without a thermal mesh or warm-up.",
-    "Fidelity": "Engineering - frequency-domain admittance method. Cite: Beckett, Owens and Acred.",
-    "Method": "SurfaceTemp solves grass_ground and brick_wall constructions against Istanbul weather, with sky view from Sky Exposure and 22 degC indoors.",
-    "Result": "Mean, Min and Max of each point's 8760-hour series, coloured with rounded Text Tag labels.",
-    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
-    "Edit": "Ground and context Breps, weather station, materials."
-  },
   "ABL_Verification.ghx": {
     "Purpose": "Does the boundary layer imposed at the inlet survive to the buildings?",
     "Fidelity": "Engineering - a partial ASCE/SEI CWE Prestandard approach-flow check, run in the real domain rather than an empty one.",
