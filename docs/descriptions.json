@@ -7,6 +7,22 @@
     "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam). Runtime: minutes.",
     "Edit": "Wall blocks, materials, boundary temperatures and simulated time."
   },
+  "ClimateCharts.ghx": {
+    "Purpose": "A climate overview of one site: temperature, humidity, sun path and wind rose from a single EPW.",
+    "Fidelity": "Screening - plots the weather file as recorded; no simulation.",
+    "Method": "Download Weather fetches the station's EPW; Monthly Climate Chart, Sun Path and Wind Compass draw from the same Weather object.",
+    "Result": "Monthly minimum, mean and maximum temperature and humidity charts, a sun-path dome and a 16-sector wind rose.",
+    "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
+    "Edit": "Station name panel (Istanbul by default); the size panel (100) scales every chart."
+  },
+  "Solar_radiation.ghx": {
+    "Purpose": "Annual solar irradiation in kWh/m2 over a ground surface and its surrounding facades.",
+    "Fidelity": "Screening - interactive beam, sky and ground-reflected estimate, not a Radiance simulation.",
+    "Method": "Brep Grid Points samples surfaces at 1 m; Sky Exposure gives sky view; Solar Irradiation sums every daylight hour of an Istanbul year.",
+    "Result": "Ground and context coloured on one legend range; Text Tag prints rounded ground values.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
+    "Edit": "Ground Brep, the ten context Breps, weather station."
+  },
   "Breathing_Manikin.ghx": {
     "Purpose": "Where exhaled CO2 goes around a breathing person in a small room.",
     "Fidelity": "Engineering - transient CFD around a simplified manikin, not validated.",
@@ -47,30 +63,6 @@
     "Needs": "Eddy3D Setup > (U)RANS CFD (OpenFOAM). Runtime: about an hour.",
     "Edit": "Nothing for the comparison itself; Cell Size (0.10 m default) for a grid-sensitivity study."
   },
-  "ClimateCharts.ghx": {
-    "Purpose": "A climate overview of one site: temperature, humidity, sun path and wind rose from a single EPW.",
-    "Fidelity": "Screening - plots the weather file as recorded; no simulation.",
-    "Method": "Download Weather fetches the station's EPW; Monthly Climate Chart, Sun Path and Wind Compass draw from the same Weather object.",
-    "Result": "Monthly minimum, mean and maximum temperature and humidity charts, a sun-path dome and a 16-sector wind rose.",
-    "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
-    "Edit": "Station name panel (Istanbul by default); the size panel (100) scales every chart."
-  },
-  "Solar_radiation.ghx": {
-    "Purpose": "Annual solar irradiation in kWh/m2 over a ground surface and its surrounding facades.",
-    "Fidelity": "Screening - interactive beam, sky and ground-reflected estimate, not a Radiance simulation.",
-    "Method": "Brep Grid Points samples surfaces at 1 m; Sky Exposure gives sky view; Solar Irradiation sums every daylight hour of an Istanbul year.",
-    "Result": "Ground and context coloured on one legend range; Text Tag prints rounded ground values.",
-    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
-    "Edit": "Ground Brep, the ten context Breps, weather station."
-  },
-  "PALM_4U.ghx": {
-    "Purpose": "Pedestrian-level PET maps from a PALM-4U large-eddy simulation of a small site.",
-    "Fidelity": "Experimental - skeleton workflow for the PALM-4U plugin.",
-    "Method": "PALM Domain (64 x 64 x 48 cells, 2 m), buildings, trees, terrain and OSM land cover feed PALM Case; 2 h, 3 m/s westerly.",
-    "Result": "Time-averaged bio_pet field from PALM Results; PALM Progress follows the container run.",
-    "Needs": "Eddy3D Setup > Urban microclimate / LES / RANS (PALM-4U). Runtime: hours.",
-    "Edit": "Domain size and resolution, STL buildings and trees, terrain, wind, simulated time; toggle Fetch for land cover."
-  },
   "Surrogate_annual_thermal_comfort_analysis.ghx": {
     "Purpose": "UTCI across a circular site for one hour or the whole year, without CFD.",
     "Fidelity": "Screening - machine-learning wind (Yel 2.0); trees count as solid obstructions.",
@@ -102,30 +94,6 @@
     "Result": "UTCI per sensor; probed air and surface temperatures, velocity and humidity.",
     "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam) on BlueCFD only; the container image lacks simpleWater. Runtime: hours.",
     "Edit": "Water outline and depth, buildings, vegetation, date and hour."
-  },
-  "ViewShed.ghx": {
-    "Purpose": "How open the view is from points on a surface, and how much of a target each point can see.",
-    "Fidelity": "Screening - geometric ray casting; a plan-view measure, not a daylight metric.",
-    "Method": "Viewshed casts a 26 degree half-angle cone out to 48 m from each mesh vertex; View Target casts rays to the target past shared context.",
-    "Result": "Values from 0 to 1, with colours, per observer point.",
-    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
-    "Edit": "Context, observer surfaces and target; wire normals to aim the cones."
-  },
-  "WRF.ghx": {
-    "Purpose": "Site weather for Atlanta from a regional WRF run driven by GFS forecasts.",
-    "Fidelity": "Experimental - mesoscale workflow; 3 km nest on low-resolution geography.",
-    "Method": "WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.",
-    "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
-    "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
-    "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
-  },
-  "Stormwater.ghx": {
-    "Purpose": "Where water can pond on a graded site, and which way it runs.",
-    "Fidelity": "Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.",
-    "Method": "Stormwater Grid rasterises the terrain at 1 m; Fast mode computes terrain analytics, Full mode solves shallow-water depths.",
-    "Result": "A depression-capacity mesh and runoff flowlines up to 240 m, coloured by contributing area.",
-    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes, Full mode the slower.",
-    "Edit": "Terrain surface; real IDF coefficients a, b, c in Design Storm; connect Land Cover Runoff."
   },
   "Sunpath.ghx": {
     "Purpose": "A sun path diagram for a city, as editable Rhino curves.",
@@ -278,5 +246,37 @@
     "Result": "Mean UTCI per sensor with a legend; probed air temperature, wind, humidity, surface and tree temperatures.",
     "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam), on BlueCFD, WSL or container. Runtime: hours.",
     "Edit": "Embedded building, tree and terrain meshes; weather file and Calendar hour."
+  },
+  "PALM-4U.ghx": {
+    "Purpose": "Pedestrian-level PET maps from a PALM-4U large-eddy simulation of a small site.",
+    "Fidelity": "Experimental - skeleton workflow for the PALM-4U plugin.",
+    "Method": "PALM Domain (64 x 64 x 48 cells, 2 m), buildings, trees, terrain and OSM land cover feed PALM Case; 2 h, 3 m/s westerly.",
+    "Result": "Time-averaged bio_pet field from PALM Results; PALM Progress follows the container run.",
+    "Needs": "Eddy3D Setup > Urban microclimate / LES / RANS (PALM-4U). Runtime: hours.",
+    "Edit": "Domain size and resolution, STL buildings and trees, terrain, wind, simulated time; toggle Fetch for land cover."
+  },
+  "ViewShed.ghx": {
+    "Purpose": "How open the view is from points on a surface, and how much of a target each point can see.",
+    "Fidelity": "Screening - geometric ray casting; a plan-view measure, not a daylight metric.",
+    "Method": "Viewshed casts a 26 degree half-angle cone out to 48 m from each mesh vertex; View Target casts rays to the target past shared context.",
+    "Result": "Values from 0 to 1, with colours, per observer point.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
+    "Edit": "Context, observer surfaces and target; wire normals to aim the cones."
+  },
+  "WRF.ghx": {
+    "Purpose": "Site weather for Atlanta from a regional WRF run driven by GFS forecasts.",
+    "Fidelity": "Experimental - mesoscale workflow; 3 km nest on low-resolution geography.",
+    "Method": "WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.",
+    "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
+    "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
+    "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
+  },
+  "Stormwater.ghx": {
+    "Purpose": "Where water can pond on a graded site, and which way it runs.",
+    "Fidelity": "Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.",
+    "Method": "Stormwater Grid rasterises the terrain at 1 m; Fast mode computes terrain analytics, Full mode solves shallow-water depths.",
+    "Result": "A depression-capacity mesh and runoff flowlines up to 240 m, coloured by contributing area.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes, Full mode the slower.",
+    "Edit": "Terrain surface; real IDF coefficients a, b, c in Design Storm; connect Land Cover Runoff."
   }
 }
