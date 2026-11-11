@@ -122,22 +122,22 @@
             </chunk>
             <chunk name="Library" index="6">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="7">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Ilker Karadag, Patrick Kastner</item>
                 <item name="Id" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
           </chunks>
@@ -14292,7 +14292,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e95464a3-04ce-4792-ba2b-d3aca57e6a77</item>
                     <item name="Name" type_name="gh_string" type_code="10">Atmospheric Boundary Layer</item>
                     <item name="NickName" type_name="gh_string" type_code="10">ABL</item>
@@ -14315,7 +14319,7 @@ Version 1.17.0.827</item>
                     <chunk name="param_input" index="0">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Wind directions to simulate. Units: degrees (0-359). 0° = North, 90° = East. Use multiple for annual studies.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Wind directions as meteorological degrees (wind-from, clockwise from north) or flow vectors. One solver case is created per direction. Optional; default is flow toward -Y (south).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">49f9978e-4f68-42c7-875e-7b1b609a288a</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Directions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Dirs</item>
@@ -14343,7 +14347,7 @@ Version 1.17.0.827</item>
                     <chunk name="param_input" index="1">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Wind speed at reference height. Units: m/s. Typical urban: 3-8 m/s. Default: 5 m/s</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Wind speed at the reference height (m/s), one value per wind direction. A single value applies to all directions; a shorter list repeats its last value. Optional; default is 5.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c57ef56f-25ab-4c38-b0af-01a3dff4b3f3</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Speed</item>
                         <item name="NickName" type_name="gh_string" type_code="10">U</item>
@@ -14370,7 +14374,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="2">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Height where velocity is measured (weather station height). Units: m. Standard: 10m. Default: 10m</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Reference height for wind speed (m). Optional; default is 10.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b1bd8010-3f80-422e-828f-6873677f57c9</item>
                         <item name="Name" type_name="gh_string" type_code="10">Reference Height</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Zref</item>
@@ -14396,7 +14400,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Aerodynamic roughness length. Units: m. Examples: 0.01 (open terrain), 0.3 (suburban), 1.0 (urban). Default: 1m</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Aerodynamic roughness length (m). Higher values indicate rougher terrain. Optional; default is 1.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">874878a4-bfe8-4ebc-b6a8-a2721e7fa3c4</item>
                         <item name="Name" type_name="gh_string" type_code="10">Roughness Length (z0)</item>
                         <item name="NickName" type_name="gh_string" type_code="10">z0</item>
@@ -14422,7 +14426,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="4">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Height of the ground plane in the simulation. Default: 0</item>
+                        <item name="Description" type_name="gh_string" type_code="10">zGround, the datum of the ABL log-law profile: the MODEL-SPACE elevation (m) of the ground the wind enters over — U is 0 at and below it. Leave it unwired and at 0 when the wind case has a Terrain: each wind direction then takes the ground along its own inlet (a Land Cover terrain is RELATIVE to the site, z = 0 at the site centre, so the rim is rarely at 0). Wire it, or type a non-zero value, to hold one value for every direction; without a terrain, the default is 0.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">32809f0b-efc0-4dd7-a62a-aa58f0c9b2b5</item>
                         <item name="Name" type_name="gh_string" type_code="10">Ground Height</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Zgnd</item>
@@ -14448,7 +14452,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="5">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Inlet/initial turbulent kinetic energy k (m^2/s^2). Optional; default is 0.015.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Inlet/initial turbulent kinetic energy k (m^2/s^2) for the ABL. Used by the k field and the turbulence transports; the inlet patch still uses the atmBoundaryLayer k profile. Optional; default is 0.015.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">47126ce1-577d-49f6-83c4-0d0205524159</item>
                         <item name="Name" type_name="gh_string" type_code="10">Turbulent KE (k)</item>
                         <item name="NickName" type_name="gh_string" type_code="10">k</item>
@@ -14579,7 +14583,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="8">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Upwind terrain class from the revised Davenport roughness classification (Davenport 1960; Wieringa 1992; Davenport, Grimmond, Oke &amp; Wieringa 2000): 1 Sea 0.0002 m · 2 Smooth 0.005 m · 3 Open 0.03 m · 4 Roughly open 0.1 m · 5 Rough 0.25 m · 6 Very rough 0.5 m · 7 Skimming 1 m · 8 Chaotic 2 m. Picking a class sets the roughness length z0 from the table (shown on the banner); Custom uses the Roughness Length input instead. Describe the terrain the wind CROSSES upwind of the site, not the site itself.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Upwind terrain class from the revised Davenport roughness classification (Davenport 1960; Wieringa 1992; Davenport, Grimmond, Oke &amp; Wieringa 2000): 1 Sea 0.0002 m · 2 Smooth 0.005 m · 3 Open 0.03 m · 4 Roughly open 0.1 m · 5 Rough 0.25 m · 6 Very rough 0.5 m · 7 Skimming 1 m · 8 Chaotic 2 m; or a load-code category: EN 1991-1-4 Table 4.1 terrain 0/I/II/III/IV (0.003/0.01/0.05/0.3/1 m), ASCE 7-16 C26.7 exposure D/C/B (typical 0.005/0.02/0.3 m). Picking a class sets the roughness length z0 from the table (shown on the banner); Custom uses the Roughness Length input instead. Describe the terrain the wind CROSSES upwind of the site, not the site itself.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fa64fcc3-2dae-478f-aa42-e93848941499</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Terrain Type</item>
@@ -14593,7 +14597,15 @@ Version 1.17.0.827</item>
 5 — Rough (0.25 m)
 6 — Very rough (0.5 m)
 7 — Skimming (1 m)
-8 — Chaotic (2 m)</item>
+8 — Chaotic (2 m)
+EN 1991-1-4 cat. 0 (0.003 m)
+EN 1991-1-4 cat. I (0.01 m)
+EN 1991-1-4 cat. II (0.05 m)
+EN 1991-1-4 cat. III (0.3 m)
+EN 1991-1-4 cat. IV (1 m)
+ASCE 7 exposure D (0.005 m)
+ASCE 7 exposure C (0.02 m)
+ASCE 7 exposure B (0.3 m)</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">Custom (z0 input)</item>
                       </items>
@@ -14641,7 +14653,7 @@ Version 1.17.0.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Optional roughness length z0 (m) PER WIND DIRECTION, aligned with Wind Directions. The terrain the wind crosses differs by sector — sea to the west, city to the east — and one z0 for all of them puts the wrong profile on most inlets. A single value applies to every direction; a shorter list repeats its last value. Leave empty to use Roughness Length / Terrain Type for all directions. Each direction case writes its own z0 into 0/ABLConditions (inlet profile AND ground wall function).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">94084cd9-a8d5-4e01-a869-179b9943bfbf</item>
                         <item name="Name" type_name="gh_string" type_code="10">z0 per Direction</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">z0[]</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">z0 [m]</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -14664,7 +14676,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="10">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">The shape of the inflow. Log law (Richards &amp; Hoxey): OpenFOAM's atmBoundaryLayer inlet, k constant with height — the default and what every earlier study used. Harris &amp; Deaves (ESDU 01008): the strong-wind boundary layer of the UK National Annex to EN 1991-1-4, which the City of London Wind Microclimate Guidelines (2019) require — a gradient-height term on the mean speed and the measured strong-wind turbulence, written as fixedProfile tables for U, k (3/2·σu², so the gust Eddy3D reads from k is the Harris &amp; Deaves gust) and epsilon. Each direction gets its own table from its own speed and z0, and the cases sample the profile approaching the model so the Study Report can plot simulated against target, as the guideline asks.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The shape of the inflow. Log law (Richards &amp; Hoxey): OpenFOAM's atmBoundaryLayer inlet, k constant with height — the default and what every earlier study used. Harris &amp; Deaves (ESDU 01008): the strong-wind boundary layer of the UK National Annex to EN 1991-1-4, which the City of London Wind Microclimate Guidelines (2019) require — a gradient-height term on the mean speed and the measured strong-wind turbulence, written as fixedProfile tables for U, k (3/2·σu², so the gust Eddy3D reads from k is the Harris &amp; Deaves gust) and epsilon. Each direction gets its own table from its own speed and z0. Either way the cases sample the profile approaching the model, so the Study Report plots simulated against target (as the guideline asks) and scores the ASCE CWE prestandard's ABL self-sustainment check (AC 5-9) on it.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">ec1d3c22-570c-4b88-8fdb-c7b2f9f44ed3</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Inlet Profile</item>
@@ -14887,7 +14899,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">355a9026-456c-4f74-ae37-299ac431d465</item>
                     <item name="MLModelInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                     <item name="Name" type_name="gh_string" type_code="10">ML Model</item>
@@ -15132,7 +15148,7 @@ Poyraz 1.0</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="5">
+                  <items count="7">
                     <item name="Description" type_name="gh_string" type_code="10">Run ONNX wind-field prediction end-to-end.
 Computes SDF, building height, Z_relative, U/Uref, direction features from geometry,
 assembles the 8-channel input tensor, runs ONNX inference, and outputs predicted wind speeds.
@@ -15170,20 +15186,26 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">b4f87be1-9940-49ee-bc32-d3f0621280b1</item>
                     <item name="Name" type_name="gh_string" type_code="10">Wind Predictor</item>
                     <item name="NickName" type_name="gh_string" type_code="10">WindPredict</item>
+                    <item name="WindPredictorInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="WindPredictorOutputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                   </items>
                   <chunks count="26">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1599</X>
-                          <Y>886</Y>
-                          <W>149</W>
-                          <H>324</H>
+                          <X>1602</X>
+                          <Y>876</Y>
+                          <W>146</W>
+                          <H>344</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1676</X>
@@ -15206,14 +15228,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>888</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>878</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>898</Y>
+                              <X>1634</X>
+                              <Y>888</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15234,14 +15256,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>908</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>898</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>918</Y>
+                              <X>1634</X>
+                              <Y>908</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15261,14 +15283,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>928</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>918</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>938</Y>
+                              <X>1634</X>
+                              <Y>928</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15276,7 +15298,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. U_ref, z_ref, z_0, wind directions, and EPW path are extracted automatically.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Uref, zRef, z0, wind directions, and EPW path are extracted automatically.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">8db97de1-cd9c-42a0-a578-4ef4605655f8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -15288,14 +15310,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>948</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>938</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>958</Y>
+                              <X>1634</X>
+                              <Y>948</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15314,14 +15336,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>968</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>958</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>978</Y>
+                              <X>1634</X>
+                              <Y>968</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15360,14 +15382,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>988</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>978</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>998</Y>
+                              <X>1634</X>
+                              <Y>988</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15417,14 +15439,14 @@ gray</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1008</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>998</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1018</Y>
+                              <X>1634</X>
+                              <Y>1008</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15465,14 +15487,14 @@ gray</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1028</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1018</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1038</Y>
+                              <X>1634</X>
+                              <Y>1028</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15480,11 +15502,11 @@ gray</item>
                     </chunk>
                     <chunk name="param_input" index="8">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">If true, generates a smooth, continuous interpolated mesh. If false, generates a pixelated blocky mesh.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Visualization style. Flat (pixelated) vs Smooth (interpolated colors).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">2be68186-cacf-4d93-b2a4-a81574b51284</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Interpolate</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Interpolate</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Interp</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">Flat
 Smooth</item>
@@ -15495,14 +15517,14 @@ Smooth</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1048</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1038</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1058</Y>
+                              <X>1634</X>
+                              <Y>1048</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15546,14 +15568,14 @@ Turbulent Kinetic Energy</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1068</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1058</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1078</Y>
+                              <X>1634</X>
+                              <Y>1068</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15597,14 +15619,14 @@ Roof Level</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1088</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1078</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1098</Y>
+                              <X>1634</X>
+                              <Y>1088</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15645,14 +15667,14 @@ Roof Level</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1108</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1098</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1118</Y>
+                              <X>1634</X>
+                              <Y>1108</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15660,7 +15682,7 @@ Roof Level</item>
                     </chunk>
                     <chunk name="param_input" index="12">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Radius (m) of each colored prediction disk in the output mesh.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Marker size (m): circle radius or square half-width.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6438e0f1-c2b1-45c8-a87a-f5b3c504a01e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Radius</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Radius</item>
@@ -15671,14 +15693,14 @@ Roof Level</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1128</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1118</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1138</Y>
+                              <X>1634</X>
+                              <Y>1128</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15717,14 +15739,14 @@ Roof Level</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1148</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1138</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1158</Y>
+                              <X>1634</X>
+                              <Y>1148</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15767,14 +15789,14 @@ Circle</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1168</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1158</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
-                              <Y>1178</Y>
+                              <X>1634</X>
+                              <Y>1168</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15802,27 +15824,79 @@ Circle</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="15">
-                      <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Sticky on/off switch for the prediction (a toggle, not a momentary button). On: every input change re-runs inference. Off: inference is skipped and the last result stays on the outputs, so the canvas can be rewired without paying for a solve. A wired boolean works the same as the inline switch.</item>
+                      <items count="9">
+                        <item name="Description" type_name="gh_string" type_code="10">Who measures the SDF and building-height grid the model reads (not the inference provider — that is the right-click menu). Auto (the default): the OpenCL GPU when every building is a mesh or a Brep with only planar faces, where it measures exactly what Rhino does; the CPU otherwise (curved faces, or no GPU), and the Remark says which. GPU: the OpenCL GPU on every building, curved ones on their render mesh; a fallback to the CPU is reported, never silent. CPU: Rhino's Brep rule on every core, the one the model was trained on.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1a8d9e4c-2659-41a1-bd47-d42db1838fb4</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Run</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Run</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Engine</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Eng</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Options" type_name="gh_string" type_code="10">Auto
+CPU
+GPU</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                        <item name="Value" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Value" type_name="gh_string" type_code="10">Auto</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1601</X>
-                              <Y>1188</Y>
-                              <W>60</W>
+                              <X>1604</X>
+                              <Y>1178</Y>
+                              <W>57</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1632.5</X>
+                              <X>1634</X>
+                              <Y>1188</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10">Auto</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="16">
+                      <items count="7">
+                        <item name="Description" type_name="gh_string" type_code="10">Sticky on/off switch for the prediction (a toggle, not a momentary button). On: every input change re-runs inference. Off: inference is skipped and the last result stays on the outputs, so the canvas can be rewired without paying for a solve. A wired boolean works the same as the inline switch.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c84c24fe-2c4c-4506-9d2d-c9f037edfeed</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Run</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Run</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1604</X>
                               <Y>1198</Y>
+                              <W>57</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1634</X>
+                              <Y>1208</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15851,10 +15925,10 @@ Circle</item>
                     <chunk name="param_output" index="0">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">X coordinate (m) of each valid input point.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">668fc0e8-cd68-43d7-bcde-69a40d8b1498</item>
-                        <item name="Name" type_name="gh_string" type_code="10">X</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">X</item>
+                        <item name="Description" type_name="gh_string" type_code="10">List of 3D points. Each point's Z must be absolute elevation (m).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">658da050-abf4-45e8-b60a-60193af8c629</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Points</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Pts</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -15863,46 +15937,19 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>888</Y>
+                              <Y>878</Y>
                               <W>37</W>
-                              <H>35</H>
+                              <H>42</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>905.7778</Y>
+                              <Y>899.25</Y>
                             </item>
                           </items>
                         </chunk>
                       </chunks>
                     </chunk>
                     <chunk name="param_output" index="1">
-                      <items count="7">
-                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Y coordinate (m) of each valid input point.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">09b54f6c-494f-423d-9706-02f58700857a</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Y</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Y</item>
-                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Attributes">
-                          <items count="2">
-                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1709</X>
-                              <Y>923</Y>
-                              <W>37</W>
-                              <H>36</H>
-                            </item>
-                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1727.5</X>
-                              <Y>941.3333</Y>
-                            </item>
-                          </items>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                    <chunk name="param_output" index="2">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">2</item>
                         <item name="Description" type_name="gh_string" type_code="10">Predicted field values at each valid input point. Outputs wind speed (m/s) or turbulent kinetic energy (m²/s²) depending on the Field input. Branches represent different wind directions.</item>
@@ -15917,19 +15964,19 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>959</Y>
+                              <Y>920</Y>
                               <W>37</W>
-                              <H>35</H>
+                              <H>43</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>976.88885</Y>
+                              <Y>941.75</Y>
                             </item>
                           </items>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="3">
+                    <chunk name="param_output" index="2">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">A fast-rendering contiguous coloured preview mesh of the predictions.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5ca52b61-15dd-4f4c-baab-006342829a9e</item>
@@ -15943,19 +15990,19 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>994</Y>
+                              <Y>963</Y>
                               <W>37</W>
-                              <H>36</H>
+                              <H>42</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>1012.44446</Y>
+                              <Y>984.25</Y>
                             </item>
                           </items>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="4">
+                    <chunk name="param_output" index="3">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">A colored mesh strip acting as a visual legend.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e3068bf6-2610-4dcf-837d-91bd2e09c268</item>
@@ -15969,19 +16016,19 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>1030</Y>
+                              <Y>1005</Y>
                               <W>37</W>
-                              <H>35</H>
+                              <H>43</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>1048</Y>
+                              <Y>1026.75</Y>
                             </item>
                           </items>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="5">
+                    <chunk name="param_output" index="4">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
                         <item name="Description" type_name="gh_string" type_code="10">Locations for the legend text in the 3D viewport (Generic type to prevent red cross preview).</item>
@@ -15996,19 +16043,19 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>1065</Y>
+                              <Y>1048</Y>
                               <W>37</W>
-                              <H>36</H>
+                              <H>42</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>1083.5557</Y>
+                              <Y>1069.25</Y>
                             </item>
                           </items>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="6">
+                    <chunk name="param_output" index="5">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
                         <item name="Description" type_name="gh_string" type_code="10">Text values corresponding to the generated legend.</item>
@@ -16023,21 +16070,21 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>1101</Y>
+                              <Y>1090</Y>
                               <W>37</W>
-                              <H>35</H>
+                              <H>43</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>1119.1112</Y>
+                              <Y>1111.75</Y>
                             </item>
                           </items>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="7">
+                    <chunk name="param_output" index="6">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Automated simulation boundary conditions metadata.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Uref, zRef, z0, wind directions, and EPW path are extracted automatically.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">3282086e-3737-436e-889a-d412797bd56f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -16049,19 +16096,19 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>1136</Y>
+                              <Y>1133</Y>
                               <W>37</W>
-                              <H>36</H>
+                              <H>42</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>1154.6667</Y>
+                              <Y>1154.25</Y>
                             </item>
                           </items>
                         </chunk>
                       </chunks>
                     </chunk>
-                    <chunk name="param_output" index="8">
+                    <chunk name="param_output" index="7">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">2</item>
                         <item name="Description" type_name="gh_string" type_code="10">Predicted roof-level field values at each valid input point. Outputs wind speed or TKE depending on the Field input. Branches represent different wind directions. Empty unless a 4-channel model is used.</item>
@@ -16076,13 +16123,13 @@ Circle</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1709</X>
-                              <Y>1172</Y>
+                              <Y>1175</Y>
                               <W>37</W>
-                              <H>36</H>
+                              <H>43</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1727.5</X>
-                              <Y>1190.2223</Y>
+                              <Y>1196.75</Y>
                             </item>
                           </items>
                         </chunk>

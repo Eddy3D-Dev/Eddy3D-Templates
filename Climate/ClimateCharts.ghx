@@ -90,32 +90,32 @@
             </chunk>
             <chunk name="Library" index="2">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="3">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Ilker Karadag, Patrick Kastner</item>
                 <item name="Id" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="4">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">a3f7d2c4-9b18-4e56-8a2f-1d6c0b9e4f30</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-Radiance</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
           </chunks>
@@ -142,7 +142,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a27e707-8186-4e8b-bb03-e58da81dfc3d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -164,13 +168,25 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="10">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Browse library… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fbba5cec-80cf-4d94-bb6c-911a1bda82a9</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Station</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="Options" type_name="gh_string" type_code="10"></item>
+                        <item name="Options" type_name="gh_string" type_code="10">OneBuilding (nearest TMYx)
+EnergyPlus (nearest)
+Open-Meteo (ERA5)
+Open-Meteo (IFS 9 km)
+Open-Meteo (CERRA 5 km)
+Open-Meteo (ICON-D2 2 km)
+Open-Meteo (HRRR 3 km)
+Open-Meteo (ERA5 + satellite radiation)
+PVGIS (typical year)
+NASA POWER (MERRA-2 + CERES)
+ERA5 via Copernicus CDS
+NSRDB (GOES TMY, PSM v4)
+NSRDB (GOES aggregated, PSM v4)</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">eba66539-2ca1-4c8a-b38e-e5cd94380f61</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                         <item name="Value" type_name="gh_string" type_code="10"></item>
@@ -194,7 +210,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="1">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Site latitude in decimal degrees (north positive). With a site, the browser lists the nearest stations first, every row states its distance, and the map shows both. Optional — leave empty and the catalog is listed in publisher order.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Site latitude in decimal degrees (north positive). With a site, the browser lists the nearest stations first, every row states its distance, and the map shows both. Optional, and only as a pair with Longitude: a lone latitude is not a site. Left empty, the document's Earth Anchor Point is the site when one is set; otherwise the catalog is listed in publisher order.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">71cebbcf-316e-4e78-8006-15a67f9f317c</item>
                         <item name="Name" type_name="gh_string" type_code="10">Latitude</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Lat</item>
@@ -326,7 +342,7 @@ Version 1.17.0.827</item>
                     <chunk name="param_output" index="2">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Stations matching the search filter.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The catalog entries that matched, nearest the site first. One line per file: name, dataset, source and distance.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">95664832-0223-45d9-a918-82eaed760237</item>
                         <item name="Name" type_name="gh_string" type_code="10">Stations</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Stn</item>
@@ -352,7 +368,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_output" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">What the chosen file is: station, period, publisher, WMO id, position, elevation, time zone, ASHRAE climate zone and the design conditions its publisher states.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">134dfb84-3a2d-49e3-afcf-584f999ce6d1</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>
@@ -1062,7 +1078,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">9e2e9f7f-93c3-48d5-9978-bc20161e11f5</item>
                     <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>

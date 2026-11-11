@@ -98,12 +98,12 @@
             </chunk>
             <chunk name="Library" index="3">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Stormwater, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Stormwater, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">7c1e5a94-3d62-4b08-9f47-2a5e8c3b61d0</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-Stormwater</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
           </chunks>
@@ -121,7 +121,7 @@
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Routes a design storm over the graded terrain and reports ponding depth, flow velocity and flood hazard.
 
 Two modes. FAST is terrain analytics only — slope, flow direction, contributing area and the capacity of every depression — which recomputes between grading edits and answers most of a grading review. FULL adds a shallow-water solve for the depths and velocities a design storm actually produces.
@@ -136,19 +136,24 @@ Version 1.12.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">5a729ef0-86e0-4aaa-a64e-ed9bc56a50aa</item>
                     <item name="Name" type_name="gh_string" type_code="10">Stormwater Run</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Stormwater Run</item>
+                    <item name="StormwaterRunInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                   </items>
-                  <chunks count="9">
+                  <chunks count="10">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>766</X>
-                          <Y>636</Y>
+                          <Y>626</Y>
                           <W>185</W>
-                          <H>104</H>
+                          <H>124</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>829</X>
@@ -171,13 +176,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>768</X>
-                              <Y>638</Y>
+                              <Y>628</Y>
                               <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>792.5</X>
-                              <Y>648</Y>
+                              <Y>638</Y>
                             </item>
                           </items>
                         </chunk>
@@ -198,13 +203,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>768</X>
-                              <Y>658</Y>
+                              <Y>648</Y>
                               <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>792.5</X>
-                              <Y>668</Y>
+                              <Y>658</Y>
                             </item>
                           </items>
                         </chunk>
@@ -224,13 +229,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>768</X>
-                              <Y>678</Y>
+                              <Y>668</Y>
                               <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>792.5</X>
-                              <Y>688</Y>
+                              <Y>678</Y>
                             </item>
                           </items>
                         </chunk>
@@ -255,13 +260,13 @@ Full (shallow water)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>768</X>
-                              <Y>698</Y>
+                              <Y>688</Y>
                               <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>792.5</X>
-                              <Y>708</Y>
+                              <Y>698</Y>
                             </item>
                           </items>
                         </chunk>
@@ -289,27 +294,79 @@ Full (shallow water)</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="4">
-                      <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Route the storm. Works as an inline button or as a wired toggle — with a wire held true, the run relaunches whenever the inputs change.</item>
+                      <items count="9">
+                        <item name="Description" type_name="gh_string" type_code="10">Who solves the shallow water. Auto: the OpenCL GPU when there is one, else the CPU. GPU: the OpenCL GPU; a fallback to the CPU is reported, never silent. CPU: every core, in double.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">161cbee6-47c0-48c1-885a-23f043f33b74</item>
-                        <item name="Name" type_name="gh_string" type_code="10">Run</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Run</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Engine</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Engine</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Options" type_name="gh_string" type_code="10">Auto
+CPU
+GPU</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                        <item name="Value" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Value" type_name="gh_string" type_code="10">Auto</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>768</X>
-                              <Y>718</Y>
+                              <Y>708</Y>
                               <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>792.5</X>
+                              <Y>718</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10">Auto</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="5">
+                      <items count="7">
+                        <item name="Description" type_name="gh_string" type_code="10">Route the storm. Works as an inline button or as a wired toggle — with a wire held true, the run relaunches whenever the inputs change.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">23e4e3c0-afee-4010-9906-d4e5b43cee7c</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Run</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Run</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_bool" type_code="1">false</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>768</X>
                               <Y>728</Y>
+                              <W>46</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>792.5</X>
+                              <Y>738</Y>
                             </item>
                           </items>
                         </chunk>
@@ -349,13 +406,13 @@ Full (shallow water)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>883</X>
-                              <Y>638</Y>
+                              <Y>628</Y>
                               <W>66</W>
-                              <H>33</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>916</X>
-                              <Y>654.6667</Y>
+                              <Y>648</Y>
                             </item>
                           </items>
                         </chunk>
@@ -375,9 +432,9 @@ Full (shallow water)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>883</X>
-                              <Y>671</Y>
+                              <Y>668</Y>
                               <W>66</W>
-                              <H>33</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>916</X>
@@ -401,13 +458,13 @@ Full (shallow water)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>883</X>
-                              <Y>704</Y>
+                              <Y>708</Y>
                               <W>66</W>
-                              <H>34</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>916</X>
-                              <Y>721.3334</Y>
+                              <Y>728</Y>
                             </item>
                           </items>
                         </chunk>
@@ -436,7 +493,11 @@ Version 1.12.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">67cb2d4a-7f36-4da6-ab34-aff0f2f93886</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct Stormwater</item>
@@ -771,7 +832,7 @@ Slope</item>
                     </chunk>
                     <chunk name="param_output" index="4">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">The value range actually used, for a legend.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Value range mapped onto the colour ramp. Leave unconnected to fit the data. Pin it when comparing two options — otherwise each rescales to its own maximum and the worse one can look identical to the better one.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">d4c09b7a-b9b1-4b28-81e2-976f6a16fc71</item>
                         <item name="Name" type_name="gh_string" type_code="10">Range</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Range</item>
@@ -818,7 +879,11 @@ Version 1.12.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">3b78aa08-787f-4908-ae66-f27479209176</item>
                     <item name="Name" type_name="gh_string" type_code="10">Stormwater Flowlines</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Stormwater Flowlines</item>
@@ -1107,7 +1172,7 @@ Version 1.17.0.827</item>
                     <chunk name="param_output" index="2">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">2</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Colour per point, matching Values.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Colour per POINT, pairing 1:1 with Values. For drawing a coloured line use Segments + Segment Colors instead — there is one fewer segment than points.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">83ecdc4d-2024-4ee5-b0da-e90004405f2f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Colors</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Colors</item>
@@ -1236,19 +1301,23 @@ Version 1.12.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">461868e8-7924-4bb0-82cc-793e4b1435a6</item>
                     <item name="Name" type_name="gh_string" type_code="10">Design Storm</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Design Storm</item>
                   </items>
-                  <chunks count="13">
+                  <chunks count="14">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>389</X>
-                          <Y>457</Y>
-                          <W>215</W>
-                          <H>164</H>
+                          <Y>447</Y>
+                          <W>216</W>
+                          <H>184</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>502</X>
@@ -1270,13 +1339,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>459</Y>
+                              <Y>449</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>469</Y>
+                              <Y>459</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1316,13 +1385,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>479</Y>
+                              <Y>469</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>489</Y>
+                              <Y>479</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1364,13 +1433,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>499</Y>
+                              <Y>489</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>509</Y>
+                              <Y>499</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1391,13 +1460,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>519</Y>
+                              <Y>509</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>529</Y>
+                              <Y>519</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1418,13 +1487,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>539</Y>
+                              <Y>529</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>549</Y>
+                              <Y>539</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1452,13 +1521,13 @@ Uniform</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>559</Y>
+                              <Y>549</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>569</Y>
+                              <Y>559</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1499,13 +1568,13 @@ Uniform</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>579</Y>
+                              <Y>569</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>589</Y>
+                              <Y>579</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1555,13 +1624,13 @@ Clausius-Clapeyron ~7%/K, +4 K</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>391</X>
-                              <Y>599</Y>
+                              <Y>589</Y>
                               <W>96</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>440.5</X>
-                              <Y>609</Y>
+                              <Y>599</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1588,6 +1657,52 @@ Clausius-Clapeyron ~7%/K, +4 K</item>
                         </chunk>
                       </chunks>
                     </chunk>
+                    <chunk name="param_input" index="8">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Total rainfall depth (mm) the piped drainage is assumed to carry off this storm, so it never reaches the surface. Usually the depth of the storm the sewers were designed for, read off the same rainfall statistics (the source study uses the 2-year, 24-hour depth). It comes off after the climate allowance, in proportion from every block: each is scaled by 1 − drainage/total, and a storm no deeper than the drainage reaches the surface as nothing. A volume allowance, not a pipe network — it does not know where the inlets are. 0 (the default) models no drainage.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">3d81b52b-d67e-4e63-baf3-f743e6df2e16</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Drainage Depth</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Drain</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>391</X>
+                              <Y>609</Y>
+                              <W>96</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>440.5</X>
+                              <Y>619</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">0</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
                     <chunk name="param_output" index="0">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">The design storm, for Stormwater Run.</item>
@@ -1601,14 +1716,14 @@ Clausius-Clapeyron ~7%/K, +4 K</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>535</X>
-                              <Y>459</Y>
+                              <X>536</X>
+                              <Y>449</Y>
                               <W>67</W>
-                              <H>40</H>
+                              <H>45</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>568.5</X>
-                              <Y>479</Y>
+                              <X>569.5</X>
+                              <Y>471.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1628,14 +1743,14 @@ Clausius-Clapeyron ~7%/K, +4 K</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>535</X>
-                              <Y>499</Y>
+                              <X>536</X>
+                              <Y>494</Y>
                               <W>67</W>
-                              <H>40</H>
+                              <H>45</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>568.5</X>
-                              <Y>519</Y>
+                              <X>569.5</X>
+                              <Y>516.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1643,7 +1758,7 @@ Clausius-Clapeyron ~7%/K, +4 K</item>
                     </chunk>
                     <chunk name="param_output" index="2">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Total rainfall over the storm (mm).</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Total rainfall over the storm (mm) that reaches the surface model — after the drainage allowance, when one is set.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fd44b1ea-b323-4f1b-b05e-70dd49804ac8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Total Depth</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Total Depth</item>
@@ -1654,14 +1769,14 @@ Clausius-Clapeyron ~7%/K, +4 K</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>535</X>
+                              <X>536</X>
                               <Y>539</Y>
                               <W>67</W>
-                              <H>40</H>
+                              <H>45</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>568.5</X>
-                              <Y>559</Y>
+                              <X>569.5</X>
+                              <Y>561.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1680,14 +1795,14 @@ Clausius-Clapeyron ~7%/K, +4 K</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>535</X>
-                              <Y>579</Y>
+                              <X>536</X>
+                              <Y>584</Y>
                               <W>67</W>
-                              <H>40</H>
+                              <H>45</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>568.5</X>
-                              <Y>599</Y>
+                              <X>569.5</X>
+                              <Y>606.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1718,7 +1833,11 @@ Version 1.12.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">008b0dac-86e1-41ca-9b92-6971eac8f59a</item>
                     <item name="Name" type_name="gh_string" type_code="10">Land Cover Runoff</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Land Cover Runoff</item>
@@ -1943,7 +2062,7 @@ D — clay, high water table (very slow)</item>
                     <chunk name="param_output" index="0">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Runoff zones for Stormwater Grid.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Runoff zones for Stormwater Grid, largest first: Grid stamps them in list order with the last one winning, so a polygon nested in another (a lake in a park) keeps its own surface. Put hand-drawn Runoff Zones AFTER these to override them.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b7448927-d556-40db-9f4e-f20abc21cd7e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Zones</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Zones</item>
@@ -2071,7 +2190,11 @@ Version 1.12.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">39e23f0d-6385-48fe-b986-32f110bce9e7</item>
                     <item name="Name" type_name="gh_string" type_code="10">Stormwater Legend</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Stormwater Legend</item>
@@ -2530,7 +2653,11 @@ Version 1.12.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">20f5a18a-af96-4ce7-bc6b-bfd7a1829612</item>
                     <item name="Name" type_name="gh_string" type_code="10">Stormwater Grid</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Stormwater Grid</item>
@@ -2880,7 +3007,7 @@ Roofs drain to grade</item>
                     </chunk>
                     <chunk name="param_input" index="9">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Fraction of rain that runs off any cell no zone covers. 1.0 treats the untagged site as sealed, which is the conservative reading.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Fraction of rain that runs off any cell no zone covers. 1.0 treats the untagged site as sealed, which is the conservative reading. A Runoff Zones component with no Areas wired into Zones replaces both defaults with its material.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e2a7e6cf-65cd-4fea-9876-31cd31a4cfec</item>
                         <item name="Name" type_name="gh_string" type_code="10">Default Runoff Coefficient</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Default Runoff Coefficient</item>

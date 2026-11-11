@@ -106,22 +106,22 @@
             </chunk>
             <chunk name="Library" index="4">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="5">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.17.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">a3f7d2c4-9b18-4e56-8a2f-1d6c0b9e4f30</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-Radiance</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.17.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
               </items>
             </chunk>
           </chunks>
@@ -1332,7 +1332,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">365888f0-9e7d-4159-8052-930d94695c4b</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -1354,13 +1358,25 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="10">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Browse library… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">25e99ec0-a1ae-4def-82b6-92f1427324ed</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Station</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                        <item name="Options" type_name="gh_string" type_code="10"></item>
+                        <item name="Options" type_name="gh_string" type_code="10">OneBuilding (nearest TMYx)
+EnergyPlus (nearest)
+Open-Meteo (ERA5)
+Open-Meteo (IFS 9 km)
+Open-Meteo (CERRA 5 km)
+Open-Meteo (ICON-D2 2 km)
+Open-Meteo (HRRR 3 km)
+Open-Meteo (ERA5 + satellite radiation)
+PVGIS (typical year)
+NASA POWER (MERRA-2 + CERES)
+ERA5 via Copernicus CDS
+NSRDB (GOES TMY, PSM v4)
+NSRDB (GOES aggregated, PSM v4)</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">8523854d-a46d-4330-8377-34dcfc45efc0</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
                         <item name="Value" type_name="gh_string" type_code="10"></item>
@@ -1384,7 +1400,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="1">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Site latitude in decimal degrees (north positive). With a site, the browser lists the nearest stations first, every row states its distance, and the map shows both. Optional — leave empty and the catalog is listed in publisher order.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Site latitude in decimal degrees (north positive). With a site, the browser lists the nearest stations first, every row states its distance, and the map shows both. Optional, and only as a pair with Longitude: a lone latitude is not a site. Left empty, the document's Earth Anchor Point is the site when one is set; otherwise the catalog is listed in publisher order.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4517b90f-5f3e-4d21-ae64-9e5b89685c11</item>
                         <item name="Name" type_name="gh_string" type_code="10">Latitude</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Lat</item>
@@ -1516,7 +1532,7 @@ Version 1.17.0.827</item>
                     <chunk name="param_output" index="2">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Stations matching the search filter.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The catalog entries that matched, nearest the site first. One line per file: name, dataset, source and distance.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4b51df31-cba6-46e4-b029-bc8bb07b6d81</item>
                         <item name="Name" type_name="gh_string" type_code="10">Stations</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Stn</item>
@@ -1542,7 +1558,7 @@ Version 1.17.0.827</item>
                     </chunk>
                     <chunk name="param_output" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">What the chosen file is: station, period, publisher, WMO id, position, elevation, time zone, ASHRAE climate zone and the design conditions its publisher states.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">881f106a-cfc2-4093-a44d-a84ab37967b7</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>
@@ -2046,7 +2062,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">4630e404-41f6-4d2a-bf89-bcfd9b8fd51b</item>
                     <item name="LegacyOpaqueTrees" type_name="gh_bool" type_code="1">true</item>
                     <item name="Name" type_name="gh_string" type_code="10">MRT Surface</item>
@@ -2249,7 +2269,7 @@ Tree</item>
                         </chunk>
                         <chunk name="InputParam" index="4">
                           <items count="6">
-                            <item name="Description" type_name="gh_string" type_code="10">Optional material from a Surface / Vegetation / Tree Settings component; overrides the default reflectance / Radiance material for this surface.</item>
+                            <item name="Description" type_name="gh_string" type_code="10">Optional material from an Outdoor+ Building / Terrain Material component or an MRT Surface / Vegetation / Tree Settings component. UMF thermal properties are reused directly; MRT optical properties override the default reflectance.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">c5bfd642-8539-40d7-94d9-c53390b7acba</item>
                             <item name="Name" type_name="gh_string" type_code="10">Material</item>
                             <item name="NickName" type_name="gh_string" type_code="10">Mat</item>
@@ -2404,7 +2424,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">d87c1399-ee21-4dea-9595-90c3d74ef5a8</item>
                     <item name="LegacyOpaqueTrees" type_name="gh_bool" type_code="1">true</item>
                     <item name="Name" type_name="gh_string" type_code="10">MRT Surface</item>
@@ -2607,7 +2631,7 @@ Tree</item>
                         </chunk>
                         <chunk name="InputParam" index="4">
                           <items count="6">
-                            <item name="Description" type_name="gh_string" type_code="10">Optional material from a Surface / Vegetation / Tree Settings component; overrides the default reflectance / Radiance material for this surface.</item>
+                            <item name="Description" type_name="gh_string" type_code="10">Optional material from an Outdoor+ Building / Terrain Material component or an MRT Surface / Vegetation / Tree Settings component. UMF thermal properties are reused directly; MRT optical properties override the default reflectance.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">143c5455-f69d-49fe-b455-858815dba68b</item>
                             <item name="Name" type_name="gh_string" type_code="10">Material</item>
                             <item name="NickName" type_name="gh_string" type_code="10">Mat</item>
@@ -2975,20 +2999,24 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">2106f6c9-8b15-4a27-a8a3-7c143c25392b</item>
                     <item name="MrtSettingsInputLayoutVersion" type_name="gh_int32" type_code="3">3</item>
                     <item name="Name" type_name="gh_string" type_code="10">MRT Settings</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Settings</item>
                   </items>
-                  <chunks count="9">
+                  <chunks count="12">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1204</X>
-                          <Y>978</Y>
+                          <X>1200</X>
+                          <Y>948</Y>
                           <W>224</W>
-                          <H>144</H>
+                          <H>204</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1250</X>
@@ -3009,14 +3037,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1206</X>
-                              <Y>980</Y>
-                              <W>29</W>
+                              <X>1202</X>
+                              <Y>950</Y>
+                              <W>33</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1222</X>
-                              <Y>990</Y>
+                              <X>1220</X>
+                              <Y>960</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3055,14 +3083,14 @@ Version 1.17.0.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1206</X>
-                              <Y>1000</Y>
-                              <W>29</W>
+                              <X>1202</X>
+                              <Y>970</Y>
+                              <W>33</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1222</X>
-                              <Y>1010</Y>
+                              <X>1220</X>
+                              <Y>980</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3104,14 +3132,14 @@ Note this is EnergyPlus, not Radiance: Radiance transports light and computes no
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1206</X>
-                              <Y>1020</Y>
-                              <W>29</W>
+                              <X>1202</X>
+                              <Y>990</Y>
+                              <W>33</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1222</X>
-                              <Y>1030</Y>
+                              <X>1220</X>
+                              <Y>1000</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3150,14 +3178,14 @@ Note this is EnergyPlus, not Radiance: Radiance transports light and computes no
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1206</X>
-                              <Y>1040</Y>
-                              <W>29</W>
+                              <X>1202</X>
+                              <Y>1010</Y>
+                              <W>33</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1222</X>
-                              <Y>1050</Y>
+                              <X>1220</X>
+                              <Y>1020</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3212,14 +3240,14 @@ Reference</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1206</X>
-                              <Y>1060</Y>
-                              <W>29</W>
+                              <X>1202</X>
+                              <Y>1030</Y>
+                              <W>33</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1222</X>
-                              <Y>1070</Y>
+                              <X>1220</X>
+                              <Y>1040</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3249,8 +3277,8 @@ Reference</item>
                     <chunk name="param_input" index="5">
                       <items count="9">
                         <item name="Description" type_name="gh_string" type_code="10">How many processes the Radiance chain spreads its sensors over.
-The annual matrix multiplies (dctimestep + rmtxop) are ~60% of the chain and scale with sensor count — at 4500 sensors they are most of the run — and neither program has a threading flag, so running several over slices of the sensors is the only way to use more than one core on them.
-Auto (default) picks one process per core, never splitting below 500 sensors a block. Off runs the single-process chain exactly as it was before this existed.
+Auto (default) decides from the chain. With Fast Matrices on (the default) the sun term is finished on the host and the container's multiplies are binary and quick, so Auto stays at ONE process: measured at 4,500 and 14,600 sensors, splitting changed the run time by less than its run-to-run noise. With Fast Matrices off (the ASCII chain), or with tree crowns (their sun multiply stays in the container), the annual multiplies (dctimestep + rmtxop) are most of the run at thousands of sensors and neither program has a threading flag, so Auto splits the sensors over up to the machine's physical cores minus two, never below 500 sensors a block — 4,500 ASCII sensors took 220 s in one process and 117 s in nine.
+Off is always one process; 2, 4, 8 or 16 processes are honoured as given, which is also the way to cap a shared machine.
 This never changes the answer: every sensor is traced by identical commands against identical octrees and sky matrices; only which file it was listed in differs.
 Only applies when Radiance Reflections is on.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5c5eaa69-06e0-4672-9dfa-3118735242c9</item>
@@ -3258,27 +3286,27 @@ Only applies when Radiance Reflections is on.</item>
                         <item name="Name" type_name="gh_string" type_code="10">Parallelize</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Par</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="Options" type_name="gh_string" type_code="10">Auto (one per core)
+                        <item name="Options" type_name="gh_string" type_code="10">Auto
 Off (single process)
 2 processes
 4 processes
 8 processes
 16 processes</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                        <item name="Value" type_name="gh_string" type_code="10">Auto (one per core)</item>
+                        <item name="Value" type_name="gh_string" type_code="10">Auto</item>
                       </items>
                       <chunks count="2">
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1206</X>
-                              <Y>1080</Y>
-                              <W>29</W>
+                              <X>1202</X>
+                              <Y>1050</Y>
+                              <W>33</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1222</X>
-                              <Y>1090</Y>
+                              <X>1220</X>
+                              <Y>1060</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3296,7 +3324,7 @@ Off (single process)
                                 <chunk name="Item" index="0">
                                   <items count="2">
                                     <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                    <item name="string" type_name="gh_string" type_code="10">Auto (one per core)</item>
+                                    <item name="string" type_name="gh_string" type_code="10">Auto</item>
                                   </items>
                                 </chunk>
                               </chunks>
@@ -3321,16 +3349,174 @@ Only applies when EnergyPlus Surfaces is on. The Radiance chain works on annual 
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1206</X>
-                              <Y>1100</Y>
-                              <W>29</W>
+                              <X>1202</X>
+                              <Y>1070</Y>
+                              <W>33</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1222</X>
-                              <Y>1110</Y>
+                              <X>1220</X>
+                              <Y>1080</Y>
                             </item>
                           </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="7">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">true (default): the Radiance chain moves its annual matrices as binary files and the sun term is finished as a sparse product on the host — several times quicker on large sensor grids, a quarter of the disk, and free of the three-digit rounding ASCII sky matrices carry (up to 0.5 % of the beam in an hour).
+false: the ASCII chain Eddy3D shipped before this input existed, kept as the control and the way back. For Two-Phase DDS the two agree to float rounding apart from that rounding. Two-Phase (preview) reads its beam straight from the sampled ray-traced coefficients, which the ASCII chain does not reproduce from run to run (about 0.7 % of the annual total, and more in single hours); the binary chain does.
+Only applies when Radiance Reflections is on.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">f16a835c-8185-48f3-9916-aefcae3d5e7f</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Fast Matrices</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Fast</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1202</X>
+                              <Y>1090</Y>
+                              <W>33</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1220</X>
+                              <Y>1100</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="boolean" type_name="gh_bool" type_code="1">true</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="8">
+                      <items count="9">
+                        <item name="Description" type_name="gh_string" type_code="10">Which Two-Phase (daylight-coefficient) method the Radiance chain runs.
+Two-Phase DDS (default): the sun is traced separately, one source per fine sky bin (Bourgeois, Reinhart and Ward 2008), so shadows have close to the sun's own edges.
+Two-Phase (preview): the sun is read off the 145-patch sky, spread over the four patches nearest it, so shadow edges are blurred by several degrees and hourly beam and dMRT at sun altitudes below about 8 degrees are approximate. It skips the sun trace: about twice as quick on a grid of a few hundred sensors or more (five times on a handful). Reflected and diffuse light are the same; the annual total stayed within 2-3 % of Two-Phase DDS on the test cube and can differ more in a street canyon. For choosing a layout, not for a result.
+Scenes with tree crowns always run Two-Phase DDS.
+Only applies when Radiance Reflections is on.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">d7bf4694-b70a-4ef6-990e-cb7b73e7e93c</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Shortwave Method</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Meth</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Options" type_name="gh_string" type_code="10">Two-Phase DDS
+Two-Phase (preview)</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_string" type_code="10">Two-Phase DDS</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1202</X>
+                              <Y>1110</Y>
+                              <W>33</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1220</X>
+                              <Y>1120</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10">Two-Phase DDS</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="9">
+                      <items count="9">
+                        <item name="Description" type_name="gh_string" type_code="10">How finely the sky is divided for the traced sun of Two-Phase DDS (the Reinhart subdivision).
+MF:4 (default): 2,305 suns, bins about 3 degrees across.
+MF:6: 5,185 suns, about 2 degrees: the traced sun lands closer to the real one (the hourly error of the beam against an exact solar position fell by about a fifth in the check this setting was added with), for about twice the sun-coefficient trace and twice the disk of the transfer matrix.
+Ignored by Two-Phase (preview) and by scenes with tree crowns.
+Only applies when Radiance Reflections is on.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">3cb41156-c6fd-4fe6-84bb-fe41e1e509ec</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Sun Resolution</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Sun</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Options" type_name="gh_string" type_code="10">MF:4 · 2,305 suns
+MF:6 · 5,185 suns</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_string" type_code="10">MF:4 · 2,305 suns</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1202</X>
+                              <Y>1130</Y>
+                              <W>33</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1220</X>
+                              <Y>1140</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10">MF:4 · 2,305 suns</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
                         </chunk>
                       </chunks>
                     </chunk>
@@ -3347,13 +3533,13 @@ Only applies when EnergyPlus Surfaces is on. The Radiance chain works on annual 
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1410</X>
-                              <Y>980</Y>
+                              <X>1406</X>
+                              <Y>950</Y>
                               <W>16</W>
-                              <H>140</H>
+                              <H>200</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1418</X>
+                              <X>1414</X>
                               <Y>1050</Y>
                             </item>
                           </items>
@@ -3383,19 +3569,23 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">d96f70ec-7c7e-4bbf-93d6-3d14e3fa662e</item>
                     <item name="Name" type_name="gh_string" type_code="10">MRT View Factors</item>
                     <item name="NickName" type_name="gh_string" type_code="10">VF</item>
                   </items>
-                  <chunks count="9">
+                  <chunks count="10">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1594</X>
-                          <Y>348</Y>
+                          <Y>338</Y>
                           <W>204</W>
-                          <H>104</H>
+                          <H>124</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1650</X>
@@ -3419,13 +3609,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1596</X>
-                              <Y>350</Y>
+                              <Y>340</Y>
                               <W>39</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1617</X>
-                              <Y>360</Y>
+                              <Y>350</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3447,13 +3637,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1596</X>
-                              <Y>370</Y>
+                              <Y>360</Y>
                               <W>39</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1617</X>
-                              <Y>380</Y>
+                              <Y>370</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3484,13 +3674,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1596</X>
-                              <Y>390</Y>
+                              <Y>380</Y>
                               <W>39</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1617</X>
-                              <Y>400</Y>
+                              <Y>390</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3532,13 +3722,13 @@ Reference</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1596</X>
-                              <Y>410</Y>
+                              <Y>400</Y>
                               <W>39</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1617</X>
-                              <Y>420</Y>
+                              <Y>410</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3566,6 +3756,64 @@ Reference</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="4">
+                      <items count="9">
+                        <item name="Description" type_name="gh_string" type_code="10">Who does the heavy lifting of the sweep: the occlusion rays (and the raycast shortwave in MRT Solve) AND the view-factor geometry of every probe x polygon pair (the cos·area/r² term) ahead of them.
+Auto: rays on Embree when its natives load, else the OpenCL GPU when a device answers, else the managed BVH; geometry on the GPU when one answers, else the CPU.
+GPU: rays and geometry on the OpenCL GPU even where Embree loads, which pays off on the sweep's large ray batches; a fallback to the CPU is reported in the log and as a warning, never silent.
+Embree: Embree rays, geometry on the CPU.
+BVH: the managed BVH and CPU geometry — the same answer on every machine.
+GPU geometry is float; measured within 2e-6 per view factor of the CPU's at Reference fidelity.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">ecc9ab88-d095-4c55-bb8e-6e9a3d387e66</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Engine</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Eng</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Options" type_name="gh_string" type_code="10">Auto
+Embree
+BVH
+GPU</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_string" type_code="10">Auto</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1596</X>
+                              <Y>420</Y>
+                              <W>39</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1617</X>
+                              <Y>430</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10">Auto</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="5">
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Solve the view factors.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a313b6cf-0ebb-40fc-914a-08c09554e5b7</item>
@@ -3580,13 +3828,13 @@ Reference</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1596</X>
-                              <Y>430</Y>
+                              <Y>440</Y>
                               <W>39</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1617</X>
-                              <Y>440</Y>
+                              <Y>450</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3626,13 +3874,13 @@ Reference</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1768</X>
-                              <Y>350</Y>
+                              <Y>340</Y>
                               <W>28</W>
-                              <H>33</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1782</X>
-                              <Y>366.66666</Y>
+                              <Y>360</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3653,9 +3901,9 @@ Reference</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1768</X>
-                              <Y>383</Y>
+                              <Y>380</Y>
                               <W>28</W>
-                              <H>33</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1782</X>
@@ -3680,13 +3928,13 @@ Reference</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1768</X>
-                              <Y>416</Y>
+                              <Y>420</Y>
                               <W>28</W>
-                              <H>34</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1782</X>
-                              <Y>433.3333</Y>
+                              <Y>440</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3715,7 +3963,11 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">26e1662c-6494-4fcb-a186-f1710086b780</item>
                     <item name="Name" type_name="gh_string" type_code="10">SurfaceTemp (EnergyPlus)</item>
                     <item name="NickName" type_name="gh_string" type_code="10">EP Temps</item>
@@ -3943,7 +4195,7 @@ Containerized</item>
                     </chunk>
                     <chunk name="param_output" index="0">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">The same model with EnergyPlus surface temperatures applied — feed to MRT Solve.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Solved view-factor model from MRT View Factors.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">885ffeab-db70-4d03-bfcc-d92c4673d69c</item>
                         <item name="Name" type_name="gh_string" type_code="10">VF Model</item>
                         <item name="NickName" type_name="gh_string" type_code="10">VF</item>
@@ -3979,7 +4231,7 @@ Containerized</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Solves MRT on a prepared VF Model: shortwave (direct raycast, or Radiance DDS when MRT Settings enables reflections) + view-factor longwave. Wire the VF Model straight from MRT View Factors for ambient/FFT surface temperatures, or through SurfaceTemp (EnergyPlus) for E+ temperatures. Result feeds Deconstruct MRT and UTCI.
 
 Version 1.9.0.827
@@ -3990,19 +4242,24 @@ Version 1.15.0.827
 
 Version 1.15.0.827
 
-Version 1.17.0.827</item>
+Version 1.17.0.827
+
+Version 1.22.0.827
+
+Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7c0988fc-637f-435f-b56d-2b336c0c288c</item>
+                    <item name="MrtSolveInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                     <item name="Name" type_name="gh_string" type_code="10">MRT Solve</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Solve</item>
                   </items>
-                  <chunks count="10">
+                  <chunks count="11">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>2393</X>
-                          <Y>338</Y>
+                          <Y>328</Y>
                           <W>161</W>
-                          <H>124</H>
+                          <H>144</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>2450</X>
@@ -4024,13 +4281,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2395</X>
-                              <Y>340</Y>
+                              <Y>330</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2416.5</X>
-                              <Y>350</Y>
+                              <Y>340</Y>
                             </item>
                           </items>
                         </chunk>
@@ -4051,13 +4308,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2395</X>
-                              <Y>360</Y>
+                              <Y>350</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2416.5</X>
-                              <Y>370</Y>
+                              <Y>360</Y>
                             </item>
                           </items>
                         </chunk>
@@ -4078,13 +4335,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2395</X>
-                              <Y>380</Y>
+                              <Y>370</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2416.5</X>
-                              <Y>390</Y>
+                              <Y>380</Y>
                             </item>
                           </items>
                         </chunk>
@@ -4105,13 +4362,13 @@ Version 1.17.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2395</X>
-                              <Y>400</Y>
+                              <Y>390</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2416.5</X>
-                              <Y>410</Y>
+                              <Y>400</Y>
                             </item>
                           </items>
                         </chunk>
@@ -4135,13 +4392,13 @@ Containerized</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2395</X>
-                              <Y>420</Y>
+                              <Y>410</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2416.5</X>
-                              <Y>430</Y>
+                              <Y>420</Y>
                             </item>
                           </items>
                         </chunk>
@@ -4169,9 +4426,61 @@ Containerized</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="5">
+                      <items count="9">
+                        <item name="Description" type_name="gh_string" type_code="10">Who runs the view-factor-weighted longwave accumulation (probes x polygons x 8760 h). Auto: the OpenCL GPU when one answers, else the CPU; a fallback is reported in the log and as a warning. CPU: the parallel loop. GPU: refuse to run silently on the CPU. The GPU's rows are bit-identical to the CPU's. A model with tree crowns always runs on the CPU.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">5dd53972-dba3-467e-90e4-15eb18b75834</item>
+                        <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Compute</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Comp</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="Options" type_name="gh_string" type_code="10">Auto
+CPU
+GPU</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                        <item name="Value" type_name="gh_string" type_code="10">Auto</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>2395</X>
+                              <Y>430</Y>
+                              <W>40</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>2416.5</X>
+                              <Y>440</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="2">
+                                    <item name="null_string" type_name="gh_bool" type_code="1">false</item>
+                                    <item name="string" type_name="gh_string" type_code="10">Auto</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="6">
                       <items count="7">
                         <item name="Description" type_name="gh_string" type_code="10">Solve MRT.</item>
-                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">5dd53972-dba3-467e-90e4-15eb18b75834</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">2c36efeb-2fed-4bd7-9df3-fcf75e3e648d</item>
                         <item name="Name" type_name="gh_string" type_code="10">Run</item>
                         <item name="NickName" type_name="gh_string" type_code="10">R</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
@@ -4183,13 +4492,13 @@ Containerized</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2395</X>
-                              <Y>440</Y>
+                              <Y>450</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2416.5</X>
-                              <Y>450</Y>
+                              <Y>460</Y>
                             </item>
                           </items>
                         </chunk>
@@ -4230,13 +4539,13 @@ Containerized</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2524</X>
-                              <Y>340</Y>
+                              <Y>330</Y>
                               <W>28</W>
-                              <H>40</H>
+                              <H>46</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2538</X>
-                              <Y>360</Y>
+                              <Y>353.33334</Y>
                             </item>
                           </items>
                         </chunk>
@@ -4256,9 +4565,9 @@ Containerized</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2524</X>
-                              <Y>380</Y>
+                              <Y>376</Y>
                               <W>28</W>
-                              <H>40</H>
+                              <H>47</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2538</X>
@@ -4283,13 +4592,13 @@ Containerized</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2524</X>
-                              <Y>420</Y>
+                              <Y>423</Y>
                               <W>28</W>
-                              <H>40</H>
+                              <H>47</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2538</X>
-                              <Y>440</Y>
+                              <Y>446.6667</Y>
                             </item>
                           </items>
                         </chunk>
