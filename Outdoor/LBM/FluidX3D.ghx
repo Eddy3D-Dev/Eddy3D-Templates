@@ -214,6 +214,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">f819823a-dadf-488f-b7db-ba065ef863f5</item>
                     <item name="Name" type_name="gh_string" type_code="10">Atmospheric Boundary Layer</item>
@@ -1067,6 +1069,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">80ea96a8-100c-45f5-a223-42d102ddeb05</item>
                     <item name="Name" type_name="gh_string" type_code="10">FluidX3D Live View</item>
@@ -1691,6 +1695,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">10a82afd-540c-44e0-836d-5a565cf3f293</item>
@@ -2071,6 +2077,8 @@ Version 1.21.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 
@@ -2967,6 +2975,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">4441ddd7-80cd-45e8-875d-b7a818d82b3a</item>
                     <item name="Name" type_name="gh_string" type_code="10">Probe</item>
@@ -3572,6 +3582,8 @@ Version 1.21.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 
@@ -5348,6 +5360,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">960af19b-e6b8-4796-8813-ef9cc69985e7</item>
                     <item name="Name" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
@@ -5935,6 +5949,8 @@ Version 1.21.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 
@@ -6585,6 +6601,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e91ad727-3c34-4b3d-8dd0-12a5f4c791ee</item>
@@ -6738,7 +6756,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="4">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Where the LiDAR comes from. Auto: AHN inside the Netherlands, swissSURFACE3D, Bavaria, IGN LiDAR HD, Scotland's National LiDAR Programme, Estonia, Denmark, Slovenia or Spain's PNOA where the site lies in one, else USGS 3DEP (its newest project over the site). Browse… picks one dataset: "3DEP &lt;project&gt;" reads that project, "AHN &lt;sheet&gt;" reads AHN. Or type an http(s) URL of any LAS/LAZ file (metric coordinates): it is downloaded once into the cache and cropped around Cloud Centre.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Where the LiDAR comes from. Auto: AHN inside the Netherlands, swissSURFACE3D, Bavaria, IGN LiDAR HD, Scotland's National LiDAR Programme, Estonia, Denmark, Slovenia, Saxony, Luxembourg, Brussels, Navarra or Spain's PNOA where the site lies in one, else USGS 3DEP (its newest project over the site). Browse… picks one dataset: "3DEP &lt;project&gt;" reads that project, "AHN &lt;sheet&gt;" reads AHN. NOAA Digital Coast is asked for by name, never by Auto: county and city surveys on the US coasts and the Great Lakes, often newer and denser than 3DEP and with a building class ("NOAA &lt;id&gt;" reads one dataset). Or type an http(s) URL of any LAS/LAZ file (metric coordinates): it is downloaded once into the cache and cropped around Cloud Centre. Or the full path of a LAS/LAZ (or x y z [class] text) file on this machine — your own survey: it is read in place and cropped the same way; press Re-run after replacing the file.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">407c989a-495b-423a-9c6c-6317df8867f8</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Source</item>
@@ -6754,7 +6772,13 @@ National LiDAR Programme (Scotland)
 Maa- ja Ruumiamet (Estonia)
 Danmarks Højdemodel (Denmark)
 PNOA-LiDAR (Spain)
-GURS CLSS (Slovenia)</item>
+GURS CLSS (Slovenia)
+Saxony (Germany)
+NOAA Digital Coast (USA)
+Navarra (Spain)
+Kanton Zürich (Switzerland)
+Luxembourg
+Brussels (Belgium)</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">Auto</item>
                       </items>
@@ -6824,7 +6848,7 @@ GURS CLSS (Slovenia)</item>
                     </chunk>
                     <chunk name="param_input" index="6">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">URL source only: the site centre in the FILE's coordinates (metres — UTM, a national grid), i.e. where Latitude/Longitude lie in the file. Points are returned relative to it.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">URL or local file source only: the site centre in the FILE's coordinates (metres — UTM, a national grid), i.e. where Latitude/Longitude lie in the file. Points are returned relative to it.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">f471933a-f43a-4623-9e29-5a7fb220ae36</item>
                         <item name="Name" type_name="gh_string" type_code="10">Cloud Centre</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Cloud Centre</item>
@@ -7424,6 +7448,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">f5e9c3b1-16dd-4943-b2a1-ee65f940a5aa</item>
                     <item name="Name" type_name="gh_string" type_code="10">Site Picker</item>
@@ -7555,6 +7581,8 @@ Version 1.21.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 

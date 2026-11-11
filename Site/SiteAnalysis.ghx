@@ -143,6 +143,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">41558221-e385-4123-ab96-09cc64737ba4</item>
                     <item name="Name" type_name="gh_string" type_code="10">Site Picker</item>
@@ -278,6 +280,8 @@ Version 1.20.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 
@@ -433,7 +437,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="4">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Where the LiDAR comes from. Auto: AHN inside the Netherlands, swissSURFACE3D, Bavaria, IGN LiDAR HD, Scotland's National LiDAR Programme, Estonia, Denmark, Slovenia or Spain's PNOA where the site lies in one, else USGS 3DEP (its newest project over the site). Browse… picks one dataset: "3DEP &lt;project&gt;" reads that project, "AHN &lt;sheet&gt;" reads AHN. Or type an http(s) URL of any LAS/LAZ file (metric coordinates): it is downloaded once into the cache and cropped around Cloud Centre.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Where the LiDAR comes from. Auto: AHN inside the Netherlands, swissSURFACE3D, Bavaria, IGN LiDAR HD, Scotland's National LiDAR Programme, Estonia, Denmark, Slovenia, Saxony, Luxembourg, Brussels, Navarra or Spain's PNOA where the site lies in one, else USGS 3DEP (its newest project over the site). Browse… picks one dataset: "3DEP &lt;project&gt;" reads that project, "AHN &lt;sheet&gt;" reads AHN. NOAA Digital Coast is asked for by name, never by Auto: county and city surveys on the US coasts and the Great Lakes, often newer and denser than 3DEP and with a building class ("NOAA &lt;id&gt;" reads one dataset). Or type an http(s) URL of any LAS/LAZ file (metric coordinates): it is downloaded once into the cache and cropped around Cloud Centre. Or the full path of a LAS/LAZ (or x y z [class] text) file on this machine — your own survey: it is read in place and cropped the same way; press Re-run after replacing the file.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0c80aa1a-03e9-4c36-b6e3-7d0a6ae24b10</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Source</item>
@@ -449,7 +453,13 @@ National LiDAR Programme (Scotland)
 Maa- ja Ruumiamet (Estonia)
 Danmarks Højdemodel (Denmark)
 PNOA-LiDAR (Spain)
-GURS CLSS (Slovenia)</item>
+GURS CLSS (Slovenia)
+Saxony (Germany)
+NOAA Digital Coast (USA)
+Navarra (Spain)
+Kanton Zürich (Switzerland)
+Luxembourg
+Brussels (Belgium)</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">Auto</item>
                       </items>
@@ -519,7 +529,7 @@ GURS CLSS (Slovenia)</item>
                     </chunk>
                     <chunk name="param_input" index="6">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">URL source only: the site centre in the FILE's coordinates (metres — UTM, a national grid), i.e. where Latitude/Longitude lie in the file. Points are returned relative to it.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">URL or local file source only: the site centre in the FILE's coordinates (metres — UTM, a national grid), i.e. where Latitude/Longitude lie in the file. Points are returned relative to it.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a524905a-3ebd-4623-8726-ce8853a6ca76</item>
                         <item name="Name" type_name="gh_string" type_code="10">Cloud Centre</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Cloud Centre</item>
@@ -1269,6 +1279,8 @@ Version 1.20.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 
@@ -2517,6 +2529,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">74e92677-3016-4e5a-bdfa-b61102b41c1e</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
@@ -2951,6 +2965,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">8d5ad0af-9fa7-4302-968d-80fd27bb2f0f</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct Weather</item>
@@ -3301,6 +3317,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="FetchLayerBuildings" type_name="gh_bool" type_code="1">true</item>
                     <item name="FetchLayerLandCover" type_name="gh_bool" type_code="1">true</item>
@@ -3636,6 +3654,27 @@ Overture Maps</item>
 Auto (best bare-earth)
 USGS 3DEP
 Canada HRDEM
+Austria ALS DTM
+Bavaria DGM1
+North Rhine-Westphalia DGM1
+Rhineland-Palatinate DGM1
+Hesse DGM1
+Brandenburg DGM1
+Lower Saxony DGM1
+Emilia-Romagna coast DTM
+South Tyrol DTM
+Luxembourg LiDAR DTM
+Netherlands AHN DTM
+swissALTI3D
+France IGN (LiDAR HD + RGE ALTI)
+Scotland LiDAR DTM
+Wales LiDAR DTM
+England LiDAR composite DTM
+Poland NMT
+Czechia DMR 5G
+Norway DTM1
+Estonia DTM 5 m
+Tasmania 2 m DEM
 Copernicus GLO-30 (surface model)</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">GEDTM30</item>
@@ -4214,6 +4253,8 @@ Version 1.20.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 

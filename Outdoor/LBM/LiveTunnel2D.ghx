@@ -159,6 +159,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">73f43564-b4a9-4fd1-9d6a-473b5e2895f8</item>
                     <item name="LidarSiteInputLayoutVersion" type_name="gh_int32" type_code="3">4</item>
@@ -310,7 +312,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="4">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Where the LiDAR comes from. Auto: AHN inside the Netherlands, swissSURFACE3D, Bavaria, IGN LiDAR HD, Scotland's National LiDAR Programme, Estonia, Denmark, Slovenia or Spain's PNOA where the site lies in one, else USGS 3DEP (its newest project over the site). Browse… picks one dataset: "3DEP &lt;project&gt;" reads that project, "AHN &lt;sheet&gt;" reads AHN. Or type an http(s) URL of any LAS/LAZ file (metric coordinates): it is downloaded once into the cache and cropped around Cloud Centre.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Where the LiDAR comes from. Auto: AHN inside the Netherlands, swissSURFACE3D, Bavaria, IGN LiDAR HD, Scotland's National LiDAR Programme, Estonia, Denmark, Slovenia, Saxony, Luxembourg, Brussels, Navarra or Spain's PNOA where the site lies in one, else USGS 3DEP (its newest project over the site). Browse… picks one dataset: "3DEP &lt;project&gt;" reads that project, "AHN &lt;sheet&gt;" reads AHN. NOAA Digital Coast is asked for by name, never by Auto: county and city surveys on the US coasts and the Great Lakes, often newer and denser than 3DEP and with a building class ("NOAA &lt;id&gt;" reads one dataset). Or type an http(s) URL of any LAS/LAZ file (metric coordinates): it is downloaded once into the cache and cropped around Cloud Centre. Or the full path of a LAS/LAZ (or x y z [class] text) file on this machine — your own survey: it is read in place and cropped the same way; press Re-run after replacing the file.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">370ea693-4a6e-45e1-a8c5-86719e8bcf12</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Source</item>
@@ -326,7 +328,13 @@ National LiDAR Programme (Scotland)
 Maa- ja Ruumiamet (Estonia)
 Danmarks Højdemodel (Denmark)
 PNOA-LiDAR (Spain)
-GURS CLSS (Slovenia)</item>
+GURS CLSS (Slovenia)
+Saxony (Germany)
+NOAA Digital Coast (USA)
+Navarra (Spain)
+Kanton Zürich (Switzerland)
+Luxembourg
+Brussels (Belgium)</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">Auto</item>
                       </items>
@@ -396,7 +404,7 @@ GURS CLSS (Slovenia)</item>
                     </chunk>
                     <chunk name="param_input" index="6">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">URL source only: the site centre in the FILE's coordinates (metres — UTM, a national grid), i.e. where Latitude/Longitude lie in the file. Points are returned relative to it.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">URL or local file source only: the site centre in the FILE's coordinates (metres — UTM, a national grid), i.e. where Latitude/Longitude lie in the file. Points are returned relative to it.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4f3b32f1-d95a-4366-9989-5c66674ce54e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Cloud Centre</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Cloud Centre</item>
@@ -1057,6 +1065,8 @@ Version 1.20.0.827
 Version 1.20.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 
@@ -2344,6 +2354,8 @@ Version 1.21.0.827
 
 Version 1.22.0.827
 
+Version 1.22.0.827
+
 Version 1.22.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e182b984-635d-4386-b45d-e73ce0b78828</item>
                     <item name="Name" type_name="gh_string" type_code="10">Live Wind Tunnel</item>
@@ -3421,6 +3433,8 @@ Version 1.21.0.827
 Version 1.21.0.827
 
 Version 1.21.0.827
+
+Version 1.22.0.827
 
 Version 1.22.0.827
 
