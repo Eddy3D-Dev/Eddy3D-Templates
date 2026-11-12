@@ -255,6 +255,14 @@
     "Needs": "Eddy3D Setup > Urban microclimate / LES / RANS (PALM-4U). Runtime: hours.",
     "Edit": "Domain size and resolution, STL buildings and trees, terrain, wind, simulated time; toggle Fetch for land cover."
   },
+  "Stormwater.ghx": {
+    "Purpose": "Where water can pond on a graded site, and which way it runs.",
+    "Fidelity": "Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.",
+    "Method": "Stormwater Grid rasterises the terrain at 1 m; Fast mode computes terrain analytics, Full mode solves shallow-water depths.",
+    "Result": "A depression-capacity mesh and runoff flowlines up to 240 m, coloured by contributing area.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes, Full mode the slower.",
+    "Edit": "Terrain surface; real IDF coefficients a, b, c in Design Storm; connect Land Cover Runoff."
+  },
   "ViewShed.ghx": {
     "Purpose": "How open the view is from points on a surface, and how much of a target each point can see.",
     "Fidelity": "Screening - geometric ray casting; a plan-view measure, not a daylight metric.",
@@ -270,13 +278,5 @@
     "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
     "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
     "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
-  },
-  "Stormwater.ghx": {
-    "Purpose": "Where water can pond on a graded site, and which way it runs.",
-    "Fidelity": "Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.",
-    "Method": "Stormwater Grid rasterises the terrain at 1 m; Fast mode computes terrain analytics, Full mode solves shallow-water depths.",
-    "Result": "A depression-capacity mesh and runoff flowlines up to 240 m, coloured by contributing area.",
-    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes, Full mode the slower.",
-    "Edit": "Terrain surface; real IDF coefficients a, b, c in Design Storm; connect Land Cover Runoff."
   }
 }
