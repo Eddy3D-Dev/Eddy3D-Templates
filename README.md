@@ -19,9 +19,17 @@ This repository stores Grasshopper template files used by Eddy3D.
 
 ## Repo Structure
 
-- `Outdoor/` Outdoor-focused templates.
-- `Indoor/` Indoor-focused templates.
-- `Internal (beta)/` Experimental/internal templates.
+Top level is what you study; the second level is the engine or indoor/outdoor. Never deeper than `Category/Sub/file.ghx`.
+
+- `Wind/` airflow around buildings: `OpenFOAM/` (steady RANS), `LBM/` (GPU lattice-Boltzmann), `ML/` (surrogates).
+- `Sun/` sun path, sun hours, overshadowing and solar irradiation.
+- `Microclimate/` coupled outdoor comfort (UTCI, PET); `MRT/` for mean radiant and surface temperatures.
+- `Building/` `Comfort/` (indoor comfort, stratification) and `Envelope/` (conduction).
+- `AirQuality/` `Indoor/` (ventilation, CO2) and `Outdoor/` (pollutant dispersion).
+- `Noise/`, `Water/` (stormwater), `Climate/` (weather data and generation), `Site/` (context, views).
+- `Internal/` experimental templates, hidden from the gallery. A promoted template moves into its category.
+
+The gallery's categories (`CATS` in `docs/index.html`) are keyed by the top-level folder; add an entry there when adding a category.
 
 ## Template Gallery (GitHub Pages)
 

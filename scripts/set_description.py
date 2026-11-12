@@ -7,13 +7,13 @@ This script writes that panel without opening Grasshopper:
 
     python scripts/set_description.py --from-json descriptions-to-apply.json
     python scripts/set_description.py --dry-run --from-json descriptions-to-apply.json
-    python scripts/set_description.py Outdoor/OpenFOAM/BoxDomain.ghx "Purpose: ...
+    python scripts/set_description.py Wind/OpenFOAM/BoxDomain.ghx "Purpose: ...
     Fidelity: ...
     ..."
 
 The JSON maps repository-relative template paths to the six fields:
 
-    { "Outdoor/OpenFOAM/BoxDomain.ghx": { "Purpose": "...", "Fidelity": "...",
+    { "Wind/OpenFOAM/BoxDomain.ghx": { "Purpose": "...", "Fidelity": "...",
       "Method": "...", "Result": "...", "Needs": "...", "Edit": "..." } }
 
 Every description is checked against scripts/description_format.py BEFORE it is
@@ -45,7 +45,7 @@ NAMESPACE = uuid.UUID("5fd2c8e1-3a4b-4c1d-9e7a-0d3e0a5b6c21")  # fixed: keeps pa
 PANEL_GUID = "59e0b89a-e487-49f8-bab8-b5bab16be14c"  # Grasshopper's built-in Panel
 PANEL_W = 420.0
 
-# Copied from a Panel saved by Grasshopper itself (Indoor/Validation_Zhang_Chen_UFAD.ghx).
+# Copied from a Panel saved by Grasshopper itself (Building/Comfort/Validation_Zhang_Chen_UFAD.ghx).
 # Placeholders ({index}, {guid}, {text}, {x}, {y}, {w}, {h}) are filled in set_description().
 PANEL_TEMPLATE = """\
 <chunk name="Object" index="{index}">

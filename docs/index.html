@@ -14,7 +14,8 @@
   --accent:#0f7fbf; --accent-soft:#e3f2fb;
   --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 12px rgba(16,24,40,.06);
   --shadow-lg:0 4px 8px rgba(16,24,40,.08),0 12px 28px rgba(16,24,40,.12);
-  --c-microclimate:#e8734a; --c-openfoam:#0f7fbf; --c-lbm:#7c5cd6; --c-ml:#2a9d6f; --c-outdoorplus:#c9464e;
+  --c-wind:#0f7fbf; --c-sun:#d9930d; --c-microclimate:#e8734a; --c-building:#c0396b; --c-air:#2a9d6f;
+  --c-noise:#7c5cd6; --c-water:#2a62d6; --c-climate:#5f7d2e; --c-site:#6b7480;
   --radius:14px;
 }
 html[data-theme="dark"]{
@@ -383,20 +384,28 @@ const OWNER="Eddy3D-Dev", REPO="Eddy3D-Templates";
 
 /* Category metadata — keyed by top-level path segment(s) */
 const CATS={
-  "Outdoor/Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",
-    desc:"Outdoor thermal comfort and radiation studies — UTCI, mean radiant temperature, sun hours and surface temperatures."},
-  "Outdoor/OpenFOAM":{label:"OpenFOAM",color:"var(--c-openfoam)",
-    desc:"Steady-state RANS wind simulations with OpenFOAM using box- or cylinder-shaped computational domains."},
-  "Outdoor/LBM":{label:"LBM",color:"var(--c-lbm)",
-    desc:"GPU-accelerated Lattice-Boltzmann airflow simulation via FluidX3D and OpenLB."},
-  "Outdoor/ML":{label:"Machine Learning",color:"var(--c-ml)",
-    desc:"Machine-learning surrogate models for fast airflow and comfort inference — no full CFD run required."},
-  "Outdoor+":{label:"Outdoor+",color:"var(--c-outdoorplus)",
-    desc:"Extended workflows combining airflow and thermal comfort pipelines."}
+  "Wind":{label:"Wind",color:"var(--c-wind)",
+    desc:"Airflow around buildings: steady RANS in OpenFOAM, live GPU lattice-Boltzmann, or instant machine-learning surrogates."},
+  "Sun":{label:"Sun & Radiation",color:"var(--c-sun)",
+    desc:"Sun path, sun hours, overshadowing and annual solar irradiation on surfaces."},
+  "Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",
+    desc:"Coupled outdoor simulations ending in pedestrian comfort (UTCI, PET), plus mean radiant temperature and surface temperatures."},
+  "Building":{label:"Building",color:"var(--c-building)",
+    desc:"Heat inside and through buildings: indoor comfort and stratification, and conduction through the envelope."},
+  "AirQuality":{label:"Air Quality",color:"var(--c-air)",
+    desc:"Ventilation, CO2 and pollutant dispersion, indoors and outdoors."},
+  "Noise":{label:"Noise",color:"var(--c-noise)",
+    desc:"Acoustic maps on the ground and on facades."},
+  "Water":{label:"Water",color:"var(--c-water)",
+    desc:"Ponding and runoff on a graded site."},
+  "Climate":{label:"Climate",color:"var(--c-climate)",
+    desc:"Weather data views, future-climate morphing and regional weather simulation."},
+  "Site":{label:"Site",color:"var(--c-site)",
+    desc:"Site context and visibility."}
 };
 
 const $=s=>document.querySelector(s);
-/* Stable per-template anchor, e.g. Outdoor/ML/ML_basic.ghx -> t-outdoor-ml-ml_basic */
+/* Stable per-template anchor, e.g. Wind/ML/ML_Inference.ghx -> t-wind-ml-ml_inference */
 const anchorOf=path=>"t-"+path.replace(/\.ghx?$/i,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const fmtSize=b=>b>1048576?(b/1048576).toFixed(1)+" MB":Math.max(1,Math.round(b/1024))+" KB";
 const titleOf=f=>f.replace(/\.ghx?$/i,"").replace(/_/g," ");
