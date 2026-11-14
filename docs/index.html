@@ -9,21 +9,23 @@
 <link rel="icon" href="https://github.com/Eddy3D-Dev.png">
 <style>
 :root{
-  --bg:#f6f8fa; --surface:#ffffff; --surface2:#f0f3f6;
-  --text:#1a2330; --muted:#5b6b7d; --border:#e2e8ef;
+  color-scheme:light;
+  --bg:#f6f8fa; --surface:#ffffff; --surface2:#f4f4f5;
+  --text:#18181b; --muted:#52525b; --border:#e5e7eb;
   --accent:#0f7fbf; --accent-soft:#e3f2fb;
-  --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 12px rgba(16,24,40,.06);
-  --shadow-lg:0 4px 8px rgba(16,24,40,.08),0 12px 28px rgba(16,24,40,.12);
+  --shadow:0 1px 2px rgba(16,24,40,.05);
+  --shadow-lg:0 4px 12px rgba(16,24,40,.08);
   --c-wind:#0f7fbf; --c-sun:#d9930d; --c-microclimate:#e8734a; --c-building:#c0396b; --c-air:#2a9d6f;
   --c-noise:#7c5cd6; --c-water:#2a62d6; --c-climate:#5f7d2e; --c-site:#6b7480;
-  --radius:14px;
+  --radius:12px;
 }
 html[data-theme="dark"]{
-  --bg:#0e141b; --surface:#161e28; --surface2:#1d2733;
-  --text:#e7edf4; --muted:#93a4b8; --border:#283445;
+  color-scheme:dark;
+  --bg:#0d1117; --surface:#161b22; --surface2:#21262d;
+  --text:#e4e4e7; --muted:#a1a1aa; --border:#30363d;
   --accent:#4db3e6; --accent-soft:#12303f;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 12px rgba(0,0,0,.3);
-  --shadow-lg:0 4px 8px rgba(0,0,0,.4),0 16px 32px rgba(0,0,0,.45);
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+  --shadow-lg:0 4px 12px rgba(0,0,0,.4);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -86,7 +88,7 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .hero p.sub{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.92}
 .hero-stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
 .stat b{font-size:24px;font-weight:800;display:block;line-height:1.1}
-.stat span{font-size:13px;opacity:.85;text-transform:uppercase;letter-spacing:.6px}
+.stat span{font-size:12px;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.6px}
 
 /* toolbar */
 .toolbar{
@@ -162,7 +164,7 @@ main.wrap{padding-top:88px;padding-bottom:24px}
   transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;
 }
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--card-color,var(--accent))}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .card-head{display:flex;align-items:flex-start;gap:12px}
 .card-head>div:last-child{min-width:0}
 .card h3{font-size:16.5px;font-weight:700;letter-spacing:-.2px;word-break:break-word}
@@ -415,17 +417,23 @@ const root=document.documentElement;
 const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
 const SUN_ICON='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
 const MOON_ICON='<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/>';
-const applyTheme=t=>{
-  root.dataset.theme=t;
-  $("#themeIcon").innerHTML=t==="dark"?SUN_ICON:MOON_ICON;
-};
-/* follow the device theme until the user picks one with the switch; only a manual pick is saved */
+const MONITOR_ICON='<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>';
+const ICONS={system:MONITOR_ICON,light:SUN_ICON,dark:MOON_ICON};
+const MODES=["system","light","dark"];
+/* Three modes: "system" follows the device (live), "light"/"dark" are a manual pick. The button
+   cycles system -> light -> dark. `mode` also lives in memory so the switch still works when
+   storage is blocked. */
 const deviceDark=matchMedia("(prefers-color-scheme: dark)");
-const deviceTheme=()=>deviceDark.matches?"dark":"light";
-const savedTheme=()=>{const v=store.get("eddy-theme");return v==="dark"||v==="light"?v:null};
-applyTheme(savedTheme()||deviceTheme());
-deviceDark.addEventListener("change",()=>{if(!savedTheme())applyTheme(deviceTheme())});
-$("#themeBtn").onclick=()=>{const t=root.dataset.theme==="dark"?"light":"dark";store.set("eddy-theme",t);applyTheme(t)};
+let mode=(v=>MODES.includes(v)?v:"system")(store.get("eddy-theme"));
+const showTheme=()=>{
+  root.dataset.theme=mode==="system"?(deviceDark.matches?"dark":"light"):mode;
+  $("#themeIcon").innerHTML=ICONS[mode];
+  const label=`Toggle theme (current: ${mode})`;
+  $("#themeBtn").setAttribute("aria-label",label);$("#themeBtn").title=label;
+};
+showTheme();
+deviceDark.addEventListener("change",showTheme);
+$("#themeBtn").onclick=()=>{mode=MODES[(MODES.indexOf(mode)+1)%MODES.length];store.set("eddy-theme",mode);showTheme()};
 
 /* collapsible hero (mobile only — the button is hidden via CSS on larger screens) */
 const heroEl=$("header.hero"),collapseBtn=$("#collapseBtn");
@@ -470,7 +478,7 @@ new IntersectionObserver(
   {rootMargin:"-44px 0px 0px 0px"}
 ).observe($(".toolbar-sentinel"));
 
-let ALL=[],activeCat="all",branch=null,spotlightId=null;
+let ALL=[],activeCat="all",branch=null,spotlightId=null,repoUpdated="";
 
 /* Description text comes from a Panel inside the .ghx, so it is data, not
    markup: escape it, and keep paragraph breaks (blank lines) as paragraphs. */
@@ -518,6 +526,7 @@ async function loadBranches(){
     .then(r=>r.ok?r.json():[]).catch(()=>[]);
   let names=list.map(b=>b.name).filter(isVersion).sort(compareBranches);
   if(!names.length)names=[info.default_branch];
+  repoUpdated=info.pushed_at?new Date(info.pushed_at).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}):"";
   /* The site always opens on the highest version branch. GitHub's own default
      branch is deliberately NOT used: it only advances on a stable release, so
      it lags every beta (names is sorted newest first). Only an explicit
@@ -551,10 +560,12 @@ async function loadTree(){
       desc:ghxDesc[name]||"",descText:descText(ghxDesc[name]).toLowerCase(),
       url:`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
   });
-  $("#meta").textContent=`Live from branch ${branch} · ${ALL.length} template${ALL.length===1?"":"s"}`;
+  $("#meta").innerHTML=`Data from GitHub · branch ${esc(branch)}${repoUpdated?` · updated ${repoUpdated}`:""} · <a href="https://github.com/${OWNER}/${REPO}/tree/${encodeURIComponent(branch)}" target="_blank" rel="noopener">Source on GitHub</a>`;
   $("#stats").innerHTML=`
     <div class="stat"><b>${ALL.length}</b><span>Templates</span></div>
-    <div class="stat"><b>${new Set(ALL.map(t=>t.cat)).size}</b><span>Categories</span></div>`;
+    <div class="stat"><b>${new Set(ALL.map(t=>t.cat)).size}</b><span>Categories</span></div>
+    <div class="stat"><b>${esc(branch)}</b><span>Version</span></div>`
+    +(repoUpdated?`<div class="stat"><b>${repoUpdated}</b><span>Repo updated</span></div>`:"");
   buildChips();render();
   $("#loading").classList.add("hidden");
   focusFromHash();
