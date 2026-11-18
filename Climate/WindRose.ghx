@@ -89,22 +89,22 @@
             </chunk>
             <chunk name="Library" index="1">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="2">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Ilker Karadag, Patrick Kastner</item>
                 <item name="Id" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
           </chunks>
@@ -580,7 +580,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a27e707-8186-4e8b-bb03-e58da81dfc3d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -602,7 +606,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="10">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fbba5cec-80cf-4d94-bb6c-911a1bda82a9</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
@@ -802,7 +806,7 @@ NSRDB (GOES aggregated, PSM v4)</item>
                     </chunk>
                     <chunk name="param_output" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">336fbaf4-bc33-4a58-85e5-5c0b0bb80f54</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>
@@ -1036,7 +1040,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">aa894a45-0a44-4151-8896-fa66b316403c</item>
                     <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>

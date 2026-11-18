@@ -105,22 +105,22 @@
             </chunk>
             <chunk name="Library" index="3">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Palm, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Palm, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">7c2e8a15-4d93-46b7-a0f1-9e5b3c68d247</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-PALM</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="4">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
           </chunks>
@@ -207,7 +207,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">c8158228-c287-42da-85f0-bc0d44c29211</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
@@ -230,7 +234,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="9">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e79ac259-3245-4c91-88fc-e5862578b4f8</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
@@ -453,7 +457,7 @@ USA_NY_New.York-Downtown.Manhattan.Heli.720553_TMYx.2004-2018</item>
                     </chunk>
                     <chunk name="param_output" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">04962f53-a236-4f2a-bd79-df8d4b2c69e2</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Station</item>
@@ -621,7 +625,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">02f57b52-5d56-4cf1-a411-2909d95c054e</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Domain</item>
@@ -1092,7 +1100,7 @@ Version 1.22.0.827</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="7">
+                  <items count="8">
                     <item name="Description" type_name="gh_string" type_code="10">Fetch open LiDAR and building footprints for a site from its latitude and longitude, for City Surface: the footprints over a square of the given Size, the point cloud (the terrain) over a larger square, Terrain Size — the ground a CFD domain stands on reaches further than the buildings that matter. The Netherlands: AHN (Het Waterschapshuis, CC-BY 4.0) from its official sheets — a sheet is ~5 GB and is downloaded once into the cache, then every site in it is read from there — with BAG footprints (Kadaster, CC0). The United States: USGS 3DEP (public domain), only the point-cloud nodes over the site, with GlobalBuildingAtlas footprints (TUM, CC BY-NC 4.0; OpenStreetMap if it cannot be read). France (IGN LiDAR HD, Licence Ouverte), Switzerland (swissSURFACE3D, swisstopo), Bavaria (CC BY 4.0), Scotland (National LiDAR Programme, OGL) and Estonia (Maa- ja Ruumiamet): the 1 km tiles over the site, 65-155 MB each, cached once, with the same footprints. Everything comes out in metres around the site centre: wire Point Cloud, Footprints and Domain into City Surface. Tree Crowns are read from the cloud's own vegetation returns (one closed mesh per cluster, for the Tree component); Land Cover, Land Cover Names, Roughness and Flatten are OpenStreetMap land cover (ODbL) with its Davenport z0, in the footprints' frame — wire them into City Surface's Layer Outlines, Layer Names, Layer Roughness and Flatten.
 
 Version 1.19.0.827
@@ -1151,11 +1159,16 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">1df13c1e-5060-46ff-a367-b054f3445a79</item>
                     <item name="LidarSiteInputLayoutVersion" type_name="gh_int32" type_code="3">4</item>
                     <item name="LidarSiteOutputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="LidarSiteRoundCrowns" type_name="gh_bool" type_code="1">false</item>
                     <item name="Name" type_name="gh_string" type_code="10">LiDAR Site</item>
                     <item name="NickName" type_name="gh_string" type_code="10">LiDAR Site</item>
                   </items>
@@ -1649,7 +1662,7 @@ Brussels (Belgium)</item>
                     </chunk>
                     <chunk name="param_output" index="4">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">The trees as individual round crowns on short trunks, ONE mesh over Terrain Size: from the cloud's own vegetation returns where it classifies any, else from the satellite canopy map (Meta/WRI CHM v2, 1 m, CC BY 4.0; most 3DEP projects classify none). 3 m and taller, none inside a footprint, at most the 20,000 tallest. For looking at and for a render, not a solver: Tree Crowns are the porous zones the Tree component takes. The Report says where they came from.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The trees as individual rhombicuboctahedron crowns (right-click for round ones) on short trunks, ONE mesh over Terrain Size: from the cloud's own vegetation returns where it classifies any, else from the satellite canopy map (Meta/WRI CHM v2, 1 m, CC BY 4.0; most 3DEP projects classify none). 3 m and taller, none inside a footprint, at most the 20,000 tallest. For looking at and for a render, not a solver: Tree Crowns are the porous zones the Tree component takes. The Report says where they came from.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b666c853-705f-4cb2-aa50-84b28bfee56d</item>
                         <item name="Name" type_name="gh_string" type_code="10">Trees</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Trees</item>
@@ -2031,7 +2044,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">c2ce5a1b-c8cf-475a-b5d3-e1f61ad3f0ea</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Land Cover</item>
@@ -2325,7 +2342,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">6c9f18ed-20af-4edb-ab39-b655000f5edf</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Settings</item>
@@ -2975,8 +2996,9 @@ t_soil</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="7">
+                  <items count="9">
                     <item name="CitySurfaceInputLayoutVersion" type_name="gh_int32" type_code="3">10</item>
+                    <item name="CitySurfaceRoundCrowns" type_name="gh_bool" type_code="1">false</item>
                     <item name="ClayLook" type_name="gh_bool" type_code="1">true</item>
                     <item name="Description" type_name="gh_string" type_code="10">Build ONE watertight surface of terrain, buildings (LoD 1.2 boxes to LoD 2.2 roofs) and surface layers (water, roads, green) for urban CFD. Ground comes from points (wired, or class 2 of a LAS/XYZ cloud) and every footprint and layer outline is carried into its triangulation, so buildings stand IN the terrain with walls down to the ground on every side instead of boxes sunk through a plate. A roof is the footprint's Height above its median ground, or else the Roof Percentile of the roof points (class 6) inside it, or — with neither, typically a house the survey saw only as the tree canopy over it — a flat box at the median height of its five nearest reconstructed buildings (the Report counts them). Overlapping footprints are separated (the earlier one wins); flattened layers sit at one level. Outputs are split by part so each can be its own patch. Method: Pađen et al. (2022), Frontiers in Built Environment 8:899332, doi:10.3389/fbuil.2022.899332; Biljecki et al. (2016), Computers, Environment and Urban Systems 59, 25-37, doi:10.1016/j.compenvurbsys.2016.04.005.
 
@@ -3036,7 +3058,12 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
+                    <item name="GroundPhoto" type_name="gh_bool" type_code="1">true</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">a6b66c00-16c7-4fe5-8ef9-79daaa193c9a</item>
                     <item name="Name" type_name="gh_string" type_code="10">City Surface</item>
@@ -3048,7 +3075,7 @@ Version 1.22.0.827</item>
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1348</X>
                           <Y>1672</Y>
-                          <W>324</W>
+                          <W>377</W>
                           <H>444</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -3058,7 +3085,7 @@ Version 1.22.0.827</item>
                       </items>
                     </chunk>
                     <chunk name="ParameterData">
-                      <items count="37">
+                      <items count="36">
                         <item name="InputCount" type_name="gh_int32" type_code="3">22</item>
                         <item name="InputId" index="0" type_name="gh_guid" type_code="9">3ede854e-c753-40eb-84cb-b48008f14fd4</item>
                         <item name="InputId" index="1" type_name="gh_guid" type_code="9">d5967b9f-e8ee-436b-a8ad-29fdcecf32d5</item>
@@ -3082,7 +3109,7 @@ Version 1.22.0.827</item>
                         <item name="InputId" index="19" type_name="gh_guid" type_code="9">47e6606f-4707-4697-b812-40dbf3b593e4</item>
                         <item name="InputId" index="20" type_name="gh_guid" type_code="9">cb95db89-6165-43b6-9c41-5702bc5bf137</item>
                         <item name="InputId" index="21" type_name="gh_guid" type_code="9">a5425ffd-c77f-40e4-bf17-1d33c17ef2a0</item>
-                        <item name="OutputCount" type_name="gh_int32" type_code="3">13</item>
+                        <item name="OutputCount" type_name="gh_int32" type_code="3">12</item>
                         <item name="OutputId" index="0" type_name="gh_guid" type_code="9">1e936df3-0eea-4246-8549-514cb8862b7a</item>
                         <item name="OutputId" index="1" type_name="gh_guid" type_code="9">1e936df3-0eea-4246-8549-514cb8862b7a</item>
                         <item name="OutputId" index="2" type_name="gh_guid" type_code="9">1e936df3-0eea-4246-8549-514cb8862b7a</item>
@@ -3095,9 +3122,8 @@ Version 1.22.0.827</item>
                         <item name="OutputId" index="9" type_name="gh_guid" type_code="9">1e936df3-0eea-4246-8549-514cb8862b7a</item>
                         <item name="OutputId" index="10" type_name="gh_guid" type_code="9">1e936df3-0eea-4246-8549-514cb8862b7a</item>
                         <item name="OutputId" index="11" type_name="gh_guid" type_code="9">1e936df3-0eea-4246-8549-514cb8862b7a</item>
-                        <item name="OutputId" index="12" type_name="gh_guid" type_code="9">1e936df3-0eea-4246-8549-514cb8862b7a</item>
                       </items>
-                      <chunks count="35">
+                      <chunks count="34">
                         <chunk name="InputParam" index="0">
                           <items count="8">
                             <item name="Access" type_name="gh_int32" type_code="3">1</item>
@@ -3922,7 +3948,7 @@ Strict</item>
                         </chunk>
                         <chunk name="OutputParam" index="0">
                           <items count="6">
-                            <item name="Description" type_name="gh_string" type_code="10">The ground outside buildings and layers (open at the domain outline).</item>
+                            <item name="Description" type_name="gh_string" type_code="10">The WHOLE ground as one welded mesh over the whole Domain, open only at its outline: nothing is cut out for a layer or a footprint. Where a Layers mesh lies, the two agree vertex for vertex (a flattened pond is as level here as there); under a building it is the plane through the ground at the footprint's corners, never the roof. The ground to drape, sample heights from or hand to LBM, PALM, Noise or Adaptive Terrain. Surface is the watertight, split-by-part mesh for snappyHexMesh.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">e821f5d4-6fbf-4c6d-aa8a-58cf14cb68dd</item>
                             <item name="Name" type_name="gh_string" type_code="10">Terrain</item>
                             <item name="NickName" type_name="gh_string" type_code="10">Terrain</item>
@@ -3933,13 +3959,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1674</Y>
                                   <W>92</W>
                                   <H>33</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1690.9231</Y>
                                 </item>
                               </items>
@@ -3959,13 +3985,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1707</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1724.7693</Y>
                                 </item>
                               </items>
@@ -3986,13 +4012,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1741</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1758.6154</Y>
                                 </item>
                               </items>
@@ -4013,13 +4039,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1775</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1792.4615</Y>
                                 </item>
                               </items>
@@ -4039,13 +4065,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1809</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1826.3077</Y>
                                 </item>
                               </items>
@@ -4066,13 +4092,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1843</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1860.1538</Y>
                                 </item>
                               </items>
@@ -4093,13 +4119,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1877</Y>
                                   <W>92</W>
                                   <H>33</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1894</Y>
                                 </item>
                               </items>
@@ -4120,13 +4146,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1910</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1927.8462</Y>
                                 </item>
                               </items>
@@ -4147,13 +4173,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1944</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1961.6924</Y>
                                 </item>
                               </items>
@@ -4174,13 +4200,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>1978</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>1995.5385</Y>
                                 </item>
                               </items>
@@ -4189,7 +4215,7 @@ Strict</item>
                         </chunk>
                         <chunk name="OutputParam" index="10">
                           <items count="6">
-                            <item name="Description" type_name="gh_string" type_code="10">The same vegetation as individual trees, ONE mesh: a round crown on a short trunk each, standing where the canopy of the cloud's vegetation returns peaks (1 m raster, 3 m and taller, none inside a footprint, at most the 20,000 tallest). For looking at and for a render, not for a solver: Tree Crowns are the porous zones the Tree component takes. Empty when the cloud has no vegetation (the Report says why); kept with the cached surface.</item>
+                            <item name="Description" type_name="gh_string" type_code="10">The same vegetation as individual trees, ONE mesh: a rhombicuboctahedron crown on a short trunk each (right-click for the round one), standing where the canopy of the cloud's vegetation returns peaks (1 m raster, 3 m and taller, none inside a footprint, at most the 20,000 tallest). For looking at and for a render, not for a solver: Tree Crowns are the porous zones the Tree component takes. Empty when the cloud has no vegetation (the Report says why); kept with the cached surface.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">9de2e546-19b7-47b0-97a5-6ab7f7bacac4</item>
                             <item name="Name" type_name="gh_string" type_code="10">Trees</item>
                             <item name="NickName" type_name="gh_string" type_code="10">Trees</item>
@@ -4200,13 +4226,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>2012</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>2029.3846</Y>
                                 </item>
                               </items>
@@ -4215,33 +4241,7 @@ Strict</item>
                         </chunk>
                         <chunk name="OutputParam" index="11">
                           <items count="6">
-                            <item name="Description" type_name="gh_string" type_code="10">The WHOLE ground as one welded mesh over the whole Domain: no layer is cut out of it and no footprint is either. It is the surface's own triangulation with every triangle at the height of the ground at its corners, so where Terrain or a Layers mesh exists the two agree exactly, a flattened pond is as level here as there, and under a building it is the plane through the ground the walls stand on at the footprint's corners (not the roof). Terrain stays the ground OUTSIDE buildings and layers; this is the ground they all stand on, to look at, to drape something on or to read heights from. Not drawn in this component's preview (it lies under the other parts); kept with the cached surface.</item>
-                            <item name="InstanceGuid" type_name="gh_guid" type_code="9">cea088a0-e206-4513-b7e4-e895dbfb467c</item>
-                            <item name="Name" type_name="gh_string" type_code="10">Full Terrain</item>
-                            <item name="NickName" type_name="gh_string" type_code="10">Ground</item>
-                            <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                            <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Attributes">
-                              <items count="2">
-                                <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
-                                  <Y>2046</Y>
-                                  <W>92</W>
-                                  <H>34</H>
-                                </item>
-                                <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
-                                  <Y>2063.2307</Y>
-                                </item>
-                              </items>
-                            </chunk>
-                          </chunks>
-                        </chunk>
-                        <chunk name="OutputParam" index="12">
-                          <items count="6">
-                            <item name="Description" type_name="gh_string" type_code="10">The bridge decks as closed slabs, from the cloud's bridge returns (ASPRS class 17): one plane through the returns, sides smoothed, 1 m thick, wherever the ground is more than 2 m under the deck (where it comes up to the deck, the bridge rests on it and Terrain has it). Not part of Surface, which is 2.5D and cannot pass under anything; Site Look's Bridges. Empty when the cloud has no bridge class; kept with the cached surface.</item>
+                            <item name="Description" type_name="gh_string" type_code="10">The bridge decks as closed slabs, from the cloud's bridge returns (ASPRS class 17): one plane through the returns, sides smoothed, 1 m thick, wherever the ground is more than 2 m under the deck (where it comes up to the deck, the bridge rests on it and Terrain has it). Not part of Surface, which is 2.5D and cannot pass under anything; Site Look's Bridges. Not drawn in this component's preview: wire it to a Mesh parameter or Site Look to show the decks, and hide that to hide them. Empty when the cloud has no bridge class; kept with the cached surface.</item>
                             <item name="InstanceGuid" type_name="gh_guid" type_code="9">d96fff22-755f-4f51-9082-3fae15fdd466</item>
                             <item name="Name" type_name="gh_string" type_code="10">Bridges</item>
                             <item name="NickName" type_name="gh_string" type_code="10">Bridges</item>
@@ -4252,13 +4252,13 @@ Strict</item>
                             <chunk name="Attributes">
                               <items count="2">
                                 <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                                  <X>1578</X>
+                                  <X>1631</X>
                                   <Y>2080</Y>
                                   <W>92</W>
                                   <H>34</H>
                                 </item>
                                 <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                                  <X>1624</X>
+                                  <X>1677</X>
                                   <Y>2097.077</Y>
                                 </item>
                               </items>
@@ -4332,7 +4332,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7796a083-1d5b-4f9c-bd29-661caef7ae1f</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Run</item>
@@ -4758,7 +4762,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">038ed9b5-3772-4569-9631-7ca57c030f2e</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Progress</item>
                     <item name="NickName" type_name="gh_string" type_code="10">PALM Progress</item>
@@ -5094,7 +5102,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">48b27d96-d0b8-4e36-a81c-c8e153619a06</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Results</item>
                     <item name="NickName" type_name="gh_string" type_code="10">PALM Results</item>
@@ -5557,7 +5569,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">ea6402c0-2cde-4324-9f49-39c79f6729f1</item>
                     <item name="Name" type_name="gh_string" type_code="10">PALM Case</item>
@@ -6734,7 +6750,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">dec9fa8f-7c83-4f57-9ae1-9c1298542cff</item>
                     <item name="Name" type_name="gh_string" type_code="10">Site Picker</item>

@@ -106,32 +106,32 @@
             </chunk>
             <chunk name="Library" index="4">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="5">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Ilker Karadag, Patrick Kastner</item>
                 <item name="Id" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="6">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">a3f7d2c4-9b18-4e56-8a2f-1d6c0b9e4f30</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-Radiance</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
           </chunks>
@@ -1142,7 +1142,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e06d2fcc-ee3f-4c93-a873-ec7d8ab8998d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -1164,7 +1168,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="10">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6e468463-373d-4874-bbcb-12a52c7258e0</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
@@ -1364,7 +1368,7 @@ NSRDB (GOES aggregated, PSM v4)</item>
                     </chunk>
                     <chunk name="param_output" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5f330889-4105-44da-bc0d-8f4ad138bb44</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>
@@ -1864,7 +1868,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">9bd96380-8ac2-4683-b040-426216561859</item>
                     <item name="Name" type_name="gh_string" type_code="10">Sun Hours</item>
                     <item name="NickName" type_name="gh_string" type_code="10">SunHrs</item>
@@ -1971,7 +1979,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Weather record from Download Weather or Open Weather. The sun's position for every hour comes from this file, so nothing else has to be wired to run a study.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Weather file: the EPW from Download Weather, or the path of any EPW file. The sun's position for every hour comes from this file, so nothing else has to be wired to run a study.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">44fa7ec0-9228-4902-b692-0d5f76a41b67</item>
                         <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                         <item name="NickName" type_name="gh_string" type_code="10">W</item>
@@ -2182,7 +2190,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="8">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Distance to lift each point off its surface before tracing. Analysis grids usually sit ON geometry that also shades, and without this every point shadows itself.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Distance to lift each point off its surface before tracing. Analysis grids usually sit ON geometry that also shades, and without this every point shadows itself. The default 0.2 m also clears a kerb foot or an unwelded terrain seam, where a mesh vertex lifted a centimetre reads 0 hours beside neighbours in full sun.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a32aaab-d91b-454c-8b67-5b6c1f71f382</item>
                         <item name="Name" type_name="gh_string" type_code="10">Offset</item>
                         <item name="NickName" type_name="gh_string" type_code="10">O</item>
@@ -2229,7 +2237,7 @@ Version 1.22.0.827</item>
                     <chunk name="param_input" index="9">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Optional canopy layers from the Canopy component. Vegetation here ATTENUATES the beam and can drop out of leaf seasonally, instead of blocking it like Context. Sun hours become fractional. Slower: attenuating geometry cannot use the any-hit early-out.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional canopy layers from the Canopy component. Vegetation here ATTENUATES the beam and can drop out of leaf seasonally, instead of blocking it like Context. Sun hours become fractional. Slower: attenuating geometry cannot use the any-hit early-out. Geometry wired straight in (a tree mesh) gets the Canopy component's defaults: crowns passing 20 % of the beam, in leaf all year.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1fd9bb55-696c-468a-af72-1c45183d8444</item>
                         <item name="Name" type_name="gh_string" type_code="10">Canopy</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Cn</item>
@@ -2538,7 +2546,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">44c3769b-77e6-446e-8e53-67375ff8cdfc</item>
                     <item name="Name" type_name="gh_string" type_code="10">Shadow</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Shadow</item>
@@ -2645,7 +2657,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Weather record from Download Weather or Open Weather. The sun's position for each evaluated hour comes from this file.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Weather file: the EPW from Download Weather, or the path of any EPW file. The sun's position for each evaluated hour comes from this file.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">23638d7a-b116-49f1-b94f-6cba4db9bf9f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                         <item name="NickName" type_name="gh_string" type_code="10">W</item>
@@ -2699,7 +2711,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="5">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Distance to lift each point off its surface before tracing.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Distance to lift each point off its surface before tracing. The default 0.2 m also clears a kerb foot or an unwelded terrain seam (see Sun Hours).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">627558de-f8d9-488d-a4ea-5eb1a89b1e12</item>
                         <item name="Name" type_name="gh_string" type_code="10">Offset</item>
                         <item name="NickName" type_name="gh_string" type_code="10">O</item>
@@ -3046,7 +3058,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">cba851e8-eae0-499f-9a81-bb8bde2538d9</item>
                     <item name="Name" type_name="gh_string" type_code="10">Solar Irradiation</item>
                     <item name="NickName" type_name="gh_string" type_code="10">SolarIrr</item>
@@ -3153,7 +3169,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Weather record from Download Weather or Open Weather. Both the sun's position and the direct/diffuse irradiance for each hour come from this one file.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Weather file: the EPW from Download Weather, or the path of any EPW file. Both the sun's position and the direct/diffuse irradiance for each hour come from this one file.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e5497468-b52a-4272-8ac9-bcf96b1595f3</item>
                         <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                         <item name="NickName" type_name="gh_string" type_code="10">W</item>
@@ -3326,7 +3342,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="8">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Distance to lift each point off its surface before tracing.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Distance to lift each point off its surface before tracing. The default 0.2 m also clears a kerb foot or an unwelded terrain seam (see Sun Hours).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">90bb703b-6e32-47de-b950-009ebd333152</item>
                         <item name="Name" type_name="gh_string" type_code="10">Offset</item>
                         <item name="NickName" type_name="gh_string" type_code="10">O</item>
@@ -3419,7 +3435,7 @@ Version 1.22.0.827</item>
                     <chunk name="param_input" index="10">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Optional canopy layers from the Canopy component. Vegetation here attenuates the BEAM only — the isotropic sky term is unaffected, because a canopy that dims the sun also blocks sky, and the sky view fraction already accounts for it if you measured SVF with the canopy in place.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional canopy layers from the Canopy component. Vegetation here attenuates the BEAM only — the isotropic sky term is unaffected, because a canopy that dims the sun also blocks sky, and the sky view fraction already accounts for it if you measured SVF with the canopy in place. Geometry wired straight in (a tree mesh) gets the Canopy component's defaults: crowns passing 20 % of the beam, in leaf all year.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6f4fada7-d985-449e-a3eb-7fec1ddeb147</item>
                         <item name="Name" type_name="gh_string" type_code="10">Canopy</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Cn</item>
@@ -4658,7 +4674,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">3fb22946-27dc-4b2f-bc8e-c69237d60f72</item>
                     <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -4862,7 +4882,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">83e0344a-e8f9-40e2-b7fe-8f694b0360c8</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct Shadow</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Deconstruct Shadow</item>

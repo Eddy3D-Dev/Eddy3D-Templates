@@ -106,22 +106,22 @@
             </chunk>
             <chunk name="Library" index="4">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="5">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Ilker Karadag, Patrick Kastner</item>
                 <item name="Id" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
           </chunks>
@@ -5183,7 +5183,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">b6664cb5-4bd0-4d0c-b415-f8c7f74a6596</item>
                     <item name="Name" type_name="gh_string" type_code="10">Wind Comfort Predictor (ML)</item>
@@ -5235,7 +5239,7 @@ Version 1.22.0.827</item>
                     <chunk name="param_input" index="1">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">2</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Predicted wind speeds (m/s) as a DataTree from WindPredictor.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Predicted wind speeds (m/s) as a DataTree from WindPredictor, one branch per direction, each at that direction's reference speed.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c92224c3-732f-4180-8c1a-9c0bd12d35cf</item>
                         <item name="Name" type_name="gh_string" type_code="10">Wind Speeds</item>
                         <item name="NickName" type_name="gh_string" type_code="10">U</item>
@@ -5518,7 +5522,7 @@ False</item>
                     </chunk>
                     <chunk name="param_input" index="8">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Optional simulation metadata to automate zRef, z0, and Uref (sim).</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional simulation metadata to automate zRef, z0, and Uref (sim). Each Wind Speeds branch is divided by its own direction's Uref.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">0970e394-7da2-4871-9ab0-47844ac949c8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -6216,14 +6220,14 @@ False</item>
                     <item name="Name" type_name="gh_string" type_code="10">Brep to Grid Points</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Brep2Grid</item>
                   </items>
-                  <chunks count="7">
+                  <chunks count="8">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1079</X>
-                          <Y>589</Y>
+                          <Y>579</Y>
                           <W>110</W>
-                          <H>84</H>
+                          <H>104</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1132</X>
@@ -6247,13 +6251,13 @@ False</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1081</X>
-                              <Y>591</Y>
+                              <Y>581</Y>
                               <W>36</W>
-                              <H>40</H>
+                              <H>50</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1100.5</X>
-                              <Y>611</Y>
+                              <Y>606</Y>
                             </item>
                           </items>
                         </chunk>
@@ -6276,11 +6280,11 @@ False</item>
                               <X>1081</X>
                               <Y>631</Y>
                               <W>36</W>
-                              <H>40</H>
+                              <H>50</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1100.5</X>
-                              <Y>651</Y>
+                              <Y>656</Y>
                             </item>
                           </items>
                         </chunk>
@@ -6321,13 +6325,13 @@ False</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1147</X>
-                              <Y>591</Y>
+                              <Y>581</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1167</X>
-                              <Y>601</Y>
+                              <Y>591</Y>
                             </item>
                           </items>
                         </chunk>
@@ -6348,13 +6352,13 @@ False</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1147</X>
-                              <Y>611</Y>
+                              <Y>601</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1167</X>
-                              <Y>621</Y>
+                              <Y>611</Y>
                             </item>
                           </items>
                         </chunk>
@@ -6374,13 +6378,13 @@ False</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1147</X>
-                              <Y>631</Y>
+                              <Y>621</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1167</X>
-                              <Y>641</Y>
+                              <Y>631</Y>
                             </item>
                           </items>
                         </chunk>
@@ -6400,13 +6404,39 @@ False</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1147</X>
-                              <Y>651</Y>
+                              <Y>641</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1167</X>
+                              <Y>651</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="4">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">One square face per grid point, in the order of Points and lying in its surface: a mesh that takes one value per FACE, at the grid's own resolution. Wire it into Flex Legend's Analysis Mesh (or any viewer that colours faces) with the values computed at Points. Mesh is the sampled geometry and does not count the same. Past 500,000 points it is built only while this output is wired.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">18f49a2a-ecdf-4e6e-bf41-05a0f8f0eeb1</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Cells</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Cells</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1147</X>
                               <Y>661</Y>
+                              <W>40</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1167</X>
+                              <Y>671</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15447,7 +15477,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">d866d37a-d51a-4f0f-ad59-94721836d931</item>
                     <item name="Name" type_name="gh_string" type_code="10">ABL Flow</item>
                     <item name="NickName" type_name="gh_string" type_code="10">ABL</item>
@@ -16105,7 +16139,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">ef3ac765-924c-4e01-9ba9-2de46ecf14cb</item>
                     <item name="MLModelInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                     <item name="Name" type_name="gh_string" type_code="10">ML Model</item>
@@ -16376,7 +16414,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e784d725-fd79-400f-8d83-30d5df3f243d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Wind Predictor</item>
@@ -16484,7 +16526,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Uref, zRef, z0, wind directions, and EPW path are extracted automatically.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Wind directions, each direction's reference speed (Uref), zRef and z0 are extracted automatically; each direction's Values branch is scaled by that direction's own Uref.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">57ddcd5f-d389-45fe-8e88-38cd019f0791</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -17137,7 +17179,7 @@ GPU</item>
                     <chunk name="param_output" index="1">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">2</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Predicted field values at each valid input point. Outputs wind speed (m/s) or turbulent kinetic energy (m²/s²) depending on the Field input. Branches represent different wind directions.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Predicted field values at each valid input point. Outputs wind speed (m/s) or turbulent kinetic energy (m²/s²) depending on the Field input. Branches represent different wind directions; each branch's speeds are at that direction's own reference speed from the Boundary Conditions.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">8c066eb1-e41b-4f09-99a9-e30673d7d388</item>
                         <item name="Name" type_name="gh_string" type_code="10">Values</item>
                         <item name="NickName" type_name="gh_string" type_code="10">V</item>
@@ -17269,7 +17311,7 @@ GPU</item>
                     </chunk>
                     <chunk name="param_output" index="6">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Uref, zRef, z0, wind directions, and EPW path are extracted automatically.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Wind directions, each direction's reference speed (Uref), zRef and z0 are extracted automatically; each direction's Values branch is scaled by that direction's own Uref.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">adb878c7-d3b1-4389-a953-3419d59c350c</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -17589,7 +17631,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">1ff64e50-f1de-409d-9ce2-422e102c6bef</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -17611,7 +17657,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="10">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">e5dcd7f8-b036-4688-bffd-69eb358af82e</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
@@ -17811,7 +17857,7 @@ NSRDB (GOES aggregated, PSM v4)</item>
                     </chunk>
                     <chunk name="param_output" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c315a4f8-3e45-4070-97f6-e6a355172b73</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>

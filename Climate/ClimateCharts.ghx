@@ -90,32 +90,32 @@
             </chunk>
             <chunk name="Library" index="2">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="3">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">OutdoorPlus, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Gonzalo Vegas, Marcelo Alvarez, Sina Rahimi, Ilker Karadag, Patrick Kastner</item>
                 <item name="Id" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="4">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">a3f7d2c4-9b18-4e56-8a2f-1d6c0b9e4f30</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-Radiance</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
           </chunks>
@@ -148,7 +148,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a27e707-8186-4e8b-bb03-e58da81dfc3d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -170,7 +174,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="10">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">fbba5cec-80cf-4d94-bb6c-911a1bda82a9</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
@@ -370,7 +374,7 @@ NSRDB (GOES aggregated, PSM v4)</item>
                     </chunk>
                     <chunk name="param_output" index="3">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Which climate file to use. Click the widget and choose Weather file (catalog)… to pick from the catalog with a map and a spec sheet; the value stored is the file's own name (e.g. DEU_BE_Berlin-Tempelhof.AP.103840_TMYx.2009-2023). A station name, WMO id, country or dataset year still works as a search — the best match nearest the site wins — and a direct EPW or ZIP URL is downloaded as-is. A full address or place (e.g. the Site Picker's Address) that no file is named after is located on the map and the nearest file taken. Choose Open-Meteo (ERA5) — or type Open-Meteo 2019 — to build a file for the SITE (wire Latitude/Longitude, or set the Earth Anchor Point) from ERA5 reanalysis: one actual year, last year unless one is given, on the 0.25° cell. The same menu builds PVGIS (a typical year), NASA POWER (an actual year, from 2001) and ERA5 via Copernicus CDS (an actual year with measured radiation; it needs your own free CDS token, in the ECMWF_DATASTORES_KEY environment variable or ~/.cdsapirc, and the dataset licence accepted on the CDS website) and NSRDB (GOES TMY, a typical year, or GOES aggregated, an actual year from 1998, both PSM v4 on a 4 km cell over the western hemisphere; a release of Eddy3D ships a shared NLR API key for it, which your own (a free key from developer.nlr.gov, with your name and email) replaces: NSRDB_API_KEY, NSRDB_FULL_NAME and NSRDB_EMAIL, or ~/.nsrdbrc). Credits: weather data by Open-Meteo.com (CC BY 4.0); PVGIS, European Commission Joint Research Centre; NASA Langley POWER Project; Copernicus Climate Change Service (ERA5); National Solar Radiation Database (NLR). Terms: THIRD-PARTY-NOTICES.md.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">134dfb84-3a2d-49e3-afcf-584f999ce6d1</item>
                         <item name="Name" type_name="gh_string" type_code="10">Station</item>
                         <item name="NickName" type_name="gh_string" type_code="10">S</item>
@@ -537,20 +541,27 @@ NSRDB (GOES aggregated, PSM v4)</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="11">
                     <item name="Description" type_name="gh_string" type_code="10">Daily sun arcs, analemmas and sun positions as curves and points — north-aware, drawn from the same solar geometry the sun studies use.</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">6a05aed6-c3c0-4e14-9104-5e923eae9212</item>
                     <item name="Name" type_name="gh_string" type_code="10">Sun Path</item>
                     <item name="NickName" type_name="gh_string" type_code="10">SunPath</item>
+                    <item name="SunPathAccumulateShadows" type_name="gh_bool" type_code="1">false</item>
+                    <item name="SunPathCastShadows" type_name="gh_bool" type_code="1">false</item>
+                    <item name="SunPathShowAnalemmas" type_name="gh_bool" type_code="1">true</item>
+                    <item name="SunPathShowCompass" type_name="gh_bool" type_code="1">true</item>
+                    <item name="SunPathShowDates" type_name="gh_bool" type_code="1">true</item>
+                    <item name="SunPathShowHours" type_name="gh_bool" type_code="1">true</item>
+                    <item name="SunPathShowRings" type_name="gh_bool" type_code="1">true</item>
                   </items>
-                  <chunks count="15">
+                  <chunks count="16">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1019</X>
-                          <Y>285</Y>
+                          <Y>275</Y>
                           <W>82</W>
-                          <H>184</H>
+                          <H>204</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1061</X>
@@ -573,13 +584,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>287</Y>
+                              <Y>277</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>297</Y>
+                              <Y>287</Y>
                             </item>
                           </items>
                         </chunk>
@@ -599,13 +610,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>307</Y>
+                              <Y>297</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>317</Y>
+                              <Y>307</Y>
                             </item>
                           </items>
                         </chunk>
@@ -645,13 +656,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>327</Y>
+                              <Y>317</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>337</Y>
+                              <Y>327</Y>
                             </item>
                           </items>
                         </chunk>
@@ -691,13 +702,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>347</Y>
+                              <Y>337</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>357</Y>
+                              <Y>347</Y>
                             </item>
                           </items>
                         </chunk>
@@ -737,13 +748,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>367</Y>
+                              <Y>357</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>377</Y>
+                              <Y>367</Y>
                             </item>
                           </items>
                         </chunk>
@@ -789,13 +800,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>387</Y>
+                              <Y>377</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>397</Y>
+                              <Y>387</Y>
                             </item>
                           </items>
                         </chunk>
@@ -835,13 +846,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>407</Y>
+                              <Y>397</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>417</Y>
+                              <Y>407</Y>
                             </item>
                           </items>
                         </chunk>
@@ -882,13 +893,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>427</Y>
+                              <Y>417</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
-                              <Y>437</Y>
+                              <Y>427</Y>
                             </item>
                           </items>
                         </chunk>
@@ -909,13 +920,40 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1021</X>
-                              <Y>447</Y>
+                              <Y>437</Y>
                               <W>25</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1035</X>
+                              <Y>447</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="9">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">2</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional model that casts the shadows (breps, extrusions, surfaces, meshes; branches are flattened). Empty uses the visible objects of the Rhino document.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">76b72946-8fa7-485e-8a4e-09b3fb5c6f89</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Geometry</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">G</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1021</X>
                               <Y>457</Y>
+                              <W>25</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1035</X>
+                              <Y>467</Y>
                             </item>
                           </items>
                         </chunk>
@@ -936,13 +974,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1076</X>
-                              <Y>287</Y>
+                              <Y>277</Y>
                               <W>23</W>
-                              <H>36</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1087.5</X>
-                              <Y>305</Y>
+                              <Y>297</Y>
                             </item>
                           </items>
                         </chunk>
@@ -963,13 +1001,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1076</X>
-                              <Y>323</Y>
+                              <Y>317</Y>
                               <W>23</W>
-                              <H>36</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1087.5</X>
-                              <Y>341</Y>
+                              <Y>337</Y>
                             </item>
                           </items>
                         </chunk>
@@ -990,9 +1028,9 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1076</X>
-                              <Y>359</Y>
+                              <Y>357</Y>
                               <W>23</W>
-                              <H>36</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1087.5</X>
@@ -1016,13 +1054,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1076</X>
-                              <Y>395</Y>
+                              <Y>397</Y>
                               <W>23</W>
-                              <H>36</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1087.5</X>
-                              <Y>413</Y>
+                              <Y>417</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1042,13 +1080,13 @@ NSRDB (GOES aggregated, PSM v4)</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1076</X>
-                              <Y>431</Y>
+                              <Y>437</Y>
                               <W>23</W>
-                              <H>36</H>
+                              <H>40</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1087.5</X>
-                              <Y>449</Y>
+                              <Y>457</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1086,7 +1124,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">9e2e9f7f-93c3-48d5-9978-bc20161e11f5</item>
                     <item name="Name" type_name="gh_string" type_code="10">Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>

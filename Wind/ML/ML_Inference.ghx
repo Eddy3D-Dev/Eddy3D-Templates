@@ -114,12 +114,12 @@
             </chunk>
             <chunk name="Library" index="5">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.22.1.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.22.1.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.22.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.22.1.827</item>
               </items>
             </chunk>
           </chunks>
@@ -437,14 +437,14 @@
                     <item name="Name" type_name="gh_string" type_code="10">Brep Grid Points</item>
                     <item name="NickName" type_name="gh_string" type_code="10">BrepGrid</item>
                   </items>
-                  <chunks count="7">
+                  <chunks count="8">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1060</X>
-                          <Y>595</Y>
+                          <Y>585</Y>
                           <W>110</W>
-                          <H>84</H>
+                          <H>104</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>1113</X>
@@ -468,13 +468,13 @@
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1062</X>
-                              <Y>597</Y>
+                              <Y>587</Y>
                               <W>36</W>
-                              <H>40</H>
+                              <H>50</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1081.5</X>
-                              <Y>617</Y>
+                              <Y>612</Y>
                             </item>
                           </items>
                         </chunk>
@@ -497,11 +497,11 @@
                               <X>1062</X>
                               <Y>637</Y>
                               <W>36</W>
-                              <H>40</H>
+                              <H>50</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1081.5</X>
-                              <Y>657</Y>
+                              <Y>662</Y>
                             </item>
                           </items>
                         </chunk>
@@ -542,13 +542,13 @@
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1128</X>
-                              <Y>597</Y>
+                              <Y>587</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1148</X>
-                              <Y>607</Y>
+                              <Y>597</Y>
                             </item>
                           </items>
                         </chunk>
@@ -569,13 +569,13 @@
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1128</X>
-                              <Y>617</Y>
+                              <Y>607</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1148</X>
-                              <Y>627</Y>
+                              <Y>617</Y>
                             </item>
                           </items>
                         </chunk>
@@ -595,13 +595,13 @@
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1128</X>
-                              <Y>637</Y>
+                              <Y>627</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1148</X>
-                              <Y>647</Y>
+                              <Y>637</Y>
                             </item>
                           </items>
                         </chunk>
@@ -621,13 +621,39 @@
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1128</X>
-                              <Y>657</Y>
+                              <Y>647</Y>
                               <W>40</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1148</X>
+                              <Y>657</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="4">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">One square face per grid point, in the order of Points and lying in its surface: a mesh that takes one value per FACE, at the grid's own resolution. Wire it into Flex Legend's Analysis Mesh (or any viewer that colours faces) with the values computed at Points. Mesh is the sampled geometry and does not count the same. Past 500,000 points it is built only while this output is wired.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c33114c4-e6d9-498c-92ef-f4c273f4ed59</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Cells</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Cells</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>1128</X>
                               <Y>667</Y>
+                              <W>40</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>1148</X>
+                              <Y>677</Y>
                             </item>
                           </items>
                         </chunk>
@@ -13692,7 +13718,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">389b6eab-837c-41aa-b2de-7eae32ed0399</item>
                     <item name="Name" type_name="gh_string" type_code="10">Atmospheric Boundary Layer</item>
                     <item name="NickName" type_name="gh_string" type_code="10">ABL</item>
@@ -14301,7 +14331,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7599fd2b-a9fd-4c3a-a7eb-409ff7f47a76</item>
                     <item name="MLModelInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
                     <item name="Name" type_name="gh_string" type_code="10">ML Model</item>
@@ -14611,7 +14645,11 @@ Version 1.22.0.827
 
 Version 1.22.0.827
 
-Version 1.22.0.827</item>
+Version 1.22.0.827
+
+Version 1.22.1.827
+
+Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">80522166-9822-46e3-b2a0-5178f77adb97</item>
                     <item name="Name" type_name="gh_string" type_code="10">Wind Predictor</item>
@@ -14719,7 +14757,7 @@ Version 1.22.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="3">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Uref, zRef, z0, wind directions, and EPW path are extracted automatically.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Wind directions, each direction's reference speed (Uref), zRef and z0 are extracted automatically; each direction's Values branch is scaled by that direction's own Uref.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7599cf58-10ff-4ce8-8db5-35879a96e153</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
@@ -15373,7 +15411,7 @@ GPU</item>
                     <chunk name="param_output" index="1">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">2</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Predicted field values at each valid input point. Outputs wind speed (m/s) or turbulent kinetic energy (m²/s²) depending on the Field input. Branches represent different wind directions.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Predicted field values at each valid input point. Outputs wind speed (m/s) or turbulent kinetic energy (m²/s²) depending on the Field input. Branches represent different wind directions; each branch's speeds are at that direction's own reference speed from the Boundary Conditions.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">8ee18527-3635-4d9a-b241-9ffe9be84a64</item>
                         <item name="Name" type_name="gh_string" type_code="10">Values</item>
                         <item name="NickName" type_name="gh_string" type_code="10">V</item>
@@ -15505,7 +15543,7 @@ GPU</item>
                     </chunk>
                     <chunk name="param_output" index="6">
                       <items count="6">
-                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Uref, zRef, z0, wind directions, and EPW path are extracted automatically.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Boundary conditions from the ABL or Uniform Flow component. Wind directions, each direction's reference speed (Uref), zRef and z0 are extracted automatically; each direction's Values branch is scaled by that direction's own Uref.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">84337f8d-63ce-4d74-8308-e3657be0b73e</item>
                         <item name="Name" type_name="gh_string" type_code="10">Boundary Conditions</item>
                         <item name="NickName" type_name="gh_string" type_code="10">BC</item>
