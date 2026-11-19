@@ -175,6 +175,14 @@
     "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds.",
     "Edit": "The Box 2Pt context, the ground plane, the weather station (Ithaca by default)."
   },
+  "Solar_Radiation.ghx": {
+    "Purpose": "Annual solar irradiation in kWh/m2 over a ground surface and its surrounding facades.",
+    "Fidelity": "Screening - interactive beam, sky and ground-reflected estimate, not a Radiance simulation.",
+    "Method": "Brep Grid Points samples surfaces at 1 m; Sky Exposure gives sky view; Solar Irradiation sums every daylight hour of an Istanbul year.",
+    "Result": "Ground and context coloured on one legend range; Text Tag prints rounded ground values.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
+    "Edit": "Ground Brep, the ten context Breps, weather station."
+  },
   "Stormwater.ghx": {
     "Purpose": "Where water can pond on a graded site, and which way it runs.",
     "Fidelity": "Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.",
