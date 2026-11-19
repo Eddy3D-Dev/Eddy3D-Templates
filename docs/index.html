@@ -16,7 +16,7 @@
   --shadow:0 1px 2px rgba(16,24,40,.05);
   --shadow-lg:0 4px 12px rgba(16,24,40,.08);
   --c-wind:#0f7fbf; --c-sun:#d9930d; --c-microclimate:#e8734a; --c-building:#c0396b; --c-air:#2a9d6f;
-  --c-noise:#7c5cd6; --c-water:#2a62d6; --c-climate:#5f7d2e; --c-site:#6b7480;
+  --c-noise:#7c5cd6; --c-water:#2a62d6; --c-climate:#5f7d2e; --c-site:#6b7480; --c-share:#8a6a2e;
   --radius:12px;
 }
 html[data-theme="dark"]{
@@ -86,9 +86,6 @@ a.brand:hover{opacity:.85}
 .collapse-btn{display:none}
 h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
 .hero p.sub{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.92}
-.hero-stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
-.stat b{font-size:24px;font-weight:800;display:block;line-height:1.1}
-.stat span{font-size:12px;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.6px}
 
 /* toolbar */
 .toolbar{
@@ -139,7 +136,7 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .chip{
   font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
   padding:8px 14px;border-radius:999px;border:1px solid var(--border);
-  background:var(--surface2);color:var(--muted);transition:all .15s;
+  background:var(--surface2);color:var(--muted);transition:background-color .15s,border-color .15s,color .15s;
   display:inline-flex;align-items:center;gap:7px;
 }
 .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--dot,var(--muted))}
@@ -161,10 +158,9 @@ main.wrap{padding-top:88px;padding-bottom:24px}
 .card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
   box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px;
-  transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;
+  position:relative;overflow:hidden;
 }
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--card-color,var(--accent))}
-.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .card-head{display:flex;align-items:flex-start;gap:12px}
 .card-head>div:last-child{min-width:0}
 .card h3{font-size:16.5px;font-weight:700;letter-spacing:-.2px;word-break:break-word}
@@ -181,8 +177,14 @@ main.wrap{padding-top:88px;padding-bottom:24px}
 .card .badge.screening{background:rgba(217,119,6,.16);color:#b45309}
 .card .badge.experimental{background:rgba(147,51,234,.14);color:#7e22ce}
 .card dl.fields{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13px;color:var(--muted);flex:1;margin:0}
-.card dl.fields dt{font-weight:700;font-size:11px;letter-spacing:.3px;text-transform:uppercase;padding-top:2px}
+.card dl.fields dt{font-weight:650;color:var(--text)}
 .card dl.fields dd{margin:0}
+/* The final simulation output, captured in Rhino: the reason to pick one template over another. */
+.card .shot{display:block;width:calc(100% + 36px);margin:-18px -18px 4px;height:auto;aspect-ratio:16/9;
+  object-fit:cover;background:var(--surface2);border-bottom:1px solid var(--border)}
+.card details{font-size:13px;color:var(--muted)}
+.card details summary{cursor:pointer;font-weight:650;color:var(--text);padding:4px 0;width:fit-content}
+.card details dl.fields{margin-top:4px}
 html[data-theme="dark"] .card .badge.validated{color:#4ade80}
 html[data-theme="dark"] .card .badge.engineering{color:#93c5fd}
 html[data-theme="dark"] .card .badge.screening{color:#fbbf24}
@@ -215,7 +217,7 @@ html[data-theme="dark"] .card .badge.experimental{color:#d8b4fe}
   15%,60%{box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
 }
 .card.flash{animation:flash 2s ease-in-out}
-.card{transition:transform .15s,box-shadow .15s,opacity .3s}
+.card{transition:opacity .3s}
 .card.dimmed{opacity:.38}
 .card.dimmed:hover{opacity:.75}
 @media (prefers-reduced-motion:reduce){
@@ -257,12 +259,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .wrap{padding:0 16px}
   header.hero{padding:40px 0 56px}
   .hero-top{margin-bottom:24px}
-  .hero-stats{gap:16px;margin-top:24px}
   .toolbar-inner{padding:12px;gap:8px}
   main.wrap{padding-top:68px;padding-bottom:16px}
   .section{margin-bottom:40px}
   .state{padding:40px 0}
   .card{padding:16px;gap:8px}
+  .card .shot{width:calc(100% + 32px);margin:-16px -16px 4px}
   .info{padding:20px;gap:16px;margin-bottom:40px}
   footer{padding:24px 0 32px}
 
@@ -277,8 +279,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .brand .logo{width:30px;height:30px;flex:0 0 auto}
   h1{font-size:26px}
   .hero p.sub{font-size:14px}
-  .stat b{font-size:20px}
-  .stat span{font-size:11px}
   .search input{font-size:14px}
   .branch select{font-size:13px}
   .chip{font-size:12.5px;padding:7px 12px}
@@ -337,7 +337,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="hero-body-inner">
         <h1>Grasshopper Templates</h1>
         <p class="sub">Ready-to-run <strong>.ghx</strong> workflows for Eddy3D — outdoor microclimate analysis, OpenFOAM &amp; LBM airflow simulation, and machine-learning surrogate models.</p>
-        <div class="hero-stats" id="stats"></div>
       </div>
     </div>
   </div>
@@ -403,7 +402,9 @@ const CATS={
   "Climate":{label:"Climate",color:"var(--c-climate)",
     desc:"Weather data views, future-climate morphing and regional weather simulation."},
   "Site":{label:"Site",color:"var(--c-site)",
-    desc:"Site context and visibility."}
+    desc:"Site context and visibility."},
+  "Sharing":{label:"Sharing",color:"var(--c-share)",
+    desc:"Packaging a result to hand to someone else."}
 };
 
 const $=s=>document.querySelector(s);
@@ -483,7 +484,7 @@ let ALL=[],activeCat="all",branch=null,spotlightId=null,repoUpdated="";
 /* Description text comes from a Panel inside the .ghx, so it is data, not
    markup: escape it, and keep paragraph breaks (blank lines) as paragraphs. */
 const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const ROWS=["Method","Result","Needs","Edit"];
+const ROWS=["Result","Needs"],MORE=["Method","Edit"];
 const FIDELITY=["Validated","Engineering","Screening","Experimental"];
 function fidelityHtml(f){
   const m=/^(\w+)[\s.,:;-]*(.*)$/.exec(f.trim());
@@ -497,7 +498,11 @@ function descHtml(d){
   if(typeof d==="string")return d.split(/\n\s*\n/).map(p=>`<p>${esc(p.trim()).replace(/\n/g,"<br>")}</p>`).join("");
   return (d.Purpose?`<p class="purpose">${esc(d.Purpose)}</p>`:"")
     +(d.Fidelity?fidelityHtml(d.Fidelity):"")
-    +`<dl class="fields">${ROWS.filter(k=>d[k]).map(k=>`<dt>${k}</dt><dd>${esc(d[k])}</dd>`).join("")}</dl>`;
+    +fieldsHtml(d,ROWS)
+    +(MORE.some(k=>d[k])?`<details><summary>Method and what to edit</summary>${fieldsHtml(d,MORE)}</details>`:"");
+}
+function fieldsHtml(d,keys){
+  return `<dl class="fields">${keys.filter(k=>d[k]).map(k=>`<dt>${k}</dt><dd>${esc(d[k])}</dd>`).join("")}</dl>`;
 }
 const descText=d=>!d?"":typeof d==="string"?d:Object.values(d).join(" ");
 
@@ -553,19 +558,17 @@ async function loadTree(){
   const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`)
     .then(r=>{if(!r.ok)throw 0;return r.json()});
   /* Internal templates are for development only — never show them in the gallery. */
+  const raw=p=>`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${p.split("/").map(encodeURIComponent).join("/")}`;
+  const shots={};
+  tree.tree.forEach(n=>{const m=/^docs\/previews\/([^/]+)\.(webp|png|jpe?g)$/i.exec(n.path);if(m)shots[m[1]]=raw(n.path)});
   ALL=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)&&!/^Internal\//.test(n.path)).map(n=>{
     const cat=catOf(n.path)||"Other";
     const name=n.path.split("/").pop();
     return {path:n.path,name,size:n.size||0,cat,
       desc:ghxDesc[name]||"",descText:descText(ghxDesc[name]).toLowerCase(),
-      url:`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${n.path.split("/").map(encodeURIComponent).join("/")}`};
+      shot:shots[name.replace(/\.ghx?$/i,"")]||"",url:raw(n.path)};
   });
-  $("#meta").innerHTML=`Data from GitHub · branch ${esc(branch)}${repoUpdated?` · updated ${repoUpdated}`:""} · <a href="https://github.com/${OWNER}/${REPO}/tree/${encodeURIComponent(branch)}" target="_blank" rel="noopener">Source on GitHub</a>`;
-  $("#stats").innerHTML=`
-    <div class="stat"><b>${ALL.length}</b><span>Templates</span></div>
-    <div class="stat"><b>${new Set(ALL.map(t=>t.cat)).size}</b><span>Categories</span></div>
-    <div class="stat"><b>${esc(branch)}</b><span>Version</span></div>`
-    +(repoUpdated?`<div class="stat"><b>${repoUpdated}</b><span>Repo updated</span></div>`:"");
+  $("#meta").innerHTML=`Data from GitHub · branch ${esc(branch)}${repoUpdated?` · last push to the repository ${repoUpdated}`:""} · <a href="https://github.com/${OWNER}/${REPO}/tree/${encodeURIComponent(branch)}" target="_blank" rel="noopener">Source on GitHub</a>`;
   buildChips();render();
   $("#loading").classList.add("hidden");
   focusFromHash();
@@ -578,7 +581,6 @@ async function load(){
 
 $("#branch").addEventListener("change",async e=>{
   branch=e.target.value;
-  activeCat="all";
   spotlightId=null;
   const url=new URL(location);url.searchParams.set("branch",branch);
   history.replaceState(null,"",url);
@@ -588,16 +590,31 @@ $("#branch").addEventListener("change",async e=>{
 
 function buildChips(){
   const counts={};ALL.forEach(t=>counts[t.cat]=(counts[t.cat]||0)+1);
-  const chips=[`<button class="chip active" data-cat="all">All <span class="count">${ALL.length}</span></button>`];
+  if(activeCat!=="all"&&!counts[activeCat])activeCat="all";
+  const chips=[`<button class="chip" data-cat="all">All <span class="count">${ALL.length}</span></button>`];
   for(const k in CATS){
     if(!counts[k])continue;
     chips.push(`<button class="chip" data-cat="${k}" style="--dot:${CATS[k].color}"><span class="dot"></span>${CATS[k].label} <span class="count">${counts[k]}</span></button>`);
   }
   $("#chips").innerHTML=chips.join("");
+  markChips();
   $("#chips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
-    $("#chips").querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
-    c.classList.add("active");activeCat=c.dataset.cat;spotlightId=null;render();
+    activeCat=c.dataset.cat;spotlightId=null;markChips();syncUrl();render();
   });
+}
+function markChips(){
+  $("#chips").querySelectorAll(".chip").forEach(c=>{
+    const on=c.dataset.cat===activeCat;
+    c.classList.toggle("active",on);c.setAttribute("aria-pressed",String(on));
+  });
+}
+/* Category and search live in the URL, so a filtered view can be shared or reloaded. */
+function syncUrl(){
+  const url=new URL(location);
+  activeCat==="all"?url.searchParams.delete("cat"):url.searchParams.set("cat",activeCat);
+  const q=$("#q").value.trim();
+  q?url.searchParams.set("q",q):url.searchParams.delete("q");
+  history.replaceState(null,"",url);
 }
 
 function render(){
@@ -613,6 +630,7 @@ function render(){
       ${m.desc?`<p class="desc">${m.desc}</p>`:""}
       <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
         <article class="card${spotlightId&&spotlightId!==anchorOf(t.path)?" dimmed":""}" id="${anchorOf(t.path)}" style="--card-color:${m.color}">
+          ${t.shot?`<img class="shot" src="${t.shot}" alt="${esc(t.desc&&t.desc.Result?t.desc.Result:"Final output of "+titleOf(t.name))}" width="1600" height="900" loading="lazy" decoding="async">`:""}
           <div class="card-head">
             <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
           </div>
@@ -689,8 +707,7 @@ function focusTemplate(id){
   if(!target)return;
   spotlightId=id;
   if(activeCat!=="all"&&activeCat!==target.cat){
-    activeCat="all";
-    $("#chips").querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.cat==="all"));
+    activeCat="all";markChips();
   }
   render();
   const el=document.getElementById(id);
@@ -716,7 +733,8 @@ $("#sections").addEventListener("click",e=>{
   if(card&&spotlightId&&card.id!==spotlightId)clearSpotlight();
 });
 
-$("#q").addEventListener("input",()=>{spotlightId=null;render()});
+$("#q").addEventListener("input",()=>{spotlightId=null;syncUrl();render()});
+{const u=new URLSearchParams(location.search);activeCat=u.get("cat")||"all";$("#q").value=u.get("q")||""}
 load().catch(()=>{$("#loading").classList.add("hidden");$("#error").classList.remove("hidden")});
 </script>
 </body>

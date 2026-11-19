@@ -35,6 +35,7 @@ The gallery's categories (`CATS` in `docs/index.html`) are keyed by the top-leve
 
 - `docs/index.html` is a static gallery site served at https://templates.eddy3d.com via GitHub Pages (source: a version branch, `/docs` folder).
 - The site lists all `.ghx` files live via the GitHub API - no rebuild needed when templates are added. Templates under `Internal/` are never shown.
+- **Result images:** a card shows `docs/previews/<Stem>.webp` (or `.png`/`.jpg`) when that file exists on the branch, e.g. `docs/previews/BoxDomain.webp` for `Wind/OpenFOAM/BoxDomain.ghx`. It is the template's final simulation output as seen in Rhino, 16:9 (1600x900), cropped to the result. No file, no image - never a placeholder.
 - **The site always opens on the highest version branch** (e.g. `1.17.0.827`), beta or stable. GitHub's own default branch is *not* used - it only advances on a stable release. A `?branch=` link (a shared template, the Select Template component) overrides it; nothing is remembered between visits.
 - **Keeping that true:** a Pages source is a single fixed branch, so something has to move it. Eddy3D's `template-branch-sync.yml` (in the main Eddy3D repo, run on every beta and stable push) creates the new version branch, lets it deploy to the `github-pages` environment, and points the Pages source at the newest version branch. Nothing to do by hand per release.
 
