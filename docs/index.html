@@ -12,18 +12,23 @@
   color-scheme:light;
   --bg:#f6f8fa; --surface:#ffffff; --surface2:#f4f4f5;
   --text:#18181b; --muted:#52525b; --border:#e5e7eb;
-  --accent:#0f7fbf; --accent-soft:#e3f2fb;
+  --accent:#0f7fbf;
+  /* Fill behind text: --accent-fill carries --on-accent at 4.5:1 or better. */
+  --accent-fill:#0f7bb9; --on-accent:#fff;
   --shadow:0 1px 2px rgba(16,24,40,.05);
   --shadow-lg:0 4px 12px rgba(16,24,40,.08);
   --c-wind:#0f7fbf; --c-sun:#d9930d; --c-microclimate:#e8734a; --c-building:#c0396b; --c-air:#2a9d6f;
   --c-noise:#7c5cd6; --c-water:#2a62d6; --c-climate:#5f7d2e; --c-site:#6b7480; --c-share:#8a6a2e;
+  /* Darker twins of the four category colors too light for white text (the Download button).
+     Stripe, dot and bar keep the lighter hue. */
+  --ink-wind:#0f7bb9; --ink-sun:#9e6b09; --ink-microclimate:#b65a3a; --ink-air:#23845d;
   --radius:12px;
 }
 html[data-theme="dark"]{
   color-scheme:dark;
   --bg:#0d1117; --surface:#161b22; --surface2:#21262d;
   --text:#e4e4e7; --muted:#a1a1aa; --border:#30363d;
-  --accent:#4db3e6; --accent-soft:#12303f;
+  --accent:#4db3e6; --accent-fill:#4db3e6; --on-accent:#0d1117;
   --shadow:0 1px 2px rgba(0,0,0,.3);
   --shadow-lg:0 4px 12px rgba(0,0,0,.4);
 }
@@ -116,9 +121,10 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .search input{
   width:100%;padding:11px 14px 11px 40px;font-size:15px;font-family:inherit;
   border:1px solid var(--border);border-radius:10px;background:var(--surface2);color:var(--text);
-  outline:none;transition:border-color .15s,box-shadow .15s;
+  transition:border-color .15s;
 }
-.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search input:focus{border-color:var(--accent)}
+.search input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.5}
 .branch{
   display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
@@ -128,10 +134,12 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .branch span{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
 .branch select{
   font-family:inherit;font-size:14px;font-weight:600;color:var(--text);
-  background:transparent;border:0;outline:none;cursor:pointer;padding:4px 2px;
+  background:transparent;border:0;cursor:pointer;padding:4px 2px;
 }
 .branch select option{background:var(--surface);color:var(--text)}
-.branch:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+/* The ring sits on the whole pill, so the select's own outline would double it. */
+.branch select:focus{outline:none}
+.branch:focus-within{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{
   font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
@@ -141,9 +149,9 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 }
 .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--dot,var(--muted))}
 .chip:hover{border-color:var(--accent);color:var(--text)}
-.chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.chip.active .dot{background:#fff}
-.chip .count{opacity:.65;font-weight:500}
+.chip.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
+.chip.active .dot{background:var(--on-accent)}
+.chip .count{font-weight:500}
 
 /* sections */
 main.wrap{padding-top:88px;padding-bottom:24px}
@@ -194,9 +202,9 @@ html[data-theme="dark"] .card .badge.experimental{color:#d8b4fe}
 .dl{
   display:inline-flex;align-items:center;gap:7px;text-decoration:none;
   font-size:13.5px;font-weight:650;padding:8px 14px;border-radius:9px;
-  background:var(--card-color,var(--accent));color:#fff;transition:filter .15s;
+  background:var(--card-ink,var(--accent-fill));color:#fff;transition:filter .15s;
 }
-.dl:hover{filter:brightness(1.12)}
+.dl:hover{filter:brightness(.9)}
 .actions{display:inline-flex;align-items:center;gap:8px}
 .share{
   display:inline-grid;place-items:center;width:34px;height:34px;flex:0 0 auto;
@@ -247,7 +255,7 @@ html[data-theme="dark"] .card .badge.experimental{color:#d8b4fe}
 .info h3{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .info p{font-size:14px;color:var(--muted)}
 .info .num{
-  width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;
+  width:24px;height:24px;border-radius:50%;background:var(--accent-fill);color:var(--on-accent);
   display:inline-grid;place-items:center;font-size:13px;font-weight:700;flex:0 0 auto;
 }
 
@@ -385,15 +393,15 @@ const OWNER="Eddy3D-Dev", REPO="Eddy3D-Templates";
 
 /* Category metadata — keyed by top-level path segment(s) */
 const CATS={
-  "Wind":{label:"Wind",color:"var(--c-wind)",
+  "Wind":{label:"Wind",color:"var(--c-wind)",ink:"var(--ink-wind)",
     desc:"Airflow around buildings: steady RANS in OpenFOAM, live GPU lattice-Boltzmann, or instant machine-learning surrogates."},
-  "Sun":{label:"Sun & Radiation",color:"var(--c-sun)",
+  "Sun":{label:"Sun & Radiation",color:"var(--c-sun)",ink:"var(--ink-sun)",
     desc:"Sun path, sun hours, overshadowing and annual solar irradiation on surfaces."},
-  "Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",
+  "Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",ink:"var(--ink-microclimate)",
     desc:"Coupled outdoor simulations ending in pedestrian comfort (UTCI, PET), plus mean radiant temperature and surface temperatures."},
   "Building":{label:"Building",color:"var(--c-building)",
     desc:"Heat inside and through buildings: indoor comfort and stratification, and conduction through the envelope."},
-  "AirQuality":{label:"Air Quality",color:"var(--c-air)",
+  "AirQuality":{label:"Air Quality",color:"var(--c-air)",ink:"var(--ink-air)",
     desc:"Ventilation, CO2 and pollutant dispersion, indoors and outdoors."},
   "Noise":{label:"Noise",color:"var(--c-noise)",
     desc:"Acoustic maps on the ground and on facades."},
@@ -624,8 +632,8 @@ function render(){
   const byCat={};vis.forEach(t=>(byCat[t.cat]=byCat[t.cat]||[]).push(t));
   const order=Object.keys(CATS).filter(k=>byCat[k]).concat(Object.keys(byCat).filter(k=>!CATS[k]));
   $("#sections").innerHTML=order.map(k=>{
-    const m=CATS[k]||{label:k,color:"var(--accent)",desc:""};
-    return `<section class="section" style="--sec-color:${m.color}">
+    const m=CATS[k]||{label:k,color:"var(--accent)",ink:"var(--accent-fill)",desc:""};
+    return `<section class="section" style="--sec-color:${m.color};--card-ink:${m.ink||m.color}">
       <div class="section-head"><span class="bar"></span><h2>${m.label}</h2></div>
       ${m.desc?`<p class="desc">${m.desc}</p>`:""}
       <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
