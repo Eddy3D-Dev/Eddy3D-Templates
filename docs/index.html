@@ -472,7 +472,7 @@ let ALL=[],activeCat="all",branch=null,spotlightId=null,updated="";
 /* Description text comes from a Panel inside the .ghx, so it is data, not
    markup: escape it, and keep paragraph breaks (blank lines) as paragraphs. */
 const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const ROWS=["Result","Runtime"],MORE=["Method"];
+const ROWS=["Result","Runtime","Method"];
 /* A card states how long a run takes; the setup the run needs is the Setup window's job, not the card's. */
 const runtimeOf=d=>{const m=/Runtime:\s*(.+?)\.?\s*$/.exec(d.Needs||"");return m?m[1].charAt(0).toUpperCase()+m[1].slice(1)+".":""};
 const FIDELITY=["Validated","Engineering","Screening","Experimental"];
@@ -488,8 +488,7 @@ function descHtml(d){
   if(typeof d==="string")return d.split(/\n\s*\n/).map(p=>`<p>${esc(p.trim()).replace(/\n/g,"<br>")}</p>`).join("");
   return (d.Purpose?`<p class="purpose">${esc(d.Purpose)}</p>`:"")
     +(d.Fidelity?fidelityHtml(d.Fidelity):"")
-    +fieldsHtml({...d,Runtime:runtimeOf(d)},ROWS)
-    +(MORE.some(k=>d[k])?`<details><summary>Method</summary>${fieldsHtml(d,MORE)}</details>`:"");
+    +fieldsHtml({...d,Runtime:runtimeOf(d)},ROWS);
 }
 function fieldsHtml(d,keys){
   return `<dl class="fields">${keys.filter(k=>d[k]).map(k=>`<dt>${k}</dt><dd>${esc(d[k])}</dd>`).join("")}</dl>`;
