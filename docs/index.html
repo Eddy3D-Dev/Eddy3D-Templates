@@ -19,9 +19,6 @@
   --shadow-lg:0 4px 12px rgba(16,24,40,.08);
   --c-wind:#0f7fbf; --c-sun:#d9930d; --c-microclimate:#e8734a; --c-building:#c0396b; --c-air:#2a9d6f;
   --c-noise:#7c5cd6; --c-water:#2a62d6; --c-climate:#5f7d2e; --c-site:#6b7480; --c-share:#8a6a2e;
-  /* Darker twins of the four category colors too light for white text (the Download button).
-     Stripe, dot and bar keep the lighter hue. */
-  --ink-wind:#0f7bb9; --ink-sun:#9e6b09; --ink-microclimate:#b65a3a; --ink-air:#23845d;
   --radius:12px;
 }
 html[data-theme="dark"]{
@@ -45,14 +42,8 @@ a{color:var(--accent)}
 /* hero */
 header.hero{
   position:relative;overflow:hidden;
-  background:linear-gradient(135deg,#0b3b57 0%,#0f7fbf 55%,#2a9d6f 130%);
-  color:#fff;padding:64px 0 88px;
-}
-header.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 50% at 85% 20%,rgba(255,255,255,.14),transparent),
-    radial-gradient(ellipse 40% 40% at 10% 90%,rgba(255,255,255,.08),transparent);
+  background:#15262f;
+  color:#fff;padding:28px 0 64px;
 }
 .hero .wrap{position:relative;z-index:1}
 .hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -63,7 +54,7 @@ header.hero::after{
   display:grid;grid-template-rows:1fr;
   transition:grid-template-rows .34s cubic-bezier(.4,0,.2,1),opacity .22s ease;
 }
-.hero-body-inner{overflow:hidden;min-height:0;padding-top:40px}
+.hero-body-inner{overflow:hidden;min-height:0;padding-top:24px}
 header.hero.collapsed .hero-body{grid-template-rows:0fr;opacity:0}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px;letter-spacing:.2px}
 /* The brand is the home link: back to the bare URL, which opens on the latest version. */
@@ -89,8 +80,14 @@ a.brand:hover{opacity:.85}
 }
 .hero-links .icon-link:hover{background:rgba(255,255,255,.2)}
 .collapse-btn{display:none}
-h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
-.hero p.sub{font-size:clamp(15px,2vw,18px);max-width:640px;opacity:.92}
+h1{font-size:clamp(28px,4.5vw,38px);font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
+.hero p.sub{font-size:clamp(15px,2vw,17px);max-width:640px;opacity:.92}
+/* How to use: three short steps, in the hero where a first-time visitor reads them. */
+.steps{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin-top:14px;font-size:14px;color:rgba(255,255,255,.85)}
+.steps li{display:flex;align-items:center;gap:8px}
+.steps b{width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;font-size:12px;
+  background:#fff;color:#15262f;flex:0 0 auto}
+.steps a{color:#fff}
 
 /* toolbar */
 .toolbar{
@@ -147,14 +144,13 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
   background:var(--surface2);color:var(--muted);transition:background-color .15s,border-color .15s,color .15s;
   display:inline-flex;align-items:center;gap:7px;
 }
-.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--dot,var(--muted))}
 .chip:hover{border-color:var(--accent);color:var(--text)}
 .chip.active{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
-.chip.active .dot{background:var(--on-accent)}
 .chip .count{font-weight:500}
 
 /* sections */
-main.wrap{padding-top:56px;padding-bottom:24px}
+/* min-height keeps the footer below the fold while templates load, so it does not jump (CLS). */
+main.wrap{padding-top:56px;padding-bottom:24px;min-height:100vh}
 .section{margin-bottom:44px}
 .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
 .section-head h2{font-size:22px;font-weight:750;letter-spacing:-.3px}
@@ -165,7 +161,7 @@ main.wrap{padding-top:56px;padding-bottom:24px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px;
+  padding:18px;display:flex;flex-direction:column;gap:10px;
   position:relative;overflow:hidden;
 }
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--card-color,var(--accent))}
@@ -187,9 +183,10 @@ main.wrap{padding-top:56px;padding-bottom:24px}
 .card dl.fields{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13px;color:var(--muted);margin:0}
 .card dl.fields dt{font-weight:650;color:var(--text)}
 .card dl.fields dd{margin:0}
-/* The final simulation output, captured in Rhino: the reason to pick one template over another. */
-.card .shot{display:block;width:calc(100% + 36px);margin:-18px -18px 4px;height:auto;aspect-ratio:16/9;
-  object-fit:cover;background:var(--surface2);border-bottom:1px solid var(--border)}
+/* The final simulation output, captured in Rhino: the reason to pick one template over another.
+   It sits under the title so titles line up across a row whether or not a card has one. */
+.card .shot{display:block;width:calc(100% + 36px);margin:4px -18px;height:auto;aspect-ratio:16/9;
+  object-fit:cover;background:var(--surface2);border-block:1px solid var(--border)}
 .card details{font-size:13px;color:var(--muted)}
 .card details summary{cursor:pointer;font-weight:650;color:var(--text);padding:4px 0;width:fit-content}
 .card details dl.fields{margin-top:4px}
@@ -202,7 +199,7 @@ html[data-theme="dark"] .card .badge.experimental{color:#d8b4fe}
 .dl{
   display:inline-flex;align-items:center;gap:7px;text-decoration:none;
   font-size:13.5px;font-weight:650;padding:8px 14px;border-radius:9px;
-  background:var(--card-ink,var(--accent-fill));color:#fff;transition:filter .15s;
+  background:var(--accent-fill);color:var(--on-accent);transition:filter .15s;
 }
 .dl:hover{filter:brightness(.9)}
 .actions{display:inline-flex;align-items:center;gap:8px}
@@ -240,19 +237,6 @@ html[data-theme="dark"] .card .badge.experimental{color:#d8b4fe}
 .state.error a{font-weight:600}
 .hidden{display:none}
 
-/* getting started */
-.info{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  box-shadow:var(--shadow);padding:24px;margin-bottom:44px;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;
-}
-.info h3{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.info p{font-size:14px;color:var(--muted)}
-.info .num{
-  width:24px;height:24px;border-radius:50%;background:var(--accent-fill);color:var(--on-accent);
-  display:inline-grid;place-items:center;font-size:13px;font-weight:700;flex:0 0 auto;
-}
-
 footer{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:600px){
@@ -266,8 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .section{margin-bottom:40px}
   .state{padding:40px 0}
   .card{padding:16px;gap:8px}
-  .card .shot{width:calc(100% + 32px);margin:-16px -16px 4px}
-  .info{padding:20px;gap:16px;margin-bottom:40px}
+  .card .shot{width:calc(100% + 32px);margin:4px -16px}
   footer{padding:24px 0 32px}
 
   /* touch targets — keep the nav on one row at 360dp and up */
@@ -295,8 +278,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .card h3{font-size:15px}
   .card p{font-size:13.5px}
   .dl{font-size:12.5px}
-  .info h3{font-size:14px}
-  .info p{font-size:13px}
 
   .hero-body-inner{padding-top:24px}
 
@@ -345,6 +326,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="hero-body-inner">
         <h1>Grasshopper Templates</h1>
         <p class="sub">Ready-to-run <strong>.ghx</strong> workflows for Eddy3D — outdoor microclimate analysis, OpenFOAM &amp; LBM airflow simulation, and machine-learning surrogate models.</p>
+        <ol class="steps">
+          <li><b>1</b> Download a template</li>
+          <li><b>2</b> Open it in Grasshopper with the <a href="https://docs.eddy3d.com" target="_blank" rel="noopener">Eddy3D plugin</a></li>
+          <li><b>3</b> Swap in your geometry and weather file</li>
+        </ol>
       </div>
     </div>
   </div>
@@ -359,7 +345,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
     <label class="branch hidden" id="branchWrap">
       <span>Version</span>
-      <select id="branch" aria-label="Repository branch"></select>
+      <select id="branch" aria-label="Template version"></select>
     </label>
     <div class="chips" id="chips"></div>
   </div>
@@ -373,12 +359,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
   <div id="sections"></div>
   <div class="state hidden" id="empty">No templates match your search.</div>
-
-  <div class="info">
-    <div><h3><span class="num">1</span> Download</h3><p>Grab a template via its download button.</p></div>
-    <div><h3><span class="num">2</span> Open in Grasshopper</h3><p>Open the file in Grasshopper for Rhino with the <a href="https://docs.eddy3d.com" target="_blank" rel="noopener">Eddy3D plugin</a> installed.</p></div>
-    <div><h3><span class="num">3</span> Plug in your data</h3><p>Replace the example geometry and weather file with your own.</p></div>
-  </div>
 </main>
 
 <footer>
@@ -393,15 +373,15 @@ const OWNER="Eddy3D-Dev", REPO="Eddy3D-Templates";
 
 /* Category metadata — keyed by top-level path segment(s) */
 const CATS={
-  "Wind":{label:"Wind",color:"var(--c-wind)",ink:"var(--ink-wind)",
+  "Wind":{label:"Wind",color:"var(--c-wind)",
     desc:"Airflow around buildings: steady RANS in OpenFOAM, live GPU lattice-Boltzmann, or instant machine-learning surrogates."},
-  "Sun":{label:"Sun & Radiation",color:"var(--c-sun)",ink:"var(--ink-sun)",
+  "Sun":{label:"Sun & Radiation",color:"var(--c-sun)",
     desc:"Sun path, sun hours, overshadowing and annual solar irradiation on surfaces."},
-  "Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",ink:"var(--ink-microclimate)",
+  "Microclimate":{label:"Microclimate",color:"var(--c-microclimate)",
     desc:"Coupled outdoor simulations ending in pedestrian comfort (UTCI, PET), plus mean radiant temperature and surface temperatures."},
   "Building":{label:"Building",color:"var(--c-building)",
     desc:"Heat inside and through buildings: indoor comfort and stratification, and conduction through the envelope."},
-  "AirQuality":{label:"Air Quality",color:"var(--c-air)",ink:"var(--ink-air)",
+  "AirQuality":{label:"Air Quality",color:"var(--c-air)",
     desc:"Ventilation, CO2 and pollutant dispersion, indoors and outdoors."},
   "Noise":{label:"Noise",color:"var(--c-noise)",
     desc:"Acoustic maps on the ground and on facades."},
@@ -487,7 +467,7 @@ new IntersectionObserver(
   {rootMargin:"-44px 0px 0px 0px"}
 ).observe($(".toolbar-sentinel"));
 
-let ALL=[],activeCat="all",branch=null,spotlightId=null,repoUpdated="";
+let ALL=[],activeCat="all",branch=null,spotlightId=null,updated="";
 
 /* Description text comes from a Panel inside the .ghx, so it is data, not
    markup: escape it, and keep paragraph breaks (blank lines) as paragraphs. */
@@ -534,12 +514,16 @@ function compareBranches(a,b){
 }
 
 async function loadBranches(){
-  const info=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}`).then(r=>{if(!r.ok)throw 0;return r.json()});
+  /* The branch list is the one GitHub API call left on a load (60 an hour per IP,
+     unauthenticated). If it fails the gallery still opens, on the default branch
+     ("HEAD"; raw.githubusercontent.com has no such limit), without a version picker. */
   const list=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/branches?per_page=100`)
     .then(r=>r.ok?r.json():[]).catch(()=>[]);
   let names=list.map(b=>b.name).filter(isVersion).sort(compareBranches);
-  if(!names.length)names=[info.default_branch];
-  repoUpdated=info.pushed_at?new Date(info.pushed_at).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}):"";
+  if(!names.length){
+    branch=new URLSearchParams(location.search).get("branch")||"HEAD";
+    return;
+  }
   /* The site always opens on the highest version branch. GitHub's own default
      branch is deliberately NOT used: it only advances on a stable release, so
      it lags every beta (names is sorted newest first). Only an explicit
@@ -563,20 +547,34 @@ async function loadTree(){
      branch so they match the templates being shown. */
   const ghxDesc=await fetch(`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/docs/descriptions.json`)
     .then(r=>r.ok?r.json():{}).catch(()=>({}));
-  const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`)
-    .then(r=>{if(!r.ok)throw 0;return r.json()});
+  /* The template list comes from docs/manifest.json, written next to descriptions.json
+     by the same workflow, so it costs no API call. A version branch from before the
+     manifest existed falls back to the git tree API. */
+  const rawBase=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}`;
+  let files,previews;
+  const manifest=await fetch(`${rawBase}/docs/manifest.json`).then(r=>r.ok?r.json():null).catch(()=>null);
+  if(manifest){
+    files=manifest.templates;previews=manifest.previews;
+    updated=manifest.updated?new Date(manifest.updated).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}):"";
+  }else{
+    updated="";
+    const tree=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${encodeURIComponent(branch)}?recursive=1`)
+      .then(r=>{if(!r.ok)throw 0;return r.json()});
+    files=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)).map(n=>({path:n.path,size:n.size}));
+    previews=tree.tree.map(n=>/^docs\/previews\/([^/]+\.(?:webp|png|jpe?g))$/i.exec(n.path)).filter(Boolean).map(m=>m[1]);
+  }
   /* Internal templates are for development only — never show them in the gallery. */
   const raw=p=>`https://raw.githubusercontent.com/${OWNER}/${REPO}/${encodeURIComponent(branch)}/${p.split("/").map(encodeURIComponent).join("/")}`;
   const shots={};
-  tree.tree.forEach(n=>{const m=/^docs\/previews\/([^/]+)\.(webp|png|jpe?g)$/i.exec(n.path);if(m)shots[m[1]]=raw(n.path)});
-  ALL=tree.tree.filter(n=>n.type==="blob"&&/\.ghx?$/i.test(n.path)&&!/^Internal\//.test(n.path)).map(n=>{
+  previews.forEach(f=>{shots[f.replace(/\.[^.]+$/,"")]=raw("docs/previews/"+f)});
+  ALL=files.filter(n=>!/^Internal\//.test(n.path)).map(n=>{
     const cat=catOf(n.path)||"Other";
     const name=n.path.split("/").pop();
     return {path:n.path,name,size:n.size||0,cat,
       desc:ghxDesc[name]||"",descText:descText(ghxDesc[name]).toLowerCase(),
       shot:shots[name.replace(/\.ghx?$/i,"")]||"",url:raw(n.path)};
   });
-  $("#meta").innerHTML=`Data from GitHub · branch ${esc(branch)}${repoUpdated?` · last push to the repository ${repoUpdated}`:""} · <a href="https://github.com/${OWNER}/${REPO}/tree/${encodeURIComponent(branch)}" target="_blank" rel="noopener">Source on GitHub</a>`;
+  $("#meta").innerHTML=`Data from GitHub · branch ${esc(branch)}${updated?` · templates last changed ${updated}`:""} · <a href="https://github.com/${OWNER}/${REPO}/tree/${encodeURIComponent(branch)}" target="_blank" rel="noopener">Source on GitHub</a>`;
   buildChips();render();
   $("#loading").classList.add("hidden");
   focusFromHash();
@@ -602,7 +600,7 @@ function buildChips(){
   const chips=[`<button class="chip" data-cat="all">All <span class="count">${ALL.length}</span></button>`];
   for(const k in CATS){
     if(!counts[k])continue;
-    chips.push(`<button class="chip" data-cat="${k}" style="--dot:${CATS[k].color}"><span class="dot"></span>${CATS[k].label} <span class="count">${counts[k]}</span></button>`);
+    chips.push(`<button class="chip" data-cat="${k}">${CATS[k].label} <span class="count">${counts[k]}</span></button>`);
   }
   $("#chips").innerHTML=chips.join("");
   markChips();
@@ -635,16 +633,16 @@ function render(){
   const byCat={};vis.forEach(t=>(byCat[t.cat]=byCat[t.cat]||[]).push(t));
   const order=Object.keys(CATS).filter(k=>byCat[k]).concat(Object.keys(byCat).filter(k=>!CATS[k]));
   $("#sections").innerHTML=order.map(k=>{
-    const m=CATS[k]||{label:k,color:"var(--accent)",ink:"var(--accent-fill)",desc:""};
-    return `<section class="section" style="--sec-color:${m.color};--card-ink:${m.ink||m.color}">
+    const m=CATS[k]||{label:k,color:"var(--accent)",desc:""};
+    return `<section class="section" style="--sec-color:${m.color}">
       <div class="section-head"><span class="bar"></span><h2>${m.label}</h2></div>
       ${m.desc?`<p class="desc">${m.desc}</p>`:""}
       <div class="grid">${byCat[k].sort((a,b)=>a.name.localeCompare(b.name)).map(t=>`
         <article class="card${spotlightId&&spotlightId!==anchorOf(t.path)?" dimmed":""}" id="${anchorOf(t.path)}" style="--card-color:${m.color}">
-          ${t.shot?`<img class="shot" src="${t.shot}" alt="${esc(t.desc&&t.desc.Result?t.desc.Result:"Final output of "+titleOf(t.name))}" width="1600" height="900" loading="lazy" decoding="async">`:""}
           <div class="card-head">
             <div><h3>${titleOf(t.name)}</h3><div class="file">${t.path}</div></div>
           </div>
+          ${t.shot?`<img class="shot" src="${t.shot}" alt="${esc(t.desc&&t.desc.Result?t.desc.Result:"Final output of "+titleOf(t.name))}" width="1600" height="900" loading="lazy" decoding="async">`:""}
           ${descHtml(t.desc)}
           <div class="card-foot">
             <span class="size">${fmtSize(t.size)}</span>

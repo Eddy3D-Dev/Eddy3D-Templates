@@ -9,7 +9,9 @@ panel into those fields, and writes docs/descriptions.json keyed by file name:
 
     { "BoxDomain.ghx": { "Purpose": "...", "Fidelity": "...", ... } }
 
-The gallery (docs/index.html) reads that file from the branch being browsed.
+It also writes docs/manifest.json: every .ghx with its size, and the preview
+images in docs/previews/. The gallery reads both from the branch being browsed,
+so listing templates costs no GitHub API call (the API allows 60 per hour per IP).
 
 A template with no panel, or a panel that breaks the structure, is reported;
 on GitHub Actions the findings become annotations. Pass --strict to exit
@@ -22,6 +24,7 @@ Write a description into a template with scripts/set_description.py.
 import argparse
 import json
 import os
+import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -30,6 +33,7 @@ from description_format import parse
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "descriptions.json"
+MANIFEST = ROOT / "docs" / "manifest.json"
 
 
 
@@ -69,6 +73,7 @@ def main() -> int:
 
     descriptions: dict[str, dict[str, str]] = {}
     paths: dict[str, str] = {}
+    templates: list[dict] = []
     findings = 0
     for ghx in sorted(ROOT.rglob("*.ghx")):
         rel = ghx.relative_to(ROOT)
@@ -78,6 +83,7 @@ def main() -> int:
             annotate("error", rel.as_posix(), f"file name also used by {paths[ghx.name]}; descriptions are keyed by file name")
             findings += 1
         paths[ghx.name] = rel.as_posix()
+        templates.append({"path": rel.as_posix(), "size": ghx.stat().st_size})
 
         text = panel_description(ghx)
         if not text:
@@ -95,6 +101,14 @@ def main() -> int:
 
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(descriptions, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    previews = sorted(p.name for p in (ROOT / "docs" / "previews").glob("*") if p.suffix.lower() in {".webp", ".png", ".jpg", ".jpeg"})
+    try:  # commit date of the latest change to any template or preview; the gallery shows it
+        updated = subprocess.run(["git", "log", "-1", "--format=%cI", "--", "*.ghx", "docs/previews"],
+                                 cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        updated = ""
+    MANIFEST.write_text(json.dumps({"updated": updated, "templates": templates, "previews": previews}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Wrote {MANIFEST.relative_to(ROOT)} ({len(templates)} templates, {len(previews)} previews)")
     print(f"Wrote {OUT.relative_to(ROOT)} ({len(descriptions)} descriptions, {findings} finding(s))")
     return 1 if (args.strict and findings) else 0
 

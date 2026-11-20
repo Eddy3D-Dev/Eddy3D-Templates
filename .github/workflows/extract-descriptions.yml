@@ -6,6 +6,7 @@ on:
       - "**/*.ghx"
       - "scripts/extract_descriptions.py"
       - "scripts/description_format.py"
+      - "docs/previews/**"
   workflow_dispatch:
 
 permissions:
@@ -24,13 +25,13 @@ jobs:
       - name: Extract descriptions from .ghx panels
         run: python scripts/extract_descriptions.py
 
-      - name: Commit descriptions.json if changed
+      - name: Commit descriptions.json and manifest.json if changed
         run: |
-          if ! git diff --quiet docs/descriptions.json; then
+          if ! git diff --quiet docs/descriptions.json docs/manifest.json; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add docs/descriptions.json
-            git commit -m "Update template descriptions from .ghx panels"
+            git add docs/descriptions.json docs/manifest.json
+            git commit -m "Update template descriptions and manifest"
             git push
           else
             echo "No description changes."
