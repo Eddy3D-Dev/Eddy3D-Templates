@@ -122,9 +122,9 @@
         </chunk>
         <chunk name="DefinitionObjects">
           <items count="1">
-            <item name="ObjectCount" type_name="gh_int32" type_code="3">15</item>
+            <item name="ObjectCount" type_name="gh_int32" type_code="3">14</item>
           </items>
-          <chunks count="15">
+          <chunks count="14">
             <chunk name="Object" index="0">
               <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">2f7a1c64-9b3d-4e58-a0c1-5d8e2b6f4a93</item>
@@ -151,6 +151,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -406,6 +408,8 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
+Version 1.22.1.827
+
 Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">10925d6a-7cec-4b09-83e4-6cca87bf2855</item>
                     <item name="Name" type_name="gh_string" type_code="10">Morph Weather</item>
@@ -561,14 +565,13 @@ Version 1.22.1.827</item>
                       </chunks>
                     </chunk>
                     <chunk name="param_input" index="5">
-                      <items count="7">
+                      <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Path to the Future Weather Generator .jar. Unwired, Eddy3D looks in ~/Eddy3D/FWG, then Downloads, then the EDDY3D_FWG_JAR environment variable. Not used by the CCKP methods.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">1528b4a1-c703-4881-8597-dcdc0bb7ed10</item>
                         <item name="Name" type_name="gh_string" type_code="10">FWG Jar</item>
                         <item name="NickName" type_name="gh_string" type_code="10">FWG Jar</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
-                        <item name="Source" index="0" type_name="gh_guid" type_code="9">d89fbed0-a160-4e97-a753-01de1b08b5d9</item>
-                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
                       <chunks count="1">
                         <chunk name="Attributes">
@@ -776,6 +779,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -1343,6 +1348,8 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
+Version 1.22.1.827
+
 Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">0fb4bb8d-bc55-4697-ab17-f731dec16442</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
@@ -1726,63 +1733,6 @@ NSRDB (GOES aggregated, PSM v4)</item>
             </chunk>
             <chunk name="Object" index="6">
               <items count="2">
-                <item name="GUID" type_name="gh_guid" type_code="9">06953bda-1d37-4d58-9b38-4b3c74e54c8f</item>
-                <item name="Name" type_name="gh_string" type_code="10">File Path</item>
-              </items>
-              <chunks count="1">
-                <chunk name="Container">
-                  <items count="8">
-                    <item name="Description" type_name="gh_string" type_code="10">Contains a collection of file paths</item>
-                    <item name="ExpireOnFileEvent" type_name="gh_bool" type_code="1">false</item>
-                    <item name="FileFilter" type_name="gh_string" type_code="10">All files|*.*</item>
-                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">d89fbed0-a160-4e97-a753-01de1b08b5d9</item>
-                    <item name="Name" type_name="gh_string" type_code="10">File Path</item>
-                    <item name="NickName" type_name="gh_string" type_code="10">File Path</item>
-                    <item name="Optional" type_name="gh_bool" type_code="1">false</item>
-                    <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
-                  </items>
-                  <chunks count="2">
-                    <chunk name="Attributes">
-                      <items count="2">
-                        <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>251</X>
-                          <Y>703</Y>
-                          <W>50</W>
-                          <H>24</H>
-                        </item>
-                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                          <X>276.0413</X>
-                          <Y>715.94543</Y>
-                        </item>
-                      </items>
-                    </chunk>
-                    <chunk name="PersistentData">
-                      <items count="1">
-                        <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                      </items>
-                      <chunks count="1">
-                        <chunk name="Branch" index="0">
-                          <items count="2">
-                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
-                            <item name="Path" type_name="gh_string" type_code="10">{0}</item>
-                          </items>
-                          <chunks count="1">
-                            <chunk name="Item" index="0">
-                              <items count="2">
-                                <item name="null_string" type_name="gh_bool" type_code="1">false</item>
-                                <item name="string" type_name="gh_string" type_code="10">/Users/patrickkastner/Desktop/Temp/FutureWeatherGenerator-CMIP6-Global-v5.0.0.jar</item>
-                              </items>
-                            </chunk>
-                          </chunks>
-                        </chunk>
-                      </chunks>
-                    </chunk>
-                  </chunks>
-                </chunk>
-              </chunks>
-            </chunk>
-            <chunk name="Object" index="7">
-              <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">59e0b89a-e487-49f8-bab8-b5bab16be14c</item>
                 <item name="Name" type_name="gh_string" type_code="10">Panel</item>
               </items>
@@ -1837,7 +1787,7 @@ NSRDB (GOES aggregated, PSM v4)</item>
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="8">
+            <chunk name="Object" index="7">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">59e0b89a-e487-49f8-bab8-b5bab16be14c</item>
                 <item name="Name" type_name="gh_string" type_code="10">Panel</item>
@@ -1889,7 +1839,7 @@ NSRDB (GOES aggregated, PSM v4)</item>
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="9">
+            <chunk name="Object" index="8">
               <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">b576d446-6bf0-4d67-b800-56808dc2d01e</item>
                 <item name="Lib" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
@@ -1916,6 +1866,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -2243,7 +2195,7 @@ December</item>
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="10">
+            <chunk name="Object" index="9">
               <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">b576d446-6bf0-4d67-b800-56808dc2d01e</item>
                 <item name="Lib" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
@@ -2272,6 +2224,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -2599,7 +2553,7 @@ December</item>
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="11">
+            <chunk name="Object" index="10">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">59e0b89a-e487-49f8-bab8-b5bab16be14c</item>
                 <item name="Name" type_name="gh_string" type_code="10">Panel</item>
@@ -2652,7 +2606,7 @@ December</item>
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="12">
+            <chunk name="Object" index="11">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">59e0b89a-e487-49f8-bab8-b5bab16be14c</item>
                 <item name="Name" type_name="gh_string" type_code="10">Panel</item>
@@ -2705,7 +2659,7 @@ December</item>
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="13">
+            <chunk name="Object" index="12">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">59daf374-bc21-4a5e-8282-5504fb7ae9ae</item>
                 <item name="Name" type_name="gh_string" type_code="10">List Item</item>
@@ -2898,7 +2852,7 @@ December</item>
                 </chunk>
               </chunks>
             </chunk>
-            <chunk name="Object" index="14">
+            <chunk name="Object" index="13">
               <items count="2">
                 <item name="GUID" type_name="gh_guid" type_code="9">59e0b89a-e487-49f8-bab8-b5bab16be14c</item>
                 <item name="Name" type_name="gh_string" type_code="10">Panel</item>
