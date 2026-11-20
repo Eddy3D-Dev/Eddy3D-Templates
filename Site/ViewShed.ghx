@@ -10,7 +10,7 @@
       <Revision>2</Revision>
     </item>
   </items>
-  <chunks count="2">
+  <chunks count="1">
     <chunk name="Definition">
       <items count="1">
         <item name="plugin_version" type_name="gh_version" type_code="80">
@@ -179,6 +179,8 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
+Version 1.22.1.827
+
 Version 1.22.1.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">e9f95db7-49c7-45bb-ad25-f43ddcc8edef</item>
@@ -261,7 +263,7 @@ Version 1.22.1.827</item>
                     <chunk name="param_input" index="2">
                       <items count="8">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Optional per-point view directions — the cone axis (e.g. a facade normal, or a seat's facing). Left empty, a point sitting on a Context face looks along that face's normal, and any other point looks straight up.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Optional per-point view directions — the cone axis (e.g. a facade normal, or a seat's facing). Default is straight up, the plan-view openness question.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">80894c11-af13-47e9-855e-86a283234f57</item>
                         <item name="Name" type_name="gh_string" type_code="10">Normals</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Normals</item>
@@ -825,8 +827,9 @@ GPU</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Deconstruct a mesh into its component parts.</item>
+                    <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">5f72e0f0-d067-4bdb-84a5-96bca2017cec</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct Mesh</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Deconstruct Mesh</item>
@@ -1177,6 +1180,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -1830,6 +1835,8 @@ Edit: Context, observer surfaces and target; wire normals to aim the cones.</ite
 
 Version 1.22.1.827
 
+Version 1.22.1.827
+
 Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7a2959ea-ecc1-4bfc-9559-4e50bf5545eb</item>
                     <item name="Name" type_name="gh_string" type_code="10">Site Picker</item>
@@ -1946,6 +1953,8 @@ Version 1.22.1.827</item>
                   <items count="10">
                     <item name="ClayLook" type_name="gh_bool" type_code="1">true</item>
                     <item name="Description" type_name="gh_string" type_code="10">One click from a location to the site's context: buildings with heights, bare-earth terrain, tree crowns, land-cover ground zones with their roughness, and the inlet z0 per wind direction — fetched in the background from open data and placed in a local frame centred on the location (Rhino model units). Sources: OpenStreetMap buildings (ODbL; height from the height tag or building:levels x 3 m, else the Fallback Height — never guessed silently: every building's height KIND is in the report), GEDTM30 bare-earth DTM (CC BY 4.0), the Meta/WRI 1 m canopy height map plus OSM street trees (CC BY 4.0 / ODbL), and ESA WorldCover 2021 (CC BY 4.0). Buildings come from GlobalBuildingAtlas LoD1 (TUM, CC BY-NC 4.0 — heights PREDICTED by a model, every one labelled so) or from OpenStreetMap (ODbL — the height tag or building:levels x 3 m, else the Fallback Height), chosen on Building Source. Results are cached on disk, so a reopened document shows its context without a new fetch; pressing Fetch again, or Refresh from the sources on the right-click menu, downloads anew.
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -4178,22 +4187,25 @@ GEM-15 terrain model</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="5">
+                  <items count="6">
                     <item name="Description" type_name="gh_string" type_code="10">Visualize a probed scalar field — CO2, temperature, age of air, Cp, pressure — as a colored point cloud, a heatmap mesh, or a translucent volumetric cloud. Feed the Probe component's points and one value per point. For velocity, use the Vector Field Viewer.
+
+Version 1.22.1.827
 
 Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">7b06867a-8c99-4cd2-bbb9-0d0821ac7093</item>
                     <item name="Name" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
                     <item name="ScalarFieldViewerInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="ScalarFieldViewerVertexColours" type_name="gh_bool" type_code="1">false</item>
                   </items>
                   <chunks count="14">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>4200</X>
+                          <X>4245</X>
                           <Y>1242</Y>
-                          <W>173</W>
+                          <W>128</W>
                           <H>204</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -4208,7 +4220,7 @@ Version 1.22.1.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">One scalar per point, in whatever unit the field is in — the Probe component's Values output for a single scalar field (CO2, T, age, Cp, p, k).</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c64ad958-de0e-4d1a-b5e1-3e069d4df3da</item>
                         <item name="Name" type_name="gh_string" type_code="10">Values</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Values</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">V</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">d7e5a683-8b59-4cb9-8037-12b6b5048f3d</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -4217,13 +4229,13 @@ Version 1.22.1.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1244</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1254</Y>
                             </item>
                           </items>
@@ -4236,7 +4248,7 @@ Version 1.22.1.827</item>
                         <item name="Description" type_name="gh_string" type_code="10">Sample points (e.g. the probe points). Empty with a Mesh wired uses the mesh's samples: its vertices when it has one per value (the WRF Probe's Mesh) or its face centres when it has one face per value (the square probe markers of Deconstruct MRT and Deconstruct Wind), in Values order — so mesh-only wiring is complete.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">5d569803-abc3-4e42-8efc-846de38f1c4a</item>
                         <item name="Name" type_name="gh_string" type_code="10">Points</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Points</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">P</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Source" index="0" type_name="gh_guid" type_code="9">5381bb42-595d-4adf-889c-703a8193187f</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
@@ -4245,13 +4257,13 @@ Version 1.22.1.827</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1264</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1274</Y>
                             </item>
                           </items>
@@ -4264,7 +4276,7 @@ Version 1.22.1.827</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">371fa591-a479-479b-94dd-74b43389db37</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Display Mode</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Display Mode</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">M</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">Point Cloud
 Heatmap Mesh
@@ -4276,13 +4288,13 @@ Volumetric Cloud</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1284</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1294</Y>
                             </item>
                           </items>
@@ -4316,7 +4328,7 @@ Volumetric Cloud</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">196d47ed-08a3-44b6-ae0b-9302405c7626</item>
                         <item name="Multiple" type_name="gh_bool" type_code="1">false</item>
                         <item name="Name" type_name="gh_string" type_code="10">Color Map</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Color Map</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">CM</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="Options" type_name="gh_string" type_code="10">Viridis
 Turbo
@@ -4338,13 +4350,13 @@ Blue → Red</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1304</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1314</Y>
                             </item>
                           </items>
@@ -4377,7 +4389,7 @@ Blue → Red</item>
                         <item name="Description" type_name="gh_string" type_code="10">Lower end of the color range / filter. Empty = data minimum.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">a753153a-20ff-4413-a84c-9699dc9e7e11</item>
                         <item name="Name" type_name="gh_string" type_code="10">Min Value</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Min Value</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Min</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4385,13 +4397,13 @@ Blue → Red</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1324</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1334</Y>
                             </item>
                           </items>
@@ -4403,7 +4415,7 @@ Blue → Red</item>
                         <item name="Description" type_name="gh_string" type_code="10">Upper end of the color range / filter. Empty = data maximum.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">2d6f9b5f-c630-4e4b-bd11-d370c5d3668f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Max Value</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Max Value</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Max</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4411,13 +4423,13 @@ Blue → Red</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1344</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1354</Y>
                             </item>
                           </items>
@@ -4429,7 +4441,7 @@ Blue → Red</item>
                         <item name="Description" type_name="gh_string" type_code="10">Surface to color for Heatmap Mesh mode. A mesh with faces is subdivided to the samples' spacing and each vertex is read from the samples that lie on its own face, so a wall is not blended from the ground and the roof; faces that meet at a crease keep separate colours. A mesh of bare vertices takes the nearest sample. Ignored in the other modes.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">c4d49255-d0e4-40e1-a8fb-ab0f7add2d0f</item>
                         <item name="Name" type_name="gh_string" type_code="10">Mesh</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Mesh</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Msh</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4437,13 +4449,13 @@ Blue → Red</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1364</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1374</Y>
                             </item>
                           </items>
@@ -4455,7 +4467,7 @@ Blue → Red</item>
                         <item name="Description" type_name="gh_string" type_code="10">Point Cloud and Volumetric Cloud: drawn point size in pixels. Heatmap Mesh with Fit = Size: the width of each square probe marker, in model units.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">b35da9dc-074e-4fe0-8ced-6fe0bac30880</item>
                         <item name="Name" type_name="gh_string" type_code="10">Size</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Size</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">S</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4463,13 +4475,13 @@ Blue → Red</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1384</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1394</Y>
                             </item>
                           </items>
@@ -4513,13 +4525,13 @@ Size</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1404</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1414</Y>
                             </item>
                           </items>
@@ -4552,7 +4564,7 @@ Size</item>
                         <item name="Description" type_name="gh_string" type_code="10">Unit label for the component's readout only (e.g. ppm, K, s, Pa). The field carries no unit of its own, so nothing can infer it: probing CO2 returns a mass fraction, age of air returns seconds, and both are just numbers by the time they reach here.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">363866b8-a47e-4f27-bb49-b377f78796b8</item>
                         <item name="Name" type_name="gh_string" type_code="10">Units</item>
-                        <item name="NickName" type_name="gh_string" type_code="10">Units</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">U</item>
                         <item name="Optional" type_name="gh_bool" type_code="1">true</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                       </items>
@@ -4560,13 +4572,13 @@ Size</item>
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>4202</X>
+                              <X>4247</X>
                               <Y>1424</Y>
-                              <W>68</W>
+                              <W>23</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>4237.5</X>
+                              <X>4260</X>
                               <Y>1434</Y>
                             </item>
                           </items>
@@ -4686,8 +4698,10 @@ Size</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="5">
+                  <items count="6">
                     <item name="Description" type_name="gh_string" type_code="10">Visualize a probed scalar field — CO2, temperature, age of air, Cp, pressure — as a colored point cloud, a heatmap mesh, or a translucent volumetric cloud. Feed the Probe component's points and one value per point. For velocity, use the Vector Field Viewer.
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -4696,6 +4710,7 @@ Version 1.22.1.827</item>
                     <item name="Name" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
                     <item name="ScalarFieldViewerInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="ScalarFieldViewerVertexColours" type_name="gh_bool" type_code="1">false</item>
                   </items>
                   <chunks count="14">
                     <chunk name="Attributes">
@@ -5195,8 +5210,9 @@ Size</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="4">
+                  <items count="5">
                     <item name="Description" type_name="gh_string" type_code="10">Join a set of meshes into a single mesh</item>
+                    <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">94e65684-924d-4c30-936d-352eba4fd566</item>
                     <item name="Name" type_name="gh_string" type_code="10">Mesh Join</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Mesh Join</item>
@@ -5285,7 +5301,7 @@ Size</item>
                     <item name="Description" type_name="gh_string" type_code="10">A panel for custom notes and text values</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">204933f8-17b5-4e49-afb4-b1c9a25bf44d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Panel</item>
-                    <item name="NickName" type_name="gh_string" type_code="10">Panel</item>
+                    <item name="NickName" type_name="gh_string" type_code="10"></item>
                     <item name="Optional" type_name="gh_bool" type_code="1">false</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
@@ -5374,13 +5390,6 @@ Size</item>
           </chunks>
         </chunk>
       </chunks>
-    </chunk>
-    <chunk name="Thumbnail">
-      <items count="1">
-        <item name="Thumbnail" type_name="gh_drawing_bitmap" type_code="37">
-          <bitmap length="8783">iVBORw0KGgoAAAANSUhEUgAAAJYAAABkCAYAAABkW8nwAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAlqADAAQAAAABAAAAZAAAAAAGd2knAAAhxUlEQVR4Ae3daZNdVdUH8JPOnBAyAEkY7U4IgUSCgiM4IM7zbGlZaqmFzys/hG/8CM9T5RurLF9oqSUqToUDqICCoowSRAiGJCRASBgyJ/2s3769bk5ubndud997+yK9u06faZ+91177v9dae+11zp1TVdVobLNplgNd5cA8pY2OzmKrq1x9hRc2Z86cqgALH/bs2XMKO+bPn1/97W9/qx555JHqc5/7XHX06NFT7r9cTubOnVs9+eST1U033VTdeOONlXbN5EAaGhqqnnnmmeoPf/hD9fa3v71y/vzzz1cvvPBCdeGFF06ZNuXs3bu3Ovfcc6tly5ZNuZzp9uvq1atLEUPjFXTs2LFqw4YNhQkaDoUvx4Tu3//+99Wb3/zmavHixTPG8OQdegzSI0eOlEvODx48WG3fvr3wGOinuilwUPppXGBp3PLly6vzzjuvevjhh6t585rCLXk08Hs0//vf/64OHDhQveY1rxkIqXv8+PHqoosuKkAHLudG+ete97rCz+RzStUEmZtA4z4pbE9K1e8r76WXXhoIcI0LLA05ceJEddVVV1UPPPDAjI909Ewl/elPf6re9KY3FRU4lee7/Qxw6PzHH3+8AOTw4cPVs88+W9EQ//znP6u//OUvzQGQ4AKgXbt2Vb/73e+KeXLfffdVf/3rX6tHH320gAuN8pKEt9xyS7dJnlJ5EwLLaFq3bl0R1U899VSzEVOqqc8PGdVPPPFEkVavfvWrm53VZzJOqw5I8BKw2HtABSi2Bx98sNi0zz333GlqccmSJcV+IpWAENAM/LrEcnzZZZcNhMRiOAU9o6cZ78mRBQsWVL/+9a9LYz74wQ82bYO8P6h7dH/ve9+rLr744uraa68dGGDhF6l17733FhUIaAawPti3b18x5C+99NLT2OoZg8Ve/iwnj5Xj+QsuuGBGbUlqHY0TSizEGx3sk7RVPDToCZPNvHbv3l1t2bKltGGQaMZDNhIwoZXkMhDWrl1bbdy48TQphHbSKY1+YLLpG2VI9vK4NgjpjMBCLBSuXLmyeuihh14WRrxO+/vf/16NjIzM6NS7XQenimYjpQHOHWKClGDJ5+qgyWvt9vJl3nb3Z+LaGYGFKESbtegsQBv0xCDmf7v66qsHZgQnz/DPTJvKkoBr1apV5RqpRXpNdVPeoACsIx8C8Urv8wdt27atGh4ebup5jRmkpKO2bt1aLVy4sDr//PMHjk4dv3Tp0gJ6BjvHNClGJdII6Yh2TXLdM2lLuVZsmLgOpO7n+ate9arKNgipI2AhVIexte66664yU6w3dBAakjRgtA4zE3Q8iHSiiT1lZvib3/ymSChASpsJUJ5++uniliDNbM4NFHbjzp07i/OaY1UbFy1aVO695z3vKQNqELRKx8DSaD6tu+++u4yyc845Z+DUog6xSoD5mDwohmyCvr5PcL32ta8tEifvpd314osvFklFLUpXXnllAZHVEA5fqwgApM0kGtAB2CCACr0dAytF+OWXX16ceB/5yEcGzvWgU/71r39VQL9ixYqmWtHQQUuAxRVigpEJjzMBTD3lPdcTTPX7ADVIA6ljYGkEwl//+tdX3/nOd4rPhK2QDa43ciaPea83b948kyR0XDcw5Jphxw+9TDJ2NCvMtmAEfc9ANF1OMZ33Z3JvFFODvNZWCwZp9M4kX2aq7kkBC5E6zNqb5YdBWfBEF+OXMczfdvbZZw+cJEXjKylNGliklhkNp+k//vGPgXGYmh1xM1grm00zz4FJAwvJwCW+icN0EGwEatBMyZScGhxEF8PMd3V/KZgSsHQcO+uss84qITUzbWuRVpZFTMGpQsCfTTPLgSkBC8lmg6IGOExn2lBmX4lNGo4VgfRYzyxbZ2ufMrCAaf369cXGYtvwIc1UQovQXstOs2pwpnrh1HqnDCzFsG3MEP/85z/P2CyMGswIzDVr1swC69T+nbGzaQGLpOCJt3AqXmsmpBbV99hjj1VAZUljNg0GB6YFLE0AJt74O+64Y8ZaBFjU8qzRPmNdcFrF0wYWqWWB1KIpO6efxnO6GXjbzVJn7avT+nfGLkwbWGaHYp+s0pNa/QQW+0oICTeDV9UGbd1yxnp1ACqeNrC0gY0lVkvQWj/f5gFiboZLLrmkr4AegH4beBK6AiySQqSDqII777yzb0Y81ccxyr6aVYODhbWuAEuTSC1x8d7l8w0B9k8vEzWoHvHtgtxmDfdecnvyZXcNWKSW4Dprdf0IqaEGxd97MWEQvskwedb/dz/RNWBhkxniG9/4xvKqeK9DakhE9hU1OGu0Dx5Iuwos6oijkhTxQkOvHKbpZuBxH471wVn76r8cWJqnk0ktsVokWC8S+2rHjh3F0z4bzdALDk+/zK5KLOQAFilCWlFVvZBa7CsvpKqnn36z6bP7lVNC14GFdSQKhykjvhezQzNQXn7RorNqcDDB2hNgUYGbNm0qLzZwmgJat5KylMmeEyI9C6xucba75XSvx2t0maX5npMZW7fj4qlW8V/eyfOtg9k0mBzoCbA0ldSiDr1AeujQoa6pRBJKiM4VV1wxK60GE1OFqp4BK1UV56Wwlm4Y2akGvcDhO56zanBwkdUzYGkyw93HOXy9rht2FjXoiywWnWeD+gYXVCjrKbCoQ1+o81rW/v37p60OzQa5GcR/zUqrVzCwGPHipHzUnq01HZ8WVZrfQveh/VlgvYKBpenAxdD2KcTpJMAywxRjPx2AToeGbjzLJGAi9GvrhgkylXb3/J0tkkXEg++t+1mPqUQi6ATPklh+JqRXS0VTYeBkntEO3+4y2BznvpMy5M3U7tnx7rtOY/QbYD0Hlob5SAeV+J///Kc4TicLDBLq/vvvLwvcvn01CK/1ZydPtNeZJG0CwfomO5Hd2coDfMrOt7cZlNOJM1O3QEhf/vPWeh18E9HdjXs9BxYiMdYHxqwdmiVONukEM0tf6Xs52FYGgk60QsDn5mP/JK7jL3zhCyU4sQ4sAGCDuo9XBqJPMrElReVOFVwJTmX2O/UFWMDgLZr6x1s7bahOyt/yGR7wEJmUNPnTJT5UAhwGlVAin9qUAKUuPfDH13vyunPg8iteea1TftXzqaNeT/1er4/7AizMoeeNUm4HkaaudZrE0b/hDW8oo7nTZ/qVjzSwGQB+GeIXv/hFUT3XXXddWSTnb8sOFqvmZZNWsLhPVZnkZFImgFGd46WsW3mOJWXVj10jEfud+gIsjWW0G4HUg68CdgIsnUV9sqksatfVRz8ZpaNIo9yrW6ejx3KVvTDp73//+0Uyi/0Xj+/z5YAhLx5YgXjnO99ZynGeSdn44mN24veV5zlSjsRrxyu0iPcXqZuvvqkHiPAL77yW531PAZFUqvv9Sn0BlsZgBKllVgQknSTM94ORvsWFURON3k7K6yQPOm06yF4n6zzSSAf5KRXHOkzHymdSYhPgKOLCu475IwA6Vx7n7CxtqoMKTc61D5C8fGtxHTgcA1Zrkl+ZaPFrYVJ+D5b6VRcJSAXLJ3yp399l7RuwMAOwuAw6SZhjJmiU9frXu0gMHSCRQDrMbMosTufqZJ3N7iFtRW1Q56JXqbabb765+uY3v1mWmtpJF20H0muuuabkT/DmdXtSx4xXyuvKymN7WyaAB8R3vOMdpWzX8czg0xY0U8MGgzz1Z7OMXu77BixMwjyGbTvm1xuJ8aTBrbfeWr3//e8vauhMz9Sf7+QY8206CJB8v9QGSCk9hOb4LgUwUeWuS2hBI8n1q1/9qvrYxz5WJAtQjpc8e8899zQ/8K/TbZ4BCMBFBwCQNiQP08HPJ5OOb33rW8uzdYCgH08zuZd+QhIMjZ5NVZn5+rHvG7A0WoyWkXQmkGA0+4Sx65tX3VKBJJMOVh5pZLYJTMClLsazqAnSCA1oRmtuaM+krB/96EcFeCJZ6/cyT+ueulS+utWp0/HEhMYPA1CVJExes9juPU3X/S4QtZoJbTYJgPI4z9EMeNmGkrGP//oGLG3SWVTbRMDCDGqIGvzqV786bYMT05Vpz0D2a7F8Rhg+HO4LvrH6rzq0A1Frf5Auv/3tb4uUMfvrBFTKffe7310W5NPGZLvlYEMfaZP8QZ9BYMGd9J7opZE6qNCa5/Z53NqGXp/3FViYJ2lsHtcb6BrG/vSnPy12ARE+VWmV0omq4T+zzsjpyJ/23ve+t6guAFGfrRNwoBVISRzlfeUrX5lwkLS2jWQiqahAdVJ1zqm+TK6rA22SiQC1CFiTTa8YYGGiDre1G0kk2k9+8pNi5Is+nQqodIrNdJ9Nw6bTccqjskiIyYKptUP5qtg8OrtTQGrzH//4xzIR0XbnXCn5Y0yu+ak5dJsQ4IVBgH6Dg2HPWJ9I2rfS2Y7HrXl6dd43iUUa5VRYxwNZPRmhfgDKrJEKbL1fz9vuWJk6izQxBadOh0PVfeITnyiqTv3K7BQI7epAo89iqouvajJlAYTPagKJY53ONZHSyjXH3AtmnaQbMFGPJgnp+/OctrSCpn4tj+VpzdeuXb241jdg6XSGKfXmuJ6MTqP31pgFfvGLXyxqgFTpJOVMjRHu+1xmdX6u913velepC5gmC9J29aJZB6vjs5/97KQ7DHDS866znZOe9Rmba+oBIoa7c0s9rpHeDZAEWE6E0R7gqqc6gOrH9Tz9PO4bsIwiUsSsqN5woCJlfvzjH1cf//jHCyM7UYGeAz4zO0s+DFxShLFrlCtjMhLlTEwHYD+6zqdGZU22bFLulltuqYZDimYivUhXAMoYfpJKXu4CewDLgQFgQ0OxwB1/x8ckfkqnLLO+Tz7n4Kvf6/VxX4Cl8UI32A5vectbCiA0DDiAza/N81dxLUzUYcrBJKAR7aBTXOPx5ipQ3nTVXTuGK9cEwKzyox/96JRsP+WSPpl0OqAYHMmfVHvq49NKyVXyhoDaF8uG+08MVQuG5lRr5/nx8SNlQHkOOAGxNXFp0BRszE61QGsZUznvC7CAQccQ/Zir89krpv033XRT9YEPfKAsOYwHKozHbODkMLRh5tve9rbi/8FQYOtE0k2WSTpf55BWH/7whwvdKUEmU5ZO5Ww1kBwDAr5og2ObNBwSLSWNa+rS/hBS1YGjx6tHdj1dHdr+r2rTxWtjdrmw2hZrlPiCd6ScGad6sgx7rhvA6mfqObAwBXNuv/326vrrry9MSiNYVCnjmrHaDlQAY2Pb+N0eDDKK3/e+95V1MIxSdnZKLxin/p/97GclJPpMEnWi+pVDZefgAliShPOT24Hzk2pMIMknMeiBg8W5ZlHYpktOVPcdfrF6/oUXQyWfXwacfPIYfHWQOgZe/rMEmrz9SD0HFhD53WPMY59wCv785z8vauVLX/pScS3UQQWImIERfDgWUI1KtsYnP/nJYt/kSO41g3S2FQA0f/rTn562RORa0A5t007A4rB1zG4zaEh2PNNG5xbgHUujIenWrD63eucNJ9cHc32xzotm/qhHG6xx9htYIWPV2Yh2rBPXjWMMImV4qW+88cYSSfnLX/6yGg5xz0lphLXqfWJdJCUbigratOmKEONXFyZ3Uzol88drpw7hB7s1Zqpf/vKXi+Q40zPjleU68GibwWJ2qCzX8D6PSbGsw3Xn00meZ6vxf2X0w3TK6+RZpo52NSUWUZ1Jo+qp9bx+r36c+RQMVLzTRvwNN9xQFmu3bn2kzNy8abNjx84xJsJ2Y/ZMFXAICuUdiZCPa699S7EjnntOyMpeuUre9v/qNLfmO3nvREzVly9fVpybSW+9vKSdpASqz3/+82XEA/V0kk4WMgRcmbL+BBAbUf054Nx3nvkcS3k9yxlvn8+Nd7+X11Ea9Y+WGRYVBGD1TaPrm8ZNtCmDatMpZm0iBADG+tjo6FBxCo6OngjmLQ4psKzJtGxk1n34iFinwH3QBhZoOBGqYLrMOnbseEjCvfFCw4amdMi60Q5AJKwXY/mrjPbpgkr5wPLd7363vEhhwblVUqvbL6mR1rkuaA3TZ85b8ya9Z9rjGXU7oxLLSj0xrBE6z3F2Yu41xHGOHOeOgQHjAMioNPPRIHaDmZ/Xv3bu3BGe5DWh1q6KKfLBkERCUQ4Un4xyMinvxTBoH3+88WIBeg4dOljNDcZj1ObNW6qFCxae9lzz+ZBqDSjmlVP3x44eC7VwcllJmegnLUhLA4Jtw/tv5tkNUKEAPy0DceDiYZ2n7qsH4PBMXnQx3LM/5JlsalfPZMuYav6mKvz6179ejOY0HJOoBFjuVaTzNVwCplxGMfPTQSIGBLVhDN+P0I8dO56MvIdDmvnl9tFq0eKQQMHg4HApJ/8BxYKwb1avXlMdC1AtmB/RlOGv4RB0Xb1oaZtC/uqgeQHyQp8OjIxlINTqYXdQSZyqBsC2mBzw/AOYoDiqWh1TlRTtaMNPXnZ2Y/K2ns81ExyGdg5WNEzHhdKunnqdvTxuqkJrdJhMdTFcW5NGUnFmSDoGWIxwsxiOT0zxvpzndZBOsyfWrX9ZUN269d9RxrwAcCOMpbWO5nlQNTTUUMmYg8jgdgHh0WPhJSxoaeYeO4/IiADVQw/dVx0FrlCjpYOo5sOHisRzbePlm6q/33NHrMU9W2akBhKVA0xoB8huSakahWXQ/uAHPyh8aKcK5cUvce+874xtLgcujnEHUr2CNsfab1HbZGHGjHfAoMK+9a1vFcMbiIBDqImGAp0NoXwvGmt0CTemwx2TAkAGTEYnxrAdTLO3bn04yjkYSy7hvBv7KwDBkALvsb3zAE4ByYP3BWAbI/j4ieOhbhdEXY21s/JsHWAAGB7p1avXVvv27yttoDKp0IMHDxSQYfTxsLEA/TOf+UShGbB0KOlkm2onIvtMyeBCw3iSRN36gZRynPnsx0tZXrv77kna1+/UVIVUlsaQREYtm8mG8bnizubIjVRzX976pgHJkGyM+ycCGC+9FAwrTGphVJ7mXhkxe6PSnt37TAEaHmH4yhUrg6aajTWaqGzUtnbtBdXa8y+Ik7gedSmyweByVB0O1T0yMtJcAUhANZ7u3X/18H57UydB01qbPHjN14Vn+Ghwy2+AtgIsBwJvu3sJMvkz0TBUvcmT/P1KTWCROCTRN77xjWIb1RuRx+Pt68RmHtc0NEcNgN5xx10hAePVpABMIyWSGiMrrw3NiVetQvpsuHRjAxiZO5iHaSdiVlmAU+6O3RzbscsaqV3ZBaNNyVSn9dRSun9GanjjiBQn5dvVncAg4fm7SH5RGzQBR2ldnSmP+cLXRsq5R7vwIwljps7VYROOlFGr3W9Z+xKbwEIAwxK66fWpottIS9HLsBeDZf/cvuciEmFrddHFG9owtQEC8MJcqgwEqLLjx82QQoWFxAuYVouXLC0tOTn3SwCNB7WTZTsqzI6yx7REKatf//CXxEdDu+S69gOFzQyS6UHq1IHiWf0DRF7kJcnxnQbJKAl5lOf69bGU1u90CrCIXcb4ZD9zjRlENWnCxuJiYK+RgBpHWj3//P5o+JIQ85eNz9ho/ZxgxO7du6qdMYsk4hcu9CbLwQCo+PCloU5eX2aH7TqnfXc1WJr3ynN50kduA4IYMRIIn9rRjxz3MlpUHq4awCGV3MvkHr5yT0jOqVB5Mp9reEhC5rV8vtf7JrA03GjymaDJSCujBCB52W2MfrMr3ykwG+FykGf+/HmhCu6M+0cDhGPGJLERja8nRvu6dRuq4VetK8wi/dhnx4NhQ5GfMT5aY3D9WcfFNiGR4g9jiaZ6/nJtLF+M+9bHe3aOLm/pkD7tVGFKKryX154dCzy2dn2iLXXAtObJ+/U8PWtgS8FNYKlcgyC8k5QSSgiLVXuzQCEgw8PDhSHKywYBB1FOFSxcuHKsw8PnFCCbH0zDVGqwMCaOASjctA1bLJg3f/7Cal7YVfIBWIKjlU7XSbvFi5eUUa5DTBbOWnpWaZv8aLEOuXbtOTHa+/dlQLzFq5GRkVayy7m2kfaMe3wwWLlBWuOotFHeTtJ4fOrk2enmaQJLQdwKVOGnPvWpJihaKwAoybfWb7vttjKaPvShD1XDASgNASBSS5KXOsQsq/jPPLs/GHVtkVKHwiB97LFHC5PSflgRM749e3YHYxvO0FUrz6l273kqpN6y8MY/X8Cx5aprwmnaeOevVJL/gtk6ZO9z8RuGu3YGDYeroQCRtHHjplKGpaQqZpFUC8nZz4S268PWYSIARtqhBp9zmxh4kygSPq+jUd4EiT2Q5nmCTP68ntfs8XYmUhNYGo4wzruUNAhCnOsap0PYTzzsRhQJJXJTI92rJ6BiTwCqyYBohttvv6s6Fvl0+Lx586tzwydF9c0Nx6VoyOXLVxSJeSD8TisDVFFwObduSJ2tWLmqSLPTPPZBY2F4lHvp+suK+iP1Uska39YZiUX1W39bt24k6uwf0/EUcEjtb3/722VSg7dejqUeHWuD2Z2+cM0z1KHJT84I8VUZ8usTg9gxG8wgNuv0rLKYNoITXXPez9QElkZQZ4CFeES7plGmvwBl2UMjRCiKLZen3YgARGKdZ57Bijlz5w6FzbU6Gh8RkXHfdt55a4oK1OTS+Rgb0qkwOep2HZgoyqi2nANGkTyFS9EZcwKkJ45UC6sj1YE5i0q5btXZ2DyO8jEY3f1mdKEp6m6sQGwt9hbJJPIjZ4r4DSh4Cgw52LkUrAy4Z5AKfDT7Y7YYuHjtDSDrtJ4TqqQshr2lusLPqLufqQksvhIEW4HPkWUEcBcAGscdqZNLNiRUO1Al8ewYjWXnSKIFMOiKK65pdirGTZQA9MHwvpM+S8NOAgYO0AIMD54Ih+nerdWiFfHdg+MRcRmMPhNgsLe/LD7ZwgQ104EPSjvwFrAk/Eg16J4Nn6291meFJkYkmEHPZ6Xv0peFZyMjI6UsNpryzsSTkxR276gJLPYVZGsI1Ju55BdVUu9ruM1oGC+ltMIs02bluWZ2qFwzvDKCxgogqSSd7bi+p/48sy/8OfsD9EujDFJOeQ1wxLuKy9ZULxwI2/DxR6uNV8XLCgG+BE67sguT+zx6ta+eRMLWpch4He+6fNrbyvO8p9wsyz5TXkt7N6/3a98EFmQbPd7ro7oQrjE2x50SaJSZVqdPRUOUQeJdeeWWUKsvlFGUDUwQOM/j5j4Yxe1QDYdhHuoBg3nW2VgNFkZU5oJ4DX9OvKRxEWlFfcaduF8vr36sLWisd0LJ3Md/nfKyjyR1vaomsNhXPLk6bzoNJ6FIP+I6VZ0yRYU+8MD9ofc7/w3nPU/tKs5Rz7O1DkeUAgN/bkQ+NME3Guoj/GILVjVePzej5MLIROoBUyb2mjCfzZsvi4E0M2oiaflv3jeBlU67eidMtuEAIAKCxKMK0wZznf3GZgtRcUpHj1cHOixA87qTTtueeKws8WzZcnU1tCDcCDWwyDsa5ZJqf7nr9rDrOBbD9xWSyVLQhRdcHKrdx2N9cGOoRGk++ujF8XLHlUVVj0fD7PWpc6AJrFYdPpUiqRhGKaOxngDMMtHu3Xsbi9AhKU4qvjEbIR8IkFBTtktjEXpugJK8oeZIG6nuSS8Xxv555vKNm6uXYvnH7BG4BQcuWby0gAoAhSaPjIyUV84S+PUyZo+7w4EmsLpRHDVoyltfFtLZbDcOSy9EzF8QryI1FVmjViAgyeZHPiAyy/EMoBYJGvfmiHiIe42wmzFqa1KrXIl8q1adE5OGc8cyAGTDxVAGTtwnwUzVga6ffqwmQa+QgyawgGIyiXrT+aXj40FuBW+2WB80kyMN3Oes4/+6//77wnDfV23a/LqQOEUGxVOcfOFSeDi88hGV6rk1a88PG21fdTR8NnIVm2negqJeD4ZavPLVryl1FUxBmoMATNnLHzZVI8W1NvfRy/ZLuscyz+66zIEmsPirkuGkzJkSqeKlAy4Jxr4FaCEeYsaByiyTU9XSjzedeYBvu+3OYtOQRI2kk09Uw8Prwz8V63YhTUQwLD97RQEVb/kxyzuxVkgVkjrl2aCvOEkhTyooaxye/B83W+9HviLBSqYzt/FkWb07wuuJ+F3obdu+3tHUjZKbwBI5yqurIaQRkJ0EAKHQWHdyzbFO/uEPf1g8wgLMBKVRgRJQWRsUrJae93ikgHDfvljDi/JPJksPS6qzIgQ5k7J1e1F/EYtVUoBEvZZ3no71REs+ggEnnYBtQDpKezg5c0nHuYGGxw1AnSjSmfPT+cspNYHFNmJ063QNbG2Ia6XDY58qDoD4p7gWUv1hCtVnSu9j+Zm8rOr7Cxs2bCllF0hEWRi7/cknyssPQLMo4q8Wh0oEHrFYx0+E/yrsK4l74NixI1GXXwPbF+t9lxW/VtZRwIj++ENr2nKu65ayjw4yaNA+00kA48MPPxFe85UlkuOPf/h9rDTcH/yp4vWz/ymgeuqpHTHgR5q+xZmmudP6m8AaHh4uLoHxHgQ04MrEJvM9q1w0pf6ASuy8NUIfopA8p5OpzeXLzy7qrrlAHAwEZLO2owEYbopyHuqQFCtxSKEe1bVo0eJ42+ZwWUvc/dT26sKL1kW5UYBeGEvsq71P7yn+Lh56M0L3M4f93PB53fuPe0N9H5iRALikFa9EOuza9Uwsir8xXCCPxNcC7yhLNL4aePPNv4xF/hsiAmR75NsWX+T5YDEx8vlB3zeBRQ1OJqU6yyk7KcYxiimiHkgEgJLsrT+Ku35yR/zywvxGtbpcZMMFF1zUECdjBMi/bv2GImZg2atg4twbEqeqzo0XXxcsXFDsr5NQb6jKveH7IpFWxuxwweiCAuyxYssODodiwrBkyeIC5KSxnqcfx4BFypuZPrt3X4Qh7y8vsnBSi144ePBQ2Kx+AeNA8O6kmdAP2rpRRxNYZmXjJZIqgaQjHJMimABAzo0+s0ILz7z4OjdT4/72EmC3Zs3IKZ0NXOyK1tSY3YVKC0A9vWd7WYT2Esb+fXtD2vhBzZVR//kB2pP1QOeGDVc0rgXN7UCjI6nu6657c2lDa739PL/88o2hBeKLhjt3RwjRebEMtj5es787ZtbnVyPr1od7Zk+17OylZaDW+dlPGqdaVxNYwJB2FCAkgFzjNTeKXLMg7dyi8q3xOrowG2uD4rMY7+63MkEZZp1GoeMiepLi1FN10ZP3Yj8aoNvz9O5qXgTwPR9uiELnUMRnVRF5yngvr3+NPRBlAaqQnJKU3Vru2LmBkdJ27Om+7/DpmmuuikDEFwuhb3trI/IDi/CaGcE8IN1abd6+EzvJCpvAMrMrna6J0TKN1iAgY4hzHeiI4eHhEsDnw/ne2jVj4U4Q+6PxraBCj2vr118a0aN7qm3bdhc1Fv0faQJUBXM9xxC/5JKRYty/uCokVdhaAgGXnRUAD7Apgc1GXTYT8NB5JTkZS3F45LDAuMl/Mz2L6OYev9iR7b5xlfXI83IDFdobXRDEs40mSjm62VKSKbI3oAWuGf3t1E69vATr//7v/5Xf9Ms4rXqe+jFmmqUeOXI0pOCyEsxGSiqHxJSAGfjRYpHbIJgo8bfxp33tazee4tyd6JnZe5PjAPNIHzWBNbnHZ3PPcmB8DjSBNX6W2TuzHJgaB/4fjaXtVZOFqRsAAAAASUVORK5CYII=</bitmap>
-        </item>
-      </items>
     </chunk>
   </chunks>
 </Archive>
