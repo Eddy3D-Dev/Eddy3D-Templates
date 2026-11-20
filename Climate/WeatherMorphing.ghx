@@ -122,9 +122,9 @@
         </chunk>
         <chunk name="DefinitionObjects">
           <items count="1">
-            <item name="ObjectCount" type_name="gh_int32" type_code="3">14</item>
+            <item name="ObjectCount" type_name="gh_int32" type_code="3">16</item>
           </items>
-          <chunks count="14">
+          <chunks count="16">
             <chunk name="Object" index="0">
               <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">2f7a1c64-9b3d-4e58-a0c1-5d8e2b6f4a93</item>
@@ -151,6 +151,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -403,6 +405,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -779,6 +783,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -1350,6 +1356,8 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
+Version 1.22.1.827
+
 Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">0fb4bb8d-bc55-4697-ab17-f731dec16442</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
@@ -1873,6 +1881,8 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
+Version 1.22.1.827
+
 Version 1.22.1.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">d331e427-2118-4f73-b2b8-6f3b9f29d040</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct Weather</item>
@@ -2224,6 +2234,8 @@ Version 1.22.0.827
 Version 1.22.0.827
 
 Version 1.22.0.827
+
+Version 1.22.1.827
 
 Version 1.22.1.827
 
@@ -2900,6 +2912,435 @@ Edit: Station, the jar File Path, Morph Settings; turn Run on.</item>
                         <item name="Stream" type_name="gh_bool" type_code="1">false</item>
                         <item name="Wrap" type_name="gh_bool" type_code="1">true</item>
                       </items>
+                    </chunk>
+                  </chunks>
+                </chunk>
+              </chunks>
+            </chunk>
+            <chunk name="Object" index="14">
+              <items count="3">
+                <item name="GUID" type_name="gh_guid" type_code="9">0feeb662-41d8-4f82-915c-4af5cd5b4fb0</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">8638ae22-b7d6-4102-a8d9-ddb877433101</item>
+                <item name="Name" type_name="gh_string" type_code="10">Weather</item>
+              </items>
+              <chunks count="1">
+                <chunk name="Container">
+                  <items count="4">
+                    <item name="Description" type_name="gh_string" type_code="10">Obsolete: every Weather input takes the EPW path itself. Reads an EPW file into a Weather object.
+OutdoorPlus
+
+Version 1.22.1.827</item>
+                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">2a99eda2-6a16-430a-8712-11fd6aadaf8f</item>
+                    <item name="Name" type_name="gh_string" type_code="10">Weather</item>
+                    <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
+                  </items>
+                  <chunks count="3">
+                    <chunk name="Attributes">
+                      <items count="2">
+                        <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                          <X>0</X>
+                          <Y>0</Y>
+                          <W>150</W>
+                          <H>20</H>
+                        </item>
+                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                          <X>779</X>
+                          <Y>1068</Y>
+                        </item>
+                      </items>
+                    </chunk>
+                    <chunk name="param_input" index="0">
+                      <items count="7">
+                        <item name="Description" type_name="gh_string" type_code="10">Full path to the EPW weather file.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">0327ea40-148c-4d8d-b3c3-55d194db7174</item>
+                        <item name="Name" type_name="gh_string" type_code="10">EPW File Path</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Path</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Source" index="0" type_name="gh_guid" type_code="9">9ee6e2cf-6d17-4c9a-a343-09bbc823fdeb</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="0">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Weather object containing EPW data.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">2f44435a-568e-431e-9410-1f8c67d1d026</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Weather</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                  </chunks>
+                </chunk>
+              </chunks>
+            </chunk>
+            <chunk name="Object" index="15">
+              <items count="3">
+                <item name="GUID" type_name="gh_guid" type_code="9">e9036e6d-812f-44d4-907e-571f0801fa69</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
+                <item name="Name" type_name="gh_string" type_code="10">Monthly Climate Chart</item>
+              </items>
+              <chunks count="1">
+                <chunk name="Container">
+                  <items count="4">
+                    <item name="Description" type_name="gh_string" type_code="10">Visualize monthly dry-bulb temperature and relative humidity from Eddy3D Weather as two aligned min/mean/max charts.</item>
+                    <item name="InstanceGuid" type_name="gh_guid" type_code="9">7ddf8bc1-5303-417b-afd3-467950c9b9aa</item>
+                    <item name="Name" type_name="gh_string" type_code="10">Monthly Climate Chart</item>
+                    <item name="NickName" type_name="gh_string" type_code="10">ClimateChart</item>
+                  </items>
+                  <chunks count="12">
+                    <chunk name="Attributes">
+                      <items count="2">
+                        <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                          <X>0</X>
+                          <Y>0</Y>
+                          <W>150</W>
+                          <H>20</H>
+                        </item>
+                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                          <X>979</X>
+                          <Y>1068</Y>
+                        </item>
+                      </items>
+                    </chunk>
+                    <chunk name="param_input" index="0">
+                      <items count="7">
+                        <item name="Description" type_name="gh_string" type_code="10">Weather file: the EPW from Download Weather, or the path of any EPW file.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">c16695fe-9858-462b-9d55-1ce1de795d38</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Weather</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="Source" index="0" type_name="gh_guid" type_code="9">2f44435a-568e-431e-9410-1f8c67d1d026</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">1</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="1">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Lower-left chart location.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">811361aa-ecb6-40dd-a109-620abab5f77a</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Base Point</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">BasePoint</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <!--GH_Point only stores data which exists, test the existence of data fields prior to reading.-->
+                                  <items count="1">
+                                    <item name="Coordinate" type_name="gh_point3d" type_code="51">
+                                      <X>0</X>
+                                      <Y>0</Y>
+                                      <Z>0</Z>
+                                    </item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Chart width in model units.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">e9221026-7987-471e-afde-0ccbe2d9aaa3</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Width</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Width</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">24</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Combined chart height in model units.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">004f9879-850a-406e-96a3-bd62f2f9db90</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Height</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Height</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">14</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="0">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">January through December.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">ee640f25-e4e4-42cc-96ea-2b5c24cb958c</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Months</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Months</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="1">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Monthly minimum dry-bulb temperature (°C).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">f4ec357c-ab56-4991-9d07-1a24ab1f16df</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Temperature Minimum</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">TempMin</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="2">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Monthly mean dry-bulb temperature (°C).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">ea054bb5-aee2-4815-93b9-0343a8a972f3</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Temperature Mean</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">TempMean</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="3">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Monthly maximum dry-bulb temperature (°C).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">17adfc90-f69f-4c56-8ae9-bd8f74f4fdcf</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Temperature Maximum</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">TempMax</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="4">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Monthly minimum relative humidity (%).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">e7b0c87f-8544-4533-a449-52b582b8e453</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Humidity Minimum</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">HumidityMin</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="5">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Monthly mean relative humidity (%).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">389fc1f7-0596-45c8-99db-e44ab137a0a9</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Humidity Mean</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">HumidityMean</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="6">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Monthly maximum relative humidity (%).</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">911ac28f-2003-4afa-b44f-5267d50d3066</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Humidity Maximum</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">HumidityMax</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="1">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>0</X>
+                              <Y>0</Y>
+                              <W>150</W>
+                              <H>20</H>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
                     </chunk>
                   </chunks>
                 </chunk>
