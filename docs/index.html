@@ -140,7 +140,7 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 /* The ring sits on the whole pill, so the select's own outline would double it. */
 .branch select:focus{outline:none}
 .branch:focus-within{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap;position:relative}
 .chip{
   font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
   padding:8px 14px;border-radius:999px;border:1px solid var(--border);
@@ -154,7 +154,7 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.5px;margin-bo
 .chip .count{font-weight:500}
 
 /* sections */
-main.wrap{padding-top:88px;padding-bottom:24px}
+main.wrap{padding-top:56px;padding-bottom:24px}
 .section{margin-bottom:44px}
 .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
 .section-head h2{font-size:22px;font-weight:750;letter-spacing:-.3px}
@@ -184,7 +184,7 @@ main.wrap{padding-top:88px;padding-bottom:24px}
 .card .badge.engineering{background:rgba(37,99,235,.14);color:#1d4ed8}
 .card .badge.screening{background:rgba(217,119,6,.16);color:#b45309}
 .card .badge.experimental{background:rgba(147,51,234,.14);color:#7e22ce}
-.card dl.fields{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13px;color:var(--muted);flex:1;margin:0}
+.card dl.fields{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13px;color:var(--muted);margin:0}
 .card dl.fields dt{font-weight:650;color:var(--text)}
 .card dl.fields dd{margin:0}
 /* The final simulation output, captured in Rhino: the reason to pick one template over another. */
@@ -227,18 +227,12 @@ html[data-theme="dark"] .card .badge.experimental{color:#d8b4fe}
 .card.flash{animation:flash 2s ease-in-out}
 .card{transition:opacity .3s}
 .card.dimmed{opacity:.38}
-.card.dimmed:hover{opacity:.75}
+.card.dimmed:hover,.card.dimmed:focus-within{opacity:.75}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .card.flash{animation:none;box-shadow:0 0 0 3px var(--card-color),var(--shadow-lg)}
   .card{transition:opacity .01s}
 }
-.badge{
-  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
-  padding:3px 9px;border-radius:999px;color:var(--card-color);
-  background:color-mix(in srgb,var(--card-color) 13%,transparent);
-}
-
 /* states */
 .state{padding:56px 0;text-align:center;color:var(--muted)}
 .spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite}
@@ -268,7 +262,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   header.hero{padding:40px 0 56px}
   .hero-top{margin-bottom:24px}
   .toolbar-inner{padding:12px;gap:8px}
-  main.wrap{padding-top:68px;padding-bottom:16px}
+  main.wrap{padding-top:32px;padding-bottom:16px}
   .section{margin-bottom:40px}
   .state{padding:40px 0}
   .card{padding:16px;gap:8px}
@@ -289,7 +283,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .hero p.sub{font-size:14px}
   .search input{font-size:14px}
   .branch select{font-size:13px}
-  .chip{font-size:12.5px;padding:7px 12px}
+  .chip{font-size:12.5px;padding:7px 12px;flex:0 0 auto}
+  /* Ten categories wrapped into five rows and pushed every template off the first
+     screen. One scrolling row; the chip cut off at the edge says there is more. */
+  .chips{flex:0 0 100%;min-width:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+    padding:3px;margin:-3px;scroll-snap-type:x proximity}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{scroll-snap-align:start}
   .section-head h2{font-size:18px}
   .section p.desc{font-size:13.5px}
   .card h3{font-size:15px}
@@ -327,7 +327,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header class="hero">
   <div class="wrap">
     <div class="hero-top">
-      <a class="brand" href="./" title="Reload the template gallery"><img class="logo" src="https://github.com/Eddy3D-Dev.png" alt="Eddy3D logo"> Eddy3D</a>
+      <a class="brand" href="./" title="Reload the template gallery"><img class="logo" src="https://github.com/Eddy3D-Dev.png" alt=""> Eddy3D</a>
       <nav class="hero-links">
         <a href="https://docs.eddy3d.com" target="_blank" rel="noopener">Docs</a>
         <a class="icon-link" href="https://github.com/Eddy3D-Dev/Eddy3D-Templates" target="_blank" rel="noopener" aria-label="View on GitHub" title="View on GitHub">
@@ -355,7 +355,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="toolbar-inner">
     <div class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-      <input id="q" type="search" placeholder="Search templates… (e.g. UTCI, OpenFOAM, comfort)" autocomplete="off">
+      <input id="q" type="search" aria-label="Search templates" placeholder="Search UTCI, OpenFOAM, comfort…" autocomplete="off">
     </div>
     <label class="branch hidden" id="branchWrap">
       <span>Version</span>
@@ -606,6 +606,9 @@ function buildChips(){
   }
   $("#chips").innerHTML=chips.join("");
   markChips();
+  /* When the row scrolls (phones), a category chosen via ?cat= may sit off-screen. */
+  const on=$("#chips .chip.active"),row=$("#chips");
+  if(on)row.scrollLeft=on.offsetLeft-(row.clientWidth-on.offsetWidth)/2;
   $("#chips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
     activeCat=c.dataset.cat;spotlightId=null;markChips();syncUrl();render();
   });
