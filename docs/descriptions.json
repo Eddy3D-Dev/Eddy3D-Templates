@@ -63,6 +63,14 @@
     "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
     "Edit": "Station name panel (Istanbul by default); the size panel (100) scales every chart."
   },
+  "WRF.ghx": {
+    "Purpose": "Site weather for Atlanta from a regional WRF run driven by GFS forecasts.",
+    "Fidelity": "Experimental - mesoscale workflow; 3 km nest on low-resolution geography.",
+    "Method": "WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.",
+    "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
+    "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
+    "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
+  },
   "WeatherMorphing.ghx": {
     "Purpose": "Future-climate weather files morphed from a present-day Atlanta EPW, set beside the baseline.",
     "Fidelity": "Engineering - statistical morphing by the Future Weather Generator, not a climate simulation.",
@@ -78,14 +86,6 @@
     "Result": "Petals sized by frequency and coloured by wind-speed band; the banner reports the hours plotted.",
     "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
     "Edit": "Station panel, Radius, Base Point; insert a Weather component before Wind Compass, which rejects the file path."
-  },
-  "WRF.ghx": {
-    "Purpose": "Site weather for Atlanta from a regional WRF run driven by GFS forecasts.",
-    "Fidelity": "Experimental - mesoscale workflow; 3 km nest on low-resolution geography.",
-    "Method": "WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.",
-    "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
-    "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
-    "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
   },
   "Surrogate_annual_thermal_comfort_analysis.ghx": {
     "Purpose": "UTCI across a circular site for one hour or the whole year, without CFD.",
