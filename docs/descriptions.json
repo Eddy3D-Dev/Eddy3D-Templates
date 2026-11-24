@@ -137,11 +137,11 @@
   },
   "SurfaceTemps_EnergyPlus.ghx": {
     "Purpose": "Surface temperatures for MRT from EnergyPlus, staged so the costly view factors are solved once.",
-    "Fidelity": "Engineering - EnergyPlus surface heat balance, not validated for this block.",
-    "Method": "MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve, for a 10 x 10 x 15 m block with Ithaca weather.",
-    "Result": "Surface temperatures and MRT at 5 m facade sensors offset 1.1 m.",
+    "Fidelity": "Engineering - EnergyPlus surface heat balance, not validated for this site.",
+    "Method": "MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve, for an Ithaca site from Site Context (buildings, tree crowns, terrain) with Ithaca weather.",
+    "Result": "Surface temperatures and annual mean MRT at sensors 1.1 m off the building and ground surfaces.",
     "Needs": "Eddy3D Setup > Comfort study (Radiance / EnergyPlus). Runtime: minutes to hours.",
-    "Edit": "Working Directory (CHANGE-ME), block and ground, station; click the three Run toggles in order."
+    "Edit": "Working Directory (CHANGE-ME), site (Site Picker), station; click the three Run toggles in order."
   },
   "PALM-4U.ghx": {
     "Purpose": "Pedestrian-level PET maps from a PALM-4U large-eddy simulation of a small site.",

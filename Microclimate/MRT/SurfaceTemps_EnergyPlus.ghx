@@ -3984,11 +3984,11 @@ GPU</item>
                     <item name="ScrollRatio" type_name="gh_double" type_code="6">0</item>
                     <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                     <item name="UserText" type_name="gh_string" type_code="10">Purpose: Surface temperatures for MRT from EnergyPlus, staged so the costly view factors are solved once.
-Fidelity: Engineering - EnergyPlus surface heat balance, not validated for this block.
-Method: MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve, for a 10 x 10 x 15 m block with Ithaca weather.
-Result: Surface temperatures and MRT at 5 m facade sensors offset 1.1 m.
+Fidelity: Engineering - EnergyPlus surface heat balance, not validated for this site.
+Method: MRT View Factors, then SurfaceTemp (EnergyPlus), then MRT Solve, for an Ithaca site from Site Context (buildings, tree crowns, terrain) with Ithaca weather.
+Result: Surface temperatures and annual mean MRT at sensors 1.1 m off the building and ground surfaces.
 Needs: Eddy3D Setup &gt; Comfort study (Radiance / EnergyPlus). Runtime: minutes to hours.
-Edit: Working Directory (CHANGE-ME), block and ground, station; click the three Run toggles in order.</item>
+Edit: Working Directory (CHANGE-ME), site (Site Picker), station; click the three Run toggles in order.</item>
                   </items>
                   <chunks count="2">
                     <chunk name="Attributes">
