@@ -63,14 +63,6 @@
     "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
     "Edit": "Station name panel (Istanbul by default); the size panel (100) scales every chart."
   },
-  "WRF.ghx": {
-    "Purpose": "Site weather for Atlanta from a regional WRF run driven by GFS forecasts.",
-    "Fidelity": "Experimental - mesoscale workflow; 3 km nest on low-resolution geography.",
-    "Method": "WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.",
-    "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
-    "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
-    "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
-  },
   "WeatherMorphing.ghx": {
     "Purpose": "Future-climate weather files morphed from a present-day Atlanta EPW, set beside the baseline.",
     "Fidelity": "Engineering - statistical morphing by the Future Weather Generator, not a climate simulation.",
@@ -86,6 +78,14 @@
     "Result": "Petals sized by frequency and coloured by wind-speed band; the banner reports the hours plotted.",
     "Needs": "Nothing to install; Download Weather needs internet. Runtime: seconds.",
     "Edit": "Station panel, Radius, Base Point; insert a Weather component before Wind Compass, which rejects the file path."
+  },
+  "WRF.ghx": {
+    "Purpose": "Site weather for Atlanta from a regional WRF run driven by GFS forecasts.",
+    "Fidelity": "Experimental - mesoscale workflow; 3 km nest on low-resolution geography.",
+    "Method": "WRF Met Data fetches 0.25 degree GFS from NOMADS; 3 km Lambert nest inside a 9 km parent; WPS and WRF run in a container.",
+    "Result": "2 m temperature and 10 m wind viewers; WRF Weather and WRF ABL derive CFD weather and inflow.",
+    "Needs": "Eddy3D Setup > Mesoscale weather / Weather Research and Forecasting (WRF). Runtime: hours.",
+    "Edit": "Dates (NOMADS keeps about ten days), domain centre and size."
   },
   "Surrogate_annual_thermal_comfort_analysis.ghx": {
     "Purpose": "UTCI across a circular site for one hour or the whole year, without CFD.",
@@ -143,6 +143,14 @@
     "Needs": "Eddy3D Setup > Comfort study (Radiance / EnergyPlus). Runtime: minutes to hours.",
     "Edit": "Working Directory (CHANGE-ME), site (Site Picker), station; click the three Run toggles in order."
   },
+  "SurfaceTemps_FFT.ghx": {
+    "Purpose": "Outdoor surface temperatures on a city site in seconds, with no thermal mesh and no warm-up.",
+    "Fidelity": "Screening - frequency-domain admittance method, not validated for this site. Cite: Beckett, Owens and Acred 2026, IBPSA-USA.",
+    "Method": "Brep Grid Points sample the surfaces, Sky Exposure gives sky view, SurfaceTemp (FFT) solves each point with SurfaceTemp Material layers.",
+    "Result": "Surface temperature per point, drawn by Scalar Field Viewer with Flex Legend; Deconstruct SurfaceTemp lists the values.",
+    "Needs": "Nothing to install. Runtime: minutes.",
+    "Edit": "Site, weather location, SurfaceTemp Material build-ups and the grid spacing."
+  },
   "PALM-4U.ghx": {
     "Purpose": "Pedestrian-level PET maps from a PALM-4U large-eddy simulation of a small site.",
     "Fidelity": "Experimental - skeleton workflow for the PALM-4U plugin.",
@@ -158,6 +166,22 @@
     "Result": "Mean UTCI per sensor with a legend; probed air temperature, wind, humidity, surface and tree temperatures.",
     "Needs": "Eddy3D Setup > Fully-coupled multi-region CFD / HAM / RAD / VEG (urbanMicroclimateFoam), on BlueCFD, WSL or container. Runtime: hours.",
     "Edit": "Embedded building, tree and terrain meshes; weather file and Calendar hour."
+  },
+  "Share.ghx": {
+    "Purpose": "Send a result to someone without Rhino: sun hours on a city site as a viewer file anyone opens in a browser.",
+    "Fidelity": "Screening - ray-cast sun hours for the weather file's hours, not a Radiance simulation.",
+    "Method": "LiDAR Site and City Surface build New York; Sun Hours traces rays on the grid; Share Bundle writes the HTML viewer, glb layers and GeoTIFFs.",
+    "Result": "The share folder with one self-contained HTML viewer, plus 3D and GIS files; open the HTML in any browser.",
+    "Needs": "Nothing to install. Runtime: minutes.",
+    "Edit": "Site, size and weather; wire your own values into Share Bundle's Points and Mesh layers."
+  },
+  "SiteAnalysis.ghx": {
+    "Purpose": "What a site looks like before any simulation: terrain, buildings, trees, land cover, weather and long-term wind.",
+    "Fidelity": "Screening - open data (LiDAR, OpenStreetMap, ERA5 or station wind); no solver runs.",
+    "Method": "Site Picker and LiDAR Site feed City Surface; Site Context fetches buildings, trees and ground roughness; Wind Climate fits Weibull wind per direction.",
+    "Result": "A watertight city surface, site context layers, a weather file and per-direction wind statistics in the output panels.",
+    "Needs": "Nothing to install. Runtime: minutes, mostly data downloads.",
+    "Edit": "Pick your own site, change the site size, weather source and wind source."
   },
   "ViewShed.ghx": {
     "Purpose": "How open the view is from points on a surface, and how much of a target each point can see.",
@@ -183,6 +207,14 @@
     "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
     "Edit": "Ground Brep, the ten context Breps, weather station."
   },
+  "Sun_Hours.ghx": {
+    "Purpose": "How many hours of direct sun each point of a 150 m New York site receives.",
+    "Fidelity": "Screening - ray casting against buildings and terrain, an interactive preview rather than a Radiance simulation.",
+    "Method": "LiDAR Site and City Surface build the context; Sun Hours traces a ray per point and sun position from the weather file's hours.",
+    "Result": "Sun Hours and Fraction per point, coloured by Flex Legend on the mesh.",
+    "Needs": "Nothing to install. Runtime: minutes.",
+    "Edit": "Site, size, weather and the period; Canopy layers make trees attenuate the beam."
+  },
   "Stormwater.ghx": {
     "Purpose": "Where water can pond on a graded site, and which way it runs.",
     "Fidelity": "Experimental - surface routing only, no pipes; the IDF coefficients are placeholders.",
@@ -198,6 +230,14 @@
     "Result": "FluidX3D Live View colours a probe mesh while it runs; Scalar and Vector Field Viewers show probed values.",
     "Needs": "Eddy3D Setup > LBM CFD (FluidX3D), built locally; needs a GPU. Runtime: minutes.",
     "Edit": "Geometry, grid spacing, simulated time, inflow."
+  },
+  "LiveTunnel2D.ghx": {
+    "Purpose": "Sketch a site against the wind: a 2D flow that runs live in the viewport while you move buildings and probes.",
+    "Fidelity": "Screening - 2D section of infinitely tall buildings at a far lower Reynolds number than air; compare layouts, not numbers.",
+    "Method": "Live Wind Tunnel steps a 2D lattice-Boltzmann solver on GPU or CPU, on a site cut at 1.75 m from City Surface.",
+    "Result": "Smoke, speed or pressure painted in the viewport, plus Speed and Pressure at the probes and a wind-load Force per building.",
+    "Needs": "Nothing to install. Runtime: seconds.",
+    "Edit": "Site, wind speed and direction, Cut Height, probe points; wire ABL Flow for a real wind profile."
   },
   "OpenLB.ghx": {
     "Purpose": "Time-averaged pedestrian wind around buildings from lattice-Boltzmann LES.",
