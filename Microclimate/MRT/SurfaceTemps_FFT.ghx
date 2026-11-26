@@ -98,22 +98,22 @@
             </chunk>
             <chunk name="Library" index="3">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.23.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.23.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Outdoor, Version=1.24.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.24.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10"></item>
                 <item name="Id" type_name="gh_guid" type_code="9">82b21a65-da8f-433c-93fb-f9814609e1d6</item>
                 <item name="Name" type_name="gh_string" type_code="10">Outdoor</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.23.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.24.0.827</item>
               </items>
             </chunk>
             <chunk name="Library" index="4">
               <items count="6">
-                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.23.0.827, Culture=neutral, PublicKeyToken=null</item>
-                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.23.0.827</item>
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">Radiance, Version=1.24.0.827, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">1.24.0.827</item>
                 <item name="Author" type_name="gh_string" type_code="10">Eddy3D Authors</item>
                 <item name="Id" type_name="gh_guid" type_code="9">a3f7d2c4-9b18-4e56-8a2f-1d6c0b9e4f30</item>
                 <item name="Name" type_name="gh_string" type_code="10">Eddy3D-Radiance</item>
-                <item name="Version" type_name="gh_string" type_code="10">1.23.0.827</item>
+                <item name="Version" type_name="gh_string" type_code="10">1.24.0.827</item>
               </items>
             </chunk>
           </chunks>
@@ -444,7 +444,9 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">1e93f930-119c-4ea3-b57d-c806ce9f5d61</item>
                     <item name="Name" type_name="gh_string" type_code="10">Sky Exposure</item>
@@ -778,20 +780,22 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">b2144c3c-ed3d-4f0d-b68e-07f703d01dcf</item>
                     <item name="Name" type_name="gh_string" type_code="10">SurfaceTemp Material</item>
                     <item name="NickName" type_name="gh_string" type_code="10">SurfaceTemp Material</item>
                   </items>
-                  <chunks count="3">
+                  <chunks count="6">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>2938</X>
-                          <Y>979</Y>
+                          <Y>951</Y>
                           <W>144</W>
-                          <H>28</H>
+                          <H>84</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>3018</X>
@@ -811,7 +815,38 @@ Version 1.23.0.827</item>
 brick_ground
 grass_ground
 brick_wall
-concrete_roof</item>
+concrete_roof
+asphalt_road_ground
+concrete_paver_ground
+granite_cobble_ground
+gravel_ground
+sand_ground
+bare_soil_ground
+limestone_paving_ground
+ceramic_tile_paving_ground
+timber_deck_ground
+rubber_track_ground
+synthetic_turf_ground
+cool_pavement_ground
+reinforced_concrete_wall
+perforated_brick_etics_wall
+sand_lime_cavity_wall
+aac_block_wall
+wood_frame_wall
+stone_masonry_wall
+steel_sandwich_wall
+metal_cladding_wall
+rammed_earth_wall
+tiled_concrete_wall
+brick_veneer_wall
+clay_tile_roof
+asphalt_shingle_roof
+green_roof
+metal_deck_roof
+cool_membrane_roof
+gravel_ballast_roof
+reinforced_concrete_roof
+irrigated_turf_ground</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">grass_ground</item>
                       </items>
@@ -820,13 +855,13 @@ concrete_roof</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2940</X>
-                              <Y>981</Y>
+                              <Y>953</Y>
                               <W>63</W>
-                              <H>24</H>
+                              <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2973</X>
-                              <Y>993</Y>
+                              <Y>963</Y>
                             </item>
                           </items>
                         </chunk>
@@ -853,6 +888,84 @@ concrete_roof</item>
                         </chunk>
                       </chunks>
                     </chunk>
+                    <chunk name="param_input" index="1">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Long-wave emissivity of the exterior face, above 0 to 1. The library's assemblies are 0.9; bare metal is 0.1-0.2 and runs hotter by day and by night for it.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">ca79e59c-2296-4365-8fa0-4a47fb9532b0</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Emissivity</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Emis</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>2940</X>
+                              <Y>973</Y>
+                              <W>63</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>2973</X>
+                              <Y>983</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">How freely the surface evaporates, 0 (dry, every library assembly) to 1 (irrigated turf, a wet green roof): that share of the Priestley-Taylor latent heat is taken out of the sunlight the surface absorbs.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">a1507695-d2fa-4f6c-9507-794dcf61b7a3</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Wetness</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Wet</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>2940</X>
+                              <Y>993</Y>
+                              <W>63</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>2973</X>
+                              <Y>1003</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">The share of the weather file's wind that reaches the surface, 1 (open) to 0 (still air). A weather station's wind does not reach a courtyard wall; a wind factor from a wind study is the number to give here.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">2023265e-d5b5-4464-9661-6108391865f2</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Wind Exposure</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Wind</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>2940</X>
+                              <Y>1013</Y>
+                              <W>63</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>2973</X>
+                              <Y>1023</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
                     <chunk name="param_output" index="0">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">SurfaceTemp material parameters for the SurfaceTemp component.</item>
@@ -867,9 +980,9 @@ concrete_roof</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3051</X>
-                              <Y>981</Y>
+                              <Y>953</Y>
                               <W>29</W>
-                              <H>24</H>
+                              <H>80</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3065.5</X>
@@ -964,20 +1077,22 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">4f1b815c-9c35-4db2-b888-159cf5027212</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct SurfaceTemp</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Deconstruct SurfaceTemp</item>
                   </items>
-                  <chunks count="7">
+                  <chunks count="12">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3605</X>
-                          <Y>1114</Y>
+                          <Y>1074</Y>
                           <W>144</W>
-                          <H>84</H>
+                          <H>164</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>3659</X>
@@ -987,7 +1102,7 @@ Version 1.23.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Result output of the SurfaceTemp component.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Result output of SurfaceTemp (FFT) — or an EnergyPlus run: the VF Model output of SurfaceTemp (EnergyPlus), the Result of MRT / MRT Solve run with EnergyPlus surface temperatures, or as text the path of its .eso file or MRT case folder. An EnergyPlus run gives one series per simulated surface (named on the Surfaces output); a run over part of the year keeps its true hours of the year.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">6c167472-97f8-457c-a2d2-b0915b374683</item>
                         <item name="Name" type_name="gh_string" type_code="10">Result</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Result</item>
@@ -1000,13 +1115,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3607</X>
-                              <Y>1116</Y>
+                              <Y>1076</Y>
                               <W>37</W>
-                              <H>40</H>
+                              <H>53</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3627</X>
-                              <Y>1136</Y>
+                              <Y>1102.6666</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1015,7 +1130,7 @@ Version 1.23.0.827</item>
                     <chunk name="param_input" index="1">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Hour(s) of year (1-8760) to restrict to. Leave unconnected for the whole year. The statistics are reduced over exactly these hours, so a July-afternoon list gives the July-afternoon mean — no re-solve needed.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Hour(s) of year (1-8760) to restrict to. Leave unconnected for the whole year. The statistics are reduced over exactly these hours, so a July-afternoon list gives the July-afternoon mean — no re-solve needed. An EnergyPlus run over part of the year is read at its true hours of the year (from the run period in its model); hours it did not simulate give nothing.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">7c305392-59cb-4a4a-b115-afb2dae41312</item>
                         <item name="Name" type_name="gh_string" type_code="10">HOY</item>
                         <item name="NickName" type_name="gh_string" type_code="10">HOY</item>
@@ -1027,13 +1142,40 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3607</X>
-                              <Y>1156</Y>
+                              <Y>1129</Y>
                               <W>37</W>
-                              <H>40</H>
+                              <H>53</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3627</X>
-                              <Y>1176</Y>
+                              <Y>1156</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="2">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">For an EnergyPlus run: points to read the surface temperature AT, each taking the solved surface straight below it (MRT sensors stand a body height over the ground). Every output is then per point, in this order, with nothing where no solved surface lies under a point. Unwired, an MRT Result uses its own sensors; a VF Model or a path gives one value per surface.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">0099641e-d168-4346-9811-0b98b938e625</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Points</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Pts</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3607</X>
+                              <Y>1182</Y>
+                              <W>37</W>
+                              <H>54</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3627</X>
+                              <Y>1209.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1054,13 +1196,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
-                              <Y>1116</Y>
+                              <Y>1076</Y>
                               <W>73</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
-                              <Y>1126</Y>
+                              <Y>1086</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1081,13 +1223,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
-                              <Y>1136</Y>
+                              <Y>1096</Y>
                               <W>73</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
-                              <Y>1146</Y>
+                              <Y>1106</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1108,13 +1250,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
-                              <Y>1156</Y>
+                              <Y>1116</Y>
                               <W>73</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
-                              <Y>1166</Y>
+                              <Y>1126</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1135,6 +1277,60 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
+                              <Y>1136</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1146</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="4">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The surface each value belongs to when the Result is an EnergyPlus run: its key in the run (G_n ground, B_n building, V_n vegetation), in the order of the other outputs. Empty for a SurfaceTemp Result, whose values follow that component's points.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">847575f9-376e-4b98-b473-4a5afc3caf84</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Surfaces</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Surfaces</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
+                              <Y>1156</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1166</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="5">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The outline of each surface of an EnergyPlus run, in model coordinates and in the order of the other outputs (read from the .epJSON beside the .eso: the model that run solved). Where the surface is on the scene. A surface the model does not name gives a null; a SurfaceTemp Result gives none.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">654fcc81-2502-4428-a56c-8ee9100a122a</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Faces</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Faces</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
                               <Y>1176</Y>
                               <W>73</W>
                               <H>20</H>
@@ -1142,6 +1338,59 @@ Version 1.23.0.827</item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
                               <Y>1186</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="6">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">For the VF Model of SurfaceTemp (EnergyPlus): the scene's own polygons (the faces MRT Scene shows) that EnergyPlus solved, as one mesh. Wire it into Flex Legend's Analysis Mesh with Polygon Mean as Values. A polygon EnergyPlus left out (seen too little by the sensors, or too small) is not in it.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">7db881cb-7462-4b2c-8151-6a46b0cedddd</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Polygon Mesh</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PolyMesh</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
+                              <Y>1196</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1206</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="7">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Mean surface temperature (°C) over the selected hours for each FACE of Polygon Mesh, in face order. The pieces of one split face are one EnergyPlus surface and share its value.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">8d4683d2-a5e1-43b6-a85a-ac4768b54c7f</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Polygon Mean</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PolyAvg</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
+                              <Y>1216</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1226</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1159,7 +1408,7 @@ Version 1.23.0.827</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="7">
+                  <items count="9">
                     <item name="Description" type_name="gh_string" type_code="10">Solves outdoor surface temperature per analysis point via the frequency-domain admittance method (no thermal mesh, no warm-up). Feeds a future MRT component alongside Sky Exposure.
 
 Version 1.3.0.827
@@ -1230,13 +1479,17 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">1b5cd9bd-d6fa-4b67-a91f-1112ed1e03d7</item>
                     <item name="Name" type_name="gh_string" type_code="10">SurfaceTemp</item>
                     <item name="NickName" type_name="gh_string" type_code="10">SurfaceTemp</item>
                     <item name="SurfaceTempInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="SurfaceTempNonlinear" type_name="gh_bool" type_code="1">false</item>
                     <item name="SurfaceTempPersistResults" type_name="gh_bool" type_code="1">false</item>
+                    <item name="SurfaceTempUnconditioned" type_name="gh_bool" type_code="1">false</item>
                   </items>
                   <chunks count="10">
                     <chunk name="Attributes">
@@ -1574,7 +1827,7 @@ GPU</item>
               </items>
               <chunks count="1">
                 <chunk name="Container">
-                  <items count="7">
+                  <items count="9">
                     <item name="Description" type_name="gh_string" type_code="10">Solves outdoor surface temperature per analysis point via the frequency-domain admittance method (no thermal mesh, no warm-up). Feeds a future MRT component alongside Sky Exposure.
 
 Version 1.3.0.827
@@ -1647,13 +1900,17 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">3f1df132-65c1-4c07-b038-0b0455c05d16</item>
                     <item name="Name" type_name="gh_string" type_code="10">SurfaceTemp</item>
                     <item name="NickName" type_name="gh_string" type_code="10">SurfaceTemp</item>
                     <item name="SurfaceTempInputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
+                    <item name="SurfaceTempNonlinear" type_name="gh_bool" type_code="1">false</item>
                     <item name="SurfaceTempPersistResults" type_name="gh_bool" type_code="1">false</item>
+                    <item name="SurfaceTempUnconditioned" type_name="gh_bool" type_code="1">false</item>
                   </items>
                   <chunks count="10">
                     <chunk name="Attributes">
@@ -2267,7 +2524,9 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">9ee1bde0-5238-4ede-94ff-1bcf6be8a9f7</item>
                     <item name="Name" type_name="gh_string" type_code="10">Download Weather</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Weather</item>
@@ -2731,20 +2990,22 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">352ab019-cf7d-499f-8985-bdcd9c87513d</item>
                     <item name="Name" type_name="gh_string" type_code="10">Deconstruct SurfaceTemp</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Deconstruct SurfaceTemp</item>
                   </items>
-                  <chunks count="7">
+                  <chunks count="12">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>3605</X>
-                          <Y>1323</Y>
+                          <Y>1283</Y>
                           <W>144</W>
-                          <H>84</H>
+                          <H>164</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>3659</X>
@@ -2754,7 +3015,7 @@ Version 1.23.0.827</item>
                     </chunk>
                     <chunk name="param_input" index="0">
                       <items count="7">
-                        <item name="Description" type_name="gh_string" type_code="10">Result output of the SurfaceTemp component.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Result output of SurfaceTemp (FFT) — or an EnergyPlus run: the VF Model output of SurfaceTemp (EnergyPlus), the Result of MRT / MRT Solve run with EnergyPlus surface temperatures, or as text the path of its .eso file or MRT case folder. An EnergyPlus run gives one series per simulated surface (named on the Surfaces output); a run over part of the year keeps its true hours of the year.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">4728a45b-6b5d-4296-b6b6-3aa3c1165002</item>
                         <item name="Name" type_name="gh_string" type_code="10">Result</item>
                         <item name="NickName" type_name="gh_string" type_code="10">Result</item>
@@ -2767,13 +3028,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3607</X>
-                              <Y>1325</Y>
+                              <Y>1285</Y>
                               <W>37</W>
-                              <H>40</H>
+                              <H>53</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3627</X>
-                              <Y>1345</Y>
+                              <Y>1311.6666</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2782,7 +3043,7 @@ Version 1.23.0.827</item>
                     <chunk name="param_input" index="1">
                       <items count="7">
                         <item name="Access" type_name="gh_int32" type_code="3">1</item>
-                        <item name="Description" type_name="gh_string" type_code="10">Hour(s) of year (1-8760) to restrict to. Leave unconnected for the whole year. The statistics are reduced over exactly these hours, so a July-afternoon list gives the July-afternoon mean — no re-solve needed.</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Hour(s) of year (1-8760) to restrict to. Leave unconnected for the whole year. The statistics are reduced over exactly these hours, so a July-afternoon list gives the July-afternoon mean — no re-solve needed. An EnergyPlus run over part of the year is read at its true hours of the year (from the run period in its model); hours it did not simulate give nothing.</item>
                         <item name="InstanceGuid" type_name="gh_guid" type_code="9">719ae53a-0e2c-4ac6-b844-6a4f4498d713</item>
                         <item name="Name" type_name="gh_string" type_code="10">HOY</item>
                         <item name="NickName" type_name="gh_string" type_code="10">HOY</item>
@@ -2794,13 +3055,40 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3607</X>
-                              <Y>1365</Y>
+                              <Y>1338</Y>
                               <W>37</W>
-                              <H>40</H>
+                              <H>53</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3627</X>
-                              <Y>1385</Y>
+                              <Y>1365</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="2">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">For an EnergyPlus run: points to read the surface temperature AT, each taking the solved surface straight below it (MRT sensors stand a body height over the ground). Every output is then per point, in this order, with nothing where no solved surface lies under a point. Unwired, an MRT Result uses its own sensors; a VF Model or a path gives one value per surface.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">db2b026f-cbf1-4163-acd5-8f0f699582b1</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Points</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Pts</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3607</X>
+                              <Y>1391</Y>
+                              <W>37</W>
+                              <H>54</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3627</X>
+                              <Y>1418.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2821,13 +3109,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
-                              <Y>1325</Y>
+                              <Y>1285</Y>
                               <W>73</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
-                              <Y>1335</Y>
+                              <Y>1295</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2848,13 +3136,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
-                              <Y>1345</Y>
+                              <Y>1305</Y>
                               <W>73</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
-                              <Y>1355</Y>
+                              <Y>1315</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2875,13 +3163,13 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
-                              <Y>1365</Y>
+                              <Y>1325</Y>
                               <W>73</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
-                              <Y>1375</Y>
+                              <Y>1335</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2902,6 +3190,60 @@ Version 1.23.0.827</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3674</X>
+                              <Y>1345</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1355</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="4">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The surface each value belongs to when the Result is an EnergyPlus run: its key in the run (G_n ground, B_n building, V_n vegetation), in the order of the other outputs. Empty for a SurfaceTemp Result, whose values follow that component's points.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">334ece77-3bf3-4d04-a448-7047d5603cc0</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Surfaces</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Surfaces</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
+                              <Y>1365</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1375</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="5">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">The outline of each surface of an EnergyPlus run, in model coordinates and in the order of the other outputs (read from the .epJSON beside the .eso: the model that run solved). Where the surface is on the scene. A surface the model does not name gives a null; a SurfaceTemp Result gives none.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">eca8d716-aef2-4f95-a7df-00abe56919b2</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Faces</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Faces</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
                               <Y>1385</Y>
                               <W>73</W>
                               <H>20</H>
@@ -2909,6 +3251,59 @@ Version 1.23.0.827</item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3710.5</X>
                               <Y>1395</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="6">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">For the VF Model of SurfaceTemp (EnergyPlus): the scene's own polygons (the faces MRT Scene shows) that EnergyPlus solved, as one mesh. Wire it into Flex Legend's Analysis Mesh with Polygon Mean as Values. A polygon EnergyPlus left out (seen too little by the sensors, or too small) is not in it.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">aa45cc6d-6a73-44a8-8777-d910a2d81b0f</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Polygon Mesh</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PolyMesh</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
+                              <Y>1405</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1415</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="7">
+                      <items count="7">
+                        <item name="Access" type_name="gh_int32" type_code="3">1</item>
+                        <item name="Description" type_name="gh_string" type_code="10">Mean surface temperature (°C) over the selected hours for each FACE of Polygon Mesh, in face order. The pieces of one split face are one EnergyPlus surface and share its value.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">7d3c60e3-8ce8-499e-ac42-fb95159387b4</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Polygon Mean</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">PolyAvg</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>3674</X>
+                              <Y>1425</Y>
+                              <W>73</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>3710.5</X>
+                              <Y>1435</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3047,20 +3442,22 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">6b45b0de-267c-4c52-86c5-aaeace4f38dd</item>
                     <item name="Name" type_name="gh_string" type_code="10">SurfaceTemp Material</item>
                     <item name="NickName" type_name="gh_string" type_code="10">SurfaceTemp Material</item>
                   </items>
-                  <chunks count="3">
+                  <chunks count="6">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>2944</X>
-                          <Y>1339</Y>
+                          <Y>1311</Y>
                           <W>144</W>
-                          <H>28</H>
+                          <H>84</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>3024</X>
@@ -3080,7 +3477,38 @@ Version 1.23.0.827</item>
 brick_ground
 grass_ground
 brick_wall
-concrete_roof</item>
+concrete_roof
+asphalt_road_ground
+concrete_paver_ground
+granite_cobble_ground
+gravel_ground
+sand_ground
+bare_soil_ground
+limestone_paving_ground
+ceramic_tile_paving_ground
+timber_deck_ground
+rubber_track_ground
+synthetic_turf_ground
+cool_pavement_ground
+reinforced_concrete_wall
+perforated_brick_etics_wall
+sand_lime_cavity_wall
+aac_block_wall
+wood_frame_wall
+stone_masonry_wall
+steel_sandwich_wall
+metal_cladding_wall
+rammed_earth_wall
+tiled_concrete_wall
+brick_veneer_wall
+clay_tile_roof
+asphalt_shingle_roof
+green_roof
+metal_deck_roof
+cool_membrane_roof
+gravel_ballast_roof
+reinforced_concrete_roof
+irrigated_turf_ground</item>
                         <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
                         <item name="Value" type_name="gh_string" type_code="10">brick_wall</item>
                       </items>
@@ -3089,13 +3517,13 @@ concrete_roof</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>2946</X>
-                              <Y>1341</Y>
+                              <Y>1313</Y>
                               <W>63</W>
-                              <H>24</H>
+                              <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2979</X>
-                              <Y>1353</Y>
+                              <Y>1323</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3122,6 +3550,84 @@ concrete_roof</item>
                         </chunk>
                       </chunks>
                     </chunk>
+                    <chunk name="param_input" index="1">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Long-wave emissivity of the exterior face, above 0 to 1. The library's assemblies are 0.9; bare metal is 0.1-0.2 and runs hotter by day and by night for it.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">fd89276b-7c9a-4d48-818f-902fa8d95f18</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Emissivity</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Emis</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>2946</X>
+                              <Y>1333</Y>
+                              <W>63</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>2979</X>
+                              <Y>1343</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">How freely the surface evaporates, 0 (dry, every library assembly) to 1 (irrigated turf, a wet green roof): that share of the Priestley-Taylor latent heat is taken out of the sunlight the surface absorbs.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">a426bfa0-1acd-4496-b083-a1ada88d8bcf</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Wetness</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Wet</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>2946</X>
+                              <Y>1353</Y>
+                              <W>63</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>2979</X>
+                              <Y>1363</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="3">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">The share of the weather file's wind that reaches the surface, 1 (open) to 0 (still air). A weather station's wind does not reach a courtyard wall; a wind factor from a wind study is the number to give here.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">94fdf6da-1b6c-4289-bdd5-27c925cdfe42</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Wind Exposure</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Wind</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">true</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>2946</X>
+                              <Y>1373</Y>
+                              <W>63</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>2979</X>
+                              <Y>1383</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
                     <chunk name="param_output" index="0">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">SurfaceTemp material parameters for the SurfaceTemp component.</item>
@@ -3136,9 +3642,9 @@ concrete_roof</item>
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>3057</X>
-                              <Y>1341</Y>
+                              <Y>1313</Y>
                               <W>29</W>
-                              <H>24</H>
+                              <H>80</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3071.5</X>
@@ -3205,7 +3711,9 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">093b7a4e-1b13-4243-8332-45249b392b14</item>
                     <item name="Name" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Scalar Field Viewer</item>
@@ -4016,7 +4524,9 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="FlexLegend.DrawField" type_name="gh_bool" type_code="1">true</item>
                     <item name="FlexLegend.LabelIsolines" type_name="gh_bool" type_code="1">true</item>
                     <item name="FlexLegendInputLayoutVersion" type_name="gh_int32" type_code="3">5</item>
@@ -5321,7 +5831,9 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">09b6c291-78be-409c-98ad-0731c3df00da</item>
                     <item name="Name" type_name="gh_string" type_code="10">Site Picker</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Site Picker</item>
@@ -5477,7 +5989,9 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">2eea328a-b23c-46dc-83d1-b6f416824127</item>
                     <item name="LidarSiteInputLayoutVersion" type_name="gh_int32" type_code="3">4</item>
                     <item name="LidarSiteOutputLayoutVersion" type_name="gh_int32" type_code="3">2</item>
@@ -6400,7 +6914,9 @@ Version 1.22.1.827
 
 Version 1.22.1.827
 
-Version 1.23.0.827</item>
+Version 1.23.0.827
+
+Version 1.24.0.827</item>
                     <item name="GroundPhoto" type_name="gh_bool" type_code="1">true</item>
                     <item name="Hidden" type_name="gh_bool" type_code="1">true</item>
                     <item name="InstanceGuid" type_name="gh_guid" type_code="9">1afa100b-caff-4c28-97f7-a2f2303febfa</item>
