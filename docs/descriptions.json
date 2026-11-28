@@ -128,12 +128,12 @@
     "Edit": "Ground and context Breps, weather station; press the two Buttons to run."
   },
   "MRT_Radiance.ghx": {
-    "Purpose": "Annual mean radiant temperature at ground sensors, with interreflected sun and computed surface temperatures.",
-    "Fidelity": "Engineering - Radiance shortwave plus EnergyPlus surface temperatures, not validated for this site.",
-    "Method": "One MRT component runs Radiance (Standard quality) and EnergyPlus; Brep Grid Points meshes ground and context at 2 m.",
-    "Result": "Annual mean MRT per probe, shown by Gradient and Text Tag.",
-    "Needs": "Eddy3D Setup > Comfort study (Radiance / EnergyPlus). Runtime: hours.",
-    "Edit": "Ground and context Breps, the EPW URL; turn Run on."
+    "Purpose": "Annual solar irradiation in kWh/m2 over a ground surface and its surrounding facades.",
+    "Fidelity": "Screening - interactive beam, sky and ground-reflected estimate, not a Radiance simulation.",
+    "Method": "Brep Grid Points samples surfaces at 1 m; Sky Exposure gives sky view; Solar Irradiation sums every daylight hour of an Istanbul year.",
+    "Result": "Ground and context coloured on one legend range; Text Tag prints rounded ground values.",
+    "Needs": "Nothing to install; runs inside Rhino. Runtime: seconds to minutes.",
+    "Edit": "Ground Brep, the ten context Breps, weather station."
   },
   "SurfaceTemps_EnergyPlus.ghx": {
     "Purpose": "Surface temperatures for MRT from EnergyPlus, staged so the costly view factors are solved once.",
